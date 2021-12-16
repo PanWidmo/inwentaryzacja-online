@@ -3,7 +3,7 @@ import './Root.css';
 function Root() {
   return (
     <div className="App">
-      <p> Project Template </p>
+      <p> Projekt Inz- Start :) </p>
     </div>
   );
 }
