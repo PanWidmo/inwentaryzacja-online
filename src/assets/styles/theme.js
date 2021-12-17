@@ -1,7 +1,7 @@
 export const theme = {
   colors: {
     white: '#FFFFFF',
-    black: '#111111',
+    black: '#000000',
   },
   fontSize: {
     xxl: '34px',
