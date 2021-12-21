@@ -43,6 +43,13 @@ const Button = styled.button`
     if (name === 'green') return theme.colors.green;
     if (name === 'blue') return theme.colors.blue;
   }};
+  position: absolute;
+  bottom: 40px;
+  right: ${({ name }) => {
+    if (name === 'red') return '100vw-50px';
+    if (name === 'green') return '50px';
+    if (name === 'blue') return '200px';
+  }};
   border-radius: 5px;
   border: none;
   font-weight: bold;
@@ -99,6 +106,7 @@ const APUsers = () => {
           </tr>
         </Table>
       </div>
+
       <Button name="red">Wyloguj</Button>
       <Button name="blue">Zapisz</Button>
       <Button name="green">Zatwierdź</Button>
