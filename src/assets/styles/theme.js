@@ -5,6 +5,8 @@ export const theme = {
     red: '#FF3939',
     blue: '#1AA7FF',
     green: '#6DD29B',
+    tabGray: '#EAE9E9',
+    tabBorderGray: '#EAE9E9',
   },
 
   fontSize: {
