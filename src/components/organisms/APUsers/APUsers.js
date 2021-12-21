@@ -40,13 +40,15 @@ const Button = styled.button`
   padding: 7px 20px;
   background-color: ${({ theme, name }) => {
     if (name === 'red') return theme.colors.red;
+    if (name === 'red2') return theme.colors.red;
     if (name === 'green') return theme.colors.green;
     if (name === 'blue') return theme.colors.blue;
   }};
   position: absolute;
-  bottom: 40px;
+  bottom: ${({ name }) => (name === 'red2' ? '88%' : '40px')};
   right: ${({ name }) => {
     if (name === 'red') return '100vw-50px';
+    if (name === 'red2') return '50px';
     if (name === 'green') return '50px';
     if (name === 'blue') return '200px';
   }};
@@ -67,6 +69,7 @@ const APUsers = () => {
       <div>
         <h2>Użytkowicy</h2>
         <h3>Firma XYZ, ul. Wąsacza 1A/20002255</h3>
+        <Button name="red2">Wyloguj</Button>
       </div>
       <div>
         <Table>
@@ -75,8 +78,8 @@ const APUsers = () => {
               <th>LP.</th>
               <th>Imie</th>
               <th>Nazwisko</th>
-              <th>Sprzęt</th>
-              <th>Usuń</th>
+              <th>E-mail</th>
+              <th>Dodatkowe informacje</th>
             </tr>
           </thead>
           <tr>
@@ -110,7 +113,7 @@ const APUsers = () => {
         </Table>
       </div>
 
-      <Button name="red">Wyloguj</Button>
+      <Button name="red">Cofnij</Button>
       <Button name="blue">Zapisz</Button>
       <Button name="green">Zatwierdź</Button>
     </Wrapper>
