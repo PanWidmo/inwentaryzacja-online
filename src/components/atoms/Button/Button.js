@@ -4,10 +4,10 @@ export const Button = styled.button`
   margin: 0.9375em 0;
   padding: 0.4375em 1.25em;
   background-color: ${({ theme, name }) => {
-    if (name === 'red') return theme.colors.red;
-    if (name === 'red2') return theme.colors.red;
-    if (name === 'green') return theme.colors.green;
-    if (name === 'blue') return theme.colors.blue;
+    if (name === 'red') return theme.colors.buttonRed;
+    if (name === 'red2') return theme.colors.buttonRed;
+    if (name === 'green') return theme.colors.buttonGreen;
+    if (name === 'blue') return theme.colors.buttonBlue;
   }};
   position: absolute;
   bottom: ${({ name }) => (name === 'red2' ? '88%' : '2.5em')};

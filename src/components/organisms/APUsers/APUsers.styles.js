@@ -7,5 +7,5 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
   padding: 1.5625em 3.125em;
-  color: ${({ theme }) => theme.colors.blue};
+  color: ${({ theme }) => theme.colors.buttonBlue};
 `;
