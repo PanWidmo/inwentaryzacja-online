@@ -1,68 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 
+import { Table } from 'components/atoms/Table/Table';
+import { Button } from 'components/atoms/Button/Button';
+import { Wrapper } from './APUsers.styles';
 import { users } from 'mocks/data/users';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  padding: 1.5625em 3.125em;
-  color: ${({ theme }) => theme.colors.blue};
-`;
-
-const Table = styled.table`
-  color: ${({ theme }) => theme.colors.black};
-  border-collapse: collapse;
-  width: 100%;
-  td,
-  th {
-    border: 0.0625em solid ${({ theme }) => theme.colors.tabBorderGray};
-    padding: 0.5em;
-  }
-  tr:nth-child(even) {
-    background-color: ${({ theme }) => theme.colors.tabGray};
-  }
-  tr:hover {
-    background-color: ${({ theme }) => theme.colors.tabHoverGray};
-  }
-  th {
-    padding-top: 0.75em;
-    padding-bottom: 0.75em;
-    background-color: ${({ theme }) => theme.colors.white};
-  }
-`;
-
-const Button = styled.button`
-  margin: 0.9375em 0;
-  padding: 0.4375em 1.25em;
-  background-color: ${({ theme, name }) => {
-    if (name === 'red') return theme.colors.red;
-    if (name === 'red2') return theme.colors.red;
-    if (name === 'green') return theme.colors.green;
-    if (name === 'blue') return theme.colors.blue;
-  }};
-  position: absolute;
-  bottom: ${({ name }) => (name === 'red2' ? '88%' : '2.5em')};
-  right: ${({ name }) => {
-    if (name === 'red') return '100vw-3.125em';
-    if (name === 'red2') return '3.125em';
-    if (name === 'green') return '3.125em';
-    if (name === 'blue') return '12.5em';
-  }};
-  border-radius: 0.3125em;
-  border: none;
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.white};
-  cursor: pointer;
-  box-shadow: 0 0.1875em 0.5em rgba(0, 0, 0, 0.3);
-  :active {
-    transform: translateY(0.25em);
-    border: none;
-  }
-`;
 
 const APUsers = () => {
   return (
