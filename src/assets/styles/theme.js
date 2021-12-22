@@ -7,6 +7,7 @@ export const theme = {
     green: '#6DD29B',
     tabGray: '#EAE9E9',
     tabBorderGray: '#EAE9E9',
+    tabHoverGray: '#F0F0F0',
   },
 
   fontSize: {

@@ -26,7 +26,7 @@ const Table = styled.table`
     background-color: ${({ theme }) => theme.colors.tabGray};
   }
   tr:hover {
-    background-color: ${({ theme }) => theme.colors.tabBorderGray};
+    background-color: ${({ theme }) => theme.colors.tabHoverGray};
   }
   th {
     padding-top: 12px;
