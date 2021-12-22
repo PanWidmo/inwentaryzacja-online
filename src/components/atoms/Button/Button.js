@@ -10,8 +10,10 @@ export const Button = styled.button`
     if (name === 'blue') return theme.colors.buttonBlue;
   }};
   position: absolute;
+  top: ${({ where }) => {
+    if (where === '1') return '3em';
+  }};
   bottom: ${({ where }) => {
-    if (where === '1') return '85%';
     if (where === '3') return '2.5em';
     if (where === '4') return '2.5em';
     if (where === '5') return '2.5em';
