@@ -14,9 +14,9 @@ export const Button = styled.button`
     if (where === '1') return '3em';
   }};
   bottom: ${({ where }) => {
-    if (where === '3') return '2.5em';
-    if (where === '4') return '2.5em';
-    if (where === '5') return '2.5em';
+    if (where === '3') return '5%';
+    if (where === '4') return '5%';
+    if (where === '5') return '5%';
   }};
   right: ${({ where }) => {
     if (where === '1') return '3.8em';
