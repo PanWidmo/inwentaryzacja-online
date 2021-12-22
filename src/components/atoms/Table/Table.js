@@ -6,7 +6,7 @@ export const Table = styled.table`
   width: 100%;
   td,
   th {
-    border: 0.0625em solid ${({ theme }) => theme.colors.tabBorderGray};
+    border: 0.0625em solid ${({ theme }) => theme.colors.tabGray};
     padding: 0.5em;
   }
   tr:nth-child(even) {

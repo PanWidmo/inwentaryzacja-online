@@ -6,7 +6,6 @@ export const theme = {
     buttonBlue: '#1AA7FF',
     buttonGreen: '#6DD29B',
     tabGray: '#EAE9E9',
-    tabBorderGray: '#EAE9E9',
     tabHoverGray: '#F0F0F0',
   },
 
