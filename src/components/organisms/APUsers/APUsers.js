@@ -11,7 +11,9 @@ const APUsers = () => {
       <div>
         <h2>Użytkowicy</h2>
         <h3>Firma XYZ, ul. Wąsacza 1A/20002255</h3>
-        <Button name="red2">Wyloguj</Button>
+        <Button name="red" where="1">
+          Wyloguj
+        </Button>
       </div>
       <div>
         <Table>
@@ -36,11 +38,20 @@ const APUsers = () => {
             ))}
           </tbody>
         </Table>
+        <Button name="blue" where="2">
+          Dodaj
+        </Button>
       </div>
 
-      <Button name="red">Cofnij</Button>
-      <Button name="blue">Zapisz</Button>
-      <Button name="green">Zatwierdź</Button>
+      <Button name="red" where="3">
+        Cofnij
+      </Button>
+      <Button name="blue" where="4">
+        Zapisz
+      </Button>
+      <Button name="green" where="5">
+        Zatwierdź
+      </Button>
     </Wrapper>
   );
 };

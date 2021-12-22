@@ -10,12 +10,17 @@ export const Button = styled.button`
     if (name === 'blue') return theme.colors.buttonBlue;
   }};
   position: absolute;
-  bottom: ${({ name }) => (name === 'red2' ? '88%' : '2.5em')};
-  right: ${({ name }) => {
-    if (name === 'red') return '100vw-3.125em';
-    if (name === 'red2') return '3.125em';
-    if (name === 'green') return '3.125em';
-    if (name === 'blue') return '12.5em';
+  bottom: ${({ where }) => {
+    if (where === '1') return '88%';
+    if (where === '3') return '2.5em';
+    if (where === '4') return '2.5em';
+    if (where === '5') return '2.5em';
+  }};
+  right: ${({ where }) => {
+    if (where === '1') return '3.125em';
+    if (where === '3') return '100vw-3.125em';
+    if (where === '4') return '3.125em';
+    if (where === '5') return '12.5em';
   }};
   border-radius: 0.3125em;
   border: none;
