@@ -44,7 +44,7 @@ const Button = styled.button`
     if (name === 'blue') return theme.colors.blue;
   }};
   position: absolute;
-  bottom: ${({ name }) => (name === 'red2' ? '88%' : '40px')};
+  bottom: ${({ name }) => (name === 'red2' ? '88%' : '2,5em')};
   right: ${({ name }) => {
     if (name === 'red') return '100vw-3.125em';
     if (name === 'red2') return '3.125em';
