@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  item-align: center;
   position: relative;
   width: 100%;
   height: 100vh;
@@ -44,7 +43,7 @@ const Button = styled.button`
     if (name === 'blue') return theme.colors.blue;
   }};
   position: absolute;
-  bottom: ${({ name }) => (name === 'red2' ? '88%' : '2,5em')};
+  bottom: ${({ name }) => (name === 'red2' ? '88%' : '2.5em')};
   right: ${({ name }) => {
     if (name === 'red') return '100vw-3.125em';
     if (name === 'red2') return '3.125em';
@@ -81,34 +80,36 @@ const APUsers = () => {
               <th>Dodatkowe informacje</th>
             </tr>
           </thead>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
         </Table>
       </div>
 
