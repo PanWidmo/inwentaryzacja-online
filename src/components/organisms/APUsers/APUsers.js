@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// import { users } from 'mocks/data/users';
+import { users } from 'mocks/data/users';
 
 const Wrapper = styled.div`
   display: flex;
@@ -84,34 +84,15 @@ const APUsers = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+            {users.map((userData) => (
+              <tr>
+                <td>{userData.lp}</td>
+                <td>{userData.imie}</td>
+                <td>{userData.nazwisko}</td>
+                <td>{userData.email}</td>
+                <td></td>
+              </tr>
+            ))}
           </tbody>
         </Table>
       </div>
