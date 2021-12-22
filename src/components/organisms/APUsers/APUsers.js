@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// import { users } from 'mocks/data/users';
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -58,6 +60,7 @@ const Button = styled.button`
   box-shadow: 0 0.1875em 0.5em rgba(0, 0, 0, 0.3);
   :active {
     transform: translateY(0.25em);
+    border: none;
   }
 `;
 
