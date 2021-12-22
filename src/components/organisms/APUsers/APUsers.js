@@ -85,7 +85,7 @@ const APUsers = () => {
           </thead>
           <tbody>
             {users.map((userData) => (
-              <tr>
+              <tr key={userData.lp}>
                 <td>{userData.lp}</td>
                 <td>{userData.imie}</td>
                 <td>{userData.nazwisko}</td>
