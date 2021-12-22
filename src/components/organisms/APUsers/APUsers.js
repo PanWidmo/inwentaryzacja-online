@@ -8,8 +8,7 @@ const Wrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
-  padding: 25px 50px;
-  border: 1px solid red;
+  padding: 1.5625em 3.125em;
   color: ${({ theme }) => theme.colors.blue};
 `;
 
@@ -19,8 +18,8 @@ const Table = styled.table`
   width: 100%;
   td,
   th {
-    border: 1px solid ${({ theme }) => theme.colors.tabBorderGray};
-    padding: 8px;
+    border: 0.0625em solid ${({ theme }) => theme.colors.tabBorderGray};
+    padding: 0.5em;
   }
   tr:nth-child(even) {
     background-color: ${({ theme }) => theme.colors.tabGray};
@@ -29,15 +28,15 @@ const Table = styled.table`
     background-color: ${({ theme }) => theme.colors.tabHoverGray};
   }
   th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
     background-color: ${({ theme }) => theme.colors.white};
   }
 `;
 
 const Button = styled.button`
-  margin: 15px 0;
-  padding: 7px 20px;
+  margin: 0.9375em 0;
+  padding: 0.4375em 1.25em;
   background-color: ${({ theme, name }) => {
     if (name === 'red') return theme.colors.red;
     if (name === 'red2') return theme.colors.red;
@@ -47,19 +46,19 @@ const Button = styled.button`
   position: absolute;
   bottom: ${({ name }) => (name === 'red2' ? '88%' : '40px')};
   right: ${({ name }) => {
-    if (name === 'red') return '100vw-50px';
-    if (name === 'red2') return '50px';
-    if (name === 'green') return '50px';
-    if (name === 'blue') return '200px';
+    if (name === 'red') return '100vw-3.125em';
+    if (name === 'red2') return '3.125em';
+    if (name === 'green') return '3.125em';
+    if (name === 'blue') return '12.5em';
   }};
-  border-radius: 5px;
+  border-radius: 0.3125em;
   border: none;
   font-weight: bold;
   color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.1875em 0.5em rgba(0, 0, 0, 0.3);
   :active {
-    transform: translateY(4px);
+    transform: translateY(0.25em);
   }
 `;
 
