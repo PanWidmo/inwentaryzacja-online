@@ -21,11 +21,9 @@ const APUsers = () => {
         <Table>
           <thead>
             <tr>
-              <th>{headders[0]}</th>
-              <th>{headders[1]}</th>
-              <th>{headders[2]}</th>
-              <th>{headders[3]}</th>
-              <th>{headders[4]}</th>
+              {headders.map((headder) => (
+                <th>{headder}</th>
+              ))}
             </tr>
           </thead>
           <tbody>
