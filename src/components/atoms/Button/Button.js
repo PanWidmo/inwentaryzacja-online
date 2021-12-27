@@ -20,6 +20,7 @@ export const Button = styled.button`
   }};
   right: ${({ where }) => {
     if (where === '1') return '3.8em';
+    if (where === '2') return '';
     if (where === '4') return '12.5em';
     if (where === '5') return '0em';
   }};

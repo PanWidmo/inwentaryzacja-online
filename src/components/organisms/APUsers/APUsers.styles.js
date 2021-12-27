@@ -11,9 +11,11 @@ export const Wrapper = styled.div`
 `;
 
 export const InnerWrapper = styled.div`
-  width: 100%;
+  width: 80%;
   height: 100%;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const StyledFooter = styled.div`

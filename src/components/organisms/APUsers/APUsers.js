@@ -40,11 +40,11 @@ const APUsers = () => {
             ))}
           </tbody>
         </Table>
-      </InnerWrapper>
-      <StyledFooter>
         <Button name="blue" where="2">
           Dodaj
         </Button>
+      </InnerWrapper>
+      <StyledFooter>
         <Button name="red" where="3">
           Cofnij
         </Button>
