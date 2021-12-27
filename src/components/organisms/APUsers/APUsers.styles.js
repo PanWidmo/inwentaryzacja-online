@@ -11,10 +11,12 @@ export const Wrapper = styled.div`
 
 export const InnerWrapper = styled.div`
   width: 80%;
-  height: 100%;
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  button {
+    position: relative;
+  }
 `;
 
 export const StyledFooter = styled.div`

@@ -5,7 +5,6 @@ export const Button = styled.button`
   padding: 0.4375em 1.25em;
   background-color: ${({ theme, name }) => {
     if (name === 'red') return theme.colors.buttonRed;
-    if (name === 'red2') return theme.colors.buttonRed;
     if (name === 'green') return theme.colors.buttonGreen;
     if (name === 'blue') return theme.colors.buttonBlue;
   }};
@@ -33,6 +32,4 @@ export const Button = styled.button`
     transform: translateY(0.25em);
     border: none;
   }
-
-  z-index: 99;
 `;
