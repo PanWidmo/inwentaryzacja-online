@@ -20,8 +20,8 @@ export const Button = styled.button`
   }};
   right: ${({ where }) => {
     if (where === '1') return '3.8em';
-    if (where === '4') return '0em';
-    if (where === '5') return '12.5em';
+    if (where === '4') return '12.5em';
+    if (where === '5') return '0em';
   }};
   border-radius: 0.3125em;
   border: none;
