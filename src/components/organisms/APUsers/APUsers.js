@@ -2,11 +2,12 @@ import React from 'react';
 
 import { Table } from 'components/atoms/Table/Table';
 import { Button } from 'components/atoms/Button/Button';
-import { Wrapper } from './APUsers.styles';
+import { Wrapper, InnerWrapper, StyledFooter } from './APUsers.styles';
 import { users } from 'mocks/data/users';
 
 const APUsers = () => {
   const headders = ['Lp.', 'Imie', 'Nazwisko', 'E-mail', 'Dodakowe informacje'];
+
   return (
     <Wrapper>
       <div>
@@ -16,7 +17,7 @@ const APUsers = () => {
           Wyloguj
         </Button>
       </div>
-      <div>
+      <InnerWrapper>
         <Table>
           <thead>
             <tr>
@@ -39,20 +40,21 @@ const APUsers = () => {
             ))}
           </tbody>
         </Table>
+      </InnerWrapper>
+      <StyledFooter>
         <Button name="blue" where="2">
           Dodaj
         </Button>
-      </div>
-
-      <Button name="red" where="3">
-        Cofnij
-      </Button>
-      <Button name="blue" where="4">
-        Zapisz
-      </Button>
-      <Button name="green" where="5">
-        Zatwierdź
-      </Button>
+        <Button name="red" where="3">
+          Cofnij
+        </Button>
+        <Button name="blue" where="4">
+          Zapisz
+        </Button>
+        <Button name="green" where="5">
+          Zatwierdź
+        </Button>
+      </StyledFooter>
     </Wrapper>
   );
 };
