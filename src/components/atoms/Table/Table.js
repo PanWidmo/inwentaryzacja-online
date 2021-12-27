@@ -13,7 +13,7 @@ export const Table = styled.table`
     background-color: ${({ theme }) => theme.colors.tabGray};
   }
   tr:hover {
-    background-color: ${({ theme }) => theme.colors.tabHoverGray};
+    background-color: ${({ theme }) => theme.colors.tabHoverGreen};
   }
   th {
     padding-top: 0.75em;
