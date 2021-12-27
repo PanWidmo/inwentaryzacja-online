@@ -2,7 +2,7 @@ import React from 'react';
 
 import { StyledTable } from './Table.styles';
 
-const Table = ({ dane, headders, ...props }) => {
+const Table = ({ dane, headders }) => {
   return (
     <StyledTable>
       <thead>

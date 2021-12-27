@@ -5,9 +5,9 @@ import { Button } from 'components/atoms/Button/Button';
 import { Wrapper, InnerWrapper, StyledFooter } from './APUsers.styles';
 import { users } from 'mocks/data/users';
 
-const APUsers = ({ headders, dane, ...props }) => {
-  headders = ['Lp.', 'Imie', 'Nazwisko', 'E-mail', 'Dodakowe informacje'];
-  dane = users;
+const APUsers = () => {
+  const headders = ['Lp.', 'Imie', 'Nazwisko', 'E-mail', 'Dodakowe informacje'];
+  const dane = users;
 
   return (
     <Wrapper>
@@ -19,7 +19,7 @@ const APUsers = ({ headders, dane, ...props }) => {
         </Button>
       </div>
       <InnerWrapper>
-        <Table {...props} />
+        <Table headders={headders} dane={dane} />
 
         <Button name="blue" where="2">
           Dodaj
