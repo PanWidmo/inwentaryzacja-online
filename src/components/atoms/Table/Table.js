@@ -1,23 +1,30 @@
-import styled from 'styled-components';
+import React from 'react';
 
-export const Table = styled.table`
-  color: ${({ theme }) => theme.colors.black};
-  border-collapse: collapse;
-  width: 100%;
-  td,
-  th {
-    border: 0.0625em solid ${({ theme }) => theme.colors.tabGray};
-    padding: 0.5em;
-  }
-  tr:nth-child(even) {
-    background-color: ${({ theme }) => theme.colors.tabGray};
-  }
-  tr:hover {
-    background-color: ${({ theme }) => theme.colors.tabHoverGreen};
-  }
-  th {
-    padding-top: 0.75em;
-    padding-bottom: 0.75em;
-    background-color: ${({ theme }) => theme.colors.white};
-  }
-`;
+import { StyledTable } from './Table.styles';
+
+const Table = ({ dane, headders, ...props }) => {
+  return (
+    <StyledTable>
+      <thead>
+        <tr>
+          {headders.map((headder) => (
+            <th>{headder}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {dane.map((daneData) => (
+          <tr key={daneData.lp}>
+            <td>{daneData.lp}</td>
+            <td>{daneData.imie}</td>
+            <td>{daneData.nazwisko}</td>
+            <td>{daneData.email}</td>
+            <td></td>
+          </tr>
+        ))}
+      </tbody>
+    </StyledTable>
+  );
+};
+
+export default Table;

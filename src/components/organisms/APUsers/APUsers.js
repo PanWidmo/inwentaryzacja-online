@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { Table } from 'components/atoms/Table/Table';
+import Table from 'components/atoms/Table/Table';
 import { Button } from 'components/atoms/Button/Button';
 import { Wrapper, InnerWrapper, StyledFooter } from './APUsers.styles';
 import { users } from 'mocks/data/users';
 
-const APUsers = () => {
-  const headders = ['Lp.', 'Imie', 'Nazwisko', 'E-mail', 'Dodakowe informacje'];
+const APUsers = ({ headders, dane, ...props }) => {
+  headders = ['Lp.', 'Imie', 'Nazwisko', 'E-mail', 'Dodakowe informacje'];
+  dane = users;
 
   return (
     <Wrapper>
@@ -18,26 +19,8 @@ const APUsers = () => {
         </Button>
       </div>
       <InnerWrapper>
-        <Table>
-          <thead>
-            <tr>
-              {headders.map((headder) => (
-                <th>{headder}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((userData) => (
-              <tr key={userData.lp}>
-                <td>{userData.lp}</td>
-                <td>{userData.imie}</td>
-                <td>{userData.nazwisko}</td>
-                <td>{userData.email}</td>
-                <td></td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
+        <Table {...props} />
+
         <Button name="blue" where="2">
           Dodaj
         </Button>
