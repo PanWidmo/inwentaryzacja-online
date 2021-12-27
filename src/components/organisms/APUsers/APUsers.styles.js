@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   position: relative;
   width: 100%;
-  min-height: 100vh;
   padding: 1.5625em 3.125em;
   color: ${({ theme }) => theme.colors.buttonBlue};
 `;

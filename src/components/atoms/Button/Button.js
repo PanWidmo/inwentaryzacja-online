@@ -34,4 +34,6 @@ export const Button = styled.button`
     transform: translateY(0.25em);
     border: none;
   }
+
+  z-index: 99;
 `;
