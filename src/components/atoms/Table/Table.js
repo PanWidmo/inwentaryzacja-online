@@ -8,7 +8,7 @@ const Table = ({ dane, headders }) => {
       <thead>
         <tr>
           {headders.map((headder) => (
-            <th>{headder}</th>
+            <th key={headder}>{headder}</th>
           ))}
         </tr>
       </thead>
