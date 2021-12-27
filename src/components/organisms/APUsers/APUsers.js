@@ -6,6 +6,7 @@ import { Wrapper } from './APUsers.styles';
 import { users } from 'mocks/data/users';
 
 const APUsers = () => {
+  const headders = ['Lp.', 'Imie', 'Nazwisko', 'E-mail', 'Dodakowe informacje'];
   return (
     <Wrapper>
       <div>
@@ -19,11 +20,11 @@ const APUsers = () => {
         <Table>
           <thead>
             <tr>
-              <th>LP.</th>
-              <th>Imie</th>
-              <th>Nazwisko</th>
-              <th>E-mail</th>
-              <th>Dodatkowe informacje</th>
+              <th>{headders[0]}</th>
+              <th>{headders[1]}</th>
+              <th>{headders[2]}</th>
+              <th>{headders[3]}</th>
+              <th>{headders[4]}</th>
             </tr>
           </thead>
           <tbody>
