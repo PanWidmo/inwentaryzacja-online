@@ -14,12 +14,12 @@ const Table = ({ dane, headders }) => {
       </thead>
       <tbody>
         {dane.map((daneData) => (
-          <tr key={daneData.lp}>
-            <td>{daneData.lp}</td>
-            <td>{daneData.imie}</td>
-            <td>{daneData.nazwisko}</td>
-            <td>{daneData.email}</td>
-            <td></td>
+          <tr key={daneData.a}>
+            <td>{daneData.a}</td>
+            <td>{daneData.b}</td>
+            <td>{daneData.c}</td>
+            <td>{daneData.d}</td>
+            <td>{daneData.e}</td>
           </tr>
         ))}
       </tbody>
