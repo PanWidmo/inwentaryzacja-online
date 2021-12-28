@@ -28,9 +28,6 @@ const APUsers = () => {
         <Button name="red" where="3">
           Cofnij
         </Button>
-        <Button name="blue" where="4">
-          Zapisz
-        </Button>
         <Button name="green" where="5">
           Zatwierdź
         </Button>

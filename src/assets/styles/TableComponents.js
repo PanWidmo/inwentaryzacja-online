@@ -25,5 +25,5 @@ export const InnerWrapper = styled.div`
 export const StyledFooter = styled.div`
   position: relative;
   width: 100%;
-  height: 10em;
+  height: 7em;
 `;
