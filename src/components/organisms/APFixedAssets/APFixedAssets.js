@@ -2,7 +2,7 @@ import React from 'react';
 
 import Table from 'components/atoms/Table/Table';
 import { Button } from 'components/atoms/Button/Button';
-import { Wrapper, InnerWrapper, StyledFooter } from '../APUsers/APUsers.styles';
+import { Wrapper, InnerWrapper, StyledFooter } from '../../../assets/styles/TableComponents';
 import { assets } from 'mocks/data/assets';
 
 const APFixedAssets = () => {
