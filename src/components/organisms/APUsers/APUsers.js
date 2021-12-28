@@ -2,7 +2,7 @@ import React from 'react';
 
 import Table from 'components/atoms/Table/Table';
 import { Button } from 'components/atoms/Button/Button';
-import { Wrapper, InnerWrapper, StyledFooter } from '../../../assets/styles/TableComponents';
+import { Wrapper, InnerWrapper, StyledFooter } from 'assets/styles/TableComponents';
 import { users } from 'mocks/data/users';
 
 const APUsers = () => {
@@ -20,7 +20,6 @@ const APUsers = () => {
       </div>
       <InnerWrapper>
         <Table headders={headders} dane={dane} />
-
         <Button name="blue" where="2">
           Dodaj
         </Button>
