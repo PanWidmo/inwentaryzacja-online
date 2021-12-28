@@ -7,6 +7,9 @@ export const Wrapper = styled.div`
   width: 100%;
   padding: 1.5625em 3.125em;
   color: ${({ theme }) => theme.colors.buttonBlue};
+  h4 {
+    color: ${({ theme }) => theme.colors.hGray};
+  }
 `;
 
 export const InnerWrapper = styled.div`

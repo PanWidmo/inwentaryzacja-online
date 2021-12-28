@@ -12,8 +12,8 @@ const APFixedAssets = () => {
   return (
     <Wrapper>
       <div>
-        <h2>Użytkowicy</h2>
-        <h3>Firma XYZ, ul. Wąsacza 1A/20002255</h3>
+        <h2>Środki Trwałe</h2>
+        <h4>Firma XYZ, ul. Wąsacza 1A/20002255</h4>
         <Button name="red" where="1">
           Wyloguj
         </Button>

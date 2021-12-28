@@ -8,6 +8,7 @@ export const theme = {
     tabGray: '#EAE9E9',
     tabHoverGray: '#F0F0F0',
     tabHoverGreen: '#69F6CA',
+    hGray: '#BABABA',
   },
 
   fontSize: {

@@ -13,13 +13,13 @@ const APUsers = () => {
     <Wrapper>
       <div>
         <h2>Użytkowicy</h2>
-        <h3>Firma XYZ, ul. Wąsacza 1A/20002255</h3>
+        <h4>Firma XYZ, ul. Wąsacza 1A/20002255</h4>
         <Button name="red" where="1">
           Wyloguj
         </Button>
       </div>
       <InnerWrapper>
-        <Table headders={headders} dane={dane} />
+        <Table headders={headders} dane={dane} id="usersTable" />
         <Button name="blue" where="2">
           Dodaj
         </Button>
