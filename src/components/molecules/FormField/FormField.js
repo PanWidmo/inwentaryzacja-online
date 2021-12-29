@@ -1,18 +1,18 @@
 import React from 'react';
-import { Label } from 'components/atoms/Label/Label';
+import { LabelAboveInput } from 'components/atoms/LabelAboveInput/LabelAboveInput';
 import { Input } from 'components/atoms/Input/Input';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 10px 0;
+  margin: 1em 0;
 `;
 
-const FormField = ({ label, name, id, type = 'text', value }) => {
+const FormField = ({ label, name, id, type, value }) => {
   return (
     <Wrapper>
-      <Label htmlFor={id}>{label}</Label>
+      <LabelAboveInput htmlFor={id}>{label}</LabelAboveInput>
       <Input name={name} id={id} type={type} value={value} />
     </Wrapper>
   );
