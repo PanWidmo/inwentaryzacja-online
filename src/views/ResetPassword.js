@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TitleLeftTop } from 'components/atoms/TitleLeftTop/TitleLeftTop';
-import { ViewWrapper } from 'components/molecules/ViewWrapper/ViewWrapper';
+import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { InfoLabel } from 'components/atoms/InfoLabel/InfoLabel';
 import FormField from 'components/molecules/FormField/FormField';
 import { Button } from 'components/atoms/Button/Button';

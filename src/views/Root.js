@@ -22,9 +22,9 @@ const Root = () => {
             <Route path="/" element={<LoginScreen />} />
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/reset-password-confirmation" element={<ResetPasswordConfirmation />} />
+            <Route path="/APUsers" element={<APUsers />} />
+            <Route path="/APFixedAssets" element={<APFixedAssets />} />
           </Routes>
-            <APUsers />
-            <APFixedAssets />
         </Wrapper>
       </ThemeProvider>
     </Router>
