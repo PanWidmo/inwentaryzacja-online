@@ -11,7 +11,6 @@ export const theme = {
     hGray: '#BABABA',
     labelBlue: '#4971FF',
     viewWrapperGray: '#F6F6F6',
-    loginButtonBlue: '#0DA2FF',
   },
 
   fontSize: {

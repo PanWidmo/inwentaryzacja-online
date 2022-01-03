@@ -1,5 +1,5 @@
 import React from 'react';
-import { ViewWrapper } from 'components/molecules/ViewWrapper/ViewWrapper';
+import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { TitleLeftTop } from 'components/atoms/TitleLeftTop/TitleLeftTop';
 import { InfoLabel } from 'components/atoms/InfoLabel/InfoLabel';
 import FormField from 'components/molecules/FormField/FormField';
@@ -15,7 +15,9 @@ const LoginScreen = () => {
         <FormField label="LOGIN" id="login" name="login" type="text" />
         <FormField label="HASŁO" id="password" name="password" type="password" />
         <LoginProblemLink to="/reset-password">Problem z logowaniem?</LoginProblemLink>
-        <Button type="submit">Zaloguj</Button>
+        <Button name="blue" type="submit">
+          Zaloguj
+        </Button>
       </ViewWrapper>
     </>
   );

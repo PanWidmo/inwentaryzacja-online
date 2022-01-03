@@ -7,7 +7,6 @@ export const Button = styled.button`
     if (name === 'red') return theme.colors.buttonRed;
     if (name === 'green') return theme.colors.buttonGreen;
     if (name === 'blue') return theme.colors.buttonBlue;
-    if (name === 'login') return theme.colors.loginButtonBlue;
   }};
   position: absolute;
   top: ${({ where }) => {
