@@ -8,11 +8,11 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: inherit;
     }
     body {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Roboto', sans-serif;
         margin: 0;
         padding: 0;
     }
     a, button {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Roboto', sans-serif;
     }
 `;
