@@ -9,6 +9,9 @@ export const theme = {
     tabHoverGray: '#F0F0F0',
     tabHoverGreen: '#69F6CA',
     hGray: '#BABABA',
+    labelBlue: '#4971FF',
+    viewWrapperGray: '#F6F6F6',
+    loginButtonBlue: '#0DA2FF',
   },
 
   fontSize: {
