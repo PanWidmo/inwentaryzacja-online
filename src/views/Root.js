@@ -11,6 +11,7 @@ import APFixedAssets from 'components/organisms/APFixedAssets/APFixedAssets';
 import LoginScreen from 'views/LoginScreen';
 import ResetPassword from 'views/ResetPassword';
 import ResetPasswordConfirmation from 'views/ResetPasswordConfirmation';
+import AdminPanel from 'views/AdminPanel';
 
 const Root = () => {
   return (
@@ -24,6 +25,7 @@ const Root = () => {
             <Route path="/reset-password-confirmation" element={<ResetPasswordConfirmation />} />
             <Route path="/APUsers" element={<APUsers />} />
             <Route path="/APFixedAssets" element={<APFixedAssets />} />
+            <Route path="/admin-panel" element={<AdminPanel />} />
           </Routes>
         </Wrapper>
       </ThemeProvider>
