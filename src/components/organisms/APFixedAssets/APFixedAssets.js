@@ -6,7 +6,7 @@ import { Wrapper, InnerWrapper, StyledFooter } from 'assets/styles/TableComponen
 import { assets } from 'mocks/data/assets';
 
 const APFixedAssets = () => {
-  const headders = ['Lp.', 'Nazwa sprzętu', 'Numer inwentarzowy', 'Numer seryjny', 'Osoba przypisana'];
+  const headers = ['Lp.', 'Nazwa sprzętu', 'Numer inwentarzowy', 'Numer seryjny', 'Osoba przypisana'];
   const dane = assets;
 
   return (
@@ -19,7 +19,7 @@ const APFixedAssets = () => {
         </Button>
       </div>
       <InnerWrapper>
-        <Table headders={headders} dane={dane} />
+        <Table headers={headers} dane={dane} />
 
         <Button name="blue" where="2">
           Dodaj

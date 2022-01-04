@@ -6,7 +6,7 @@ import { Wrapper, InnerWrapper, StyledFooter } from 'assets/styles/TableComponen
 import { users } from 'mocks/data/users';
 
 const APUsers = () => {
-  const headders = ['Lp.', 'Imie', 'Nazwisko', 'E-mail', 'Dodakowe informacje'];
+  const headers = ['Lp.', 'Imie', 'Nazwisko', 'E-mail', 'Dodakowe informacje'];
   const dane = users;
 
   return (
@@ -19,7 +19,7 @@ const APUsers = () => {
         </Button>
       </div>
       <InnerWrapper>
-        <Table headders={headders} dane={dane} id="usersTable" />
+        <Table headers={headers} dane={dane} id="usersTable" />
         <Button name="blue" where="2">
           Dodaj
         </Button>

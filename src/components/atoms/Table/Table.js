@@ -2,13 +2,13 @@ import React from 'react';
 
 import { StyledTable } from './Table.styles';
 
-const Table = ({ dane, headders }) => {
+const Table = ({ dane, headers }) => {
   return (
     <StyledTable>
       <thead>
         <tr>
-          {headders.map((headder) => (
-            <th key={headder}>{headder}</th>
+          {headers.map((header) => (
+            <th key={header}>{header}</th>
           ))}
         </tr>
       </thead>
