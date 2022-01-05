@@ -10,7 +10,7 @@ export const ChoosePanelSingleViewWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin: 0 auto;
-  min-height: 50vh;
+  max-width: 40vh;
 
   button {
     position: relative;
@@ -20,5 +20,9 @@ export const ChoosePanelSingleViewWrapper = styled.div`
   img {
     width: 8rem;
     margin: 2em auto;
+  }
+
+  p {
+    word-wrap: break-word;
   }
 `;

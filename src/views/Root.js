@@ -12,6 +12,7 @@ import LoginScreen from 'views/LoginScreen';
 import ResetPassword from 'views/ResetPassword';
 import ResetPasswordConfirmation from 'views/ResetPasswordConfirmation';
 import AdminPanel from 'views/AdminPanel';
+import AccountantPanel from 'views/AccountantPanel';
 
 const Root = () => {
   return (
@@ -26,6 +27,7 @@ const Root = () => {
             <Route path="/APUsers" element={<APUsers />} />
             <Route path="/APFixedAssets" element={<APFixedAssets />} />
             <Route path="/admin-panel" element={<AdminPanel />} />
+            <Route path="/accountant-panel" element={<AccountantPanel />} />
           </Routes>
         </Wrapper>
       </ThemeProvider>

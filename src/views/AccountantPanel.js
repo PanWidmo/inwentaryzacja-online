@@ -4,9 +4,9 @@ import { Button } from 'components/atoms/Button/Button';
 import { SubtitleLeftTop } from 'components/atoms/SubtitleLeftTop/SubtitleLeftTop';
 import { ChoosePanelSingleViewWrapper } from 'components/atoms/ChoosePanelSingleViewWrapper/ChoosePanelSingleViewWrapper';
 import { Wrapper } from 'assets/styles/AdminAccountantViewPanel';
-import image19 from 'assets/icons/image19.png';
-import image20 from 'assets/icons/image20.png';
-import image18 from 'assets/icons/image18.png';
+import image21 from 'assets/icons/image21.png';
+import image22 from 'assets/icons/image22.png';
+import image23 from 'assets/icons/image23.png';
 import { users } from 'mocks/data/users';
 
 const AdminPanel = () => {
@@ -23,31 +23,31 @@ const AdminPanel = () => {
         </Button>
 
         <ChoosePanelSingleViewWrapper as="form">
-          <img src={image19} alt="people_logo" />
+          <img src={image23} alt="people_logo" />
           <Button name="green" where="2">
             {' '}
-            Użytkownicy{' '}
+            Historia{' '}
           </Button>
 
-          <p>Modyfikuj dane użytkowników</p>
+          <p>Poprzednie inwentaryzacje</p>
         </ChoosePanelSingleViewWrapper>
         <ChoosePanelSingleViewWrapper as="form">
-          <img src={image18} alt="people_logo" />
+          <img src={image22} alt="people_logo" />
           <Button name="green" where="2">
             {' '}
-            Środki trwałe{' '}
+            Aktualna inwentaryzacja{' '}
           </Button>
 
-          <p>Modyfikuj informacje o obiektach</p>
+          <p>Aktualna inwentaryzacja</p>
         </ChoosePanelSingleViewWrapper>
         <ChoosePanelSingleViewWrapper as="form">
-          <img src={image20} alt="people_logo" />
+          <img src={image21} alt="people_logo" />
           <Button name="green" where="2">
             {' '}
-            Pobierz dane{' '}
+            Nowa inwentaryzacja{' '}
           </Button>
 
-          <p>Generuj plik z danymi wyjściowymi</p>
+          <p>Rozpocznij inwentaryzację</p>
         </ChoosePanelSingleViewWrapper>
       </Wrapper>
     </>
