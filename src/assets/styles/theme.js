@@ -7,10 +7,6 @@ export const theme = {
     buttonGreen: '#6DD29B',
     tabGray: '#EAE9E9',
     tabHoverGray: '#F0F0F0',
-    tabHoverGreen: '#69F6CA',
-    hGray: '#BABABA',
-    labelBlue: '#4971FF',
-    viewWrapperGray: '#F6F6F6',
   },
 
   fontSize: {
