@@ -2,29 +2,37 @@ import React, { useState } from 'react';
 
 import { StyledTable } from './Table.styles';
 
-const Table = ({ dane, headers }) => {
+const Table = ({ dane }) => {
   const daneDatas = dane;
   const [sortedField, setSortedField] = useState(null);
+  const headers = daneDatas.map((header) => Object.keys(header));
+  //console.log(headers[1]);
   let sortedData = [...daneDatas];
   if (sortedField !== null) {
     sortedData.sort((a, b) => {
-      if (a[sortedField] < b[sortedField]) {
+      //console.log(a[Object.keys(sortedField)]);
+      if (a[sortedField['header']] < b[[sortedField['header']]]) {
         return -1;
       }
-      if (a[sortedField] > b[sortedField]) {
+      if (a[sortedField['header']] > b[[sortedField['header']]]) {
         return 1;
       }
       return 0;
     });
   }
-  console.log(sortedData);
+  //console.log(daneDatas[1]);
+  //console.log(Object.keys(daneDatas[1]));
+  console.log(sortedField['header']);
+  //console.log(sortedData);
+  //console.log(daneDatas);
+
   return (
     <StyledTable>
       <thead>
         <tr>
-          {headers.map((header) => (
+          {headers[1].map((header) => (
             <th key={header}>
-              <div type="button" onClick={() => setSortedField(`${daneDatas}`)}>
+              <div type="button" onClick={() => setSortedField({ header })}>
                 {header}
               </div>
             </th>
@@ -33,11 +41,11 @@ const Table = ({ dane, headers }) => {
       </thead>
       <tbody>
         {sortedData.map((daneData) => (
-          <tr key={daneData.a}>
-            <td>{daneData.a}</td>
-            <td>{daneData.b}</td>
-            <td>{daneData.c}</td>
-            <td>{daneData.d}</td>
+          <tr key={daneData.lp}>
+            <td>{daneData.lp}</td>
+            <td>{daneData.imie}</td>
+            <td>{daneData.nazwisko}</td>
+            <td>{daneData.email}</td>
             <td>{daneData.e}</td>
           </tr>
         ))}
