@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { StyledTable } from './Table.styles';
 
 const Table = ({ dane }) => {
-  const daneDatas = dane;
   const [sortedField, setSortedField] = useState(null);
-  const headers = daneDatas.map((header) => Object.keys(header));
-  //console.log(headers[1]);
-  let sortedData = [...daneDatas];
+  const headers = dane.map((header) => Object.keys(header));
+  const [lp, setLp] = useState(0);
+
+  let sortedData = [...dane];
   if (sortedField !== null) {
     sortedData.sort((a, b) => {
-      //console.log(a[Object.keys(sortedField)]);
       if (a[sortedField['header']] < b[[sortedField['header']]]) {
         return -1;
       }
@@ -20,16 +19,12 @@ const Table = ({ dane }) => {
       return 0;
     });
   }
-  //console.log(daneDatas[1]);
-  //console.log(Object.keys(daneDatas[1]));
-  //console.log(sortedField['header']);
-  //console.log(sortedData);
-  //console.log(daneDatas);
 
   return (
     <StyledTable>
       <thead>
         <tr>
+          <th>Lp</th>
           {headers[1].map((header) => (
             <th key={header}>
               <div type="button" onClick={() => setSortedField({ header })}>
@@ -42,11 +37,11 @@ const Table = ({ dane }) => {
       <tbody>
         {sortedData.map((daneData) => (
           <tr key={daneData.lp}>
-            <td>{daneData.lp}</td>
-            <td>{daneData.imie}</td>
-            <td>{daneData.nazwisko}</td>
-            <td>{daneData.email}</td>
-            <td>{daneData.e}</td>
+            <td onClick={() => setLp(+1)}>{lp}</td>
+            {console.log(lp)}
+            {Object.values(daneData).map((columnData) => (
+              <td>{columnData}</td>
+            ))}
           </tr>
         ))}
       </tbody>
