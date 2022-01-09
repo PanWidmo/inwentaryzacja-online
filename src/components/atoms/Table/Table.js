@@ -22,7 +22,7 @@ const Table = ({ dane }) => {
   }
   //console.log(daneDatas[1]);
   //console.log(Object.keys(daneDatas[1]));
-  console.log(sortedField['header']);
+  //console.log(sortedField['header']);
   //console.log(sortedData);
   //console.log(daneDatas);
 
@@ -33,7 +33,7 @@ const Table = ({ dane }) => {
           {headers[1].map((header) => (
             <th key={header}>
               <div type="button" onClick={() => setSortedField({ header })}>
-                {header}
+                {header[0].toUpperCase() + header.substring(1)}
               </div>
             </th>
           ))}
