@@ -5,7 +5,6 @@ import { SubtitleLeftTop } from 'components/atoms/SubtitleLeftTop/SubtitleLeftTo
 import { ChoosePanelSingleViewWrapper } from 'components/atoms/ChoosePanelSingleViewWrapper/ChoosePanelSingleViewWrapper';
 import { Wrapper } from 'assets/styles/AdminAccountantViewPanel';
 import image19 from 'assets/icons/image19.png';
-import image20 from 'assets/icons/image20.png';
 import image18 from 'assets/icons/image18.png';
 import { users } from 'mocks/data/users';
 
@@ -39,15 +38,6 @@ const AdminPanel = () => {
           </Button>
 
           <p>Modyfikuj informacje o obiektach</p>
-        </ChoosePanelSingleViewWrapper>
-        <ChoosePanelSingleViewWrapper as="form">
-          <img src={image20} alt="people_logo" />
-          <Button name="green" where="2">
-            {' '}
-            Pobierz dane{' '}
-          </Button>
-
-          <p>Generuj plik z danymi wyjściowymi</p>
         </ChoosePanelSingleViewWrapper>
       </Wrapper>
     </>
