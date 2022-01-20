@@ -7,6 +7,7 @@ export const theme = {
     buttonGreen: '#6DD29B',
     tabGray: '#EAE9E9',
     tabHoverGray: '#F0F0F0',
+    labelBlue: '#1AA7FF',
   },
 
   fontSize: {
@@ -16,5 +17,6 @@ export const theme = {
     l: '1.0625rem', // 17px
     m: '0.75rem', // 12px
     s: '0.6875rem', // 11px
+    xs: '0.5rem',
   },
 };

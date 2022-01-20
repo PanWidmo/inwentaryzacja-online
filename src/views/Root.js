@@ -13,6 +13,7 @@ import ResetPassword from 'views/ResetPassword';
 import ResetPasswordConfirmation from 'views/ResetPasswordConfirmation';
 import AdminPanel from 'views/AdminPanel';
 import AccountantPanel from 'views/AccountantPanel';
+import CreateNewInventory from './CreateNewInventory';
 
 const Root = () => {
   return (
@@ -28,6 +29,7 @@ const Root = () => {
             <Route path="/APFixedAssets" element={<APFixedAssets />} />
             <Route path="/admin-panel" element={<AdminPanel />} />
             <Route path="/accountant-panel" element={<AccountantPanel />} />
+            <Route path="/create-new-inventory" element={<CreateNewInventory />} />
           </Routes>
         </Wrapper>
       </ThemeProvider>

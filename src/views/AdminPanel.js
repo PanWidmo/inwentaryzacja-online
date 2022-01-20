@@ -9,11 +9,11 @@ import image18 from 'assets/icons/image18.png';
 import { users } from 'mocks/data/users';
 
 const AdminPanel = () => {
-  const dane = users;
+  const data = users;
   return (
     <>
       <Wrapper>
-        <TitleLeftTop>{dane[0].imie + ' ' + dane[0].nazwisko}</TitleLeftTop>
+        <TitleLeftTop>{data[0].imie + ' ' + data[0].nazwisko}</TitleLeftTop>
         <SubtitleLeftTop>Firma XYZ, ul. Wąsacza 1A/20002255</SubtitleLeftTop>
 
         <Button name="red" where="1">

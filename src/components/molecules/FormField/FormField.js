@@ -12,7 +12,9 @@ const Wrapper = styled.div`
 const FormField = ({ label, name, id, type, value }) => {
   return (
     <Wrapper>
-      <LabelAboveInput htmlFor={id}>{label}</LabelAboveInput>
+      <LabelAboveInput htmlFor={id} name={name}>
+        {label}
+      </LabelAboveInput>
       <Input name={name} id={id} type={type} value={value} />
     </Wrapper>
   );
