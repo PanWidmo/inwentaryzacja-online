@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { StyledTable } from './Table.styles';
 
 const Table = ({ dane }) => {
   const [sortedField, setSortedField] = useState(null);
   const headers = dane.map((header) => Object.keys(header));
-  const [lp, setLp] = useState(1);
 
   let sortedData = [...dane];
   if (sortedField !== null) {
@@ -38,9 +37,9 @@ const Table = ({ dane }) => {
         {sortedData.map((daneData, index) => (
           <tr key={daneData.lp}>
             <td key={index + 1}>{index + 1}</td>
-            {Object.values(daneData).map((columnData) => (
+            {Object.values(daneData).map((columnData, index) => (
               <>
-                <td>{columnData}</td>
+                <td key={index + 1}>{columnData}</td>
               </>
             ))}
           </tr>

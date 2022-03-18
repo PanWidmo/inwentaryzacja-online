@@ -31,5 +31,10 @@ export const Button = styled.button`
   :active {
     transform: translateY(0.25em);
     border: none;
+    outline: none;
+  }
+  :focus {
+    border: none;
+    outline: none;
   }
 `;
