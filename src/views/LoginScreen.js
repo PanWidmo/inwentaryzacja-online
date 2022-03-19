@@ -5,13 +5,13 @@ import { InfoLabel } from 'components/atoms/InfoLabel/InfoLabel';
 import FormField from 'components/molecules/FormField/FormField';
 import { LoginProblemLink } from 'components/atoms/LoginProblemLink/LoginProblemLink';
 import { Button } from 'components/atoms/Button/Button';
-import { useAuthContext } from '../contexts/AuthContext';
+import { useAuth } from 'hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 
 const LoginScreen = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { signIn } = useAuthContext();
+  const { signIn } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
