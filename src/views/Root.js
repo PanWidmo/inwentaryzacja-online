@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Wrapper } from 'views/Root.styles';
 
 import APUsers from 'components/organisms/APUsers/APUsers';
@@ -13,7 +13,7 @@ const AuthenticatedApp = () => {
   return (
     <Wrapper>
       <Routes>
-        <Route path="/" element={<APUsers />} />
+        <Route path="/" element={<Navigate to="/APUsers" />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/reset-password-confirmation" element={<ResetPasswordConfirmation />} />
         <Route path="/APUsers" element={<APUsers />} />
@@ -35,7 +35,6 @@ const UnauthenticatedApp = () => {
 
 const Root = () => {
   const auth = useAuth();
-  console.log(auth.user);
 
   return auth.user ? <AuthenticatedApp /> : <UnauthenticatedApp />;
 };

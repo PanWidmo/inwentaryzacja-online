@@ -6,10 +6,12 @@ const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (response) => {
-      response ? setUser(response) : setUser(null);
+      setUser(response);
+      setLoading(false);
     });
     return unsubscribe;
   }, []);
@@ -22,7 +24,7 @@ export const AuthProvider = ({ children }) => {
     signOut(auth);
   };
 
-  return <AuthContext.Provider value={{ user, signIn, signOut }}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={{ user, signIn, signOut }}>{!loading && children}</AuthContext.Provider>;
 };
 
 export const useAuth = () => {
