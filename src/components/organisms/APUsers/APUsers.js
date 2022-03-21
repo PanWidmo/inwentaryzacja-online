@@ -4,17 +4,23 @@ import Table from 'components/atoms/Table/Table';
 import { Button } from 'components/atoms/Button/Button';
 import { Wrapper, InnerWrapper, StyledFooter } from 'assets/styles/TableComponents';
 import { users } from 'mocks/data/users';
+import { useAuth } from 'hooks/useAuth';
 
 const APUsers = () => {
   const headders = ['Lp.', 'Imie', 'Nazwisko', 'E-mail', 'Dodakowe informacje'];
   const dane = users;
+  const { signOutUser } = useAuth();
+
+  const handleLogout = () => {
+    signOutUser();
+  };
 
   return (
     <Wrapper>
       <div>
         <h2>Użytkowicy</h2>
         <h4>Firma XYZ, ul. Wąsacza 1A/20002255</h4>
-        <Button name="red" where="1">
+        <Button name="red" where="1" onClick={handleLogout}>
           Wyloguj
         </Button>
       </div>
