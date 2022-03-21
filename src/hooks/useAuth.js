@@ -20,11 +20,11 @@ export const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const signOut = () => {
-    signOut(auth);
+  const signOutUser = () => {
+    return signOut(auth);
   };
 
-  return <AuthContext.Provider value={{ user, signIn, signOut }}>{!loading && children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={{ user, signIn, signOutUser }}>{!loading && children}</AuthContext.Provider>;
 };
 
 export const useAuth = () => {

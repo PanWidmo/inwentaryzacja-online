@@ -14,8 +14,6 @@ const AuthenticatedApp = () => {
     <Wrapper>
       <Routes>
         <Route path="/" element={<Navigate to="/APUsers" />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path="/reset-password-confirmation" element={<ResetPasswordConfirmation />} />
         <Route path="/APUsers" element={<APUsers />} />
         <Route path="/APFixedAssets" element={<APFixedAssets />} />
       </Routes>
@@ -27,7 +25,10 @@ const UnauthenticatedApp = () => {
   return (
     <Wrapper>
       <Routes>
-        <Route path="/*" element={<LoginScreen />} />
+        <Route path="/*" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<LoginScreen />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/reset-password-confirmation" element={<ResetPasswordConfirmation />} />
       </Routes>
     </Wrapper>
   );
