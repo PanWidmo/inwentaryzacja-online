@@ -7,7 +7,7 @@ import { Button } from 'components/atoms/Button/Button';
 
 const ResetPasswordConfirmation = () => {
   const navigate = useNavigate();
-  const handleClick = () => navigate('/', { replace: true });
+  const handleClick = () => navigate('/');
   return (
     <>
       <TitleLeftTop>Problem z logowaniem</TitleLeftTop>
