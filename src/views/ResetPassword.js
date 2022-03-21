@@ -30,7 +30,9 @@ const ResetPassword = () => {
       <ViewWrapper as="form" onSubmit={handleSubmit}>
         <InfoLabel>Wpisz swój adres email:</InfoLabel>
         <FormField label="EMAIL" id="email" name="email" type="email" ref={emailRef} />
-        <Button type="submit">Wyślij</Button>
+        <Button name="blue" type="submit">
+          Wyślij
+        </Button>
       </ViewWrapper>
     </>
   );

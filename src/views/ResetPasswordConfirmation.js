@@ -14,7 +14,7 @@ const ResetPasswordConfirmation = () => {
       <ViewWrapper>
         <InfoLabel>Mail został wysłany!</InfoLabel>
         <InfoLabel>Sprawdź swoją skrzynkę odbiorczą</InfoLabel>
-        <Button type="submit" onClick={handleClick}>
+        <Button name="blue" type="submit" onClick={handleClick}>
           Powrót
         </Button>
       </ViewWrapper>
