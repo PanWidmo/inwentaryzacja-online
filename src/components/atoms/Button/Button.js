@@ -5,6 +5,7 @@ export const Button = styled.button`
   padding: 0.4375em 1.25em;
   background-color: ${({ theme, name }) => {
     if (name === 'red') return theme.colors.buttonRed;
+    if (name === 'red2') return theme.colors.buttonRed;
     if (name === 'green') return theme.colors.buttonGreen;
     if (name === 'blue') return theme.colors.buttonBlue;
   }};
@@ -19,8 +20,9 @@ export const Button = styled.button`
   }};
   right: ${({ where }) => {
     if (where === '1') return '3.8em';
-    if (where === '4') return '12.5em';
-    if (where === '5') return '0em';
+    if (where === '3') return '100vw-3.125em';
+    if (where === '4') return '3.8em';
+    if (where === '5') return '12.5em';
   }};
   border-radius: 0.3125em;
   border: none;

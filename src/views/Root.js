@@ -8,6 +8,8 @@ import LoginScreen from 'views/LoginScreen';
 import ResetPassword from 'views/ResetPassword';
 import ResetPasswordConfirmation from 'views/ResetPasswordConfirmation';
 import { useAuth } from 'hooks/useAuth';
+import AdminPanel from 'views/AdminPanel';
+
 
 const AuthenticatedApp = () => {
   return (
@@ -31,6 +33,7 @@ const UnauthenticatedApp = () => {
         <Route path="/reset-password-confirmation" element={<ResetPasswordConfirmation />} />
       </Routes>
     </Wrapper>
+
   );
 };
 
