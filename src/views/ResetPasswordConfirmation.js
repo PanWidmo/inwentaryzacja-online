@@ -7,14 +7,14 @@ import { Button } from 'components/atoms/Button/Button';
 
 const ResetPasswordConfirmation = () => {
   const navigate = useNavigate();
-  const handleClick = () => navigate('/', { replace: true });
+  const handleClick = () => navigate('/');
   return (
     <>
       <TitleLeftTop>Problem z logowaniem</TitleLeftTop>
       <ViewWrapper>
         <InfoLabel>Mail został wysłany!</InfoLabel>
         <InfoLabel>Sprawdź swoją skrzynkę odbiorczą</InfoLabel>
-        <Button type="submit" onClick={handleClick}>
+        <Button name="blue" type="submit" onClick={handleClick}>
           Powrót
         </Button>
       </ViewWrapper>
