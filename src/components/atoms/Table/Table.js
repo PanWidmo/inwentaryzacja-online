@@ -39,7 +39,7 @@ const Table = ({ dane }) => {
             <td key={index + 1}>{index + 1}</td>
             {Object.values(daneData).map((columnData, index) => (
               <>
-                <td key={index + 1}>{columnData}</td>
+                <td key={index + 100}>{columnData}</td>
               </>
             ))}
           </tr>
