@@ -9,11 +9,11 @@ export const StyledTable = styled.table`
     border: 0.0625em solid ${({ theme }) => theme.colors.tabGray};
     padding: 0.5em;
   }
-  tr:nth-child(even) {
+  tr: nth-child(even) {
     background-color: ${({ theme }) => theme.colors.tabGray};
   }
-  tr:hover {
-    background-color: ${({ theme }) => theme.colors.tabHoverGreen};
+  tr: hover {
+    background-color: ${({ theme }) => theme.colors.tabHoverGray};
   }
   th {
     padding-top: 0.75em;
