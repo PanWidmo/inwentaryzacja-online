@@ -7,7 +7,6 @@ import { assets } from 'mocks/data/assets';
 import { useAuth } from 'hooks/useAuth';
 
 const APFixedAssets = () => {
-  const headders = ['Lp.', 'Nazwa sprzętu', 'Numer inwentarzowy', 'Numer seryjny', 'Osoba przypisana'];
   const dane = assets;
   const { signOutUser } = useAuth();
 
@@ -25,7 +24,7 @@ const APFixedAssets = () => {
         </Button>
       </div>
       <InnerWrapper>
-        <Table headders={headders} dane={dane} />
+        <Table dane={dane} />
 
         <Button name="blue" where="2">
           Dodaj

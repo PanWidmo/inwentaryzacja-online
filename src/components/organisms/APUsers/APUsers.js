@@ -7,7 +7,6 @@ import { users } from 'mocks/data/users';
 import { useAuth } from 'hooks/useAuth';
 
 const APUsers = () => {
-  const headders = ['Lp.', 'Imie', 'Nazwisko', 'E-mail', 'Dodakowe informacje'];
   const dane = users;
   const { signOutUser } = useAuth();
 
@@ -25,7 +24,7 @@ const APUsers = () => {
         </Button>
       </div>
       <InnerWrapper>
-        <Table headders={headders} dane={dane} id="usersTable" />
+        <Table dane={dane} id="usersTable" />
         <Button name="blue" where="2">
           Dodaj
         </Button>
