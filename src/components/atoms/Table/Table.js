@@ -35,12 +35,10 @@ const Table = ({ dane }) => {
       </thead>
       <tbody>
         {sortedData.map((daneData, index) => (
-          <tr key={daneData.lp}>
+          <tr key={Math.random() + 1}>
             <td key={index + 1}>{index + 1}</td>
             {Object.values(daneData).map((columnData, index) => (
-              <>
-                <td key={index + 100}>{columnData}</td>
-              </>
+              <td key={Math.random() + index + 100}>{columnData}</td>
             ))}
           </tr>
         ))}
