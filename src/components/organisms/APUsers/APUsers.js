@@ -25,9 +25,7 @@ const APUsers = () => {
       </div>
       <InnerWrapper>
         <Table dane={dane} id="usersTable" />
-        <Button name="blue" where="2">
-          Dodaj
-        </Button>
+        <Button name="blue">Dodaj</Button>
       </InnerWrapper>
       <StyledFooter>
         <Button name="red" where="3">
