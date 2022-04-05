@@ -40,12 +40,11 @@ export const InnerWrapper = styled.div`
   }
   form {
     width: 90%;
-    margin-left: auto;
+    margin-left: 7%;
     margin-right: auto;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 20%;
+    gap: 25%;
   }
   input {
     width: 250px;

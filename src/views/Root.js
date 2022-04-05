@@ -6,6 +6,7 @@ import APUsers from 'components/organisms/APUsers/APUsers';
 import UEPanel from 'components/organisms/UEPanel/UEPanel';
 import NUAPanel from 'components/organisms/NUAPanel/NUAPanel';
 import APFixedAssets from 'components/organisms/APFixedAssets/APFixedAssets';
+import NAAPanel from 'components/organisms/NAAPanel/NAAPanel';
 import LoginScreen from 'views/LoginScreen';
 import ResetPassword from 'views/ResetPassword';
 import ResetPasswordConfirmation from 'views/ResetPasswordConfirmation';
@@ -21,6 +22,7 @@ const AuthenticatedApp = () => {
         <Route path="/UEPanel" element={<UEPanel />} />
         <Route path="/NUAPanel" element={<NUAPanel />} />
         <Route path="/APFixedAssets" element={<APFixedAssets />} />
+        <Route path="/NAAPanel" element={<NAAPanel />} />
       </Routes>
     </Wrapper>
   );
