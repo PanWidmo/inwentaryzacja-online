@@ -4,6 +4,7 @@ import { Wrapper } from 'views/Root.styles';
 
 import APUsers from 'components/organisms/APUsers/APUsers';
 import UEPanel from 'components/organisms/UEPanel/UEPanel';
+import NUAPanel from 'components/organisms/NUAPanel/NUAPanel';
 import APFixedAssets from 'components/organisms/APFixedAssets/APFixedAssets';
 import LoginScreen from 'views/LoginScreen';
 import ResetPassword from 'views/ResetPassword';
@@ -18,6 +19,7 @@ const AuthenticatedApp = () => {
         <Route path="/" element={<Navigate to="/APUsers" />} />
         <Route path="/APUsers" element={<APUsers />} />
         <Route path="/UEPanel" element={<UEPanel />} />
+        <Route path="/NUAPanel" element={<NUAPanel />} />
         <Route path="/APFixedAssets" element={<APFixedAssets />} />
       </Routes>
     </Wrapper>
