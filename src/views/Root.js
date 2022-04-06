@@ -7,6 +7,8 @@ import UserEdit from 'components/organisms/UserEdit/UserEdit';
 import NewUserAdding from 'components/organisms/NewUserAdding/NewUserAdding';
 import AdminPanelFixedAssets from 'components/organisms/AdminPanelFixedAssets/AdminPanelFixedAssets';
 import NewAssetsAdding from 'components/organisms/NewAssetsAdding/NewAssetsAdding';
+import CreateNewInventory from 'components/organisms/CreateNewInventory/CreateNewInventory';
+
 import LoginScreen from 'views/LoginScreen';
 import ResetPassword from 'views/ResetPassword';
 import ResetPasswordConfirmation from 'views/ResetPasswordConfirmation';
@@ -23,6 +25,7 @@ const AuthenticatedApp = () => {
         <Route path="/NUAPanel" element={<NewUserAdding />} />
         <Route path="/APFixedAssets" element={<AdminPanelFixedAssets />} />
         <Route path="/NAAPanel" element={<NewAssetsAdding />} />
+        <Route path="/CNInventory" element={<CreateNewInventory />} />
       </Routes>
     </Wrapper>
   );

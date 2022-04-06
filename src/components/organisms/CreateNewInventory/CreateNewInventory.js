@@ -5,16 +5,12 @@ import { SubtitleLeftTop } from 'components/atoms/SubtitleLeftTop/SubtitleLeftTo
 import { Button } from 'components/atoms/Button/Button';
 import { LabelAboveInput } from 'components/atoms/LabelAboveInput/LabelAboveInput';
 import { Input } from 'components/atoms/Input/Input';
-import Table from 'components/atoms/Table/Table';
 
-import { users } from 'mocks/data/users';
-import { assets } from 'mocks/data/assets';
 import { useAuth } from 'hooks/useAuth';
 
-import { Wrapper, InnerWrapper, TableWrapper } from '../../atoms/PanelStyles/PanelStyles';
+import { Wrapper, InnerWrapper } from '../../atoms/PanelStyles/PanelStyles';
 
-const UserEdit = () => {
-  const dane = assets;
+const CreateNewInventory = () => {
   const { signOutUser } = useAuth();
 
   const handleLogout = () => {
@@ -23,7 +19,7 @@ const UserEdit = () => {
   return (
     <Wrapper>
       <div>
-        <TitleLeftTop>Edytuj dane: {users[0].imie + ' ' + users[0].nazwisko}</TitleLeftTop>
+        <TitleLeftTop>Nowa Inventaryzacja</TitleLeftTop>
         <SubtitleLeftTop>Firma XYZ, ul. Wąsacza 1A/20002255</SubtitleLeftTop>
         <Button name="red" where="1" onClick={handleLogout}>
           Wyloguj
@@ -34,50 +30,29 @@ const UserEdit = () => {
         <hr />
         <form>
           <LabelAboveInput>
-            IMIĘ<Input></Input>
+            DATA INWENTARYZACJI<Input></Input>
           </LabelAboveInput>
 
           <LabelAboveInput>
-            NAZWISKO<Input></Input>
+            PRZEWODNICZĄCY KOMISJI<Input></Input>
           </LabelAboveInput>
 
           <LabelAboveInput>
-            LOGIN<Input></Input>
+            POZOSTALI CZŁONKOWIE<Input></Input>
           </LabelAboveInput>
+          <Button name="blue">Dodaj plik</Button>
         </form>
         <hr />
-        <form>
-          <LabelAboveInput>
-            EMAIL<Input></Input>
-          </LabelAboveInput>
-
-          <LabelAboveInput>
-            HASŁO<Input></Input>
-          </LabelAboveInput>
-
-          <LabelAboveInput>
-            UPRAWNIENIA<Input></Input>
-          </LabelAboveInput>
-        </form>
-        <hr />
-        <TableWrapper>
-          <Table dane={dane} />
-        </TableWrapper>
       </InnerWrapper>
-      <Button name="red" where="2">
-        Usuń
-      </Button>
+
       <Button name="red" where="3">
         Cofnij
       </Button>
-      <Button name="blue" where="5">
+      <Button name="blue" where="4">
         Zapisz
-      </Button>
-      <Button name="green" where="4">
-        Zatwierdź
       </Button>
     </Wrapper>
   );
 };
 
-export default UserEdit;
+export default CreateNewInventory;

@@ -18,8 +18,8 @@ export const Wrapper = styled.div`
   hr {
     color: ${({ theme }) => theme.colors.tabGray};
     width: 90%;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
   }
 `;
 
@@ -35,8 +35,8 @@ export const InnerWrapper = styled.div`
   hr {
     color: ${({ theme }) => theme.colors.tabGray};
     width: 90%;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 3.125em;
+    margin-bottom: 3.125em,;
   }
   form {
     width: 90%;
@@ -44,10 +44,13 @@ export const InnerWrapper = styled.div`
     margin-right: auto;
     display: flex;
     flex-direction: row;
-    gap: 25%;
-  }
-  input {
-    width: 250px;
+    gap: 15%;
+    input {
+      width: 15em;
+    }
+    button {
+      top: 25em;
+
   }
 `;
 
