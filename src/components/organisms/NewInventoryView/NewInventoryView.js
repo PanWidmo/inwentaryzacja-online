@@ -54,8 +54,11 @@ const NewInventoryView = () => {
       <Button name="red" where="3">
         Cofnij
       </Button>
-      <Button name="blue" where="4">
+      <Button name="blue" where="5">
         Zapisz
+      </Button>
+      <Button name="green" where="4">
+        Zatwierdź
       </Button>
     </Wrapper>
   );
