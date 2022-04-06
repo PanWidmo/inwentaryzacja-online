@@ -8,9 +8,9 @@ import { Input } from 'components/atoms/Input/Input';
 
 import { useAuth } from 'hooks/useAuth';
 
-import { Wrapper, InnerWrapper } from '../UEPanel/UEPanel.styles';
+import { Wrapper, InnerWrapper } from '../UserEditPanel/UserEditPanel.styles';
 
-const NUAPanel = () => {
+const NewAssetsAddingPanel = () => {
   const { signOutUser } = useAuth();
 
   const handleLogout = () => {
@@ -19,7 +19,7 @@ const NUAPanel = () => {
   return (
     <Wrapper>
       <div>
-        <TitleLeftTop>Dodaj użytkownika</TitleLeftTop>
+        <TitleLeftTop>Dodaj nowy środek trwały</TitleLeftTop>
         <SubtitleLeftTop>Firma XYZ, ul. Wąsacza 1A/20002255</SubtitleLeftTop>
         <Button name="red" where="1" onClick={handleLogout}>
           Wyloguj
@@ -30,29 +30,25 @@ const NUAPanel = () => {
         <hr />
         <form>
           <LabelAboveInput>
-            IMIĘ<Input></Input>
+            NAZWASPRZĘTU<Input></Input>
           </LabelAboveInput>
 
           <LabelAboveInput>
-            NAZWISKO<Input></Input>
+            NUMER INWENTARZOWY<Input></Input>
           </LabelAboveInput>
 
           <LabelAboveInput>
-            LOGIN<Input></Input>
+            NUMER SERYJNY<Input></Input>
           </LabelAboveInput>
         </form>
         <hr />
         <form>
           <LabelAboveInput>
-            EMAIL<Input></Input>
+            OSOBA PRZYPISANA<Input></Input>
           </LabelAboveInput>
 
           <LabelAboveInput>
-            HASŁO<Input></Input>
-          </LabelAboveInput>
-
-          <LabelAboveInput>
-            UPRAWNIENIA<Input></Input>
+            STAN<Input></Input>
           </LabelAboveInput>
         </form>
         <hr />
@@ -71,4 +67,4 @@ const NUAPanel = () => {
   );
 };
 
-export default NUAPanel;
+export default NewAssetsAddingPanel;

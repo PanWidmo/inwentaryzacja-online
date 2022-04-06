@@ -5,16 +5,12 @@ import { SubtitleLeftTop } from 'components/atoms/SubtitleLeftTop/SubtitleLeftTo
 import { Button } from 'components/atoms/Button/Button';
 import { LabelAboveInput } from 'components/atoms/LabelAboveInput/LabelAboveInput';
 import { Input } from 'components/atoms/Input/Input';
-import Table from 'components/atoms/Table/Table';
 
-import { users } from 'mocks/data/users';
-import { assets } from 'mocks/data/assets';
 import { useAuth } from 'hooks/useAuth';
 
-import { Wrapper, InnerWrapper, TableWrapper } from './UEPanel.styles';
+import { Wrapper, InnerWrapper } from '../UserEditPanel/UserEditPanel.styles';
 
-const UEPanel = () => {
-  const dane = assets;
+const NewUserAddingPanel = () => {
   const { signOutUser } = useAuth();
 
   const handleLogout = () => {
@@ -23,7 +19,7 @@ const UEPanel = () => {
   return (
     <Wrapper>
       <div>
-        <TitleLeftTop>Edytuj dane: {users[0].imie + ' ' + users[0].nazwisko}</TitleLeftTop>
+        <TitleLeftTop>Dodaj użytkownika</TitleLeftTop>
         <SubtitleLeftTop>Firma XYZ, ul. Wąsacza 1A/20002255</SubtitleLeftTop>
         <Button name="red" where="1" onClick={handleLogout}>
           Wyloguj
@@ -60,13 +56,8 @@ const UEPanel = () => {
           </LabelAboveInput>
         </form>
         <hr />
-        <TableWrapper>
-          <Table dane={dane} />
-        </TableWrapper>
       </InnerWrapper>
-      <Button name="red" where="2">
-        Usuń
-      </Button>
+
       <Button name="red" where="3">
         Cofnij
       </Button>
@@ -80,4 +71,4 @@ const UEPanel = () => {
   );
 };
 
-export default UEPanel;
+export default NewUserAddingPanel;

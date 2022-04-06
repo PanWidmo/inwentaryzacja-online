@@ -5,12 +5,16 @@ import { SubtitleLeftTop } from 'components/atoms/SubtitleLeftTop/SubtitleLeftTo
 import { Button } from 'components/atoms/Button/Button';
 import { LabelAboveInput } from 'components/atoms/LabelAboveInput/LabelAboveInput';
 import { Input } from 'components/atoms/Input/Input';
+import Table from 'components/atoms/Table/Table';
 
+import { users } from 'mocks/data/users';
+import { assets } from 'mocks/data/assets';
 import { useAuth } from 'hooks/useAuth';
 
-import { Wrapper, InnerWrapper } from '../UEPanel/UEPanel.styles';
+import { Wrapper, InnerWrapper, TableWrapper } from './UserEditPanel.styles';
 
-const NAAPanel = () => {
+const UserEditPanel = () => {
+  const dane = assets;
   const { signOutUser } = useAuth();
 
   const handleLogout = () => {
@@ -19,7 +23,7 @@ const NAAPanel = () => {
   return (
     <Wrapper>
       <div>
-        <TitleLeftTop>Dodaj nowy środek trwały</TitleLeftTop>
+        <TitleLeftTop>Edytuj dane: {users[0].imie + ' ' + users[0].nazwisko}</TitleLeftTop>
         <SubtitleLeftTop>Firma XYZ, ul. Wąsacza 1A/20002255</SubtitleLeftTop>
         <Button name="red" where="1" onClick={handleLogout}>
           Wyloguj
@@ -30,30 +34,39 @@ const NAAPanel = () => {
         <hr />
         <form>
           <LabelAboveInput>
-            NAZWASPRZĘTU<Input></Input>
+            IMIĘ<Input></Input>
           </LabelAboveInput>
 
           <LabelAboveInput>
-            NUMER INWENTARZOWY<Input></Input>
+            NAZWISKO<Input></Input>
           </LabelAboveInput>
 
           <LabelAboveInput>
-            NUMER SERYJNY<Input></Input>
+            LOGIN<Input></Input>
           </LabelAboveInput>
         </form>
         <hr />
         <form>
           <LabelAboveInput>
-            OSOBA PRZYPISANA<Input></Input>
+            EMAIL<Input></Input>
           </LabelAboveInput>
 
           <LabelAboveInput>
-            STAN<Input></Input>
+            HASŁO<Input></Input>
+          </LabelAboveInput>
+
+          <LabelAboveInput>
+            UPRAWNIENIA<Input></Input>
           </LabelAboveInput>
         </form>
         <hr />
+        <TableWrapper>
+          <Table dane={dane} />
+        </TableWrapper>
       </InnerWrapper>
-
+      <Button name="red" where="2">
+        Usuń
+      </Button>
       <Button name="red" where="3">
         Cofnij
       </Button>
@@ -67,4 +80,4 @@ const NAAPanel = () => {
   );
 };
 
-export default NAAPanel;
+export default UserEditPanel;

@@ -6,7 +6,7 @@ import { Wrapper, InnerWrapper, StyledFooter } from 'assets/styles/TableComponen
 import { assets } from 'mocks/data/assets';
 import { useAuth } from 'hooks/useAuth';
 
-const APFixedAssets = () => {
+const AdminPanelFixedAssets = () => {
   const dane = assets;
   const { signOutUser } = useAuth();
 
@@ -42,4 +42,4 @@ const APFixedAssets = () => {
   );
 };
 
-export default APFixedAssets;
+export default AdminPanelFixedAssets;

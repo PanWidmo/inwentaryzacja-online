@@ -2,11 +2,11 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Wrapper } from 'views/Root.styles';
 
-import APUsers from 'components/organisms/APUsers/APUsers';
-import UEPanel from 'components/organisms/UEPanel/UEPanel';
-import NUAPanel from 'components/organisms/NUAPanel/NUAPanel';
-import APFixedAssets from 'components/organisms/APFixedAssets/APFixedAssets';
-import NAAPanel from 'components/organisms/NAAPanel/NAAPanel';
+import AdminPanelWUsers from 'components/organisms/AdminPanelWUsers/AdminPanelWUsers';
+import UserEditPanel from 'components/organisms/UserEditPanel/UserEditPanel';
+import NewUserAddingPanel from 'components/organisms/NewUserAddingPanel/NewUserAddingPanel';
+import AdminPanelFixedAssets from 'components/organisms/AdminPanelFixedAssets/AdminPanelFixedAssets';
+import NewAssetsAddingPanel from 'components/organisms/NewAssetsAddingPanel/NewAssetsAddingPanel';
 import LoginScreen from 'views/LoginScreen';
 import ResetPassword from 'views/ResetPassword';
 import ResetPasswordConfirmation from 'views/ResetPasswordConfirmation';
@@ -18,11 +18,11 @@ const AuthenticatedApp = () => {
     <Wrapper>
       <Routes>
         <Route path="/" element={<Navigate to="/APUsers" />} />
-        <Route path="/APUsers" element={<APUsers />} />
-        <Route path="/UEPanel" element={<UEPanel />} />
-        <Route path="/NUAPanel" element={<NUAPanel />} />
-        <Route path="/APFixedAssets" element={<APFixedAssets />} />
-        <Route path="/NAAPanel" element={<NAAPanel />} />
+        <Route path="/APUsers" element={<AdminPanelWUsers />} />
+        <Route path="/UEPanel" element={<UserEditPanel />} />
+        <Route path="/NUAPanel" element={<NewUserAddingPanel />} />
+        <Route path="/APFixedAssets" element={<AdminPanelFixedAssets />} />
+        <Route path="/NAAPanel" element={<NewAssetsAddingPanel />} />
       </Routes>
     </Wrapper>
   );
