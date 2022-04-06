@@ -8,9 +8,9 @@ import { Input } from 'components/atoms/Input/Input';
 
 import { useAuth } from 'hooks/useAuth';
 
-import { Wrapper, InnerWrapper } from '../UserEditPanel/UserEditPanel.styles';
+import { Wrapper, InnerWrapper } from '../UserEdit/UserEdit.styles';
 
-const NewUserAddingPanel = () => {
+const NewUserAdding = () => {
   const { signOutUser } = useAuth();
 
   const handleLogout = () => {
@@ -71,4 +71,4 @@ const NewUserAddingPanel = () => {
   );
 };
 
-export default NewUserAddingPanel;
+export default NewUserAdding;

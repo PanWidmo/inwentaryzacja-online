@@ -3,10 +3,10 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { Wrapper } from 'views/Root.styles';
 
 import AdminPanelWUsers from 'components/organisms/AdminPanelWUsers/AdminPanelWUsers';
-import UserEditPanel from 'components/organisms/UserEditPanel/UserEditPanel';
-import NewUserAddingPanel from 'components/organisms/NewUserAddingPanel/NewUserAddingPanel';
+import UserEdit from 'components/organisms/UserEdit/UserEdit';
+import NewUserAdding from 'components/organisms/NewUserAdding/NewUserAdding';
 import AdminPanelFixedAssets from 'components/organisms/AdminPanelFixedAssets/AdminPanelFixedAssets';
-import NewAssetsAddingPanel from 'components/organisms/NewAssetsAddingPanel/NewAssetsAddingPanel';
+import NewAssetsAdding from 'components/organisms/NewAssetsAdding/NewAssetsAdding';
 import LoginScreen from 'views/LoginScreen';
 import ResetPassword from 'views/ResetPassword';
 import ResetPasswordConfirmation from 'views/ResetPasswordConfirmation';
@@ -19,10 +19,10 @@ const AuthenticatedApp = () => {
       <Routes>
         <Route path="/" element={<Navigate to="/APUsers" />} />
         <Route path="/APUsers" element={<AdminPanelWUsers />} />
-        <Route path="/UEPanel" element={<UserEditPanel />} />
-        <Route path="/NUAPanel" element={<NewUserAddingPanel />} />
+        <Route path="/UEPanel" element={<UserEdit />} />
+        <Route path="/NUAPanel" element={<NewUserAdding />} />
         <Route path="/APFixedAssets" element={<AdminPanelFixedAssets />} />
-        <Route path="/NAAPanel" element={<NewAssetsAddingPanel />} />
+        <Route path="/NAAPanel" element={<NewAssetsAdding />} />
       </Routes>
     </Wrapper>
   );

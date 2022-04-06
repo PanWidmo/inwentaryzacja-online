@@ -11,9 +11,9 @@ import { users } from 'mocks/data/users';
 import { assets } from 'mocks/data/assets';
 import { useAuth } from 'hooks/useAuth';
 
-import { Wrapper, InnerWrapper, TableWrapper } from './UserEditPanel.styles';
+import { Wrapper, InnerWrapper, TableWrapper } from './UserEdit.styles';
 
-const UserEditPanel = () => {
+const UserEdit = () => {
   const dane = assets;
   const { signOutUser } = useAuth();
 
@@ -80,4 +80,4 @@ const UserEditPanel = () => {
   );
 };
 
-export default UserEditPanel;
+export default UserEdit;
