@@ -26,9 +26,7 @@ const AdminPanelFixedAssets = () => {
       <InnerWrapper>
         <Table dane={dane} />
 
-        <Button name="blue" where="2">
-          Dodaj
-        </Button>
+        <Button name="blue">Dodaj</Button>
       </InnerWrapper>
       <StyledFooter>
         <Button name="red" where="3">

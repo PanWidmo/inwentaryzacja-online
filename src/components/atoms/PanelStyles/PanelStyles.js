@@ -36,7 +36,7 @@ export const InnerWrapper = styled.div`
     color: ${({ theme }) => theme.colors.tabGray};
     width: 90%;
     margin-top: 3.125em;
-    margin-bottom: 3.125em,;
+    margin-bottom: 3.125em;
   }
   form {
     width: 90%;
@@ -49,11 +49,17 @@ export const InnerWrapper = styled.div`
       width: 15em;
     }
     button {
-      top: 25em;
+      top: 27em;
 
   }
 `;
 
 export const TableWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 60%;
+  button {
+    position: relative;
+    width: 7em;
+  }
 `;

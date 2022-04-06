@@ -5,15 +5,16 @@ import { Wrapper } from 'views/Root.styles';
 import AdminPanelWUsers from 'components/organisms/AdminPanelWUsers/AdminPanelWUsers';
 import UserEdit from 'components/organisms/UserEdit/UserEdit';
 import NewUserAdding from 'components/organisms/NewUserAdding/NewUserAdding';
-import AdminPanelFixedAssets from 'components/organisms/AdminPanelFixedAssets/AdminPanelFixedAssets';
+import AdminPanelFixedAssets from 'components/organisms/AdmiPanelFixedAssets/AdminPanelFixedAssets';
 import NewAssetsAdding from 'components/organisms/NewAssetsAdding/NewAssetsAdding';
 import CreateNewInventory from 'components/organisms/CreateNewInventory/CreateNewInventory';
+import NewInventoryView from 'components/organisms/NewInventoryView/NewInventoryView';
 
 import LoginScreen from 'views/LoginScreen';
 import ResetPassword from 'views/ResetPassword';
 import ResetPasswordConfirmation from 'views/ResetPasswordConfirmation';
 import { useAuth } from 'hooks/useAuth';
-import AdminPanel from 'views/AdminPanel';
+// import AdminPanel from 'views/AdminPanel';
 
 const AuthenticatedApp = () => {
   return (
@@ -26,6 +27,7 @@ const AuthenticatedApp = () => {
         <Route path="/APFixedAssets" element={<AdminPanelFixedAssets />} />
         <Route path="/NAAPanel" element={<NewAssetsAdding />} />
         <Route path="/CNInventory" element={<CreateNewInventory />} />
+        <Route path="/NInventoryView" element={<NewInventoryView />} />
       </Routes>
     </Wrapper>
   );
