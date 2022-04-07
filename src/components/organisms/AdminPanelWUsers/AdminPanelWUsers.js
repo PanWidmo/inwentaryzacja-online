@@ -6,7 +6,7 @@ import { Wrapper, InnerWrapper, StyledFooter } from 'assets/styles/TableComponen
 import { users } from 'mocks/data/users';
 import { useAuth } from 'hooks/useAuth';
 
-const APUsers = () => {
+const AdminPanelWUsers = () => {
   const dane = users;
   const { signOutUser } = useAuth();
 
@@ -25,9 +25,7 @@ const APUsers = () => {
       </div>
       <InnerWrapper>
         <Table dane={dane} id="usersTable" />
-        <Button name="blue" where="2">
-          Dodaj
-        </Button>
+        <Button name="blue">Dodaj</Button>
       </InnerWrapper>
       <StyledFooter>
         <Button name="red" where="3">
@@ -41,4 +39,4 @@ const APUsers = () => {
   );
 };
 
-export default APUsers;
+export default AdminPanelWUsers;
