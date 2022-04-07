@@ -23,8 +23,7 @@ const AdminPanel = () => {
       <ChoosePanelSingleViewWrapper as="form">
         <img src={image19} alt="people_logo" />
         <Button name="green" where="2">
-          {' '}
-          Użytkownicy{' '}
+          Użytkownicy
         </Button>
 
         <p>Modyfikuj dane użytkowników</p>
@@ -32,8 +31,7 @@ const AdminPanel = () => {
       <ChoosePanelSingleViewWrapper as="form">
         <img src={image18} alt="people_logo" />
         <Button name="green" where="2">
-          {' '}
-          Środki trwałe{' '}
+          Środki trwałe
         </Button>
 
         <p>Modyfikuj informacje o obiektach</p>
@@ -41,8 +39,7 @@ const AdminPanel = () => {
       <ChoosePanelSingleViewWrapper as="form">
         <img src={image20} alt="people_logo" />
         <Button name="green" where="2">
-          {' '}
-          Pobierz dane{' '}
+          Pobierz dane
         </Button>
 
         <p>Generuj plik z danymi wyjściowymi</p>

@@ -14,13 +14,13 @@ import LoginScreen from 'views/LoginScreen';
 import ResetPassword from 'views/ResetPassword';
 import ResetPasswordConfirmation from 'views/ResetPasswordConfirmation';
 import { useAuth } from 'hooks/useAuth';
-// import AdminPanel from 'views/AdminPanel';
+import AdminPanel from 'views/AdminPanel';
 
 const AuthenticatedApp = () => {
   return (
     <Wrapper>
       <Routes>
-        <Route path="/" element={<Navigate to="/APUsers" />} />
+        <Route path="/" element={<Navigate to="/AdminPanel" />} />
         <Route path="/AdminPanelWithUsers" element={<AdminPanelWithUsers />} />
         <Route path="/UserEdit" element={<UserEdit />} />
         <Route path="/NewUserAdding" element={<NewUserAdding />} />
@@ -28,6 +28,7 @@ const AuthenticatedApp = () => {
         <Route path="/NewAssetsAdding" element={<NewAssetsAdding />} />
         <Route path="/CreateNewInventory" element={<CreateNewInventory />} />
         <Route path="/NewInventoryView" element={<NewInventoryView />} />
+        <Route path="/AdminPanel" element={<AdminPanel />} />
       </Routes>
     </Wrapper>
   );
