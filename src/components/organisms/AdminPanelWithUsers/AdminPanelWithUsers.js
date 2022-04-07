@@ -6,7 +6,7 @@ import { Wrapper, InnerWrapper, StyledFooter } from 'assets/styles/TableComponen
 import { users } from 'mocks/data/users';
 import { useAuth } from 'hooks/useAuth';
 
-const AdminPanelWUsers = () => {
+const AdminPanelWithUsers = () => {
   const dane = users;
   const { signOutUser } = useAuth();
 
@@ -39,4 +39,4 @@ const AdminPanelWUsers = () => {
   );
 };
 
-export default AdminPanelWUsers;
+export default AdminPanelWithUsers;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Wrapper } from 'views/Root.styles';
 
-import AdminPanelWUsers from 'components/organisms/AdminPanelWUsers/AdminPanelWUsers';
+import AdminPanelWithUsers from 'components/organisms/AdminPanelWithUsers/AdminPanelWithUsers';
 import UserEdit from 'components/organisms/UserEdit/UserEdit';
 import NewUserAdding from 'components/organisms/NewUserAdding/NewUserAdding';
 import AdminPanelFixedAssets from 'components/organisms/AdmiPanelFixedAssets/AdminPanelFixedAssets';
@@ -21,13 +21,13 @@ const AuthenticatedApp = () => {
     <Wrapper>
       <Routes>
         <Route path="/" element={<Navigate to="/APUsers" />} />
-        <Route path="/APUsers" element={<AdminPanelWUsers />} />
-        <Route path="/UEPanel" element={<UserEdit />} />
-        <Route path="/NUAPanel" element={<NewUserAdding />} />
-        <Route path="/APFixedAssets" element={<AdminPanelFixedAssets />} />
-        <Route path="/NAAPanel" element={<NewAssetsAdding />} />
-        <Route path="/CNInventory" element={<CreateNewInventory />} />
-        <Route path="/NInventoryView" element={<NewInventoryView />} />
+        <Route path="/AdminPanelWithUsers" element={<AdminPanelWithUsers />} />
+        <Route path="/UserEdit" element={<UserEdit />} />
+        <Route path="/NewUserAdding" element={<NewUserAdding />} />
+        <Route path="/AdminPanelFixedAssets" element={<AdminPanelFixedAssets />} />
+        <Route path="/NewAssetsAdding" element={<NewAssetsAdding />} />
+        <Route path="/CreateNewInventory" element={<CreateNewInventory />} />
+        <Route path="/NewInventoryView" element={<NewInventoryView />} />
       </Routes>
     </Wrapper>
   );
@@ -39,8 +39,8 @@ const UnauthenticatedApp = () => {
       <Routes>
         <Route path="/*" element={<Navigate to="/login" />} />
         <Route path="/login" element={<LoginScreen />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path="/reset-password-confirmation" element={<ResetPasswordConfirmation />} />
+        <Route path="/resetPassword" element={<ResetPassword />} />
+        <Route path="/resetPasswordConfirmation" element={<ResetPasswordConfirmation />} />
       </Routes>
     </Wrapper>
   );
