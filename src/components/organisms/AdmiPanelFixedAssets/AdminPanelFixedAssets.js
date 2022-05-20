@@ -5,13 +5,19 @@ import { Button } from 'components/atoms/Button/Button';
 import { Wrapper, InnerWrapper, StyledFooter } from 'assets/styles/TableComponents';
 import { assets } from 'mocks/data/assets';
 import { useAuth } from 'hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 
 const AdminPanelFixedAssets = () => {
   const dane = assets;
+  const navigate = useNavigate();
   const { signOutUser } = useAuth();
 
   const handleLogout = () => {
     signOutUser();
+  };
+
+  const handleAddAssets = () => {
+    navigate('/NewAssetsAdding');
   };
 
   return (
@@ -26,7 +32,9 @@ const AdminPanelFixedAssets = () => {
       <InnerWrapper>
         <Table dane={dane} />
 
-        <Button name="blue">Dodaj</Button>
+        <Button name="blue" onClick={handleAddAssets}>
+          Dodaj
+        </Button>
       </InnerWrapper>
       <StyledFooter>
         <Button name="red" where="3">

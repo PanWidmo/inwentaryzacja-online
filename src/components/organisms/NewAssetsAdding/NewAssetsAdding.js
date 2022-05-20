@@ -60,7 +60,7 @@ const NewAssetsAdding = () => {
       <Button name="blue" where="5">
         Zapisz
       </Button>
-      <Button name="green" where="4">
+      <Button name="green" where="4" type="submit">
         Zatwierdź
       </Button>
     </Wrapper>
