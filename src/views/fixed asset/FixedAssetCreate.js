@@ -5,16 +5,12 @@ import { SubtitleLeftTop } from 'components/atoms/SubtitleLeftTop/SubtitleLeftTo
 import { Button } from 'components/atoms/Button/Button';
 import { LabelAboveInput } from 'components/atoms/LabelAboveInput/LabelAboveInput';
 import { Input } from 'components/atoms/Input/Input';
-import Table from 'components/atoms/Table/Table';
 
-import { users } from 'mocks/data/users';
-import { assets } from 'mocks/data/assets';
 import { useAuth } from 'hooks/useAuth';
 
-import { Wrapper, InnerWrapper, TableWrapper } from '../../atoms/PanelStyles/PanelStyles';
+import { Wrapper, InnerWrapper } from '../../components/atoms/PanelStyles/PanelStyles';
 
-const UserEdit = () => {
-  const dane = assets;
+export const FixedAssetCreate = () => {
   const { signOutUser } = useAuth();
 
   const handleLogout = () => {
@@ -23,7 +19,7 @@ const UserEdit = () => {
   return (
     <Wrapper>
       <div>
-        <TitleLeftTop>Edytuj dane: {users[0].imie + ' ' + users[0].nazwisko}</TitleLeftTop>
+        <TitleLeftTop>Dodaj nowy środek trwały</TitleLeftTop>
         <SubtitleLeftTop>Firma XYZ, ul. Wąsacza 1A/20002255</SubtitleLeftTop>
         <Button name="red" where="1" onClick={handleLogout}>
           Wyloguj
@@ -34,39 +30,30 @@ const UserEdit = () => {
         <hr />
         <form>
           <LabelAboveInput>
-            IMIĘ<Input></Input>
+            NAZWASPRZĘTU<Input></Input>
           </LabelAboveInput>
 
           <LabelAboveInput>
-            NAZWISKO<Input></Input>
+            NUMER INWENTARZOWY<Input></Input>
           </LabelAboveInput>
 
           <LabelAboveInput>
-            LOGIN<Input></Input>
+            NUMER SERYJNY<Input></Input>
           </LabelAboveInput>
         </form>
         <hr />
         <form>
           <LabelAboveInput>
-            EMAIL<Input></Input>
+            OSOBA PRZYPISANA<Input></Input>
           </LabelAboveInput>
 
           <LabelAboveInput>
-            HASŁO<Input></Input>
-          </LabelAboveInput>
-
-          <LabelAboveInput>
-            UPRAWNIENIA<Input></Input>
+            STAN<Input></Input>
           </LabelAboveInput>
         </form>
         <hr />
-        <TableWrapper>
-          <Table dane={dane} />
-        </TableWrapper>
       </InnerWrapper>
-      <Button name="red" where="2">
-        Usuń
-      </Button>
+
       <Button name="red" where="3">
         Cofnij
       </Button>
@@ -79,5 +66,3 @@ const UserEdit = () => {
     </Wrapper>
   );
 };
-
-export default UserEdit;

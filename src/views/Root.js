@@ -2,24 +2,27 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Wrapper } from 'views/Root.styles';
 
-import AdminPanelWithUsers from 'components/organisms/AdminPanelWithUsers/AdminPanelWithUsers';
-import UserEdit from 'components/organisms/UserEdit/UserEdit';
-import NewUserAdding from 'components/organisms/NewUserAdding/NewUserAdding';
-import AdminPanelFixedAssets from 'components/organisms/AdmiPanelFixedAssets/AdminPanelFixedAssets';
-import NewAssetsAdding from 'components/organisms/NewAssetsAdding/NewAssetsAdding';
-import CreateNewInventory from 'components/organisms/CreateNewInventory/CreateNewInventory';
+import { Login } from 'views/auth/Login';
+import { ResetPassword } from 'views/auth/ResetPassword';
+import { ResetPasswordConfirmation } from 'views/auth/ResetPasswordConfirmation';
+import { ResetPasswordForm } from 'views/auth/ResetPasswordForm';
+import { AdminPanel } from 'views/roles pages/AdminPanel';
+import { UserPanelList } from 'views/user/UserPanelList';
+import { UserCreate } from 'views/user/UserCreate';
+import { UserEdit } from 'views/user/UserEdit';
+import { FixedAssetPanelList } from 'views/fixed asset/FixedAssetPanel';
+import { FixedAssetCreate } from 'views/fixed asset/FixedAssetCreate';
+import { InventoryCreate } from 'views/inventory/InventoryCreate';
+
 import NewInventoryView from 'components/organisms/NewInventoryView/NewInventoryView';
 
-import LoginScreen from 'views/LoginScreen';
-import ResetPassword from 'views/ResetPassword';
-import ResetPasswordConfirmation from 'views/ResetPasswordConfirmation';
 import { useAuth } from 'hooks/useAuth';
-import AdminPanel from 'views/AdminPanel';
 
+//working on FireBase but need to be change, so work on UnauthenticatedApp
 const AuthenticatedApp = () => {
   return (
     <Wrapper>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Navigate to="/AdminPanel" />} />
         <Route path="/AdminPanelWithUsers" element={<AdminPanelWithUsers />} />
         <Route path="/UserEdit" element={<UserEdit />} />
@@ -29,19 +32,36 @@ const AuthenticatedApp = () => {
         <Route path="/CreateNewInventory" element={<CreateNewInventory />} />
         <Route path="/NewInventoryView" element={<NewInventoryView />} />
         <Route path="/AdminPanel" element={<AdminPanel />} />
-      </Routes>
+      </Routes> */}
     </Wrapper>
   );
 };
 
+//!!! work on unauthenticated version
 const UnauthenticatedApp = () => {
   return (
     <Wrapper>
       <Routes>
+        {/* pages for unauth */}
         <Route path="/*" element={<Navigate to="/login" />} />
-        <Route path="/login" element={<LoginScreen />} />
-        <Route path="/resetPassword" element={<ResetPassword />} />
-        <Route path="/resetPasswordConfirmation" element={<ResetPasswordConfirmation />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/reset-password-confirmation" element={<ResetPasswordConfirmation />} />
+        <Route path="/reset-password-form" element={<ResetPasswordForm />} />
+        {/* pages that working on: */}
+        {/* <Route path="/user/:user-id/inventory/:inventory-id" element={< />} /> */}
+        {/* <Route path="/user/:user-id/inventory/:inventory-id/summary" element={< />} /> */}
+        {/* <Route path="/user/:user-id/inventory/:inventory-id/summary-confirmation" element={< />} /> */}
+        <Route path="/admin-panel" element={<AdminPanel />} />
+        <Route path="/user-management" element={<UserPanelList />} />
+        <Route path="/user-management/create" element={<UserCreate />} />
+        <Route path="/user-management/:id" element={<UserEdit />} />
+        <Route path="/fixed-asset-management" element={<FixedAssetPanelList />} />
+        <Route path="/fixed-asset-management/create" element={<FixedAssetCreate />} />
+        {/* <Route path="/fixed-asset-management/:id" element={< />} /> */}
+        {/* <Route path="/inventory-management" element={< />} /> */}
+        <Route path="/inventory-management/create" element={<InventoryCreate />} />
+        {/* <Route path="/inventory-management/:id" element={< />} /> */}
       </Routes>
     </Wrapper>
   );

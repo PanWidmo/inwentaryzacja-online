@@ -6,7 +6,7 @@ import { Wrapper, InnerWrapper, StyledFooter } from 'assets/styles/TableComponen
 import { assets } from 'mocks/data/assets';
 import { useAuth } from 'hooks/useAuth';
 
-const AdminPanelFixedAssets = () => {
+export const FixedAssetPanelList = () => {
   const dane = assets;
   const { signOutUser } = useAuth();
 
@@ -39,5 +39,3 @@ const AdminPanelFixedAssets = () => {
     </Wrapper>
   );
 };
-
-export default AdminPanelFixedAssets;

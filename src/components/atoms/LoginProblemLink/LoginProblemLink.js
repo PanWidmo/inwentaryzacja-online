@@ -7,4 +7,9 @@ export const LoginProblemLink = styled(Link)`
   border: none;
   background: none;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    font-weight: bold;
+  }
 `;

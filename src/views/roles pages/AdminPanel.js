@@ -8,7 +8,7 @@ import image20 from 'assets/icons/image20.png';
 import image18 from 'assets/icons/image18.png';
 import { users } from 'mocks/data/users';
 
-const AdminPanel = () => {
+export const AdminPanel = () => {
   const dane = users;
   return (
     <>
@@ -47,4 +47,3 @@ const AdminPanel = () => {
     </>
   );
 };
-export default AdminPanel;

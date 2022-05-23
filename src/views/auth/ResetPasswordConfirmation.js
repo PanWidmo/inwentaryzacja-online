@@ -5,7 +5,7 @@ import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { InfoLabel } from 'components/atoms/InfoLabel/InfoLabel';
 import { Button } from 'components/atoms/Button/Button';
 
-const ResetPasswordConfirmation = () => {
+export const ResetPasswordConfirmation = () => {
   const navigate = useNavigate();
   const handleClick = () => navigate('/');
   return (
@@ -21,5 +21,3 @@ const ResetPasswordConfirmation = () => {
     </>
   );
 };
-
-export default ResetPasswordConfirmation;

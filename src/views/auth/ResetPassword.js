@@ -7,7 +7,7 @@ import FormField from 'components/molecules/FormField/FormField';
 import { Button } from 'components/atoms/Button/Button';
 import { useAuth } from 'hooks/useAuth';
 
-const ResetPassword = () => {
+export const ResetPassword = () => {
   const emailRef = useRef();
   const { resetPassword } = useAuth();
 
@@ -37,5 +37,3 @@ const ResetPassword = () => {
     </>
   );
 };
-
-export default ResetPassword;

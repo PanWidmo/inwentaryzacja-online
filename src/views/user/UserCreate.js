@@ -8,9 +8,9 @@ import { Input } from 'components/atoms/Input/Input';
 
 import { useAuth } from 'hooks/useAuth';
 
-import { Wrapper, InnerWrapper } from '../../atoms/PanelStyles/PanelStyles';
+import { Wrapper, InnerWrapper } from '../../components/atoms/PanelStyles/PanelStyles';
 
-const NewUserAdding = () => {
+export const UserCreate = () => {
   const { signOutUser } = useAuth();
 
   const handleLogout = () => {
@@ -70,5 +70,3 @@ const NewUserAdding = () => {
     </Wrapper>
   );
 };
-
-export default NewUserAdding;

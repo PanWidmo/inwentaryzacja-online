@@ -8,7 +8,7 @@ import { Button } from 'components/atoms/Button/Button';
 import { useAuth } from 'hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 
-const LoginScreen = () => {
+export const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const { signIn } = useAuth();
@@ -41,5 +41,3 @@ const LoginScreen = () => {
     </>
   );
 };
-
-export default LoginScreen;
