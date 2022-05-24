@@ -12,6 +12,7 @@ const Wrapper = styled.div`
 
   p {
     font-size: ${({ theme }) => theme.fontSize.xxxl};
+    color: ${({ theme }) => theme.colors.titleBlue};
   }
 `;
 

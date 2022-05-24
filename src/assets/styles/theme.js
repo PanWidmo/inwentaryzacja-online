@@ -7,8 +7,10 @@ export const theme = {
     buttonGreen: '#6DD29B',
     tabGray: '#EAE9E9',
     tabHoverGray: '#F0F0F0',
+    titleBlue: '#1aa7ff',
   },
 
+  //1.5rem = 15px)
   fontSize: {
     xxxl: '4.8rem',
     xxl: '3.4rem',
