@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { StyledTable } from './Table.styles';
 
-const Table = ({ dane }) => {
+export const Table = ({ dane }) => {
   const [sortedField, setSortedField] = useState(null);
   const headers = dane.map((header) => Object.keys(header));
 
@@ -46,5 +46,3 @@ const Table = ({ dane }) => {
     </StyledTable>
   );
 };
-
-export default Table;

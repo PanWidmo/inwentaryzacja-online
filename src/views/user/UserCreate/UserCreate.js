@@ -8,9 +8,9 @@ import { Input } from 'components/atoms/Input/Input';
 
 import { useAuth } from 'hooks/useAuth';
 
-import { Wrapper, InnerWrapper } from '../../components/atoms/PanelStyles/PanelStyles';
+import { Wrapper, InnerWrapper } from 'components/atoms/PanelStyles/PanelStyles';
 
-export const FixedAssetCreate = () => {
+export const UserCreate = () => {
   const { signOutUser } = useAuth();
 
   const handleLogout = () => {
@@ -19,7 +19,7 @@ export const FixedAssetCreate = () => {
   return (
     <Wrapper>
       <div>
-        <TitleLeftTop>Dodaj nowy środek trwały</TitleLeftTop>
+        <TitleLeftTop>Dodaj użytkownika</TitleLeftTop>
         <SubtitleLeftTop>Firma XYZ, ul. Wąsacza 1A/20002255</SubtitleLeftTop>
         <Button name="red" where="1" onClick={handleLogout}>
           Wyloguj
@@ -30,25 +30,29 @@ export const FixedAssetCreate = () => {
         <hr />
         <form>
           <LabelAboveInput>
-            NAZWASPRZĘTU<Input></Input>
+            IMIĘ<Input></Input>
           </LabelAboveInput>
 
           <LabelAboveInput>
-            NUMER INWENTARZOWY<Input></Input>
+            NAZWISKO<Input></Input>
           </LabelAboveInput>
 
           <LabelAboveInput>
-            NUMER SERYJNY<Input></Input>
+            LOGIN<Input></Input>
           </LabelAboveInput>
         </form>
         <hr />
         <form>
           <LabelAboveInput>
-            OSOBA PRZYPISANA<Input></Input>
+            EMAIL<Input></Input>
           </LabelAboveInput>
 
           <LabelAboveInput>
-            STAN<Input></Input>
+            HASŁO<Input></Input>
+          </LabelAboveInput>
+
+          <LabelAboveInput>
+            UPRAWNIENIA<Input></Input>
           </LabelAboveInput>
         </form>
         <hr />

@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { TitleLeftTop } from 'components/atoms/TitleLeftTop/TitleLeftTop';
 import { InfoLabel } from 'components/atoms/InfoLabel/InfoLabel';
-import FormField from 'components/molecules/FormField/FormField';
+import { FormField } from 'components/molecules/FormField/FormField';
 import { LoginProblemLink } from 'components/atoms/LoginProblemLink/LoginProblemLink';
 import { Button } from 'components/atoms/Button/Button';
 import { useAuth } from 'hooks/useAuth';
-import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
   const emailRef = useRef();

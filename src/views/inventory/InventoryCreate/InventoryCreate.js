@@ -8,7 +8,7 @@ import { Input } from 'components/atoms/Input/Input';
 
 import { useAuth } from 'hooks/useAuth';
 
-import { Wrapper, InnerWrapper } from '../../components/atoms/PanelStyles/PanelStyles';
+import { Wrapper, InnerWrapper } from 'components/atoms/PanelStyles/PanelStyles';
 
 export const InventoryCreate = () => {
   const { signOutUser } = useAuth();

@@ -2,19 +2,20 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Wrapper } from 'views/Root.styles';
 
-import { Login } from 'views/auth/Login';
-import { ResetPassword } from 'views/auth/ResetPassword';
-import { ResetPasswordConfirmation } from 'views/auth/ResetPasswordConfirmation';
-import { ResetPasswordForm } from 'views/auth/ResetPasswordForm';
-import { InventorySummaryConfirmation } from 'views/inventory/InventorySummaryConfirmation';
-import { AdminPanel } from 'views/roles pages/AdminPanel';
-import { UserPanelList } from 'views/user/UserPanelList';
-import { UserCreate } from 'views/user/UserCreate';
-import { UserEdit } from 'views/user/UserEdit';
-import { FixedAssetPanelList } from 'views/fixed asset/FixedAssetPanel';
-import { FixedAssetCreate } from 'views/fixed asset/FixedAssetCreate';
-import { InventoryCreate } from 'views/inventory/InventoryCreate';
+import { Login } from 'views/auth/Login/Login';
+import { ResetPassword } from 'views/auth/ResetPassword/ResetPassword';
+import { ResetPasswordConfirmation } from 'views/auth/ResetPasswordConfirmation/ResetPasswordConfirmation';
+import { ResetPasswordForm } from 'views/auth/ResetPasswordForm/ResetPasswordForm';
+import { InventorySummaryConfirmation } from 'views/inventory/InventorySummaryConfirmation/InventorySummaryConfirmation';
+import { AdminPanel } from 'views/roles pages/AdminPanel/AdminPanel';
+import { UserPanelList } from 'views/user/UserPanelList/UserPanelList';
+import { UserCreate } from 'views/user/UserCreate/UserCreate';
+import { UserEdit } from 'views/user/UserEdit/UserEdit';
+import { FixedAssetPanelList } from 'views/fixed asset/FixedAssetPanel/FixedAssetPanel';
+import { FixedAssetCreate } from 'views/fixed asset/FixedAssetCreate/FixedAssetCreate';
+import { InventoryCreate } from 'views/inventory/InventoryCreate/InventoryCreate';
 
+//NewInventoryView it's just view after imported data from file (probably no to use)
 import NewInventoryView from 'components/organisms/NewInventoryView/NewInventoryView';
 
 import { useAuth } from 'hooks/useAuth';

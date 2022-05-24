@@ -5,13 +5,13 @@ import { SubtitleLeftTop } from 'components/atoms/SubtitleLeftTop/SubtitleLeftTo
 import { Button } from 'components/atoms/Button/Button';
 import { LabelAboveInput } from 'components/atoms/LabelAboveInput/LabelAboveInput';
 import { Input } from 'components/atoms/Input/Input';
-import Table from 'components/atoms/Table/Table';
+import { Table } from 'components/atoms/Table/Table';
 
 import { users } from 'mocks/data/users';
 import { assets } from 'mocks/data/assets';
 import { useAuth } from 'hooks/useAuth';
 
-import { Wrapper, InnerWrapper, TableWrapper } from '../../components/atoms/PanelStyles/PanelStyles';
+import { Wrapper, InnerWrapper, TableWrapper } from 'components/atoms/PanelStyles/PanelStyles';
 
 export const UserEdit = () => {
   const dane = assets;
