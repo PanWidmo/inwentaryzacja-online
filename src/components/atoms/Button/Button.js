@@ -9,7 +9,7 @@ export const Button = styled.button`
     if (name === 'green') return theme.colors.buttonGreen;
     if (name === 'blue') return theme.colors.buttonBlue;
   }};
-  position: absolute;
+  //position: absolute;
   top: ${({ where }) => {
     if (where === '1') return '3em';
   }};

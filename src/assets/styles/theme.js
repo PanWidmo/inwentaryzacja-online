@@ -10,11 +10,11 @@ export const theme = {
   },
 
   fontSize: {
-    xxxl: '3rem', // 48px
-    xxl: '2.125rem', // 34px
-    xl: '1.5rem', // 24px
-    l: '1.0625rem', // 17px
-    m: '0.75rem', // 12px
-    s: '0.6875rem', // 11px
+    xxxl: '4.8rem',
+    xxl: '3.4rem',
+    xl: '2.4rem',
+    l: '1.7',
+    m: '1.2rem',
+    s: '1.1rem',
   },
 };

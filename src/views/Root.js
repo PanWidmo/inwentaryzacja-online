@@ -6,6 +6,7 @@ import { Login } from 'views/auth/Login';
 import { ResetPassword } from 'views/auth/ResetPassword';
 import { ResetPasswordConfirmation } from 'views/auth/ResetPasswordConfirmation';
 import { ResetPasswordForm } from 'views/auth/ResetPasswordForm';
+import { InventorySummaryConfirmation } from 'views/inventory/InventorySummaryConfirmation';
 import { AdminPanel } from 'views/roles pages/AdminPanel';
 import { UserPanelList } from 'views/user/UserPanelList';
 import { UserCreate } from 'views/user/UserCreate';
@@ -51,7 +52,7 @@ const UnauthenticatedApp = () => {
         {/* pages that working on: */}
         {/* <Route path="/user/:user-id/inventory/:inventory-id" element={< />} /> */}
         {/* <Route path="/user/:user-id/inventory/:inventory-id/summary" element={< />} /> */}
-        {/* <Route path="/user/:user-id/inventory/:inventory-id/summary-confirmation" element={< />} /> */}
+        <Route path="/user/:user-id/inventory/:inventory-id/summary-confirmation" element={<InventorySummaryConfirmation />} />
         <Route path="/admin-panel" element={<AdminPanel />} />
         {/* <Route path="/accountant-panel" element={< />} /> */}
         <Route path="/user-management" element={<UserPanelList />} />
