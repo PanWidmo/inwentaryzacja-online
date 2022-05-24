@@ -15,7 +15,7 @@ import { FixedAssetPanelList } from 'views/fixed asset/FixedAssetPanel/FixedAsse
 import { FixedAssetCreate } from 'views/fixed asset/FixedAssetCreate/FixedAssetCreate';
 import { InventoryCreate } from 'views/inventory/InventoryCreate/InventoryCreate';
 
-//NewInventoryView it's just view after imported data from file (probably no to use)
+//NewInventoryView it's just view after imported data from file (probably no)
 import NewInventoryView from 'components/organisms/NewInventoryView/NewInventoryView';
 
 import { useAuth } from 'hooks/useAuth';
@@ -70,10 +70,8 @@ const UnauthenticatedApp = () => {
   );
 };
 
-const Root = () => {
+export const Root = () => {
   const auth = useAuth();
 
   return auth.user ? <AuthenticatedApp /> : <UnauthenticatedApp />;
 };
-
-export default Root;
