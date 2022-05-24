@@ -53,6 +53,7 @@ const UnauthenticatedApp = () => {
         {/* <Route path="/user/:user-id/inventory/:inventory-id/summary" element={< />} /> */}
         {/* <Route path="/user/:user-id/inventory/:inventory-id/summary-confirmation" element={< />} /> */}
         <Route path="/admin-panel" element={<AdminPanel />} />
+        {/* <Route path="/accountant-panel" element={< />} /> */}
         <Route path="/user-management" element={<UserPanelList />} />
         <Route path="/user-management/create" element={<UserCreate />} />
         <Route path="/user-management/:id" element={<UserEdit />} />
