@@ -3,9 +3,9 @@ import { TitleLeftTop } from 'components/atoms/TitleLeftTop/TitleLeftTop';
 import { Button } from 'components/atoms/Button/Button';
 import { SubtitleLeftTop } from 'components/atoms/SubtitleLeftTop/SubtitleLeftTop';
 import { ChoosePanelSingleViewWrapper } from 'components/atoms/ChoosePanelSingleViewWrapper/ChoosePanelSingleViewWrapper';
-import image19 from 'assets/icons/image19.png';
-import image20 from 'assets/icons/image20.png';
-import image18 from 'assets/icons/image18.png';
+import usersIcon from 'assets/icons/users.png';
+import fixedAssetsIcon from 'assets/icons/fixedAssets.png';
+import downloadIcon from 'assets/icons/download.png';
 import { users } from 'mocks/data/users';
 
 export const AdminPanel = () => {
@@ -21,7 +21,7 @@ export const AdminPanel = () => {
       </Button>
 
       <ChoosePanelSingleViewWrapper as="form">
-        <img src={image19} alt="people_logo" />
+        <img src={usersIcon} alt="people_logo" />
         <Button name="green" where="2">
           Użytkownicy
         </Button>
@@ -29,7 +29,7 @@ export const AdminPanel = () => {
         <p>Modyfikuj dane użytkowników</p>
       </ChoosePanelSingleViewWrapper>
       <ChoosePanelSingleViewWrapper as="form">
-        <img src={image18} alt="people_logo" />
+        <img src={fixedAssetsIcon} alt="people_logo" />
         <Button name="green" where="2">
           Środki trwałe
         </Button>
@@ -37,7 +37,7 @@ export const AdminPanel = () => {
         <p>Modyfikuj informacje o obiektach</p>
       </ChoosePanelSingleViewWrapper>
       <ChoosePanelSingleViewWrapper as="form">
-        <img src={image20} alt="people_logo" />
+        <img src={downloadIcon} alt="people_logo" />
         <Button name="green" where="2">
           Pobierz dane
         </Button>
