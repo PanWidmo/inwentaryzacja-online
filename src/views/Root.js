@@ -73,5 +73,7 @@ const UnauthenticatedApp = () => {
 export const Root = () => {
   const auth = useAuth();
 
-  return auth.user ? <AuthenticatedApp /> : <UnauthenticatedApp />;
+  //proper -> return auth.user ? <AuthenticatedApp /> : <UnauthenticatedApp />;
+  //currentyl changed to development:
+  return auth.user ? <UnauthenticatedApp /> : <UnauthenticatedApp />;
 };
