@@ -45,11 +45,11 @@ const UnauthenticatedApp = () => {
     <Wrapper>
       <Routes>
         {/* pages for unauth */}
-        <Route path="/*" element={<Navigate to="/login" />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path="/reset-password-confirmation" element={<ResetPasswordConfirmation />} />
-        <Route path="/reset-password-form" element={<ResetPasswordForm />} />
+        <Route path="/*" element={<Navigate to="/auth/login" />} />
+        <Route path="/auth/login" element={<Login />} />
+        <Route path="/auth/login-reset-password" element={<ResetPassword />} />
+        <Route path="/auth/login-reset-password-confirmation" element={<ResetPasswordConfirmation />} />
+        <Route path="/auth/login-reset-password-form" element={<ResetPasswordForm />} />
         {/* pages that working on: */}
         {/* <Route path="/user/:user-id/inventory/:inventory-id" element={< />} /> */}
         {/* <Route path="/user/:user-id/inventory/:inventory-id/summary" element={< />} /> */}
