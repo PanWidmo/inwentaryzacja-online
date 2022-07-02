@@ -24,7 +24,18 @@ export const StyledButton = styled.button`
   }};
   border: none;
   border-radius: 7px;
-  padding: 1rem 2rem;
+  padding: 0.42375em 1.25em;
   font-size: ${({ theme }) => theme.fontSize.l};
   color: ${({ theme }) => theme.colors.white};
+  cursor: pointer;
+  box-shadow: 0 0.1875em 0.5em rgba(0, 0, 0, 0.3);
+  :active {
+    transform: translateY(0.25em);
+    border: none;
+    outline: none;
+  }
+  :focus {
+    border: none;
+    outline: none;
+  }
 `;

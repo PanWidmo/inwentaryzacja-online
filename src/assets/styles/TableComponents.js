@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   width: 100%;
   padding: 1.5625em 3.125em;
   color: ${({ theme }) => theme.colors.buttonBlue};
+  font-size: ${({ theme }) => theme.fontSize.l};
   h4 {
     color: ${({ theme }) => theme.colors.hGray};
   }
@@ -19,6 +20,7 @@ export const InnerWrapper = styled.div`
   margin-right: auto;
   button {
     position: relative;
+    margin-top: 0.5em;
   }
 `;
 
