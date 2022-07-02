@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Button = styled.button`
+export const ButtonZG = styled.button`
   margin: 0.9375em 0;
   padding: 0.4375em 1.25em;
   background-color: ${({ theme, name }) => {

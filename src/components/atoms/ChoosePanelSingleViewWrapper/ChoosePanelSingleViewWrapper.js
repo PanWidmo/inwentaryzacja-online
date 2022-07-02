@@ -12,11 +12,6 @@ export const ChoosePanelSingleViewWrapper = styled.div`
   margin: 0 auto;
   min-height: 50vh;
 
-  button {
-    position: relative;
-    height: 3rem;
-  }
-
   img {
     width: 8rem;
     margin: 2em auto;

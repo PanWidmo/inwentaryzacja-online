@@ -1,10 +1,14 @@
 import React from 'react';
 
 import { Table } from 'components/atoms/Table/Table';
-import { Button } from 'components/atoms/Button/Button';
+import { ButtonZG } from 'components/atoms/ButtonZG/ButtonZG';
 import { Wrapper, InnerWrapper, StyledFooter } from 'assets/styles/TableComponents';
 import { users } from 'mocks/data/users';
 import { useAuth } from 'hooks/useAuth';
+import { Header } from 'components/organisms/Header/Header';
+import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
+import { ButtonCreateUser } from 'components/molecules/Buttons/ButtonCreateUser';
+import { Footer } from 'components/organisms/Footer/Footer';
 
 export const UserPanelList = () => {
   const dane = users;
@@ -15,26 +19,17 @@ export const UserPanelList = () => {
   };
 
   return (
-    <Wrapper>
-      <div>
-        <h2>Użytkowicy</h2>
-        <h4>Firma XYZ, ul. Wąsacza 1A/20002255</h4>
-        <Button name="red" where="1" onClick={handleLogout}>
-          Wyloguj
-        </Button>
-      </div>
-      <InnerWrapper>
-        <Table dane={dane} id="usersTable" />
-        <Button name="blue">Dodaj</Button>
-      </InnerWrapper>
-      <StyledFooter>
-        <Button name="red" where="3">
-          Cofnij
-        </Button>
-        <Button name="green" where="5">
-          Zatwierdź
-        </Button>
-      </StyledFooter>
-    </Wrapper>
+    <>
+      <Header title="Uzytkownicy" companyName="Compolexos" hasLogoutButton />
+      <ContentWrapper>
+        <Wrapper>
+          <InnerWrapper>
+            <Table dane={dane} id="usersTable" />
+            <ButtonCreateUser />
+          </InnerWrapper>
+        </Wrapper>
+      </ContentWrapper>
+      <Footer hasBackToPrevPageButton />
+    </>
   );
 };

@@ -6,8 +6,8 @@ import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { InfoLabel } from 'components/atoms/InfoLabel/InfoLabel';
 import { FormField } from 'components/molecules/FormField/FormField';
 import { LoginProblemLink } from 'components/atoms/LoginProblemLink/LoginProblemLink';
-import { Button } from 'components/atoms/Button/Button';
 import { useAuth } from 'hooks/useAuth';
+import { ButtonLogin } from 'components/molecules/Buttons/ButtonLogin';
 
 export const Login = () => {
   const emailRef = useRef();
@@ -29,16 +29,14 @@ export const Login = () => {
 
   return (
     <>
-      <Header title="Logowanie do systemu inwentaryzacji" companyName="Compolexos"></Header>
+      <Header title="Logowanie do systemu inwentaryzacji" companyName="Compolexos" />
       <ContentWrapper>
         <ViewWrapper as="form" onSubmit={handleSubmit}>
           <InfoLabel>Wpisz swoje dane:</InfoLabel>
           <FormField label="EMAIL" id="email" name="email" type="email" ref={emailRef} />
           <FormField label="HASŁO" id="password" name="password" type="password" ref={passwordRef} />
           <LoginProblemLink to="/auth/login-reset-password">Problem z logowaniem?</LoginProblemLink>
-          <Button name="blue" type="submit">
-            Zaloguj
-          </Button>
+          <ButtonLogin />
         </ViewWrapper>
       </ContentWrapper>
     </>

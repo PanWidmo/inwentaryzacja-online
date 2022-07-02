@@ -1,10 +1,14 @@
 import React from 'react';
 
 import { Table } from 'components/atoms/Table/Table';
-import { Button } from 'components/atoms/Button/Button';
+import { ButtonZG } from 'components/atoms/ButtonZG/ButtonZG';
 import { Wrapper, InnerWrapper, StyledFooter } from 'assets/styles/TableComponents';
 import { assets } from 'mocks/data/assets';
 import { useAuth } from 'hooks/useAuth';
+import { Header } from 'components/organisms/Header/Header';
+import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
+import { Footer } from 'components/organisms/Footer/Footer';
+import { ButtonCreateFixedAsset } from 'components/molecules/Buttons/ButtonCreateFixedAsset';
 
 export const FixedAssetPanelList = () => {
   const dane = assets;
@@ -15,27 +19,18 @@ export const FixedAssetPanelList = () => {
   };
 
   return (
-    <Wrapper>
-      <div>
-        <h2>Środki Trwałe</h2>
-        <h4>Firma XYZ, ul. Wąsacza 1A/20002255</h4>
-        <Button name="red" where="1" onClick={handleLogout}>
-          Wyloguj
-        </Button>
-      </div>
-      <InnerWrapper>
-        <Table dane={dane} />
+    <>
+      <Header title="Srodki Trwale" companyName="Compolexos" hasLogoutButton />
+      <ContentWrapper>
+        <Wrapper>
+          <InnerWrapper>
+            <Table dane={dane} />
 
-        <Button name="blue">Dodaj</Button>
-      </InnerWrapper>
-      <StyledFooter>
-        <Button name="red" where="3">
-          Cofnij
-        </Button>
-        <Button name="green" where="5">
-          Zatwierdź
-        </Button>
-      </StyledFooter>
-    </Wrapper>
+            <ButtonCreateFixedAsset />
+          </InnerWrapper>
+        </Wrapper>
+      </ContentWrapper>
+      <Footer hasBackToPrevPageButton />
+    </>
   );
 };

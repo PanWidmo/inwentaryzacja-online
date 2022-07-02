@@ -2,7 +2,7 @@ import React from 'react';
 
 import { TitleLeftTop } from 'components/atoms/TitleLeftTop/TitleLeftTop';
 import { SubtitleLeftTop } from 'components/atoms/SubtitleLeftTop/SubtitleLeftTop';
-import { Button } from 'components/atoms/Button/Button';
+import { ButtonZG } from 'components/atoms/ButtonZG/ButtonZG';
 import { LabelAboveInput } from 'components/atoms/LabelAboveInput/LabelAboveInput';
 import { Input } from 'components/atoms/Input/Input';
 import { Table } from 'components/atoms/Table/Table';
@@ -12,6 +12,9 @@ import { assets } from 'mocks/data/assets';
 import { useAuth } from 'hooks/useAuth';
 
 import { Wrapper, InnerWrapper, TableWrapper } from 'components/atoms/PanelStyles/PanelStyles';
+import { Header } from 'components/organisms/Header/Header';
+import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
+import { Footer } from 'components/organisms/Footer/Footer';
 
 export const UserEdit = () => {
   const dane = assets;
@@ -21,61 +24,47 @@ export const UserEdit = () => {
     signOutUser();
   };
   return (
-    <Wrapper>
-      <div>
-        <TitleLeftTop>Edytuj dane: {users[0].imie + ' ' + users[0].nazwisko}</TitleLeftTop>
-        <SubtitleLeftTop>Firma XYZ, ul. Wąsacza 1A/20002255</SubtitleLeftTop>
-        <Button name="red" where="1" onClick={handleLogout}>
-          Wyloguj
-        </Button>
-      </div>
+    <>
+      <Header title="Edytuj dane: Janusz Świrpaleta" companyName="Compolexos" hasLogoutButton />
+      <ContentWrapper>
+        <Wrapper>
+          <InnerWrapper>
+            <hr />
+            <form>
+              <LabelAboveInput>
+                IMIĘ<Input></Input>
+              </LabelAboveInput>
 
-      <InnerWrapper>
-        <hr />
-        <form>
-          <LabelAboveInput>
-            IMIĘ<Input></Input>
-          </LabelAboveInput>
+              <LabelAboveInput>
+                NAZWISKO<Input></Input>
+              </LabelAboveInput>
 
-          <LabelAboveInput>
-            NAZWISKO<Input></Input>
-          </LabelAboveInput>
+              <LabelAboveInput>
+                LOGIN<Input></Input>
+              </LabelAboveInput>
+            </form>
+            <hr />
+            <form>
+              <LabelAboveInput>
+                EMAIL<Input></Input>
+              </LabelAboveInput>
 
-          <LabelAboveInput>
-            LOGIN<Input></Input>
-          </LabelAboveInput>
-        </form>
-        <hr />
-        <form>
-          <LabelAboveInput>
-            EMAIL<Input></Input>
-          </LabelAboveInput>
+              <LabelAboveInput>
+                HASŁO<Input></Input>
+              </LabelAboveInput>
 
-          <LabelAboveInput>
-            HASŁO<Input></Input>
-          </LabelAboveInput>
-
-          <LabelAboveInput>
-            UPRAWNIENIA<Input></Input>
-          </LabelAboveInput>
-        </form>
-        <hr />
-        <TableWrapper>
-          <Table dane={dane} />
-        </TableWrapper>
-      </InnerWrapper>
-      <Button name="red" where="2">
-        Usuń
-      </Button>
-      <Button name="red" where="3">
-        Cofnij
-      </Button>
-      <Button name="blue" where="5">
-        Zapisz
-      </Button>
-      <Button name="green" where="4">
-        Zatwierdź
-      </Button>
-    </Wrapper>
+              <LabelAboveInput>
+                UPRAWNIENIA<Input></Input>
+              </LabelAboveInput>
+            </form>
+            <hr />
+            <TableWrapper>
+              <Table dane={dane} />
+            </TableWrapper>
+          </InnerWrapper>
+        </Wrapper>
+      </ContentWrapper>
+      <Footer hasBackToPrevPageButton hasDeleteUserButton hasSaveEditedUserButton />
+    </>
   );
 };

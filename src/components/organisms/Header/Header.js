@@ -1,3 +1,4 @@
+import { ButtonLogout } from 'components/molecules/Buttons/ButtonLogout';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -25,7 +26,7 @@ const Subtitles = styled.div`
     margin-top: 0.75rem;
   }
 `;
-export const Header = ({ title, companyName, inventoryNumber }) => {
+export const Header = ({ title, companyName, inventoryNumber, hasLogoutButton }) => {
   return (
     <Wrapper>
       <TitleWithButtons>
@@ -33,7 +34,11 @@ export const Header = ({ title, companyName, inventoryNumber }) => {
           <h1>{title}</h1>
         </Title>
 
-        <ButtonsSection>{/* <button type="button">CHUJ</button> */}</ButtonsSection>
+        {hasLogoutButton && (
+          <ButtonsSection>
+            <ButtonLogout />
+          </ButtonsSection>
+        )}
       </TitleWithButtons>
       <Subtitles>
         <p>{companyName}</p>

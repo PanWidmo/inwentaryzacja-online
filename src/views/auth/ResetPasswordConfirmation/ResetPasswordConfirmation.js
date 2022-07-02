@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Header } from 'components/organisms/Header/Header';
 import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { InfoLabel } from 'components/atoms/InfoLabel/InfoLabel';
-import { Button } from 'components/atoms/Button/Button';
 import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
+import { ButtonBackToLogin } from 'components/molecules/Buttons/ButtonBackToLogin';
 
 export const ResetPasswordConfirmation = () => {
   const navigate = useNavigate();
@@ -16,9 +16,7 @@ export const ResetPasswordConfirmation = () => {
         <ViewWrapper>
           <InfoLabel>Mail został wysłany!</InfoLabel>
           <InfoLabel>Sprawdź swoją skrzynkę odbiorczą</InfoLabel>
-          <Button name="blue" type="submit" onClick={handleClick}>
-            Powrót
-          </Button>
+          <ButtonBackToLogin />
         </ViewWrapper>
       </ContentWrapper>
     </>
