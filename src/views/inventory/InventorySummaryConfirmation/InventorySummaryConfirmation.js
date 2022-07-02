@@ -1,7 +1,9 @@
 import React from 'react';
 import sentProtocol from 'assets/icons/sentProtocol.png';
-import { Button } from 'components/atoms/Button/Button';
+import { ButtonZG } from 'components/atoms/ButtonZG/ButtonZG';
 import styled from 'styled-components';
+import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
+import { ButtonCloseTab } from 'components/molecules/Buttons/ButtonCloseTab';
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,10 +20,12 @@ const Wrapper = styled.div`
 
 export const InventorySummaryConfirmation = () => {
   return (
-    <Wrapper>
-      <img src={sentProtocol} alt="protocol sent icon" />
-      <p>Protokół wysłany, dziękujemy.</p>
-      <Button name="green">Zakończ</Button>
-    </Wrapper>
+    <ContentWrapper>
+      <Wrapper>
+        <img src={sentProtocol} alt="protocol sent icon" />
+        <p>Protokół wysłany, dziękujemy.</p>
+        <ButtonCloseTab />
+      </Wrapper>
+    </ContentWrapper>
   );
 };

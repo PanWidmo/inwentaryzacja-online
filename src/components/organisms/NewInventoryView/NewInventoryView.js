@@ -2,7 +2,7 @@ import React from 'react';
 
 import { TitleLeftTop } from 'components/atoms/TitleLeftTop/TitleLeftTop';
 import { SubtitleLeftTop } from 'components/atoms/SubtitleLeftTop/SubtitleLeftTop';
-import { Button } from 'components/atoms/Button/Button';
+import { ButtonZG } from 'components/atoms/ButtonZG/ButtonZG';
 import { LabelAboveInput } from 'components/atoms/LabelAboveInput/LabelAboveInput';
 import { Input } from 'components/atoms/Input/Input';
 import { Wrapper, InnerWrapper, TableWrapper } from 'components/atoms/PanelStyles/PanelStyles';
@@ -24,9 +24,9 @@ export const NewInventoryView = () => {
       <div>
         <TitleLeftTop>Nowa Inventaryzacja</TitleLeftTop>
         <SubtitleLeftTop>Firma XYZ, ul. Wąsacza 1A/20002255</SubtitleLeftTop>
-        <Button name="red" where="1" onClick={handleLogout}>
+        <ButtonZG name="red" where="1" onClick={handleLogout}>
           Wyloguj
-        </Button>
+        </ButtonZG>
       </div>
 
       <InnerWrapper>
@@ -47,19 +47,19 @@ export const NewInventoryView = () => {
         <hr />
         <TableWrapper>
           <Table dane={dane} />
-          <Button name="red">Usuń plik</Button>
+          <ButtonZG name="red">Usuń plik</ButtonZG>
         </TableWrapper>
       </InnerWrapper>
 
-      <Button name="red" where="3">
+      <ButtonZG name="red" where="3">
         Cofnij
-      </Button>
-      <Button name="blue" where="5">
+      </ButtonZG>
+      <ButtonZG name="blue" where="5">
         Zapisz
-      </Button>
-      <Button name="green" where="4">
+      </ButtonZG>
+      <ButtonZG name="green" where="4">
         Zatwierdź
-      </Button>
+      </ButtonZG>
     </Wrapper>
   );
 };

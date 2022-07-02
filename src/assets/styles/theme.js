@@ -2,12 +2,13 @@ export const theme = {
   colors: {
     white: '#FFFFFF',
     black: '#000000',
-    buttonRed: '#FF3939',
-    buttonBlue: '#1AA7FF',
+    blue: '#1AA7FF',
     buttonGreen: '#6DD29B',
     tabGray: '#EAE9E9',
     tabHoverGray: '#F0F0F0',
-    titleBlue: '#1aa7ff',
+    redBackgroundColor: '#FF3939',
+    blueBackgroundColor: '#1AA7FF',
+    greenBackgroundColor: '#6DD29B',
   },
 
   //1.5rem = 15px)
