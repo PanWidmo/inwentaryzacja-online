@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { ButtonDeleteUser } from 'components/molecules/Buttons/ButtonDeleteUser';
 import { ButtonDeleteFixedAsset } from 'components/molecules/Buttons/ButtonDeleteFixedAsset';
 import { ButtonCreateUser } from 'components/molecules/Buttons/ButtonCreateUser';
-import { ButtonCreateFixedAsset } from 'components/molecules/Buttons/ButtonCreateFixedAsset';
+import { ButtonAddFixedAsset } from 'components/molecules/Buttons/ButtonAddFixedAsset';
 import { ButtonSaveEditedUser } from 'components/molecules/Buttons/ButtonSaveEditedUser';
 import { ButtonCreateInventory } from 'components/molecules/Buttons/ButtonCreateInventory';
 
@@ -42,7 +42,7 @@ export const Footer = ({
       </LeftSide>
       <RightSide>
         {hasCreateUserButton && <ButtonCreateUser />}
-        {hasCreateFixedAssetButton && <ButtonCreateFixedAsset />}
+        {hasCreateFixedAssetButton && <ButtonAddFixedAsset />}
         {hasCreateInventoryButton && <ButtonCreateInventory />}
         {hasSaveEditedUserButton && <ButtonSaveEditedUser />}
         {hasSaveEditedFixedAssetButton && <ButtonSaveEditedUser />}

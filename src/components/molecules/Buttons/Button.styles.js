@@ -13,6 +13,7 @@ export const StyledButton = styled.button`
     if (name === 'downloadData') return theme.colors.greenBackgroundColor;
     if (name === 'createUser') return theme.colors.greenBackgroundColor;
     if (name === 'createFixedAsset') return theme.colors.greenBackgroundColor;
+    if (name === 'addFixedAsset') return theme.colors.greenBackgroundColor;
     if (name === 'createInventory') return theme.colors.greenBackgroundColor;
     if (name === 'saveEditedUser') return theme.colors.greenBackgroundColor;
     if (name === 'saveEditedFixedAsset') return theme.colors.greenBackgroundColor;
