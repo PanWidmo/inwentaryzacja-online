@@ -21,7 +21,7 @@ export const Login = () => {
       const email = emailRef.current.value;
       const password = passwordRef.current.value;
       await signIn(email, password);
-      navigate('/APUsers'); //TO CHANGE! temporary redirection till other view will be done :)
+      navigate('/admin-panel'); //TO CHANGE! temporary redirection till other view will be done :)
     } catch (e) {
       console.log(e);
     }

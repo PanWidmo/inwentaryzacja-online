@@ -20,37 +20,11 @@ import NewInventoryView from 'components/organisms/NewInventoryView/NewInventory
 
 import { useAuth } from 'hooks/useAuth';
 
-//working on FireBase but need to be change, so work on UnauthenticatedApp
 const AuthenticatedApp = () => {
   return (
     <Wrapper>
-      {/* <Routes>
-        <Route path="/" element={<Navigate to="/AdminPanel" />} />
-        <Route path="/AdminPanelWithUsers" element={<AdminPanelWithUsers />} />
-        <Route path="/UserEdit" element={<UserEdit />} />
-        <Route path="/NewUserAdding" element={<NewUserAdding />} />
-        <Route path="/AdminPanelFixedAssets" element={<AdminPanelFixedAssets />} />
-        <Route path="/NewAssetsAdding" element={<NewAssetsAdding />} />
-        <Route path="/CreateNewInventory" element={<CreateNewInventory />} />
-        <Route path="/NewInventoryView" element={<NewInventoryView />} />
-        <Route path="/AdminPanel" element={<AdminPanel />} />
-      </Routes> */}
-    </Wrapper>
-  );
-};
-
-//!!! work on unauthenticated version
-const UnauthenticatedApp = () => {
-  return (
-    <Wrapper>
       <Routes>
-        {/* pages for unauth */}
-        <Route path="/*" element={<Navigate to="/auth/login" />} />
-        <Route path="/auth/login" element={<Login />} />
-        <Route path="/auth/login-reset-password" element={<ResetPassword />} />
-        <Route path="/auth/login-reset-password-confirmation" element={<ResetPasswordConfirmation />} />
-        <Route path="/auth/login-reset-password-form" element={<ResetPasswordForm />} />
-        {/* pages that working on: */}
+        <Route path="/*" element={<Navigate to="/admin-panel" />} />
         {/* <Route path="/user/:user-id/inventory/:inventory-id" element={< />} /> */}
         {/* <Route path="/user/:user-id/inventory/:inventory-id/summary" element={< />} /> */}
         <Route path="/user/:user-id/inventory/:inventory-id/summary-confirmation" element={<InventorySummaryConfirmation />} />
@@ -64,7 +38,21 @@ const UnauthenticatedApp = () => {
         {/* <Route path="/fixed-asset-management/:id" element={< />} /> */}
         {/* <Route path="/inventory-management" element={< />} /> */}
         <Route path="/inventory-management/create" element={<InventoryCreate />} />
-        {/* <Route path="/inventory-management/:id" element={< />} /> */}
+        {/* <Routes path="/inventory-management/:id" element={< />} /> */}
+      </Routes>
+    </Wrapper>
+  );
+};
+
+const UnauthenticatedApp = () => {
+  return (
+    <Wrapper>
+      <Routes>
+        <Route path="/*" element={<Navigate to="/auth/login" />} />
+        <Route path="/auth/login" element={<Login />} />
+        <Route path="/auth/login-reset-password" element={<ResetPassword />} />
+        <Route path="/auth/login-reset-password-confirmation" element={<ResetPasswordConfirmation />} />
+        <Route path="/auth/login-reset-password-form" element={<ResetPasswordForm />} />
       </Routes>
     </Wrapper>
   );
@@ -73,7 +61,5 @@ const UnauthenticatedApp = () => {
 export const Root = () => {
   const auth = useAuth();
 
-  //proper -> return auth.user ? <AuthenticatedApp /> : <UnauthenticatedApp />;
-  //changed for development issues:
-  return <UnauthenticatedApp />;
+  return auth.user ? <AuthenticatedApp /> : <UnauthenticatedApp />;
 };
