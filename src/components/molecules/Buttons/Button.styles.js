@@ -21,6 +21,7 @@ export const StyledButton = styled.button`
     if (name === 'deleteFixedAsset') return theme.colors.redBackgroundColor;
     if (name === 'addFile') return theme.colors.blueBackgroundColor;
     if (name === 'addUserToDB') return theme.colors.greenBackgroundColor;
+    if (name === 'addFixedAssetToDB') return theme.colors.greenBackgroundColor;
     return theme.colors.black;
   }};
   border: none;

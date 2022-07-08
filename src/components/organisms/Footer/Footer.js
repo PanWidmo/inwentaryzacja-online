@@ -8,6 +8,7 @@ import { ButtonCreateFixedAsset } from 'components/molecules/Buttons/ButtonCreat
 import { ButtonSaveEditedUser } from 'components/molecules/Buttons/ButtonSaveEditedUser';
 import { ButtonCreateInventory } from 'components/molecules/Buttons/ButtonCreateInventory';
 import { ButtonAddUserToDB } from 'components/molecules/Buttons/ButtonAddUserToDB';
+import { ButtonAddFixedAssetToDBButton } from 'components/molecules/Buttons/ButtonAddFixedAssetToDBButton';
 
 const Wrapper = styled.footer`
   margin: 2rem 3.5rem;
@@ -34,6 +35,7 @@ export const Footer = ({
   hasDownloadInventoryButton,
   hasAbortInventoryButton,
   hasAddUserToDBButton,
+  hasAddFixedAssetToDBButton,
 }) => {
   return (
     <Wrapper>
@@ -49,6 +51,7 @@ export const Footer = ({
         {hasSaveEditedUserButton && <ButtonSaveEditedUser />}
         {hasSaveEditedFixedAssetButton && <ButtonSaveEditedUser />}
         {hasAddUserToDBButton && <ButtonAddUserToDB />}
+        {hasAddFixedAssetToDBButton && <ButtonAddFixedAssetToDBButton />}
       </RightSide>
     </Wrapper>
   );
