@@ -9,18 +9,25 @@ import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
 import { Footer } from 'components/organisms/Footer/Footer';
 import { ButtonCreateFixedAsset } from 'components/molecules/Buttons/ButtonCreateFixedAsset';
-import { useAssets } from 'hooks/useAssets';
+// import { useAssets } from 'hooks/useAssets';
 
 export const FixedAssetPanelList = () => {
   const [assets, setAssets] = useState([]);
-  const { getAssets } = useAssets();
+  // const { getAssets } = useAssets();
 
+  // useEffect(() => {
+  //   (async () => {
+  //     const assets = await getAssets;
+  //     setAssets(assets);
+  //   })();
+  // }, [getAssets]);
   useEffect(() => {
-    (async () => {
-      const assets = await getAssets;
-      setAssets(assets);
-    })();
-  }, [getAssets]);
+    fetch('https://localhost:5001/api/asset')
+      .then((res) => res.json())
+      .then((data) => {
+        return setAssets(data);
+      });
+  }, []);
 
   // const { signOutUser } = useAuth();
 
@@ -28,13 +35,14 @@ export const FixedAssetPanelList = () => {
   //   signOutUser();
   // };
 
+  console.log(assets);
   return (
     <>
       <Header title="Srodki Trwale" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
         <Wrapper>
           <InnerWrapper>
-            {/* <Table dane={assets} /> */}
+            <Table dane={assets} />
 
             <ButtonCreateFixedAsset />
           </InnerWrapper>

@@ -24,7 +24,7 @@ export const Table = ({ dane }) => {
       <thead>
         <tr>
           <th>Lp</th>
-          {headers[1].map((header) => (
+          {headers[0]?.map((header) => (
             <th key={header}>
               <div key={header + 1} type="button" onClick={() => setSortedField({ header })}>
                 {header[0].toUpperCase() + header.substring(1)}
