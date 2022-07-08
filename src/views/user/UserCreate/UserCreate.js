@@ -1,63 +1,60 @@
-import React from 'react';
-
-import { TitleLeftTop } from 'components/atoms/TitleLeftTop/TitleLeftTop';
-import { SubtitleLeftTop } from 'components/atoms/SubtitleLeftTop/SubtitleLeftTop';
-import { ButtonZG } from 'components/atoms/ButtonZG/ButtonZG';
-import { LabelAboveInput } from 'components/atoms/LabelAboveInput/LabelAboveInput';
-import { Input } from 'components/atoms/Input/Input';
-
-import { useAuth } from 'hooks/useAuth';
+import React, { useRef } from 'react';
+import axios from 'axios';
 
 import { Wrapper, InnerWrapper } from 'components/atoms/PanelStyles/PanelStyles';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
 import { Footer } from 'components/organisms/Footer/Footer';
+import { FormField } from 'components/molecules/FormField/FormField';
 
 export const UserCreate = () => {
-  const { signOutUser } = useAuth();
+  const firstNameRef = useRef();
+  const lastNameRef = useRef();
+  const loginRef = useRef();
+  const emailRef = useRef();
+  const phoneNumberRef = useRef();
+  const permissionsRef = useRef();
 
-  const handleLogout = () => {
-    signOutUser();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const userData = {
+      name: firstNameRef.current.value,
+      surname: lastNameRef.current.value,
+      login: loginRef.current.value,
+      email: emailRef.current.value,
+      phoneNumber: phoneNumberRef.current.value,
+      permissionId: permissionsRef.current.value,
+    };
+
+    try {
+      axios.post('https://localhost:5001/api/user', userData);
+      e.target.reset();
+      alert('Uzytkownik dodany! :)');
+    } catch (e) {
+      console.log(e);
+    }
   };
+
   return (
     <>
       <Header title="Dodaj nowego uzytkownika" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
-        <Wrapper>
-          <InnerWrapper>
-            <hr />
-            <form>
-              <LabelAboveInput>
-                IMIĘ<Input></Input>
-              </LabelAboveInput>
+        <form id="userForm" onSubmit={handleSubmit}>
+          <FormField label="Imie" id="firstName" name="firstName" type="text" ref={firstNameRef} />
 
-              <LabelAboveInput>
-                NAZWISKO<Input></Input>
-              </LabelAboveInput>
+          <FormField label="Nazwisko" id="lastName" name="lastName" type="text" ref={lastNameRef} />
 
-              <LabelAboveInput>
-                LOGIN<Input></Input>
-              </LabelAboveInput>
-            </form>
-            <hr />
-            <form>
-              <LabelAboveInput>
-                EMAIL<Input></Input>
-              </LabelAboveInput>
+          <FormField label="Login" id="login" name="login" type="text" ref={loginRef} />
 
-              <LabelAboveInput>
-                HASŁO<Input></Input>
-              </LabelAboveInput>
+          <FormField label="Email" id="email" name="email" type="email" ref={emailRef} />
 
-              <LabelAboveInput>
-                UPRAWNIENIA<Input></Input>
-              </LabelAboveInput>
-            </form>
-            <hr />
-          </InnerWrapper>
-        </Wrapper>
+          <FormField label="Telefon" id="phoneNumber" name="text" type="phoneNumber" ref={phoneNumberRef} />
+
+          <FormField label="Uprawnienia" id="permissions" name="permissions" type="permissions" ref={permissionsRef} />
+        </form>
       </ContentWrapper>
-      <Footer hasBackToPrevPageButton hasCreateUserButton />
+      <Footer hasBackToPrevPageButton hasAddUserToDBButton />
     </>
   );
 };
