@@ -6,7 +6,7 @@ export const ButtonViewFixedAssets = ({ text = 'Srodki trwale' }) => {
   const navigate = useNavigate();
 
   const navigateToFixedAssets = () => {
-    navigate('/user-management');
+    navigate('/fixed-asset-management');
   };
 
   return (
