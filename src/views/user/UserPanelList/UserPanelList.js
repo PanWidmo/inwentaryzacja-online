@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import { useNavigate } from 'react-router-dom';
 import { Table } from 'components/atoms/Table/Table';
-import { ButtonZG } from 'components/atoms/ButtonZG/ButtonZG';
-import { Wrapper, InnerWrapper, StyledFooter } from 'assets/styles/TableComponents';
+import { Wrapper, InnerWrapper } from 'assets/styles/TableComponents';
 import { users } from 'mocks/data/users';
-import { useAuth } from 'hooks/useAuth';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
-import { ButtonCreateUser } from 'components/molecules/Buttons/ButtonCreateUser';
 import { Footer } from 'components/organisms/Footer/Footer';
+import { Button } from 'components/molecules/Button/Button';
 
 export const UserPanelList = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const dane = users;
+
+  const navigate = useNavigate();
+
+  const navigateToCreateUser = () => {
+    navigate('/user-management/create');
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,7 +45,7 @@ export const UserPanelList = () => {
               <>
                 {/* <Table dane={data} id="usersTable" /> */}
                 <Table dane={dane} id="usersTable" />
-                <ButtonCreateUser />
+                <Button name="navigateTo" text="Dodaj" onClick={navigateToCreateUser} />
               </>
             ) : (
               <p>Loading...</p>

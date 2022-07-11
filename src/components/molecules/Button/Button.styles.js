@@ -2,26 +2,20 @@ import styled from 'styled-components';
 
 export const StyledButton = styled.button`
   background-color: ${({ theme, name }) => {
-    if (name === 'logout') return theme.colors.redBackgroundColor;
     if (name === 'login') return theme.colors.blueBackgroundColor;
+    if (name === 'logout') return theme.colors.redBackgroundColor;
     if (name === 'sendEmail') return theme.colors.blueBackgroundColor;
     if (name === 'backToLogin') return theme.colors.blueBackgroundColor;
     if (name === 'confirmResetPassword') return theme.colors.blueBackgroundColor;
     if (name === 'closeTab') return theme.colors.greenBackgroundColor;
-    if (name === 'viewUsers') return theme.colors.greenBackgroundColor;
+    if (name === 'navigateTo') return theme.colors.greenBackgroundColor;
     if (name === 'viewFixedAssets') return theme.colors.greenBackgroundColor;
     if (name === 'downloadData') return theme.colors.greenBackgroundColor;
-    if (name === 'createUser') return theme.colors.greenBackgroundColor;
-    if (name === 'createFixedAsset') return theme.colors.greenBackgroundColor;
-    if (name === 'createInventory') return theme.colors.greenBackgroundColor;
-    if (name === 'saveEditedUser') return theme.colors.greenBackgroundColor;
-    if (name === 'saveEditedFixedAsset') return theme.colors.greenBackgroundColor;
+    if (name === 'addFile') return theme.colors.greenBackgroundColor;
+    if (name === 'create') return theme.colors.greenBackgroundColor;
+    if (name === 'save') return theme.colors.greenBackgroundColor;
     if (name === 'backToPrevPage') return theme.colors.redBackgroundColor;
-    if (name === 'deleteUser') return theme.colors.redBackgroundColor;
-    if (name === 'deleteFixedAsset') return theme.colors.redBackgroundColor;
-    if (name === 'addFile') return theme.colors.blueBackgroundColor;
-    if (name === 'addUserToDB') return theme.colors.greenBackgroundColor;
-    if (name === 'addFixedAssetToDB') return theme.colors.greenBackgroundColor;
+    if (name === 'delete') return theme.colors.redBackgroundColor;
     return theme.colors.black;
   }};
   border: none;

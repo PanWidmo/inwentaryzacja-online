@@ -7,7 +7,7 @@ import { InfoLabel } from 'components/atoms/InfoLabel/InfoLabel';
 import { FormField } from 'components/molecules/FormField/FormField';
 import { LoginProblemLink } from 'components/atoms/LoginProblemLink/LoginProblemLink';
 import { useAuth } from 'hooks/useAuth';
-import { ButtonLogin } from 'components/molecules/Buttons/ButtonLogin';
+import { Button } from 'components/molecules/Button/Button';
 
 export const Login = () => {
   const emailRef = useRef();
@@ -36,7 +36,7 @@ export const Login = () => {
           <FormField label="EMAIL" id="email" name="email" type="email" ref={emailRef} />
           <FormField label="HASŁO" id="password" name="password" type="password" ref={passwordRef} />
           <LoginProblemLink to="/auth/login-reset-password">Problem z logowaniem?</LoginProblemLink>
-          <ButtonLogin />
+          <Button name="login" text="Zaloguj" type="submit" />
         </ViewWrapper>
       </ContentWrapper>
     </>

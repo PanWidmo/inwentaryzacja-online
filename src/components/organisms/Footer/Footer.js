@@ -1,14 +1,8 @@
-import { ButtonBackToPrevPage } from 'components/molecules/Buttons/ButtonBackToPrevPage';
 import React from 'react';
 import styled from 'styled-components';
-import { ButtonDeleteUser } from 'components/molecules/Buttons/ButtonDeleteUser';
-import { ButtonDeleteFixedAsset } from 'components/molecules/Buttons/ButtonDeleteFixedAsset';
-import { ButtonCreateUser } from 'components/molecules/Buttons/ButtonCreateUser';
-import { ButtonCreateFixedAsset } from 'components/molecules/Buttons/ButtonCreateFixedAsset';
-import { ButtonSaveEditedUser } from 'components/molecules/Buttons/ButtonSaveEditedUser';
-import { ButtonCreateInventory } from 'components/molecules/Buttons/ButtonCreateInventory';
-import { ButtonAddUserToDB } from 'components/molecules/Buttons/ButtonAddUserToDB';
-import { ButtonAddFixedAssetToDBButton } from 'components/molecules/Buttons/ButtonAddFixedAssetToDBButton';
+
+import { Button } from 'components/molecules/Button/Button';
+import { useNavigate } from 'react-router-dom';
 
 const Wrapper = styled.footer`
   margin: 2rem 3.5rem;
@@ -31,27 +25,30 @@ export const Footer = ({
   hasCreateInventoryButton,
   hasSaveEditedUserButton,
   hasSaveEditedFixedAssetButton,
-  hasSaveInventoryButton,
-  hasDownloadInventoryButton,
   hasAbortInventoryButton,
-  hasAddUserToDBButton,
-  hasAddFixedAssetToDBButton,
+  hasDownloadInventoryButton,
 }) => {
+  const navigate = useNavigate();
+
+  const navigateToPrevPage = () => {
+    navigate(-1);
+  };
+
   return (
     <Wrapper>
       <LeftSide>
-        {hasBackToPrevPageButton && <ButtonBackToPrevPage />}
-        {hasDeleteUserButton && <ButtonDeleteUser />}
-        {hasDeleteFixedAssetButton && <ButtonDeleteFixedAsset />}
+        {hasBackToPrevPageButton && <Button name="backToPrevPage" text="Cofnij" onClick={navigateToPrevPage} />}
+        {hasDeleteUserButton && <Button name="delete" text="Usun" type="submit" form="deleteUserForm" />}
+        {hasDeleteFixedAssetButton && <Button name="delete" text="Usun" form="deleteFixedAssetForm" />}
       </LeftSide>
       <RightSide>
-        {hasCreateUserButton && <ButtonCreateUser />}
-        {hasCreateFixedAssetButton && <ButtonCreateFixedAsset />}
-        {hasCreateInventoryButton && <ButtonCreateInventory />}
-        {hasSaveEditedUserButton && <ButtonSaveEditedUser />}
-        {hasSaveEditedFixedAssetButton && <ButtonSaveEditedUser />}
-        {hasAddUserToDBButton && <ButtonAddUserToDB />}
-        {hasAddFixedAssetToDBButton && <ButtonAddFixedAssetToDBButton />}
+        {hasCreateUserButton && <Button name="create" text="Zatwierdz" type="submit" form="userCreateForm" />}
+        {hasCreateFixedAssetButton && <Button name="create" text="Zatwierdz" type="submit" form="fixedAssetCreateForm" />}
+        {hasCreateInventoryButton && <Button name="create" text="Zatwierdz" type="submit" form="inventoryCreateForm" />}
+        {hasSaveEditedUserButton && <Button name="save" text="Zapisz" type="submit" form="userEditForm" />}
+        {hasSaveEditedFixedAssetButton && <Button name="save" text="Zapisz" type="submit" form="fixedAssetEditForm" />}
+        {hasAbortInventoryButton && <Button name="delete" text="Przerwij" type="submit" />}
+        {hasDownloadInventoryButton && <Button name="download" text="Pobierz" />}
       </RightSide>
     </Wrapper>
   );

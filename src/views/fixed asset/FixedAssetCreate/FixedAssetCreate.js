@@ -1,11 +1,5 @@
 import React, { useRef } from 'react';
 
-import { TitleLeftTop } from 'components/atoms/TitleLeftTop/TitleLeftTop';
-import { SubtitleLeftTop } from 'components/atoms/SubtitleLeftTop/SubtitleLeftTop';
-import { ButtonZG } from 'components/atoms/ButtonZG/ButtonZG';
-import { LabelAboveInput } from 'components/atoms/LabelAboveInput/LabelAboveInput';
-import { Input } from 'components/atoms/Input/Input';
-
 import axios from 'axios';
 
 import { Wrapper, InnerWrapper } from 'components/atoms/PanelStyles/PanelStyles';
@@ -47,7 +41,7 @@ export const FixedAssetCreate = () => {
     <>
       <Header title="Dodanie nowego Srodka Trwalego" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
-        <form id="fixedAssetForm" onSubmit={handleSubmit}>
+        <form id="fixedAssetCreateForm" onSubmit={handleSubmit}>
           <FormField label="Nazwa" id="name" name="name" type="text" ref={nameRef} />
 
           <FormField label="Number inwentarzowy" id="inventoryNumber" name="inventoryNumber" type="text" ref={inventoryNumberRef} />
@@ -61,7 +55,7 @@ export const FixedAssetCreate = () => {
           <FormField label="Inventory Id" id="inventoryId" name="inventoryId" type="text" ref={inventoryIdRef} />
         </form>
       </ContentWrapper>
-      <Footer hasBackToPrevPageButton hasAddFixedAssetToDBButton />
+      <Footer hasBackToPrevPageButton hasCreateFixedAssetButton />
     </>
   );
 };

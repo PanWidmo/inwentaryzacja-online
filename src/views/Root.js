@@ -52,6 +52,7 @@ const UnauthenticatedApp = () => {
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth/login-reset-password" element={<ResetPassword />} />
         <Route path="/auth/login-reset-password-confirmation" element={<ResetPasswordConfirmation />} />
+        {/* KOMPONENT DO DOKONCZENIA: */}
         <Route path="/auth/login-reset-password-form" element={<ResetPasswordForm />} />
       </Routes>
     </Wrapper>

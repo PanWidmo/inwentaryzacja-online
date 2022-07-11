@@ -1,6 +1,7 @@
-import { ButtonLogout } from 'components/molecules/Buttons/ButtonLogout';
 import React from 'react';
 import styled from 'styled-components';
+import { useAuth } from 'hooks/useAuth';
+import { Button } from 'components/molecules/Button/Button';
 
 const Wrapper = styled.header`
   margin: 2rem 3.5rem;
@@ -27,6 +28,12 @@ const Subtitles = styled.div`
   }
 `;
 export const Header = ({ title, companyName, inventoryNumber, hasLogoutButton }) => {
+  const { signOutUser } = useAuth();
+
+  const handleLogout = () => {
+    signOutUser();
+  };
+
   return (
     <Wrapper>
       <TitleWithButtons>
@@ -36,7 +43,7 @@ export const Header = ({ title, companyName, inventoryNumber, hasLogoutButton })
 
         {hasLogoutButton && (
           <ButtonsSection>
-            <ButtonLogout />
+            <Button name="logout" text="Wyloguj" onClick={handleLogout} />
           </ButtonsSection>
         )}
       </TitleWithButtons>

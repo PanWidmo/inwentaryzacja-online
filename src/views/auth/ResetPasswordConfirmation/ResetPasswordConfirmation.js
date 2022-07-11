@@ -4,11 +4,13 @@ import { Header } from 'components/organisms/Header/Header';
 import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { InfoLabel } from 'components/atoms/InfoLabel/InfoLabel';
 import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
-import { ButtonBackToLogin } from 'components/molecules/Buttons/ButtonBackToLogin';
+import { Button } from 'components/molecules/Button/Button';
 
 export const ResetPasswordConfirmation = () => {
   const navigate = useNavigate();
+
   const handleClick = () => navigate('/');
+
   return (
     <>
       <Header title="Problem z logowaniem" companyName="Compolexos"></Header>
@@ -16,7 +18,7 @@ export const ResetPasswordConfirmation = () => {
         <ViewWrapper>
           <InfoLabel>Mail został wysłany!</InfoLabel>
           <InfoLabel>Sprawdź swoją skrzynkę odbiorczą</InfoLabel>
-          <ButtonBackToLogin />
+          <Button name="backToLogin" text="Zapisz" type="submit" onClick={handleClick} />
         </ViewWrapper>
       </ContentWrapper>
     </>

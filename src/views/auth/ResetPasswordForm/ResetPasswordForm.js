@@ -3,7 +3,8 @@ import { Header } from 'components/organisms/Header/Header';
 import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { InfoLabel } from 'components/atoms/InfoLabel/InfoLabel';
 import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
-import { ButtonConfirmResetPassword } from 'components/molecules/Buttons/ButtonConfirmResetPassword';
+import { Button } from 'components/molecules/Button/Button';
+
 export const ResetPasswordForm = () => {
   return (
     <>
@@ -11,8 +12,14 @@ export const ResetPasswordForm = () => {
       <ContentWrapper>
         <ViewWrapper>
           {/* TO DO COMPONENT!!*/}
-          <InfoLabel>do zrobienia component!</InfoLabel>
-          <ButtonConfirmResetPassword />
+          <InfoLabel>Do zrobienia component!</InfoLabel>
+          <Button
+            name="confirmResetPassword"
+            text="Potwierdz"
+            type="submit"
+            form="resetPasswordForm"
+            onClick={() => alert('dziaua POTWIERDZ RESET PASSOWRD button :)')}
+          />
         </ViewWrapper>
       </ContentWrapper>
     </>

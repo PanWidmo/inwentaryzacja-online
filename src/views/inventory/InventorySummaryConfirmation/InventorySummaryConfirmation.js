@@ -1,9 +1,8 @@
 import React from 'react';
 import sentProtocol from 'assets/icons/sentProtocol.png';
-import { ButtonZG } from 'components/atoms/ButtonZG/ButtonZG';
 import styled from 'styled-components';
 import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
-import { ButtonCloseTab } from 'components/molecules/Buttons/ButtonCloseTab';
+import { Button } from 'components/molecules/Button/Button';
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,12 +18,18 @@ const Wrapper = styled.div`
 `;
 
 export const InventorySummaryConfirmation = () => {
+  // https://stackoverflow.com/questions/54996850/close-current-browser-tab-on-button-click-using-reactjs
+  const closeTab = () => {
+    window.open('about:blank', '_self');
+    window.close();
+  };
+
   return (
     <ContentWrapper>
       <Wrapper>
         <img src={sentProtocol} alt="protocol sent icon" />
         <p>Protokół wysłany, dziękujemy.</p>
-        <ButtonCloseTab />
+        <Button name="closeTab" text="Zakoncz" type="submit" onClick={closeTab} />
       </Wrapper>
     </ContentWrapper>
   );

@@ -40,7 +40,7 @@ export const UserCreate = () => {
     <>
       <Header title="Dodaj nowego uzytkownika" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
-        <form id="userForm" onSubmit={handleSubmit}>
+        <form id="userCreateForm" onSubmit={handleSubmit}>
           <FormField label="Imie" id="firstName" name="firstName" type="text" ref={firstNameRef} />
 
           <FormField label="Nazwisko" id="lastName" name="lastName" type="text" ref={lastNameRef} />
@@ -54,7 +54,7 @@ export const UserCreate = () => {
           <FormField label="Uprawnienia" id="permissions" name="permissions" type="permissions" ref={permissionsRef} />
         </form>
       </ContentWrapper>
-      <Footer hasBackToPrevPageButton hasAddUserToDBButton />
+      <Footer hasBackToPrevPageButton hasCreateUserButton />
     </>
   );
 };
