@@ -75,27 +75,6 @@ export const FixedAssetCreate = () => {
     },
   });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    // const fixedAssetData = {
-    //   name: nameRef.current.value,
-    //   inventoryNumber: inventoryNumberRef.current.value,
-    //   serialNumber: serialNumberRef.current.value,
-    //   description: descriptionRef.current.value,
-    //   userId: userIdRef.current.value,
-    //   inventoryId: userIdRef.current.value,
-    // };
-
-    // try {
-    //   axios.post('https://localhost:5001/api/asset', fixedAssetData);
-    //   e.target.reset();
-    //   alert('Srodek trwaly dodany! :)');
-    // } catch (e) {
-    //   console.log(e);
-    // }
-  };
-
   return (
     <>
       <Header title="Dodanie nowego Srodka Trwalego" companyName="Compolexos" hasLogoutButton />
