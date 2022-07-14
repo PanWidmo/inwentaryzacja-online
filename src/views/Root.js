@@ -22,6 +22,7 @@ import { useAuth } from 'hooks/useAuth';
 import { FixedAssetEdit } from './fixed asset/FixedAssetEdit/FixedAssetEdit';
 import { AccountantPanel } from './roles pages/AccountantPanel/AccountantPanel';
 import { InventoryPanel } from './inventory/InventoryPanel/InventoryPanel';
+import { InventoryEdit } from './inventory/InventoryEdit/InventoryEdit';
 
 const AuthenticatedApp = () => {
   return (
@@ -41,7 +42,7 @@ const AuthenticatedApp = () => {
         <Route path="/fixed-asset-management/:id" element={<FixedAssetEdit />} />
         <Route path="/inventory-management" element={<InventoryPanel />} />
         <Route path="/inventory-management/create" element={<InventoryCreate />} />
-        {/* <Routes path="/inventory-management/:id" element={< />} /> */}
+        <Route path="/inventory-management/:id" element={<InventoryEdit />} />
       </Routes>
     </Wrapper>
   );

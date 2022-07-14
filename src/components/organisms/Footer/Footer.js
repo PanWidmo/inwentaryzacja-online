@@ -21,11 +21,13 @@ export const Footer = ({
   hasBackToPrevPageButton,
   hasDeleteUserButton,
   hasDeleteFixedAssetButton,
+  hasDeleteInventoryButton,
   hasCreateUserButton,
   hasCreateFixedAssetButton,
   hasCreateInventoryButton,
   hasSaveEditedUserButton,
   hasSaveEditedFixedAssetButton,
+  hasSaveEditedInventoryButton,
   hasAbortInventoryButton,
   hasDownloadInventoryButton,
 }) => {
@@ -56,12 +58,23 @@ export const Footer = ({
     }
   };
 
+  const deleteInventory = () => {
+    try {
+      axios.delete(`https://localhost:5001/api/inventory/${id}`);
+      navigate('/inventory-management');
+      alert('Usunieto inwentaryzacje! :)');
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
   return (
     <Wrapper>
       <LeftSide>
         {hasBackToPrevPageButton && <Button name="backToPrevPage" text="Cofnij" onClick={navigateToPrevPage} />}
         {hasDeleteUserButton && <Button name="delete" text="Usun" type="submit" onClick={deleteUser} />}
         {hasDeleteFixedAssetButton && <Button name="delete" text="Usun" onClick={deleteFixedAsset} />}
+        {hasDeleteInventoryButton && <Button name="delete" text="Usun" onClick={deleteInventory} />}
       </LeftSide>
       <RightSide>
         {hasCreateUserButton && <Button name="create" text="Zatwierdz" type="submit" form="userCreateForm" />}
@@ -69,6 +82,7 @@ export const Footer = ({
         {hasCreateInventoryButton && <Button name="create" text="Zatwierdz" type="submit" form="inventoryCreateForm" />}
         {hasSaveEditedUserButton && <Button name="save" text="Zapisz" type="submit" form="userEditForm" />}
         {hasSaveEditedFixedAssetButton && <Button name="save" text="Zapisz" type="submit" form="fixedAssetEditForm" />}
+        {hasSaveEditedInventoryButton && <Button name="save" text="Zapisz" type="submit" form="inventoryEditForm" />}
         {hasAbortInventoryButton && <Button name="delete" text="Przerwij" type="submit" />}
         {hasDownloadInventoryButton && <Button name="download" text="Pobierz" />}
       </RightSide>
