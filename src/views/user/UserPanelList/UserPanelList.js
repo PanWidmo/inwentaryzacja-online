@@ -24,7 +24,7 @@ export const UserPanelList = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const result = await axios.get('https://localhost:5001/api/user');
+        const result = await axios.get('https://localhost:5001/api/user/onlyall');
 
         setData(result.data);
       } catch (error) {
@@ -44,7 +44,7 @@ export const UserPanelList = () => {
             {!loading ? (
               <>
                 {/* <Table dane={data} id="usersTable" /> */}
-                <Table dane={dane} id="usersTable" />
+                <Table dane={data} id="usersTable" />
                 <Button name="navigateTo" text="Dodaj" onClick={navigateToCreateUser} />
               </>
             ) : (
