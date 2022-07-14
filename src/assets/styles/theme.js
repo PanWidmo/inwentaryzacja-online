@@ -9,6 +9,7 @@ export const theme = {
     redBackgroundColor: '#FF3939',
     blueBackgroundColor: '#1AA7FF',
     greenBackgroundColor: '#6DD29B',
+    red: '#FF3939',
   },
 
   //1.5rem = 15px)

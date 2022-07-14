@@ -21,7 +21,7 @@ export const AdminPanel = () => {
 
   return (
     <>
-      <Header title="Imie i nazwisko zalogowanego admina" companyName="Compolexos" hasLogoutButton />
+      <Header title="Panel admina" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
         <ChoosePanelSingleViewWrapper as="form">
           <img src={usersIcon} alt="people_logo" />

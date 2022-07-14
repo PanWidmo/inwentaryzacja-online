@@ -19,6 +19,10 @@ import { InventoryCreate } from 'views/inventory/InventoryCreate/InventoryCreate
 import NewInventoryView from 'components/organisms/NewInventoryView/NewInventoryView';
 
 import { useAuth } from 'hooks/useAuth';
+import { FixedAssetEdit } from './fixed asset/FixedAssetEdit/FixedAssetEdit';
+import { AccountantPanel } from './roles pages/AccountantPanel/AccountantPanel';
+import { InventoryPanel } from './inventory/InventoryPanel/InventoryPanel';
+import { InventoryEdit } from './inventory/InventoryEdit/InventoryEdit';
 
 const AuthenticatedApp = () => {
   return (
@@ -29,16 +33,16 @@ const AuthenticatedApp = () => {
         {/* <Route path="/user/:user-id/inventory/:inventory-id/summary" element={< />} /> */}
         <Route path="/user/:user-id/inventory/:inventory-id/summary-confirmation" element={<InventorySummaryConfirmation />} />
         <Route path="/admin-panel" element={<AdminPanel />} />
-        {/* <Route path="/accountant-panel" element={< />} /> */}
+        <Route path="/accountant-panel" element={<AccountantPanel />} />
         <Route path="/user-management" element={<UserPanelList />} />
         <Route path="/user-management/create" element={<UserCreate />} />
         <Route path="/user-management/:id" element={<UserEdit />} />
         <Route path="/fixed-asset-management" element={<FixedAssetPanelList />} />
         <Route path="/fixed-asset-management/create" element={<FixedAssetCreate />} />
-        {/* <Route path="/fixed-asset-management/:id" element={< />} /> */}
-        {/* <Route path="/inventory-management" element={< />} /> */}
+        <Route path="/fixed-asset-management/:id" element={<FixedAssetEdit />} />
+        <Route path="/inventory-management" element={<InventoryPanel />} />
         <Route path="/inventory-management/create" element={<InventoryCreate />} />
-        {/* <Routes path="/inventory-management/:id" element={< />} /> */}
+        <Route path="/inventory-management/:id" element={<InventoryEdit />} />
       </Routes>
     </Wrapper>
   );

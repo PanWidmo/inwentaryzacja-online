@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { NavLink } from 'react-router-dom';
 import { StyledTable } from './Table.styles';
 
 export const Table = ({ dane }) => {
@@ -38,7 +38,9 @@ export const Table = ({ dane }) => {
           <tr key={index + 1}>
             <td key={index + 1}>{index + 1}</td>
             {Object.values(daneData).map((columnData, index) => (
-              <td key={Math.random() + index + 100}>{columnData}</td>
+              <td key={Math.random() + index + 100}>
+                <NavLink to={`/user-management/${daneData.id}`}>{columnData}</NavLink>
+              </td>
             ))}
           </tr>
         ))}

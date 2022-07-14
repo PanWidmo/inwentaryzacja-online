@@ -8,19 +8,20 @@ import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapp
 import { Footer } from 'components/organisms/Footer/Footer';
 import { Button } from 'components/molecules/Button/Button';
 
-export const UserPanelList = () => {
+export const InventoryPanel = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
-  const navigateToCreateUser = () => {
-    navigate('/user-management/create');
+  const navigateToCreateInventory = () => {
+    navigate('/inventory-management/create');
   };
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
+        //TODO: CHANGE URL!
         const result = await axios.get('https://localhost:5001/api/user/onlyall');
 
         setData(result.data);
@@ -34,14 +35,14 @@ export const UserPanelList = () => {
 
   return (
     <>
-      <Header title="Uzytkownicy" companyName="Compolexos" hasLogoutButton />
+      <Header title="Inwentaryzacje" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
         <Wrapper>
           <InnerWrapper>
             {!loading ? (
               <>
-                <Table dane={data} id="usersTable" />
-                <Button name="navigateTo" text="Dodaj" onClick={navigateToCreateUser} />
+                <Table dane={data} id="inventoryTable" />
+                <Button name="navigateTo" text="Dodaj" onClick={navigateToCreateInventory} />
               </>
             ) : (
               <p>Loading...</p>
