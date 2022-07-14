@@ -20,6 +20,7 @@ import NewInventoryView from 'components/organisms/NewInventoryView/NewInventory
 
 import { useAuth } from 'hooks/useAuth';
 import { FixedAssetEdit } from './fixed asset/FixedAssetEdit/FixedAssetEdit';
+import { AccountantPanel } from './roles pages/AccountantPanel/AccountantPanel';
 
 const AuthenticatedApp = () => {
   return (
@@ -30,7 +31,7 @@ const AuthenticatedApp = () => {
         {/* <Route path="/user/:user-id/inventory/:inventory-id/summary" element={< />} /> */}
         <Route path="/user/:user-id/inventory/:inventory-id/summary-confirmation" element={<InventorySummaryConfirmation />} />
         <Route path="/admin-panel" element={<AdminPanel />} />
-        {/* <Route path="/accountant-panel" element={< />} /> */}
+        <Route path="/accountant-panel" element={<AccountantPanel />} />
         <Route path="/user-management" element={<UserPanelList />} />
         <Route path="/user-management/create" element={<UserCreate />} />
         <Route path="/user-management/:id" element={<UserEdit />} />
