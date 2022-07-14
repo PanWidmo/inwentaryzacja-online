@@ -73,8 +73,8 @@ export const UserEdit = () => {
         axios.put(`https://localhost:5001/api/user/${id}`, values);
         navigateToUsers();
         alert('Edytowano uzytkownika! :)');
-      } catch (e) {
-        console.log(e);
+      } catch (error) {
+        console.error(error.message);
       }
     },
   });

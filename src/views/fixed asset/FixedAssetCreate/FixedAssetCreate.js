@@ -64,13 +64,12 @@ export const FixedAssetCreate = () => {
     },
     validate,
     onSubmit: (values) => {
-      console.log(values);
       try {
         axios.post('https://localhost:5001/api/asset', values);
         navigateToFixedAsset();
         alert('Srodek Trwaly dodany! :)');
-      } catch (e) {
-        console.log(e);
+      } catch (error) {
+        console.error(error.message);
       }
     },
   });

@@ -19,6 +19,7 @@ import { InventoryCreate } from 'views/inventory/InventoryCreate/InventoryCreate
 import NewInventoryView from 'components/organisms/NewInventoryView/NewInventoryView';
 
 import { useAuth } from 'hooks/useAuth';
+import { FixedAssetEdit } from './fixed asset/FixedAssetEdit/FixedAssetEdit';
 
 const AuthenticatedApp = () => {
   return (
@@ -35,7 +36,7 @@ const AuthenticatedApp = () => {
         <Route path="/user-management/:id" element={<UserEdit />} />
         <Route path="/fixed-asset-management" element={<FixedAssetPanelList />} />
         <Route path="/fixed-asset-management/create" element={<FixedAssetCreate />} />
-        {/* <Route path="/fixed-asset-management/:id" element={< />} /> */}
+        <Route path="/fixed-asset-management/:id" element={<FixedAssetEdit />} />
         {/* <Route path="/inventory-management" element={< />} /> */}
         <Route path="/inventory-management/create" element={<InventoryCreate />} />
         {/* <Routes path="/inventory-management/:id" element={< />} /> */}

@@ -72,8 +72,8 @@ export const UserCreate = () => {
         axios.post('https://localhost:5001/api/user', values);
         navigateToUsers();
         alert('Uzytkownik dodany! :)');
-      } catch (e) {
-        console.log(e);
+      } catch (error) {
+        console.error(error.message);
       }
     },
   });
