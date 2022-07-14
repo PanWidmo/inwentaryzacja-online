@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Table } from 'components/atoms/Table/Table';
 import { Wrapper, InnerWrapper } from 'assets/styles/TableComponents';
-import { users } from 'mocks/data/users';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
 import { Footer } from 'components/organisms/Footer/Footer';
@@ -12,8 +11,6 @@ import { Button } from 'components/molecules/Button/Button';
 export const UserPanelList = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-  const dane = users;
-
   const navigate = useNavigate();
 
   const navigateToCreateUser = () => {
@@ -43,7 +40,6 @@ export const UserPanelList = () => {
           <InnerWrapper>
             {!loading ? (
               <>
-                {/* <Table dane={data} id="usersTable" /> */}
                 <Table dane={data} id="usersTable" />
                 <Button name="navigateTo" text="Dodaj" onClick={navigateToCreateUser} />
               </>
