@@ -7,6 +7,7 @@ import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
 import { Footer } from 'components/organisms/Footer/Footer';
 import { Button } from 'components/molecules/Button/Button';
+import { Loading } from '../../../components/molecules/Loading/Loading';
 
 export const InventoryPanel = () => {
   const [loading, setLoading] = useState(true);
@@ -41,10 +42,10 @@ export const InventoryPanel = () => {
             {!loading ? (
               <>
                 <Table dane={data} id="inventoryTable" />
-                <Button name="navigateTo" text="Dodaj" onClick={navigateToCreateInventory} />
+                <Button name="green" text="Dodaj" onClick={navigateToCreateInventory} />
               </>
             ) : (
-              <p>Loading...</p>
+              <Loading />
             )}
           </InnerWrapper>
         </Wrapper>

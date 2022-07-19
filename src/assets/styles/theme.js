@@ -3,13 +3,10 @@ export const theme = {
     white: '#FFFFFF',
     black: '#000000',
     blue: '#1AA7FF',
-    buttonGreen: '#6DD29B',
+    red: '#FF3939',
+    green: '#6DD29B',
     tabGray: '#EAE9E9',
     tabHoverGray: '#F0F0F0',
-    redBackgroundColor: '#FF3939',
-    blueBackgroundColor: '#1AA7FF',
-    greenBackgroundColor: '#6DD29B',
-    red: '#FF3939',
   },
 
   //1.5rem = 15px)

@@ -5,6 +5,7 @@ import { Wrapper, InnerWrapper } from 'assets/styles/TableComponents';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
 import { Footer } from 'components/organisms/Footer/Footer';
+import { Loading } from '../../../components/molecules/Loading/Loading';
 
 export const UserAssets = () => {
   const [loading, setLoading] = useState(true);
@@ -42,12 +43,12 @@ export const UserAssets = () => {
                 <Table dane={data} id="usersTable" />
               </>
             ) : (
-              <p>Loading...</p>
+              <Loading />
             )}
           </InnerWrapper>
         </Wrapper>
       </ContentWrapper>
-      <Footer hasBackToPrevPageButton  hasConfirmUserAssets />
+      <Footer hasBackToPrevPageButton hasConfirmUserAssets />
     </>
   );
 };

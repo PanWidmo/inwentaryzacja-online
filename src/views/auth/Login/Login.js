@@ -36,7 +36,7 @@ export const Login = () => {
           <FormField label="EMAIL" id="email" name="email" type="email" ref={emailRef} />
           <FormField label="HASŁO" id="password" name="password" type="password" ref={passwordRef} />
           <LoginProblemLink to="/auth/login-reset-password">Problem z logowaniem?</LoginProblemLink>
-          <Button name="login" text="Zaloguj" type="submit" />
+          <Button name="blue" text="Zaloguj" type="submit" />
         </ViewWrapper>
       </ContentWrapper>
     </>

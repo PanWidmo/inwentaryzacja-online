@@ -83,7 +83,7 @@ export const InventoryCreate = () => {
           />
           {formik.errors.closeDate ? <ErrorMessage errorMsg={formik.errors.closeDate} /> : null}
         </form>
-        {/* <Button name="addFile" text="Dodaj plik" onClick={() => alert('dziala dodaj plik button')} /> */}
+        {/* <Button name="green" text="Dodaj plik" onClick={() => alert('dziala dodaj plik button')} /> */}
       </ContentWrapper>
 
       <Footer hasBackToPrevPageButton hasCreateInventoryButton />

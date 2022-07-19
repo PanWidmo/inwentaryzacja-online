@@ -29,7 +29,7 @@ export const InventorySummaryConfirmation = () => {
       <Wrapper>
         <img src={sentProtocol} alt="protocol sent icon" />
         <p>Protokół wysłany, dziękujemy.</p>
-        <Button name="closeTab" text="Zakoncz" type="submit" onClick={closeTab} />
+        <Button name="green" text="Zakoncz" type="submit" onClick={closeTab} />
       </Wrapper>
     </ContentWrapper>
   );

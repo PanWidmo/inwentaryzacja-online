@@ -2,21 +2,9 @@ import styled from 'styled-components';
 
 export const StyledButton = styled.button`
   background-color: ${({ theme, name }) => {
-    if (name === 'login') return theme.colors.blueBackgroundColor;
-    if (name === 'logout') return theme.colors.redBackgroundColor;
-    if (name === 'sendEmail') return theme.colors.blueBackgroundColor;
-    if (name === 'backToLogin') return theme.colors.blueBackgroundColor;
-    if (name === 'confirmResetPassword') return theme.colors.blueBackgroundColor;
-    if (name === 'closeTab') return theme.colors.greenBackgroundColor;
-    if (name === 'navigateTo') return theme.colors.greenBackgroundColor;
-    if (name === 'viewFixedAssets') return theme.colors.greenBackgroundColor;
-    if (name === 'downloadData') return theme.colors.greenBackgroundColor;
-    if (name === 'addFile') return theme.colors.greenBackgroundColor;
-    if (name === 'create') return theme.colors.greenBackgroundColor;
-    if (name === 'save') return theme.colors.blueBackgroundColor;
-    if (name === 'backToPrevPage') return theme.colors.redBackgroundColor;
-    if (name === 'delete') return theme.colors.redBackgroundColor;
-    if (name === 'confirm') return theme.colors.greenBackgroundColor;
+    if (name === 'blue') return theme.colors.blue;
+    if (name === 'red') return theme.colors.red;
+    if (name === 'green') return theme.colors.green;
     return theme.colors.black;
   }};
   border: none;

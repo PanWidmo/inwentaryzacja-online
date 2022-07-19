@@ -7,6 +7,7 @@ import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapp
 import { Footer } from 'components/organisms/Footer/Footer';
 import { Button } from 'components/molecules/Button/Button';
 import { useNavigate } from 'react-router-dom';
+import { Loading } from '../../../components/molecules/Loading/Loading';
 
 export const FixedAssetPanelList = () => {
   const [loading, setLoading] = useState(true);
@@ -41,10 +42,10 @@ export const FixedAssetPanelList = () => {
             {!loading ? (
               <>
                 <Table dane={data} id="fixedAssetsTable" />
-                <Button name="navigateTo" text="Dodaj" onClick={navigateToCreateFixedAsset} />
+                <Button name="green" text="Dodaj" onClick={navigateToCreateFixedAsset} />
               </>
             ) : (
-              <p>Loading...</p>
+              <Loading />
             )}
           </InnerWrapper>
         </Wrapper>

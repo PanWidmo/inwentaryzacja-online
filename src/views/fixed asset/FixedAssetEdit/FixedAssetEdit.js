@@ -10,6 +10,7 @@ import { useParams } from 'react-router';
 
 import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
 import { useNavigate } from 'react-router-dom';
+import { Loading } from '../../../components/molecules/Loading/Loading';
 
 const validate = (values) => {
   const errors = {};
@@ -149,7 +150,7 @@ export const FixedAssetEdit = () => {
             {formik.errors.inventoryId ? <ErrorMessage errorMsg={formik.errors.inventoryId} /> : null}
           </form>
         ) : (
-          <p>Loading...</p>
+          <Loading />
         )}
       </ContentWrapper>
       <Footer hasBackToPrevPageButton hasDeleteFixedAssetButton hasSaveEditedFixedAssetButton />

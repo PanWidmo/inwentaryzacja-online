@@ -25,19 +25,19 @@ export const AdminPanel = () => {
       <ContentWrapper>
         <ChoosePanelSingleViewWrapper as="form">
           <img src={usersIcon} alt="people_logo" />
-          <Button name="navigateTo" text="Uzytkownicy" onClick={navigateToUsers} />
+          <Button name="green" text="Uzytkownicy" onClick={navigateToUsers} />
           <p>Modyfikuj dane użytkowników</p>
         </ChoosePanelSingleViewWrapper>
 
         <ChoosePanelSingleViewWrapper as="form">
           <img src={fixedAssetsIcon} alt="people_logo" />
-          <Button name="navigateTo" text="Srodki Trwale" onClick={navigateToFixedAssets} />
+          <Button name="green" text="Srodki Trwale" onClick={navigateToFixedAssets} />
           <p>Modyfikuj informacje o obiektach</p>
         </ChoosePanelSingleViewWrapper>
 
         <ChoosePanelSingleViewWrapper as="form">
           <img src={downloadIcon} alt="people_logo" />
-          <Button name="downloadData" text="Pobierz" onClick={() => alert('Functionality in progress... :)')} />
+          <Button name="green" text="Pobierz" onClick={() => alert('Functionality in progress... :)')} />
           <p>Generuj plik z danymi wyjściowymi</p>
         </ChoosePanelSingleViewWrapper>
       </ContentWrapper>

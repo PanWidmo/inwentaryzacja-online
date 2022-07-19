@@ -18,7 +18,7 @@ export const ResetPasswordConfirmation = () => {
         <ViewWrapper>
           <InfoLabel>Mail został wysłany!</InfoLabel>
           <InfoLabel>Sprawdź swoją skrzynkę odbiorczą</InfoLabel>
-          <Button name="backToLogin" text="Zapisz" type="submit" onClick={handleClick} />
+          <Button name="blue" text="Zapisz" type="submit" onClick={handleClick} />
         </ViewWrapper>
       </ContentWrapper>
     </>

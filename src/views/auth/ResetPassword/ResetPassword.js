@@ -32,7 +32,7 @@ export const ResetPassword = () => {
         <ViewWrapper as="form" onSubmit={handleSubmit}>
           <InfoLabel>Wpisz swój adres email:</InfoLabel>
           <FormField label="EMAIL" id="email" name="email" type="email" ref={emailRef} />
-          <Button name="sendEmail" text="Wyslij" type="submit" onClick={() => alert('dziaua WYSLIJ button :)')} />
+          <Button name="blue" text="Wyslij" type="submit" onClick={() => alert('dziaua WYSLIJ button :)')} />
         </ViewWrapper>
       </ContentWrapper>
     </>

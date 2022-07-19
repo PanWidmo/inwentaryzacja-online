@@ -72,21 +72,21 @@ export const Footer = ({
   return (
     <Wrapper>
       <LeftSide>
-        {hasBackToPrevPageButton && <Button name="backToPrevPage" text="Cofnij" onClick={navigateToPrevPage} />}
-        {hasDeleteUserButton && <Button name="delete" text="Usun" type="submit" onClick={deleteUser} />}
-        {hasDeleteFixedAssetButton && <Button name="delete" text="Usun" onClick={deleteFixedAsset} />}
-        {hasDeleteInventoryButton && <Button name="delete" text="Usun" onClick={deleteInventory} />}
+        {hasBackToPrevPageButton && <Button name="red" text="Cofnij" onClick={navigateToPrevPage} />}
+        {hasDeleteUserButton && <Button name="red" text="Usun" type="submit" onClick={deleteUser} />}
+        {hasDeleteFixedAssetButton && <Button name="red" text="Usun" onClick={deleteFixedAsset} />}
+        {hasDeleteInventoryButton && <Button name="red" text="Usun" onClick={deleteInventory} />}
       </LeftSide>
       <RightSide>
-        {hasCreateUserButton && <Button name="create" text="Zatwierdź" type="submit" form="userCreateForm" />}
-        {hasCreateFixedAssetButton && <Button name="create" text="Zatwierdź" type="submit" form="fixedAssetCreateForm" />}
-        {hasCreateInventoryButton && <Button name="create" text="Zatwierdź" type="submit" form="inventoryCreateForm" />}
-        {hasSaveEditedUserButton && <Button name="save" text="Zapisz" type="submit" form="userEditForm" />}
-        {hasSaveEditedFixedAssetButton && <Button name="save" text="Zapisz" type="submit" form="fixedAssetEditForm" />}
-        {hasSaveEditedInventoryButton && <Button name="save" text="Zapisz" type="submit" form="inventoryEditForm" />}
-        {hasAbortInventoryButton && <Button name="delete" text="Przerwij" type="submit" />}
-        {hasDownloadInventoryButton && <Button name="download" text="Pobierz" />}
-        {hasConfirmUserAssets && <Button name="confirm" text="Zatwierdź" />}
+        {hasCreateUserButton && <Button name="green" text="Zatwierdź" type="submit" form="userCreateForm" />}
+        {hasCreateFixedAssetButton && <Button name="green" text="Zatwierdź" type="submit" form="fixedAssetCreateForm" />}
+        {hasCreateInventoryButton && <Button name="green" text="Zatwierdź" type="submit" form="inventoryCreateForm" />}
+        {hasSaveEditedUserButton && <Button name="blue" text="Zapisz" type="submit" form="userEditForm" />}
+        {hasSaveEditedFixedAssetButton && <Button name="blue" text="Zapisz" type="submit" form="fixedAssetEditForm" />}
+        {hasSaveEditedInventoryButton && <Button name="blue" text="Zapisz" type="submit" form="inventoryEditForm" />}
+        {hasAbortInventoryButton && <Button name="red" text="Przerwij" type="submit" />}
+        {hasDownloadInventoryButton && <Button name="green" text="Pobierz" />}
+        {hasConfirmUserAssets && <Button name="green" text="Zatwierdź" />}
       </RightSide>
     </Wrapper>
   );

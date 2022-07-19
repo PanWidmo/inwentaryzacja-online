@@ -9,6 +9,7 @@ import { useFormik } from 'formik';
 import { useParams } from 'react-router';
 import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
 import { useNavigate } from 'react-router-dom';
+import { Loading } from '../../../components/molecules/Loading/Loading';
 
 const validate = (values) => {
   const errors = {};
@@ -109,7 +110,7 @@ export const InventoryEdit = () => {
             {formik.errors.closeDate ? <ErrorMessage errorMsg={formik.errors.closeDate} /> : null}
           </form>
         ) : (
-          <p>Loading...</p>
+          <Loading />
         )}
       </ContentWrapper>
       <Footer hasBackToPrevPageButton hasDeleteInventoryButton hasSaveEditedInventoryButton />

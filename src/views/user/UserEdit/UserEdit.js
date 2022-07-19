@@ -9,6 +9,7 @@ import { FormField } from 'components/molecules/FormField/FormField';
 import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
+import { Loading } from '../../../components/molecules/Loading/Loading';
 
 const validate = (values) => {
   const errors = {};
@@ -137,7 +138,7 @@ export const UserEdit = () => {
             {formik.errors.permissionId ? <ErrorMessage errorMsg={formik.errors.permissionId} /> : null}
           </form>
         ) : (
-          <p>Loading...</p>
+          <Loading />
         )}
       </ContentWrapper>
       <Footer hasBackToPrevPageButton hasDeleteUserButton hasSaveEditedUserButton />

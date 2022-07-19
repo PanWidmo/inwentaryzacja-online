@@ -30,19 +30,19 @@ export const UserRoleSelect = () => {
       <ContentWrapper>
         <ChoosePanelSingleViewWrapper as="form">
           <img src={userIcon} alt="people_logo" />
-          <Button name="navigateTo" text="Uzytkownik" onClick={navigateToUserPanel} />
+          <Button name="green" text="Uzytkownik" onClick={navigateToUserPanel} />
           <p>Panel uzytkownika</p>
         </ChoosePanelSingleViewWrapper>
 
         <ChoosePanelSingleViewWrapper as="form">
           <img src={adminIcon} alt="people_logo" />
-          <Button name="navigateTo" text="Admin" onClick={navigateToAdminPanel} />
+          <Button name="green" text="Admin" onClick={navigateToAdminPanel} />
           <p>Panel administratora</p>
         </ChoosePanelSingleViewWrapper>
 
         <ChoosePanelSingleViewWrapper as="form">
           <img src={accountantIcon} alt="people_logo" />
-          <Button name="downloadData" text="Ksiegowy" onClick={navigateToAccountantPanel} />
+          <Button name="green" text="Ksiegowy" onClick={navigateToAccountantPanel} />
           <p>Panel ksiegowego</p>
         </ChoosePanelSingleViewWrapper>
       </ContentWrapper>

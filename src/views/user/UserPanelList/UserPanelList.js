@@ -7,6 +7,7 @@ import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
 import { Footer } from 'components/organisms/Footer/Footer';
 import { Button } from 'components/molecules/Button/Button';
+import { Loading } from '../../../components/molecules/Loading/Loading';
 
 export const UserPanelList = () => {
   const [loading, setLoading] = useState(true);
@@ -41,10 +42,10 @@ export const UserPanelList = () => {
             {!loading ? (
               <>
                 <Table dane={data} id="usersTable" />
-                <Button name="navigateTo" text="Dodaj" onClick={navigateToCreateUser} />
+                <Button name="green" text="Dodaj" onClick={navigateToCreateUser} />
               </>
             ) : (
-              <p>Loading...</p>
+              <Loading />
             )}
           </InnerWrapper>
         </Wrapper>

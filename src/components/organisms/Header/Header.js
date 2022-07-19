@@ -43,7 +43,7 @@ export const Header = ({ title, companyName, inventoryNumber, hasLogoutButton })
 
         {hasLogoutButton && (
           <ButtonsSection>
-            <Button name="logout" text="Wyloguj" onClick={handleLogout} />
+            <Button name="red" text="Wyloguj" onClick={handleLogout} />
           </ButtonsSection>
         )}
       </TitleWithButtons>

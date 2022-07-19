@@ -14,7 +14,7 @@ export const ResetPasswordForm = () => {
           {/* TO DO COMPONENT!!*/}
           <InfoLabel>Do zrobienia component!</InfoLabel>
           <Button
-            name="confirmResetPassword"
+            name="red"
             text="Potwierdz"
             type="submit"
             form="resetPasswordForm"
