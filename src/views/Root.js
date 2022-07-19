@@ -23,12 +23,14 @@ import { FixedAssetEdit } from './fixed asset/FixedAssetEdit/FixedAssetEdit';
 import { AccountantPanel } from './roles pages/AccountantPanel/AccountantPanel';
 import { InventoryPanel } from './inventory/InventoryPanel/InventoryPanel';
 import { InventoryEdit } from './inventory/InventoryEdit/InventoryEdit';
+import {UserRoleSelect} from "./roles pages/UserRoleSelect/UserRoleSelect";
 
 const AuthenticatedApp = () => {
   return (
     <Wrapper>
       <Routes>
-        <Route path="/*" element={<Navigate to="/admin-panel" />} />
+        <Route path="/*" element={<Navigate to="/select-user-role" />} />
+        <Route path="/select-user-role" element={<UserRoleSelect />} />
         {/* <Route path="/user/:user-id/inventory/:inventory-id" element={< />} /> */}
         {/* <Route path="/user/:user-id/inventory/:inventory-id/summary" element={< />} /> */}
         <Route path="/user/:user-id/inventory/:inventory-id/summary-confirmation" element={<InventorySummaryConfirmation />} />

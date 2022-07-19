@@ -21,7 +21,7 @@ export const FixedAssetPanelList = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const result = await axios.get('https://localhost:5001/api/asset');
+        const result = await axios.get('https://localhost:5001/api/asset/onlyall ');
 
         setData(result.data);
       } catch (error) {
