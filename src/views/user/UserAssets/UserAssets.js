@@ -6,7 +6,6 @@ import { Wrapper, InnerWrapper } from 'assets/styles/TableComponents';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
 import { Footer } from 'components/organisms/Footer/Footer';
-import { Button } from 'components/molecules/Button/Button';
 
 export const UserAssets = () => {
   const [loading, setLoading] = useState(true);
