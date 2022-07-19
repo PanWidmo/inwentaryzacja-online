@@ -23,7 +23,8 @@ import { FixedAssetEdit } from './fixed asset/FixedAssetEdit/FixedAssetEdit';
 import { AccountantPanel } from './roles pages/AccountantPanel/AccountantPanel';
 import { InventoryPanel } from './inventory/InventoryPanel/InventoryPanel';
 import { InventoryEdit } from './inventory/InventoryEdit/InventoryEdit';
-import {UserRoleSelect} from "./roles pages/UserRoleSelect/UserRoleSelect";
+import { UserRoleSelect } from './roles pages/UserRoleSelect/UserRoleSelect';
+import { UserAssets } from './user/UserAssets/UserAssets';
 
 const AuthenticatedApp = () => {
   return (
@@ -33,6 +34,7 @@ const AuthenticatedApp = () => {
         <Route path="/select-user-role" element={<UserRoleSelect />} />
         {/* <Route path="/user/:user-id/inventory/:inventory-id" element={< />} /> */}
         {/* <Route path="/user/:user-id/inventory/:inventory-id/summary" element={< />} /> */}
+        <Route path="/user/summary" element={<UserAssets />} />
         <Route path="/user/:user-id/inventory/:inventory-id/summary-confirmation" element={<InventorySummaryConfirmation />} />
         <Route path="/admin-panel" element={<AdminPanel />} />
         <Route path="/accountant-panel" element={<AccountantPanel />} />
