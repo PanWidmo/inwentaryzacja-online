@@ -22,7 +22,6 @@ export const StyledButton = styled.button`
   border: none;
   border-radius: 0.4375em;
   padding: 0.42375em 1.25em;
-  margin-left: 1.5em;
   font-size: ${({ theme }) => theme.fontSize.l};
   color: ${({ theme }) => theme.colors.white};
   cursor: pointer;

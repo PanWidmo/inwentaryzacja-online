@@ -31,7 +31,6 @@ export const Footer = ({
   hasAbortInventoryButton,
   hasDownloadInventoryButton,
   hasConfirmUserAssets,
-  hasSaveUserAssets,
 }) => {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -88,7 +87,6 @@ export const Footer = ({
         {hasAbortInventoryButton && <Button name="delete" text="Przerwij" type="submit" />}
         {hasDownloadInventoryButton && <Button name="download" text="Pobierz" />}
         {hasConfirmUserAssets && <Button name="confirm" text="Zatwierdź" />}
-        {hasSaveUserAssets && <Button name="save" text="Zapisz" />}
       </RightSide>
     </Wrapper>
   );

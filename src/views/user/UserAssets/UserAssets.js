@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import { Table } from 'components/atoms/Table/Table';
 import { Wrapper, InnerWrapper } from 'assets/styles/TableComponents';
 import { Header } from 'components/organisms/Header/Header';
@@ -48,7 +47,7 @@ export const UserAssets = () => {
           </InnerWrapper>
         </Wrapper>
       </ContentWrapper>
-      <Footer hasBackToPrevPageButton hasSaveUserAssets hasConfirmUserAssets />
+      <Footer hasBackToPrevPageButton  hasConfirmUserAssets />
     </>
   );
 };
