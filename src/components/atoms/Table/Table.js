@@ -37,11 +37,17 @@ export const Table = ({ dane }) => {
         {sortedData.map((daneData, index) => (
           <tr key={index + 1}>
             <td key={index + 1}>{index + 1}</td>
-            {Object.values(daneData).map((columnData, index) => (
-              <td key={Math.random() + index + 100}>
-                <NavLink to={`/user-management/${daneData.id}`}>{columnData}</NavLink>
-              </td>
-            ))}
+            {Object.values(daneData).map((columnData, index) =>
+              columnData === false || columnData === true ? (
+                <td key={Math.random() + index + 100}>
+                  <input type="checkbox" defaultChecked={columnData} />
+                </td>
+              ) : (
+                <td key={Math.random() + index + 100}>
+                  <NavLink to={`/user-management/${daneData.id}`}>{columnData}</NavLink>
+                </td>
+              )
+            )}
           </tr>
         ))}
       </tbody>
