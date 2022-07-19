@@ -30,6 +30,8 @@ export const Footer = ({
   hasSaveEditedInventoryButton,
   hasAbortInventoryButton,
   hasDownloadInventoryButton,
+  hasConfirmUserAssets,
+  hasSaveUserAssets,
 }) => {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -77,14 +79,16 @@ export const Footer = ({
         {hasDeleteInventoryButton && <Button name="delete" text="Usun" onClick={deleteInventory} />}
       </LeftSide>
       <RightSide>
-        {hasCreateUserButton && <Button name="create" text="Zatwierdz" type="submit" form="userCreateForm" />}
-        {hasCreateFixedAssetButton && <Button name="create" text="Zatwierdz" type="submit" form="fixedAssetCreateForm" />}
-        {hasCreateInventoryButton && <Button name="create" text="Zatwierdz" type="submit" form="inventoryCreateForm" />}
+        {hasCreateUserButton && <Button name="create" text="Zatwierdź" type="submit" form="userCreateForm" />}
+        {hasCreateFixedAssetButton && <Button name="create" text="Zatwierdź" type="submit" form="fixedAssetCreateForm" />}
+        {hasCreateInventoryButton && <Button name="create" text="Zatwierdź" type="submit" form="inventoryCreateForm" />}
         {hasSaveEditedUserButton && <Button name="save" text="Zapisz" type="submit" form="userEditForm" />}
         {hasSaveEditedFixedAssetButton && <Button name="save" text="Zapisz" type="submit" form="fixedAssetEditForm" />}
         {hasSaveEditedInventoryButton && <Button name="save" text="Zapisz" type="submit" form="inventoryEditForm" />}
         {hasAbortInventoryButton && <Button name="delete" text="Przerwij" type="submit" />}
         {hasDownloadInventoryButton && <Button name="download" text="Pobierz" />}
+        {hasConfirmUserAssets && <Button name="confirm" text="Zatwierdź" />}
+        {hasSaveUserAssets && <Button name="save" text="Zapisz" />}
       </RightSide>
     </Wrapper>
   );

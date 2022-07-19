@@ -13,14 +13,16 @@ export const StyledButton = styled.button`
     if (name === 'downloadData') return theme.colors.greenBackgroundColor;
     if (name === 'addFile') return theme.colors.greenBackgroundColor;
     if (name === 'create') return theme.colors.greenBackgroundColor;
-    if (name === 'save') return theme.colors.greenBackgroundColor;
+    if (name === 'save') return theme.colors.blueBackgroundColor;
     if (name === 'backToPrevPage') return theme.colors.redBackgroundColor;
     if (name === 'delete') return theme.colors.redBackgroundColor;
+    if (name === 'confirm') return theme.colors.greenBackgroundColor;
     return theme.colors.black;
   }};
   border: none;
-  border-radius: 7px;
-  padding: 0.42375em 1.25em;
+  border-radius: 0.5em;
+  padding: 0.7em 2em;
+  margin-left:
   font-size: ${({ theme }) => theme.fontSize.l};
   color: ${({ theme }) => theme.colors.white};
   cursor: pointer;

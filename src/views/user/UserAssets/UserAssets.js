@@ -49,7 +49,7 @@ export const UserAssets = () => {
           </InnerWrapper>
         </Wrapper>
       </ContentWrapper>
-      <Footer hasBackToPrevPageButton />
+      <Footer hasBackToPrevPageButton hasSaveUserAssets hasConfirmUserAssets />
     </>
   );
 };
