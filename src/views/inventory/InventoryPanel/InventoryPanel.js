@@ -21,8 +21,7 @@ export const InventoryPanel = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        //TODO: CHANGE URL!
-        const result = await axios.get('https://localhost:5001/api/user/onlyall');
+        const result = await axios.get('https://localhost:5001/api/inventory/onlyall');
 
         setData(result.data);
       } catch (error) {
