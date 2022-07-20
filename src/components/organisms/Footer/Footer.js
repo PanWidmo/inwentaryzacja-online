@@ -42,8 +42,8 @@ export const Footer = ({
   const deleteUser = () => {
     try {
       axios.delete(`https://localhost:5001/api/user/${id}`);
-      navigate('/user-management');
       alert('Usunieto uzytkownika! :)');
+      navigate('/user-management');
     } catch (error) {
       console.error(error.message);
     }
@@ -52,8 +52,8 @@ export const Footer = ({
   const deleteFixedAsset = () => {
     try {
       axios.delete(`https://localhost:5001/api/asset/${id}`);
-      navigate('/fixed-asset-management');
       alert('Usunieto srodek trwaly! :)');
+      navigate('/fixed-asset-management');
     } catch (error) {
       console.error(error.message);
     }
@@ -62,8 +62,8 @@ export const Footer = ({
   const deleteInventory = () => {
     try {
       axios.delete(`https://localhost:5001/api/inventory/${id}`);
-      navigate('/inventory-management');
       alert('Usunieto inwentaryzacje! :)');
+      navigate('/inventory-management');
     } catch (error) {
       console.error(error.message);
     }

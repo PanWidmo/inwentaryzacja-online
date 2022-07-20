@@ -70,8 +70,8 @@ export const FixedAssetEdit = () => {
     onSubmit: (values) => {
       try {
         axios.put(`https://localhost:5001/api/asset/${id}`, values);
-        navigateToFixedAsset();
         alert('Edytowano srodek trwaly! :)');
+        navigateToFixedAsset();
       } catch (error) {
         console.error(error.message);
       }

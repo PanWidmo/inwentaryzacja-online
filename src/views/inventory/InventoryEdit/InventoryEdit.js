@@ -51,8 +51,8 @@ export const InventoryEdit = () => {
     onSubmit: (values) => {
       try {
         axios.put(`https://localhost:5001/api/inventory/${id}`, values);
-        navigateToInventory();
         alert('Edytowano inwentaryzacje! :)');
+        navigateToInventory();
       } catch (error) {
         console.error(error.message);
       }

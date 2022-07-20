@@ -47,8 +47,8 @@ export const InventoryCreate = () => {
     onSubmit: (values) => {
       try {
         axios.post('https://localhost:5001/api/inventory', values);
-        navigateToAccountantPanel();
         alert('Utworzono nowa inwentaryzacje! :)');
+        navigateToAccountantPanel();
       } catch (error) {
         console.error(error.message);
       }

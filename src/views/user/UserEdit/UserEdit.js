@@ -69,8 +69,8 @@ export const UserEdit = () => {
     onSubmit: (values) => {
       try {
         axios.put(`https://localhost:5001/api/user/${id}`, values);
-        navigateToUsers();
         alert('Edytowano uzytkownika! :)');
+        navigateToUsers();
       } catch (error) {
         console.error(error.message);
       }

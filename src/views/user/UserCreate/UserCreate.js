@@ -65,8 +65,8 @@ export const UserCreate = () => {
     onSubmit: (values) => {
       try {
         axios.post('https://localhost:5001/api/user', values);
-        navigateToUsers();
         alert('Uzytkownik dodany! :)');
+        navigateToUsers();
       } catch (error) {
         console.error(error.message);
       }
