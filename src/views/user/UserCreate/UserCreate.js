@@ -8,6 +8,7 @@ import { FormField } from 'components/molecules/FormField/FormField';
 import { useFormik } from 'formik';
 import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
 import { useNavigate } from 'react-router-dom';
+import { FormSelectPermission } from 'components/molecules/FormSelect/FormSelectPermission';
 
 const validate = (values) => {
   const errors = {};
@@ -41,12 +42,6 @@ const validate = (values) => {
     errors.phoneNumber = 'Must have 9 characters.';
   }
 
-  if (!values.permissionId) {
-    errors.permissionId = 'Required';
-  } else if (values.permissionId.length !== 1) {
-    errors.permissionId = 'Must have 1 character.';
-  }
-
   return errors;
 };
 
@@ -64,7 +59,7 @@ export const UserCreate = () => {
       login: '',
       email: '',
       phoneNumber: '',
-      permissionId: '',
+      permissionId: 1,
     },
     validate,
     onSubmit: (values) => {
@@ -105,15 +100,13 @@ export const UserCreate = () => {
           />
           {formik.errors.phoneNumber ? <ErrorMessage errorMsg={formik.errors.phoneNumber} /> : null}
 
-          <FormField
+          <FormSelectPermission
             label="Uprawnienia"
             id="permissionId"
             name="permissionId"
-            type="text"
-            onChange={formik.handleChange}
             value={formik.values.permissionId}
+            onChange={formik.handleChange}
           />
-          {formik.errors.permissionId ? <ErrorMessage errorMsg={formik.errors.permissionId} /> : null}
         </form>
       </ContentWrapper>
       <Footer hasBackToPrevPageButton hasCreateUserButton />

@@ -10,6 +10,7 @@ import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { Loading } from '../../../components/molecules/Loading/Loading';
+import { FormSelectPermission } from 'components/molecules/FormSelect/FormSelectPermission';
 
 const validate = (values) => {
   const errors = {};
@@ -41,10 +42,6 @@ const validate = (values) => {
     errors.phoneNumber = 'Required';
   } else if (values.phoneNumber.length !== 9) {
     errors.phoneNumber = 'Must have 9 characters.';
-  }
-
-  if (!values.permissionId) {
-    errors.permissionId = 'Required';
   }
 
   return errors;
@@ -127,15 +124,13 @@ export const UserEdit = () => {
             />
             {formik.errors.phoneNumber ? <ErrorMessage errorMsg={formik.errors.phoneNumber} /> : null}
 
-            <FormField
+            <FormSelectPermission
               label="Uprawnienia"
               id="permissionId"
               name="permissionId"
-              type="text"
-              onChange={formik.handleChange}
               value={formik.values.permissionId}
+              onChange={formik.handleChange}
             />
-            {formik.errors.permissionId ? <ErrorMessage errorMsg={formik.errors.permissionId} /> : null}
           </form>
         ) : (
           <Loading />
