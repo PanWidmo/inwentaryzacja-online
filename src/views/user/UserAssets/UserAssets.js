@@ -40,7 +40,7 @@ export const UserAssets = () => {
           <InnerWrapper>
             {!loading ? (
               <>
-                <Table dane={data} id="usersTable" />
+                <Table dane={data} dataName="fixed-asset" id="usersTable" />
               </>
             ) : (
               <Loading />

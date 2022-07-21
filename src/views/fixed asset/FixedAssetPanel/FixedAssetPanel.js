@@ -41,7 +41,7 @@ export const FixedAssetPanelList = () => {
           <InnerWrapper>
             {!loading ? (
               <>
-                <Table dane={data} id="fixedAssetsTable" />
+                <Table dane={data} dataName="fixed-asset" id="fixedAssetsTable" />
                 <Button name="green" text="Dodaj" onClick={navigateToCreateFixedAsset} />
               </>
             ) : (

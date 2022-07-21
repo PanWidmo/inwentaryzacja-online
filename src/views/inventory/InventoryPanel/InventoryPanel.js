@@ -41,7 +41,7 @@ export const InventoryPanel = () => {
           <InnerWrapper>
             {!loading ? (
               <>
-                <Table dane={data} id="inventoryTable" />
+                <Table dane={data} dataName="inventory" id="inventoryTable" />
                 <Button name="green" text="Dodaj" onClick={navigateToCreateInventory} />
               </>
             ) : (

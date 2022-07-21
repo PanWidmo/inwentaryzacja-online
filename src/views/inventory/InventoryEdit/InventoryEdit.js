@@ -82,7 +82,7 @@ export const InventoryEdit = () => {
 
   return (
     <>
-      <Header title="Edycja srodka trwalego" companyName="Compolexos" hasLogoutButton />
+      <Header title="Edycja inwentaryzacji" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
         {!loading ? (
           <form id="inventoryEditForm" onSubmit={formik.handleSubmit}>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { StyledTable } from './Table.styles';
 
-export const Table = ({ dane }) => {
+export const Table = ({ dane, dataName }) => {
   const [sortedField, setSortedField] = useState(null);
   const headers = dane.map((header) => Object.keys(header));
 
@@ -44,7 +44,7 @@ export const Table = ({ dane }) => {
                 </td>
               ) : (
                 <td key={Math.random() + index + 100}>
-                  <NavLink to={`/user-management/${daneData.id}`}>{columnData}</NavLink>
+                  <NavLink to={`/${dataName}-management/${daneData.id}`}>{columnData}</NavLink>
                 </td>
               )
             )}

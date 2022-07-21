@@ -41,7 +41,7 @@ export const UserPanelList = () => {
           <InnerWrapper>
             {!loading ? (
               <>
-                <Table dane={data} id="usersTable" />
+                <Table dane={data} dataName="user" id="usersTable" />
                 <Button name="green" text="Dodaj" onClick={navigateToCreateUser} />
               </>
             ) : (
