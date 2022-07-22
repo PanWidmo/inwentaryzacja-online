@@ -1,8 +1,8 @@
 import React from 'react';
 import sentProtocol from 'assets/icons/sentProtocol.png';
 import styled from 'styled-components';
-import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
-import { Button } from 'components/molecules/Button/Button';
+import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
+import { Button } from 'components/organisms/Button/Button';
 
 const Wrapper = styled.div`
   display: flex;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { StyledTable } from './Table.styles';
+import { StyledTable } from 'components/organisms/Table/Table.styles';
 
 export const Table = ({ dane, dataName }) => {
   const [sortedField, setSortedField] = useState(null);

@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Wrapper, InnerWrapper } from 'components/atoms/PanelStyles/PanelStyles';
 import { Header } from 'components/organisms/Header/Header';
-import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
+import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { Footer } from 'components/organisms/Footer/Footer';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';

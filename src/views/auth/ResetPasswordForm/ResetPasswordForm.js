@@ -2,8 +2,8 @@ import React from 'react';
 import { Header } from 'components/organisms/Header/Header';
 import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { InfoLabel } from 'components/atoms/InfoLabel/InfoLabel';
-import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
-import { Button } from 'components/molecules/Button/Button';
+import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
+import { Button } from 'components/organisms/Button/Button';
 
 export const ResetPasswordForm = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { LabelAboveInput } from 'components/atoms/LabelAboveInput/LabelAboveInput';
-import { Wrapper } from 'components/molecules/FormSelect/FormSelectPermission.styles';
+import { Wrapper } from 'components/molecules/FormSelectPermission/FormSelectPermission.styles';
 
 export const FormSelectPermission = ({ label, name, id, value, onChange }) => {
   return (

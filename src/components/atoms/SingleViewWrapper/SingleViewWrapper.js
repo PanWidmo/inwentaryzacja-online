@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ChoosePanelSingleViewWrapper = styled.div`
+export const SingleViewWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.tabHoverGray};
   border-radius: 0.5rem;
   box-shadow: 0 0.1875rem 0.5rem rgba(0, 0, 0, 0.3);

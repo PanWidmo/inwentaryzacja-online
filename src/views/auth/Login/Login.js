@@ -1,13 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from 'components/organisms/Header/Header';
-import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
+import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { InfoLabel } from 'components/atoms/InfoLabel/InfoLabel';
 import { FormField } from 'components/molecules/FormField/FormField';
 import { LoginProblemLink } from 'components/atoms/LoginProblemLink/LoginProblemLink';
 import { useAuth } from 'hooks/useAuth';
-import { Button } from 'components/molecules/Button/Button';
+import { Button } from 'components/organisms/Button/Button';
 import { useFormik } from 'formik';
 import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
 
@@ -15,7 +15,7 @@ const validate = (values) => {
   const errors = {};
   if (!values.email) {
     errors.email = 'Required';
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+  } else if (!/^[A-Z\d._%+-]+@[A-Z\d.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
     errors.email = 'Invalid email address';
   }
 

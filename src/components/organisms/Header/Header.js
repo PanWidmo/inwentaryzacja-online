@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useAuth } from 'hooks/useAuth';
-import { Button } from 'components/molecules/Button/Button';
+import { Button } from 'components/organisms/Button/Button';
 
 const Wrapper = styled.header`
   margin: 2rem 3.5rem;

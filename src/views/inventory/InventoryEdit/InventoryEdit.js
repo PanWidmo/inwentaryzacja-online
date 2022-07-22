@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Wrapper, InnerWrapper } from 'components/atoms/PanelStyles/PanelStyles';
 import { Header } from 'components/organisms/Header/Header';
-import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
+import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { Footer } from 'components/organisms/Footer/Footer';
 import { FormField } from 'components/molecules/FormField/FormField';
 import { useFormik } from 'formik';
-import { useParams } from 'react-router';
 import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
-import { useNavigate } from 'react-router-dom';
-import { Loading } from '../../../components/molecules/Loading/Loading';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Loading } from 'components/molecules/Loading/Loading';
 
 const validate = (values) => {
   const errors = {};
@@ -66,7 +65,7 @@ export const InventoryEdit = () => {
         const response = await axios.get(`https://localhost:5001/api/inventory/${id}`);
         const data = response.data;
 
-        formik.setValues({
+        await formik.setValues({
           name: data.name,
           startDate: data.startDate.slice(0, 10),
           closeDate: data.closeDate.slice(0, 10),

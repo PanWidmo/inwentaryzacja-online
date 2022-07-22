@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import { Button } from 'components/molecules/Button/Button';
-import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router';
+import { Button } from 'components/organisms/Button/Button';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Wrapper = styled.footer`
   margin: 2rem 3.5rem;

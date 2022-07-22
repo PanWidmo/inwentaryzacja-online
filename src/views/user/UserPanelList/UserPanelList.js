@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { Table } from 'components/atoms/Table/Table';
+import { Table } from 'components/organisms/Table/Table';
 import { Wrapper, InnerWrapper } from 'assets/styles/TableComponents';
 import { Header } from 'components/organisms/Header/Header';
-import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
+import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { Footer } from 'components/organisms/Footer/Footer';
-import { Button } from 'components/molecules/Button/Button';
-import { Loading } from '../../../components/molecules/Loading/Loading';
+import { Button } from 'components/organisms/Button/Button';
+import { Loading } from 'components/molecules/Loading/Loading';
 
 export const UserPanelList = () => {
   const [loading, setLoading] = useState(true);

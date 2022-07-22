@@ -2,15 +2,14 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Wrapper, InnerWrapper, TableWrapper } from 'components/atoms/PanelStyles/PanelStyles';
 import { Header } from 'components/organisms/Header/Header';
-import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
+import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { Footer } from 'components/organisms/Footer/Footer';
-import { useParams } from 'react-router';
 import { FormField } from 'components/molecules/FormField/FormField';
 import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
 import { useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom';
-import { Loading } from '../../../components/molecules/Loading/Loading';
-import { FormSelectPermission } from 'components/molecules/FormSelect/FormSelectPermission';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Loading } from 'components/molecules/Loading/Loading';
+import { FormSelectPermission } from 'components/molecules/FormSelectPermission/FormSelectPermission';
 
 const validate = (values) => {
   const errors = {};
@@ -34,7 +33,7 @@ const validate = (values) => {
 
   if (!values.email) {
     errors.email = 'Required';
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+  } else if (!/^[A-Z\d._%+-]+@[A-Z\d.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
     errors.email = 'Invalid email address';
   }
 
@@ -84,7 +83,7 @@ export const UserEdit = () => {
         const response = await axios.get(`https://localhost:5001/api/user/${id}`);
         const data = response.data;
 
-        formik.setValues({
+        await formik.setValues({
           ...data,
         });
       } catch (error) {

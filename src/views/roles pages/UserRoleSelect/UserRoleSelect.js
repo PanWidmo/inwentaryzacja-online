@@ -1,11 +1,11 @@
 import React from 'react';
-import { ChoosePanelSingleViewWrapper } from 'components/atoms/ChoosePanelSingleViewWrapper/ChoosePanelSingleViewWrapper';
+import { SingleViewWrapper } from 'components/atoms/SingleViewWrapper/SingleViewWrapper';
 import userIcon from 'assets/icons/user.png';
 import adminIcon from 'assets/icons/admin.png';
 import accountantIcon from 'assets/icons/accountant.png';
 import { Header } from 'components/organisms/Header/Header';
-import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
-import { Button } from 'components/molecules/Button/Button';
+import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
+import { Button } from 'components/organisms/Button/Button';
 import { useNavigate } from 'react-router-dom';
 
 export const UserRoleSelect = () => {
@@ -28,23 +28,23 @@ export const UserRoleSelect = () => {
     <>
       <Header title="Wybierz swoja role" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
-        <ChoosePanelSingleViewWrapper as="form">
+        <SingleViewWrapper as="form">
           <img src={userIcon} alt="people_logo" />
           <Button name="green" text="Uzytkownik" onClick={navigateToUserPanel} />
           <p>Panel uzytkownika</p>
-        </ChoosePanelSingleViewWrapper>
+        </SingleViewWrapper>
 
-        <ChoosePanelSingleViewWrapper as="form">
+        <SingleViewWrapper as="form">
           <img src={adminIcon} alt="people_logo" />
           <Button name="green" text="Admin" onClick={navigateToAdminPanel} />
           <p>Panel administratora</p>
-        </ChoosePanelSingleViewWrapper>
+        </SingleViewWrapper>
 
-        <ChoosePanelSingleViewWrapper as="form">
+        <SingleViewWrapper as="form">
           <img src={accountantIcon} alt="people_logo" />
           <Button name="green" text="Ksiegowy" onClick={navigateToAccountantPanel} />
           <p>Panel ksiegowego</p>
-        </ChoosePanelSingleViewWrapper>
+        </SingleViewWrapper>
       </ContentWrapper>
     </>
   );

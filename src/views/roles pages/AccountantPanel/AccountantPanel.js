@@ -1,11 +1,11 @@
 import React from 'react';
-import { ChoosePanelSingleViewWrapper } from 'components/atoms/ChoosePanelSingleViewWrapper/ChoosePanelSingleViewWrapper';
+import { SingleViewWrapper } from 'components/atoms/SingleViewWrapper/SingleViewWrapper';
 import inventoryHistory from 'assets/icons/inventoryHistory.png';
 import inventoryCreate from 'assets/icons/inventoryCreate.png';
 import inventoryCurrent from 'assets/icons/inventoryCurrent.png';
 import { Header } from 'components/organisms/Header/Header';
-import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
-import { Button } from 'components/molecules/Button/Button';
+import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
+import { Button } from 'components/organisms/Button/Button';
 import { useNavigate } from 'react-router-dom';
 
 export const AccountantPanel = () => {
@@ -23,23 +23,23 @@ export const AccountantPanel = () => {
     <>
       <Header title="Panel ksiegowego" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
-        <ChoosePanelSingleViewWrapper as="form">
+        <SingleViewWrapper as="form">
           <img src={inventoryHistory} alt="people_logo" />
           <Button name="green" text="Historia" onClick={navigateToInventoryHistory} />
           <p>Wgląd w poprzednie inwentaryzacje</p>
-        </ChoosePanelSingleViewWrapper>
+        </SingleViewWrapper>
 
-        <ChoosePanelSingleViewWrapper as="form">
+        <SingleViewWrapper as="form">
           <img src={inventoryCreate} alt="people_logo" />
           <Button name="green" text="Obecna inwentaryzacja" onClick={() => alert('Functionality in progress... :)')} />
           <p>Akualnie przeprowadzana inwentaryzacja</p>
-        </ChoosePanelSingleViewWrapper>
+        </SingleViewWrapper>
 
-        <ChoosePanelSingleViewWrapper as="form">
+        <SingleViewWrapper as="form">
           <img src={inventoryCurrent} alt="people_logo" />
           <Button name="green" text="Nowa inwentaryzacja" onClick={navigateToCreateInventory} />
           <p>Rozpocznij nową inwentaryzacje</p>
-        </ChoosePanelSingleViewWrapper>
+        </SingleViewWrapper>
       </ContentWrapper>
     </>
   );
