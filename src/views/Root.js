@@ -1,7 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Wrapper } from 'views/Root.styles';
-
 import { Login } from 'views/auth/Login/Login';
 import { ResetPassword } from 'views/auth/ResetPassword/ResetPassword';
 import { ResetPasswordConfirmation } from 'views/auth/ResetPasswordConfirmation/ResetPasswordConfirmation';
@@ -14,10 +13,6 @@ import { UserEdit } from 'views/user/UserEdit/UserEdit';
 import { FixedAssetPanelList } from 'views/fixed asset/FixedAssetPanel/FixedAssetPanel';
 import { FixedAssetCreate } from 'views/fixed asset/FixedAssetCreate/FixedAssetCreate';
 import { InventoryCreate } from 'views/inventory/InventoryCreate/InventoryCreate';
-
-//NewInventoryView it's just view after imported data from file (probably no)
-import NewInventoryView from 'components/organisms/NewInventoryView/NewInventoryView';
-
 import { useAuth } from 'hooks/useAuth';
 import { FixedAssetEdit } from './fixed asset/FixedAssetEdit/FixedAssetEdit';
 import { AccountantPanel } from './roles pages/AccountantPanel/AccountantPanel';
@@ -60,7 +55,6 @@ const UnauthenticatedApp = () => {
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth/login-reset-password" element={<ResetPassword />} />
         <Route path="/auth/login-reset-password-confirmation" element={<ResetPasswordConfirmation />} />
-        {/* KOMPONENT DO DOKONCZENIA: */}
         <Route path="/auth/login-reset-password-form" element={<ResetPasswordForm />} />
       </Routes>
     </Wrapper>

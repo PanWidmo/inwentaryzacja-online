@@ -7,6 +7,7 @@ export const LoginProblemLink = styled(Link)`
   border: none;
   background: none;
   text-decoration: none;
+  padding: 1rem 0;
 
   &:hover {
     text-decoration: underline;
