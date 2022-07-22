@@ -15,8 +15,8 @@ const validate = (values) => {
   const errors = {};
   if (!values.email) {
     errors.email = 'Required';
-  } else if (values.email.length < 2) {
-    errors.email = 'Must be 2 characters or more';
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = 'Invalid email address';
   }
 
   if (!values.password) {

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
@@ -7,32 +7,48 @@ import { InfoLabel } from 'components/atoms/InfoLabel/InfoLabel';
 import { FormField } from 'components/molecules/FormField/FormField';
 import { useAuth } from 'hooks/useAuth';
 import { Button } from 'components/molecules/Button/Button';
+import { useFormik } from 'formik';
+import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
+
+const validate = (values) => {
+  const errors = {};
+  if (!values.email) {
+    errors.email = 'Required';
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = 'Invalid email address';
+  }
+
+  return errors;
+};
 
 export const ResetPassword = () => {
-  const emailRef = useRef();
+  const navigate = useNavigate();
   const { resetPassword } = useAuth();
 
-  const navigate = useNavigate();
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const email = emailRef.current.value;
-      await resetPassword(email);
-      navigate('/reset-password-confirmation');
-    } catch (e) {
-      console.log(e);
-    }
-  };
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+    },
+    validate,
+    onSubmit: (values) => {
+      try {
+        resetPassword(values.email);
+        navigate('/auth/login-reset-password-confirmation');
+      } catch (error) {
+        console.error(error.message);
+      }
+    },
+  });
 
-  navigate('/reset-password-confirmation', { replace: true });
   return (
     <>
       <Header title="Problem z logowaniem" companyName="Compolexos" />
       <ContentWrapper>
-        <ViewWrapper as="form" onSubmit={handleSubmit}>
+        <ViewWrapper as="form" onSubmit={formik.handleSubmit}>
           <InfoLabel>Wpisz swój adres email:</InfoLabel>
-          <FormField label="EMAIL" id="email" name="email" type="email" ref={emailRef} />
-          <Button name="blue" text="Wyslij" type="submit" onClick={() => alert('dziaua WYSLIJ button :)')} />
+          <FormField label="EMAIL" id="email" name="email" type="email" onChange={formik.handleChange} value={formik.values.email} />
+          {formik.errors.email ? <ErrorMessage errorMsg={formik.errors.email} /> : null}
+          <Button name="blue" text="Wyslij" type="submit" />
         </ViewWrapper>
       </ContentWrapper>
     </>
