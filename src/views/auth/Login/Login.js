@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/organisms/ContentWrapper/ContentWrapper';
@@ -8,33 +8,54 @@ import { FormField } from 'components/molecules/FormField/FormField';
 import { LoginProblemLink } from 'components/atoms/LoginProblemLink/LoginProblemLink';
 import { useAuth } from 'hooks/useAuth';
 import { Button } from 'components/molecules/Button/Button';
+import { useFormik } from 'formik';
+import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
+
+const validate = (values) => {
+  const errors = {};
+  if (!values.email) {
+    errors.email = 'Required';
+  } else if (values.email.length < 2) {
+    errors.email = 'Must be 2 characters or more';
+  }
+
+  if (!values.password) {
+    errors.password = 'Required';
+  }
+
+  return errors;
+};
 
 export const Login = () => {
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const { signIn } = useAuth();
   const navigate = useNavigate();
+  const { signIn } = useAuth();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const email = emailRef.current.value;
-      const password = passwordRef.current.value;
-      await signIn(email, password);
-      navigate('/admin-panel'); //TO CHANGE! temporary redirection till other view will be done :)
-    } catch (e) {
-      console.log(e);
-    }
-  };
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validate,
+    onSubmit: (values) => {
+      try {
+        signIn(values.email, values.password);
+        navigate('/select-user-role');
+      } catch (error) {
+        console.error(error.message);
+      }
+    },
+  });
 
   return (
     <>
       <Header title="Logowanie do systemu inwentaryzacji" companyName="Compolexos" />
       <ContentWrapper>
-        <ViewWrapper as="form" onSubmit={handleSubmit}>
+        <ViewWrapper as="form" onSubmit={formik.handleSubmit}>
           <InfoLabel>Wpisz swoje dane:</InfoLabel>
-          <FormField label="EMAIL" id="email" name="email" type="email" ref={emailRef} />
-          <FormField label="HASŁO" id="password" name="password" type="password" ref={passwordRef} />
+          <FormField label="EMAIL" id="email" name="email" type="email" onChange={formik.handleChange} value={formik.values.email} />
+          {formik.errors.email ? <ErrorMessage errorMsg={formik.errors.email} /> : null}
+          <FormField label="HASŁO" id="password" name="password" type="password" onChange={formik.handleChange} value={formik.values.password} />
+          {formik.errors.password ? <ErrorMessage errorMsg={formik.errors.password} /> : null}
           <LoginProblemLink to="/auth/login-reset-password">Problem z logowaniem?</LoginProblemLink>
           <Button name="blue" text="Zaloguj" type="submit" />
         </ViewWrapper>
