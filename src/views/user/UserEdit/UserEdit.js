@@ -101,17 +101,49 @@ export const UserEdit = () => {
       <ContentWrapper>
         {!loading ? (
           <form id="userEditForm" onSubmit={formik.handleSubmit}>
-            <FormField label="Imie" id="name" name="name" type="text" onChange={formik.handleChange} value={formik.values.name} />
-            {formik.errors.name ? <ErrorMessage errorMsg={formik.errors.name} /> : null}
+            <FormField
+              label="Imie"
+              id="name"
+              name="name"
+              type="text"
+              onChange={formik.handleChange}
+              value={formik.values.name}
+              onBlur={formik.handleBlur}
+            />
+            {formik.touched.name && formik.errors.name ? <ErrorMessage errorMsg={formik.errors.name} /> : null}
 
-            <FormField label="Nazwisko" id="surname" name="surname" type="text" onChange={formik.handleChange} value={formik.values.surname} />
-            {formik.errors.surname ? <ErrorMessage errorMsg={formik.errors.surname} /> : null}
+            <FormField
+              label="Nazwisko"
+              id="surname"
+              name="surname"
+              type="text"
+              onChange={formik.handleChange}
+              value={formik.values.surname}
+              onBlur={formik.handleBlur}
+            />
+            {formik.touched.surname && formik.errors.surname ? <ErrorMessage errorMsg={formik.errors.surname} /> : null}
 
-            <FormField label="Login" id="login" name="login" type="text" onChange={formik.handleChange} value={formik.values.login} />
-            {formik.errors.login ? <ErrorMessage errorMsg={formik.errors.login} /> : null}
+            <FormField
+              label="Login"
+              id="login"
+              name="login"
+              type="text"
+              onChange={formik.handleChange}
+              value={formik.values.login}
+              onBlur={formik.handleBlur}
+            />
+            {formik.touched.login && formik.errors.login ? <ErrorMessage errorMsg={formik.errors.login} /> : null}
 
-            <FormField label="Email" id="email" name="email" type="email" onChange={formik.handleChange} value={formik.values.email} />
-            {formik.errors.email ? <ErrorMessage errorMsg={formik.errors.email} /> : null}
+            <FormField
+              label="Email"
+              id="email"
+              name="email"
+              type="email"
+              onChange={formik.handleChange}
+              value={formik.values.email}
+              onBlur={formik.handleBlur}
+            />
+            {formik.touched.email && formik.errors.email ? <ErrorMessage errorMsg={formik.errors.email} /> : null}
 
             <FormField
               label="Telefon"
@@ -120,8 +152,9 @@ export const UserEdit = () => {
               type="text"
               onChange={formik.handleChange}
               value={formik.values.phoneNumber}
+              onBlur={formik.handleBlur}
             />
-            {formik.errors.phoneNumber ? <ErrorMessage errorMsg={formik.errors.phoneNumber} /> : null}
+            {formik.touched.phoneNumber && formik.errors.phoneNumber ? <ErrorMessage errorMsg={formik.errors.phoneNumber} /> : null}
 
             <FormSelectPermission
               label="Uprawnienia"

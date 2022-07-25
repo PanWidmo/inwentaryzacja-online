@@ -60,8 +60,16 @@ export const InventoryCreate = () => {
       <Header title="Nowa Inwentaryzacja" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
         <form id="inventoryCreateForm" onSubmit={formik.handleSubmit}>
-          <FormField label="Nazwa" id="name" name="name" type="text" onChange={formik.handleChange} value={formik.values.name} />
-          {formik.errors.name ? <ErrorMessage errorMsg={formik.errors.name} /> : null}
+          <FormField
+            label="Nazwa"
+            id="name"
+            name="name"
+            type="text"
+            onChange={formik.handleChange}
+            value={formik.values.name}
+            onBlur={formik.handleBlur}
+          />
+          {formik.touched.name && formik.errors.name ? <ErrorMessage errorMsg={formik.errors.name} /> : null}
 
           <FormField
             label="Data rozpoczecia"
@@ -70,8 +78,9 @@ export const InventoryCreate = () => {
             type="date"
             onChange={formik.handleChange}
             value={formik.values.startDate}
+            onBlur={formik.handleBlur}
           />
-          {formik.errors.startDate ? <ErrorMessage errorMsg={formik.errors.startDate} /> : null}
+          {formik.touched.startDate && formik.errors.startDate ? <ErrorMessage errorMsg={formik.errors.startDate} /> : null}
 
           <FormField
             label="Data zakonczenia"
@@ -80,8 +89,9 @@ export const InventoryCreate = () => {
             type="date"
             onChange={formik.handleChange}
             value={formik.values.closeDate}
+            onBlur={formik.handleBlur}
           />
-          {formik.errors.closeDate ? <ErrorMessage errorMsg={formik.errors.closeDate} /> : null}
+          {formik.touched.closeDate && formik.errors.closeDate ? <ErrorMessage errorMsg={formik.errors.closeDate} /> : null}
         </form>
         {/* <Button name="green" text="Dodaj plik" onClick={() => alert('dziala dodaj plik button')} /> */}
       </ContentWrapper>

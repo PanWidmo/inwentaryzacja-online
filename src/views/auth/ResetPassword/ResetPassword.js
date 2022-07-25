@@ -46,8 +46,16 @@ export const ResetPassword = () => {
       <ContentWrapper>
         <ViewWrapper as="form" onSubmit={formik.handleSubmit}>
           <InfoLabel>Wpisz swój adres email:</InfoLabel>
-          <FormField label="EMAIL" id="email" name="email" type="email" onChange={formik.handleChange} value={formik.values.email} />
-          {formik.errors.email ? <ErrorMessage errorMsg={formik.errors.email} /> : null}
+          <FormField
+            label="EMAIL"
+            id="email"
+            name="email"
+            type="email"
+            onChange={formik.handleChange}
+            value={formik.values.email}
+            onBlur={formik.handleBlur}
+          />
+          {formik.touched.email && formik.errors.email ? <ErrorMessage errorMsg={formik.errors.email} /> : null}
           <Button name="blue" text="Wyslij" type="submit" />
         </ViewWrapper>
       </ContentWrapper>

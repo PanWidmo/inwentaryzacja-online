@@ -52,10 +52,26 @@ export const Login = () => {
       <ContentWrapper>
         <ViewWrapper as="form" onSubmit={formik.handleSubmit}>
           <InfoLabel>Wpisz swoje dane:</InfoLabel>
-          <FormField label="EMAIL" id="email" name="email" type="email" onChange={formik.handleChange} value={formik.values.email} />
-          {formik.errors.email ? <ErrorMessage errorMsg={formik.errors.email} /> : null}
-          <FormField label="HASŁO" id="password" name="password" type="password" onChange={formik.handleChange} value={formik.values.password} />
-          {formik.errors.password ? <ErrorMessage errorMsg={formik.errors.password} /> : null}
+          <FormField
+            label="EMAIL"
+            id="email"
+            name="email"
+            type="email"
+            onChange={formik.handleChange}
+            value={formik.values.email}
+            onBlur={formik.handleBlur}
+          />
+          {formik.touched.email && formik.errors.email ? <ErrorMessage errorMsg={formik.errors.email} /> : null}
+          <FormField
+            label="HASŁO"
+            id="password"
+            name="password"
+            type="password"
+            onChange={formik.handleChange}
+            value={formik.values.password}
+            onBlur={formik.handleBlur}
+          />
+          {formik.touched.email && formik.errors.password ? <ErrorMessage errorMsg={formik.errors.password} /> : null}
           <LoginProblemLink to="/auth/login-reset-password">Problem z logowaniem?</LoginProblemLink>
           <Button name="blue" text="Zaloguj" type="submit" />
         </ViewWrapper>
