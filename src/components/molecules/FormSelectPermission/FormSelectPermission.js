@@ -1,4 +1,3 @@
-import React from 'react';
 import { LabelAboveInput } from 'components/atoms/LabelAboveInput/LabelAboveInput';
 import { Wrapper } from 'components/molecules/FormSelectPermission/FormSelectPermission.styles';
 

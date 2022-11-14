@@ -1,4 +1,3 @@
-import React from 'react';
 import { LabelAboveInput } from 'components/atoms/LabelAboveInput/LabelAboveInput';
 import { Input } from 'components/atoms/Input/Input';
 import { Wrapper } from 'components/molecules/FormField/FormField.styles';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from 'components/organisms/Header/Header';
 import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';

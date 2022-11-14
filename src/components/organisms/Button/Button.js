@@ -1,4 +1,3 @@
-import React from 'react';
 import { StyledButton } from 'components/organisms/Button/Button.styles';
 
 export const Button = ({ text = 'Button', name = 'default', type = 'button', form, onClick }) => {

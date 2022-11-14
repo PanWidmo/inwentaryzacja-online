@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Wrapper } from 'views/Root.styles';
 import { Login } from 'views/auth/Login/Login';

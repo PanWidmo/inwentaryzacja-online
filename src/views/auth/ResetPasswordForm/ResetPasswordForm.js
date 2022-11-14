@@ -1,4 +1,3 @@
-import React from 'react';
 import { Header } from 'components/organisms/Header/Header';
 import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { InfoLabel } from 'components/atoms/InfoLabel/InfoLabel';
