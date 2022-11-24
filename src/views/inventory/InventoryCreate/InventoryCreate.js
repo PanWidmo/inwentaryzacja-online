@@ -1,13 +1,12 @@
-import React from 'react';
-import axios from 'axios';
-import { Wrapper, InnerWrapper } from 'components/atoms/PanelStyles/PanelStyles';
+import axios from 'api/axios';
+import { requests } from 'api/requests';
+import { useNavigate } from 'react-router-dom';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
-import { Footer } from 'components/organisms/Footer/Footer';
 import { useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom';
-import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
 import { FormField } from 'components/molecules/FormField/FormField';
+import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
+import { Footer } from 'components/organisms/Footer/Footer';
 
 const validate = (values) => {
   const errors = {};
@@ -46,7 +45,7 @@ export const InventoryCreate = () => {
     validate,
     onSubmit: (values) => {
       try {
-        axios.post('https://localhost:5001/api/inventory', values);
+        axios.post(requests.singleInventory, values);
         alert('Utworzono nowa inwentaryzacje! :)');
         navigateToAccountantPanel();
       } catch (error) {

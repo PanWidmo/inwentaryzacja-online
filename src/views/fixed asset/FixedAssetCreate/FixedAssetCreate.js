@@ -1,13 +1,12 @@
-import React from 'react';
-import axios from 'axios';
-import { Wrapper, InnerWrapper } from 'components/atoms/PanelStyles/PanelStyles';
+import axios from 'api/axios';
+import { requests } from 'api/requests';
+import { useNavigate } from 'react-router-dom';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
-import { Footer } from 'components/organisms/Footer/Footer';
-import { FormField } from 'components/molecules/FormField/FormField';
 import { useFormik } from 'formik';
+import { FormField } from 'components/molecules/FormField/FormField';
 import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
-import { useNavigate } from 'react-router-dom';
+import { Footer } from 'components/organisms/Footer/Footer';
 
 const validate = (values) => {
   const errors = {};
@@ -65,7 +64,7 @@ export const FixedAssetCreate = () => {
     validate,
     onSubmit: (values) => {
       try {
-        axios.post('https://localhost:5001/api/asset', values);
+        axios.post(requests.singleFixedAsset, values);
         alert('Srodek Trwaly dodany! :)');
         navigateToFixedAsset();
       } catch (error) {
