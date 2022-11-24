@@ -1,4 +1,3 @@
-import React from 'react';
 import { SingleViewWrapper } from 'components/atoms/SingleViewWrapper/SingleViewWrapper';
 import inventoryHistory from 'assets/icons/inventoryHistory.png';
 import inventoryCreate from 'assets/icons/inventoryCreate.png';

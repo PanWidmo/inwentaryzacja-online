@@ -1,4 +1,3 @@
-import React from 'react';
 import { SingleViewWrapper } from 'components/atoms/SingleViewWrapper/SingleViewWrapper';
 import userIcon from 'assets/icons/user.png';
 import adminIcon from 'assets/icons/admin.png';
