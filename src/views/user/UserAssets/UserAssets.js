@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Table } from 'components/organisms/Table/Table';
 import { Wrapper, InnerWrapper } from 'assets/styles/TableComponents';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { Footer } from 'components/organisms/Footer/Footer';
-import { Loading } from 'components/molecules/Loading/Loading';
+import { LoadingOrError } from 'components/molecules/LoadingOrError/LoadingOrError';
 
 export const UserAssets = () => {
   const [loading, setLoading] = useState(true);
@@ -43,7 +43,7 @@ export const UserAssets = () => {
                 <Table dane={data} dataName="fixed-asset" id="usersTable" />
               </>
             ) : (
-              <Loading />
+              <LoadingOrError />
             )}
           </InnerWrapper>
         </Wrapper>

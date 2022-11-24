@@ -1,4 +1,3 @@
-import React from 'react';
 import sentProtocol from 'assets/icons/sentProtocol.png';
 import styled from 'styled-components';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
