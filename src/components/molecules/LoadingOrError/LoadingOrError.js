@@ -1,4 +1,4 @@
-import { Wrapper } from 'components/molecules/LoadingorError/LoadingOrError.styles';
+import { Wrapper } from 'components/molecules/LoadingOrError/LoadingOrError.styles';
 import loadingGif from 'assets/icons/loading.gif';
 
 export const LoadingOrError = ({ msg }) => {
