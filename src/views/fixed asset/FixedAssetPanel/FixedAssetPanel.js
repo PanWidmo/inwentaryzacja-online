@@ -1,36 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Table } from 'components/organisms/Table/Table';
+import { useState, useEffect } from 'react';
+import axios from 'api/axios';
+import { requests } from 'api/requests';
+import { useNavigate } from 'react-router-dom';
 import { Wrapper, InnerWrapper } from 'assets/styles/TableComponents';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
-import { Footer } from 'components/organisms/Footer/Footer';
+import { Table } from 'components/organisms/Table/Table';
 import { Button } from 'components/organisms/Button/Button';
-import { useNavigate } from 'react-router-dom';
-import { Loading } from 'components/molecules/Loading/Loading';
+import { LoadingOrError } from 'components/molecules/LoadingorError/LoadingOrError';
+import { Footer } from 'components/organisms/Footer/Footer';
 
 export const FixedAssetPanelList = () => {
-  const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const navigateToCreateFixedAsset = () => {
     navigate('/fixed-asset-management/create');
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const result = await axios.get('https://localhost:5001/api/asset ');
+  const getData = async () => {
+    setLoading(true);
+    try {
+      const result = await axios.get(requests.singleFixedAsset);
+      setData(result.data);
+    } catch (error) {
+      console.error(error.message);
+      setError(error.message);
+    }
+    setLoading(false);
+  };
 
-        setData(result.data);
-      } catch (error) {
-        console.error(error.message);
-      }
-      setLoading(false);
-    };
-    fetchData();
+  useEffect(() => {
+    getData();
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -39,13 +43,13 @@ export const FixedAssetPanelList = () => {
       <ContentWrapper>
         <Wrapper>
           <InnerWrapper>
-            {!loading ? (
+            {!loading && !error && data?.length ? (
               <>
                 <Table dane={data} dataName="fixed-asset" id="fixedAssetsTable" />
                 <Button name="green" text="Dodaj" onClick={navigateToCreateFixedAsset} />
               </>
             ) : (
-              <Loading />
+              <LoadingOrError msg={error ? error : 'LoadingorError...'} />
             )}
           </InnerWrapper>
         </Wrapper>

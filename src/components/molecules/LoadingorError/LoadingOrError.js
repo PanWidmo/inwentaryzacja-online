@@ -1,11 +1,11 @@
-import React from 'react';
-import { Wrapper } from 'components/molecules/Loading/Loading.styles';
+import { Wrapper } from 'components/molecules/LoadingorError/LoadingOrError.styles';
 import loadingGif from 'assets/icons/loading.gif';
 
-export const Loading = () => {
+export const LoadingOrError = ({ msg }) => {
   return (
     <Wrapper>
       <img src={loadingGif} alt="Loading icon" />
+      <p>{msg}</p>
     </Wrapper>
   );
 };
