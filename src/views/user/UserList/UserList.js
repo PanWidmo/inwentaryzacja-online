@@ -10,7 +10,7 @@ import { Button } from 'components/organisms/Button/Button';
 import { LoadingOrError } from 'components/molecules/LoadingOrError/LoadingOrError';
 import { Footer } from 'components/organisms/Footer/Footer';
 
-export const UserPanelList = () => {
+export const UserList = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -43,17 +43,18 @@ export const UserPanelList = () => {
       <Header title="Uzytkownicy" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
         <Wrapper>
-          {!loading && !error && data?.length ? (
-            <>
-              <Table dane={data} dataName="user" id="usersTable" />
-              <Button name="green" text="Dodaj" onClick={navigateToCreateUser} />
-            </>
-          ) : (
-            <>
-              <LoadingOrError msg={error ? error : 'Loading...'} />
-            </>
-          )}
-          <InnerWrapper></InnerWrapper>
+          <InnerWrapper>
+            {!loading && !error && data?.length ? (
+              <>
+                <Table dane={data} dataName="user" id="usersTable" />
+                <Button name="green" text="Dodaj" onClick={navigateToCreateUser} />
+              </>
+            ) : (
+              <>
+                <LoadingOrError msg={error ? error : 'Loading...'} />
+              </>
+            )}
+          </InnerWrapper>
         </Wrapper>
       </ContentWrapper>
       <Footer hasBackToPrevPageButton />

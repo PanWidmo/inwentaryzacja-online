@@ -10,20 +10,20 @@ import { Button } from 'components/organisms/Button/Button';
 import { LoadingOrError } from 'components/molecules/LoadingOrError/LoadingOrError';
 import { Footer } from 'components/organisms/Footer/Footer';
 
-export const InventoryPanel = () => {
+export const FixedAssetList = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const navigateToCreateInventory = () => {
-    navigate('/inventory-management/create');
+  const navigateToCreateFixedAsset = () => {
+    navigate('/fixed-asset-management/create');
   };
 
   const getData = async () => {
     setLoading(true);
     try {
-      const result = await axios.get(requests.getInventories);
+      const result = await axios.get(requests.singleFixedAsset);
       setData(result.data);
     } catch (error) {
       console.error(error.message);
@@ -39,14 +39,14 @@ export const InventoryPanel = () => {
 
   return (
     <>
-      <Header title="Inwentaryzacje" companyName="Compolexos" hasLogoutButton />
+      <Header title="Srodki Trwale" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
         <Wrapper>
           <InnerWrapper>
             {!loading && !error && data?.length ? (
               <>
-                <Table dane={data} dataName="inventory" id="inventoryTable" />
-                <Button name="green" text="Dodaj" onClick={navigateToCreateInventory} />
+                <Table dane={data} dataName="fixed-asset" id="fixedAssetsTable" />
+                <Button name="green" text="Dodaj" onClick={navigateToCreateFixedAsset} />
               </>
             ) : (
               <LoadingOrError msg={error ? error : 'Loading...'} />
