@@ -7,7 +7,7 @@ import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { Table } from 'components/organisms/Table/Table';
 import { Button } from 'components/organisms/Button/Button';
-import { LoadingOrError } from 'components/molecules/LoadingorError/LoadingOrError';
+import { LoadingOrError } from 'components/molecules/LoadingOrError/LoadingOrError';
 import { Footer } from 'components/organisms/Footer/Footer';
 
 export const FixedAssetPanelList = () => {
@@ -49,7 +49,7 @@ export const FixedAssetPanelList = () => {
                 <Button name="green" text="Dodaj" onClick={navigateToCreateFixedAsset} />
               </>
             ) : (
-              <LoadingOrError msg={error ? error : 'LoadingorError...'} />
+              <LoadingOrError msg={error ? error : 'Loading...'} />
             )}
           </InnerWrapper>
         </Wrapper>
