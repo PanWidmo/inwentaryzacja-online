@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Wrapper, InnerWrapper } from 'components/atoms/PanelStyles/PanelStyles';
+import { useState, useEffect } from 'react';
+import axios from 'api/axios';
+import { requests } from 'api/requests';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
-import { Footer } from 'components/organisms/Footer/Footer';
 import { FormField } from 'components/molecules/FormField/FormField';
 import { useFormik } from 'formik';
 import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
-import { useNavigate, useParams } from 'react-router-dom';
-import { Loading } from 'components/molecules/Loading/Loading';
+import { LoadingOrError } from 'components/molecules/LoadingOrError/LoadingOrError';
+import { Footer } from 'components/organisms/Footer/Footer';
 
 const validate = (values) => {
   const errors = {};
@@ -49,6 +49,7 @@ const validate = (values) => {
 export const FixedAssetEdit = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const navigateToFixedAsset = () => {
@@ -67,7 +68,7 @@ export const FixedAssetEdit = () => {
     validate,
     onSubmit: (values) => {
       try {
-        axios.put(`https://localhost:5001/api/asset/${id}`, values);
+        axios.put(`${requests.singleFixedAsset}/${id}`, values);
         alert('Edytowano srodek trwaly! :)');
         navigateToFixedAsset();
       } catch (error) {
@@ -76,30 +77,32 @@ export const FixedAssetEdit = () => {
     },
   });
 
+  const getData = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get(`${requests.singleFixedAsset}/${id}`);
+      const data = response.data;
+
+      await formik.setValues({
+        ...data,
+      });
+    } catch (error) {
+      console.error(error.message);
+      setError(error.message);
+    }
+    setLoading(false);
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const response = await axios.get(`https://localhost:5001/api/asset/${id}`);
-        const data = response.data;
-
-        await formik.setValues({
-          ...data,
-        });
-      } catch (error) {
-        console.error(error.message);
-      }
-      setLoading(false);
-    };
-
-    fetchData();
-  }, [id]);
+    getData();
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <>
       <Header title="Edycja srodka trwalego" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
-        {!loading ? (
+        {!loading && !error ? (
           <form id="fixedAssetEditForm" onSubmit={formik.handleSubmit}>
             <FormField
               label="Nazwa"
@@ -168,7 +171,7 @@ export const FixedAssetEdit = () => {
             {formik.touched.inventoryId && formik.errors.inventoryId ? <ErrorMessage errorMsg={formik.errors.inventoryId} /> : null}
           </form>
         ) : (
-          <Loading />
+          <LoadingOrError msg={error ? error : 'Loading...'} />
         )}
       </ContentWrapper>
       <Footer hasBackToPrevPageButton hasDeleteFixedAssetButton hasSaveEditedFixedAssetButton />

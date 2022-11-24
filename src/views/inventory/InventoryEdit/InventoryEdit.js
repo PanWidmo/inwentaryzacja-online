@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Wrapper, InnerWrapper } from 'components/atoms/PanelStyles/PanelStyles';
+import { useState, useEffect } from 'react';
+import axios from 'api/axios';
+import { requests } from 'api/requests';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
-import { Footer } from 'components/organisms/Footer/Footer';
-import { FormField } from 'components/molecules/FormField/FormField';
 import { useFormik } from 'formik';
+import { FormField } from 'components/molecules/FormField/FormField';
 import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
-import { useNavigate, useParams } from 'react-router-dom';
-import { Loading } from 'components/molecules/Loading/Loading';
+import { LoadingOrError } from 'components/molecules/LoadingOrError/LoadingOrError';
+import { Footer } from 'components/organisms/Footer/Footer';
 
 const validate = (values) => {
   const errors = {};
@@ -34,6 +34,7 @@ const validate = (values) => {
 export const InventoryEdit = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const navigateToInventory = () => {
@@ -49,7 +50,7 @@ export const InventoryEdit = () => {
     validate,
     onSubmit: (values) => {
       try {
-        axios.put(`https://localhost:5001/api/inventory/${id}`, values);
+        axios.put(`${requests.singleInventory}/${id}`, values);
         alert('Edytowano inwentaryzacje! :)');
         navigateToInventory();
       } catch (error) {
@@ -58,32 +59,34 @@ export const InventoryEdit = () => {
     },
   });
 
+  const getData = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get(`${requests.singleInventory}/${id}`);
+      const data = response.data;
+
+      await formik.setValues({
+        name: data.name,
+        startDate: data.startDate.slice(0, 10),
+        closeDate: data.closeDate.slice(0, 10),
+      });
+    } catch (error) {
+      console.error(error.message);
+      setError(error.message);
+    }
+    setLoading(false);
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const response = await axios.get(`https://localhost:5001/api/inventory/${id}`);
-        const data = response.data;
-
-        await formik.setValues({
-          name: data.name,
-          startDate: data.startDate.slice(0, 10),
-          closeDate: data.closeDate.slice(0, 10),
-        });
-      } catch (error) {
-        console.error(error.message);
-      }
-      setLoading(false);
-    };
-
-    fetchData();
-  }, [id]);
+    getData();
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <>
       <Header title="Edycja inwentaryzacji" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
-        {!loading ? (
+        {!loading && !error ? (
           <form id="inventoryEditForm" onSubmit={formik.handleSubmit}>
             <FormField
               label="Nazwa"
@@ -119,7 +122,7 @@ export const InventoryEdit = () => {
             {formik.touched.closeDate && formik.errors.closeDate ? <ErrorMessage errorMsg={formik.errors.closeDate} /> : null}
           </form>
         ) : (
-          <Loading />
+          <LoadingOrError msg={error ? error : 'Loading...'} />
         )}
       </ContentWrapper>
       <Footer hasBackToPrevPageButton hasDeleteInventoryButton hasSaveEditedInventoryButton />

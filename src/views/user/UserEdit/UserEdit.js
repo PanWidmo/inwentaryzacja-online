@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Wrapper, InnerWrapper, TableWrapper } from 'components/atoms/PanelStyles/PanelStyles';
+import { useState, useEffect } from 'react';
+import axios from 'api/axios';
+import { requests } from 'api/requests';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
-import { Footer } from 'components/organisms/Footer/Footer';
 import { FormField } from 'components/molecules/FormField/FormField';
-import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
 import { useFormik } from 'formik';
-import { useNavigate, useParams } from 'react-router-dom';
-import { Loading } from 'components/molecules/Loading/Loading';
 import { FormSelectPermission } from 'components/molecules/FormSelectPermission/FormSelectPermission';
+import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
+import { LoadingOrError } from 'components/molecules/LoadingOrError/LoadingOrError';
+import { Footer } from 'components/organisms/Footer/Footer';
 
 const validate = (values) => {
   const errors = {};
@@ -49,6 +49,7 @@ const validate = (values) => {
 export const UserEdit = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const navigateToUsers = () => {
@@ -67,39 +68,41 @@ export const UserEdit = () => {
     validate,
     onSubmit: (values) => {
       try {
-        axios.put(`https://localhost:5001/api/user/${id}`, values);
-        alert('Edytowano uzytkownika! :)');
-        navigateToUsers();
+        axios.put(`${requests.singleUser}/${id}`, values);
       } catch (error) {
         console.error(error.message);
       }
+      alert('Edytowano uzytkownika! :)');
+      navigateToUsers();
     },
   });
 
+  const getData = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get(`${requests.singleUser}/${id}`);
+      const data = response.data;
+
+      await formik.setValues({
+        ...data,
+      });
+    } catch (error) {
+      console.error(error.message);
+      setError(error.message);
+    }
+    setLoading(false);
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const response = await axios.get(`https://localhost:5001/api/user/${id}`);
-        const data = response.data;
-
-        await formik.setValues({
-          ...data,
-        });
-      } catch (error) {
-        console.error(error.message);
-      }
-      setLoading(false);
-    };
-
-    fetchData();
-  }, [id]);
+    getData();
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <>
       <Header title="Edytuj dane użytkownika" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
-        {!loading ? (
+        {!loading && !error ? (
           <form id="userEditForm" onSubmit={formik.handleSubmit}>
             <FormField
               label="Imie"
@@ -165,7 +168,7 @@ export const UserEdit = () => {
             />
           </form>
         ) : (
-          <Loading />
+          <LoadingOrError msg={error ? error : 'Loading...'} />
         )}
       </ContentWrapper>
       <Footer hasBackToPrevPageButton hasDeleteUserButton hasSaveEditedUserButton />
