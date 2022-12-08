@@ -50,7 +50,9 @@ export const InventoryEdit = () => {
     validate,
     onSubmit: (values) => {
       try {
-        axios.put(`${requests.singleInventory}/${id}`, values);
+        axios.put(`${requests.singleInventory}/${id}`, values, {
+          headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+        });
         alert('Edytowano inwentaryzacje! :)');
         navigateToInventory();
       } catch (error) {
@@ -62,7 +64,9 @@ export const InventoryEdit = () => {
   const getData = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`${requests.singleInventory}/${id}`);
+      const response = await axios.get(`${requests.singleInventory}/${id}`, {
+        headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+      });
       const data = response.data;
 
       await formik.setValues({

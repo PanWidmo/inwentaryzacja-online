@@ -39,7 +39,9 @@ export const Footer = ({
 
   const deleteUser = () => {
     try {
-      axios.delete(`https://localhost:5001/api/user/${id}`);
+      axios.delete(`https://localhost:5001/api/user/${id}`, {
+        headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+      });
       alert('Usunieto uzytkownika! :)');
       navigate('/user-management');
     } catch (error) {
@@ -49,7 +51,9 @@ export const Footer = ({
 
   const deleteFixedAsset = () => {
     try {
-      axios.delete(`https://localhost:5001/api/asset/${id}`);
+      axios.delete(`https://localhost:5001/api/asset/${id}`, {
+        headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+      });
       alert('Usunieto srodek trwaly! :)');
       navigate('/fixed-asset-management');
     } catch (error) {
@@ -59,7 +63,9 @@ export const Footer = ({
 
   const deleteInventory = () => {
     try {
-      axios.delete(`https://localhost:5001/api/inventory/${id}`);
+      axios.delete(`https://localhost:5001/api/inventory/${id}`, {
+        headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+      });
       alert('Usunieto inwentaryzacje! :)');
       navigate('/inventory-management');
     } catch (error) {

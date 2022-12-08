@@ -23,7 +23,9 @@ export const UserList = () => {
   const getData = async () => {
     setLoading(true);
     try {
-      const result = await axios.get(requests.getUsers);
+      const result = await axios.get(requests.getUsers, {
+        headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+      });
 
       setData(result.data);
     } catch (error) {

@@ -45,7 +45,9 @@ export const InventoryCreate = () => {
     validate,
     onSubmit: (values) => {
       try {
-        axios.post(requests.singleInventory, values);
+        axios.post(requests.singleInventory, values, {
+          headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+        });
         alert('Utworzono nowa inwentaryzacje! :)');
         navigateToAccountantPanel();
       } catch (error) {

@@ -31,6 +31,20 @@ const validate = (values) => {
     errors.login = 'Must be 2 characters or more';
   }
 
+  if (!values.password) {
+    errors.password = 'Required';
+  } else if (values.password < 6) {
+    errors.password = 'Must be 6 characters or more';
+  }
+
+  if (!values.confirmPassword) {
+    errors.confirmPassword = 'Required';
+  } else if (values < 6) {
+    errors.confirmPassword = 'Must be 6 characters or more';
+  } else if (values.confirmPassword !== values.password) {
+    errors.confirmPassword = 'Passwords must be the same';
+  }
+
   if (!values.email) {
     errors.email = 'Required';
   } else if (!/^[A-Z\d._%+-]+@[A-Z\d.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
@@ -61,6 +75,8 @@ export const UserEdit = () => {
       name: '',
       surname: '',
       login: '',
+      password: '',
+      confirmPassword: '',
       email: '',
       phoneNumber: '',
       permissionId: '',
@@ -68,7 +84,9 @@ export const UserEdit = () => {
     validate,
     onSubmit: (values) => {
       try {
-        axios.put(`${requests.singleUser}/${id}`, values);
+        axios.put(`${requests.singleUser}/${id}`, values, {
+          headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+        });
       } catch (error) {
         console.error(error.message);
       }
@@ -80,11 +98,18 @@ export const UserEdit = () => {
   const getData = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`${requests.singleUser}/${id}`);
+      const response = await axios.get(`${requests.singleUser}/${id}`, {
+        headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+      });
       const data = response.data;
 
       await formik.setValues({
-        ...data,
+        name: data.name,
+        surname: data.surname,
+        login: data.login,
+        email: data.email,
+        phoneNumber: data.phoneNumber,
+        permissionId: data.permissionId,
       });
     } catch (error) {
       console.error(error.message);
@@ -136,6 +161,28 @@ export const UserEdit = () => {
               onBlur={formik.handleBlur}
             />
             {formik.touched.login && formik.errors.login ? <ErrorMessage errorMsg={formik.errors.login} /> : null}
+
+            <FormField
+              label="Haslo"
+              id="password"
+              name="password"
+              type="password"
+              onChange={formik.handleChange}
+              value={formik.values.password}
+              onBlur={formik.handleBlur}
+            />
+            {formik.touched.password && formik.errors.password ? <ErrorMessage errorMsg={formik.errors.password} /> : null}
+
+            <FormField
+              label="Powtorz haslo"
+              id="confirmPassword"
+              name="confirmPassword"
+              type="password"
+              onChange={formik.handleChange}
+              value={formik.values.confirmPassword}
+              onBlur={formik.handleBlur}
+            />
+            {formik.touched.confirmPassword && formik.errors.confirmPassword ? <ErrorMessage errorMsg={formik.errors.confirmPassword} /> : null}
 
             <FormField
               label="Email"

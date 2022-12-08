@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useAuth } from 'hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 import { Button } from 'components/organisms/Button/Button';
 
 const Wrapper = styled.header`
@@ -27,10 +27,16 @@ const Subtitles = styled.div`
   }
 `;
 export const Header = ({ title, companyName, inventoryNumber, hasLogoutButton }) => {
-  const { signOutUser } = useAuth();
+  const navigate = useNavigate();
+
+  const navigateToLogin = () => {
+    navigate('/login');
+  };
 
   const handleLogout = () => {
-    signOutUser();
+    localStorage.removeItem('token');
+    localStorage.removeItem('roles');
+    navigateToLogin();
   };
 
   return (
