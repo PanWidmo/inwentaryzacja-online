@@ -23,7 +23,9 @@ export const InventoryList = () => {
   const getData = async () => {
     setLoading(true);
     try {
-      const result = await axios.get(requests.getInventories);
+      const result = await axios.get(requests.getInventories, {
+        headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+      });
       setData(result.data);
     } catch (error) {
       console.error(error.message);

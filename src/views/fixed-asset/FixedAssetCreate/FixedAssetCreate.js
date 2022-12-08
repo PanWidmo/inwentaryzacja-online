@@ -64,7 +64,9 @@ export const FixedAssetCreate = () => {
     validate,
     onSubmit: (values) => {
       try {
-        axios.post(requests.singleFixedAsset, values);
+        axios.post(requests.singleFixedAsset, values, {
+          headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+        });
         alert('Srodek Trwaly dodany! :)');
         navigateToFixedAsset();
       } catch (error) {

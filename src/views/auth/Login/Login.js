@@ -1,14 +1,15 @@
-import { useNavigate } from 'react-router-dom';
+import axios from 'api/axios';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { InfoLabel } from 'components/atoms/InfoLabel/InfoLabel';
 import { FormField } from 'components/molecules/FormField/FormField';
 import { LoginProblemLink } from 'components/atoms/LoginProblemLink/LoginProblemLink';
-import { useAuth } from 'hooks/useAuth';
 import { Button } from 'components/organisms/Button/Button';
 import { useFormik } from 'formik';
 import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
+import { requests } from 'api/requests';
 
 const validate = (values) => {
   const errors = {};
@@ -27,7 +28,8 @@ const validate = (values) => {
 
 export const Login = () => {
   const navigate = useNavigate();
-  const { signIn } = useAuth();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/select-user-role';
 
   const formik = useFormik({
     initialValues: {
@@ -35,10 +37,14 @@ export const Login = () => {
       password: '',
     },
     validate,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       try {
-        signIn(values.email, values.password);
-        navigate('/select-user-role');
+        const response = await axios.post(requests.login, values);
+        const accessToken = response?.data?.token;
+        const roles = [response?.data?.permission];
+        localStorage.setItem('token', JSON.stringify(accessToken));
+        localStorage.setItem('roles', JSON.stringify(roles));
+        navigate(from, { replace: true });
       } catch (error) {
         console.error(error.message);
       }
@@ -70,7 +76,7 @@ export const Login = () => {
             value={formik.values.password}
             onBlur={formik.handleBlur}
           />
-          {formik.touched.email && formik.errors.password ? <ErrorMessage errorMsg={formik.errors.password} /> : null}
+          {formik.touched.password && formik.errors.password ? <ErrorMessage errorMsg={formik.errors.password} /> : null}
           <LoginProblemLink to="/auth/login-reset-password">Problem z logowaniem?</LoginProblemLink>
           <Button name="blue" text="Zaloguj" type="submit" />
         </ViewWrapper>

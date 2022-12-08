@@ -29,6 +29,20 @@ const validate = (values) => {
     errors.login = 'Must be 2 characters or more';
   }
 
+  if (!values.password) {
+    errors.password = 'Required';
+  } else if (values.password < 6) {
+    errors.password = 'Must be 6 characters or more';
+  }
+
+  if (!values.confirmPassword) {
+    errors.confirmPassword = 'Required';
+  } else if (values < 6) {
+    errors.confirmPassword = 'Must be 6 characters or more';
+  } else if (values.confirmPassword !== values.password) {
+    errors.confirmPassword = 'Passwords must be the same';
+  }
+
   if (!values.email) {
     errors.email = 'Required';
   } else if (!/^[A-Z\d._%+-]+@[A-Z\d.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
@@ -56,6 +70,8 @@ export const UserCreate = () => {
       name: '',
       surname: '',
       login: '',
+      password: '',
+      confirmPassword: '',
       email: '',
       phoneNumber: '',
       permissionId: 1,
@@ -63,7 +79,9 @@ export const UserCreate = () => {
     validate,
     onSubmit: (values) => {
       try {
-        axios.post(requests.singleUser, values);
+        axios.post(requests.singleUser, values, {
+          headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+        });
         alert('Uzytkownik dodany! :)');
         navigateToUsers();
       } catch (error) {
@@ -109,6 +127,28 @@ export const UserCreate = () => {
             onBlur={formik.handleBlur}
           />
           {formik.touched.login && formik.errors.login ? <ErrorMessage errorMsg={formik.errors.login} /> : null}
+
+          <FormField
+            label="Haslo"
+            id="password"
+            name="password"
+            type="password"
+            onChange={formik.handleChange}
+            value={formik.values.password}
+            onBlur={formik.handleBlur}
+          />
+          {formik.touched.password && formik.errors.password ? <ErrorMessage errorMsg={formik.errors.password} /> : null}
+
+          <FormField
+            label="Powtorz haslo"
+            id="confirmPassword"
+            name="confirmPassword"
+            type="password"
+            onChange={formik.handleChange}
+            value={formik.values.confirmPassword}
+            onBlur={formik.handleBlur}
+          />
+          {formik.touched.confirmPassword && formik.errors.confirmPassword ? <ErrorMessage errorMsg={formik.errors.confirmPassword} /> : null}
 
           <FormField
             label="Email"

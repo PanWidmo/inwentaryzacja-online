@@ -68,7 +68,9 @@ export const FixedAssetEdit = () => {
     validate,
     onSubmit: (values) => {
       try {
-        axios.put(`${requests.singleFixedAsset}/${id}`, values);
+        axios.put(`${requests.singleFixedAsset}/${id}`, values, {
+          headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+        });
         alert('Edytowano srodek trwaly! :)');
         navigateToFixedAsset();
       } catch (error) {
@@ -80,7 +82,9 @@ export const FixedAssetEdit = () => {
   const getData = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`${requests.singleFixedAsset}/${id}`);
+      const response = await axios.get(`${requests.singleFixedAsset}/${id}`, {
+        headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+      });
       const data = response.data;
 
       await formik.setValues({
