@@ -14,8 +14,9 @@ import { InventoryList } from 'views/inventory/InventoryList/InventoryList';
 import { InventoryEdit } from './inventory/InventoryEdit/InventoryEdit';
 import { UserRoleSelect } from './role-pages/UserRoleSelect/UserRoleSelect';
 import { UserAssets } from './user/UserAssets/UserAssets';
-import { RequireAuth } from 'views/auth/RequireAuth/RequireAuth';
+import { RequireAuth } from 'components/molecules/RequireAuth/RequireAuth';
 import { Unauthorized } from 'views/auth/Unauthorized/Unauthorized';
+import { ErrorPage } from 'views/auth/ErrorPage/ErrorPage';
 
 const ROLES = {
   User: 1,
@@ -52,8 +53,7 @@ export const Root = () => {
           <Route path="/inventory-management/:id" element={<InventoryEdit />} />
         </Route>
         {/*catch all*/}
-        {/*// TODO: 404 component*/}
-        {/*<Route path="/*" element={<404 />} />*/}
+        <Route path="/*" element={<ErrorPage />} />
       </Routes>
     </Wrapper>
   );

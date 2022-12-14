@@ -9,6 +9,6 @@ export const RequireAuth = ({ allowedRoles }) => {
   ) : roles ? (
     <Navigate to="/unauthorized" state={{ from: location }} replace />
   ) : (
-    <Navigate to="/login" state={{ from: location }} replace />
+    <Navigate to="/login" state={{ from: location }} />
   );
 };

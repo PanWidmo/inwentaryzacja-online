@@ -1,8 +1,8 @@
-export const Unauthorized = () => {
+export const ErrorPage = () => {
   return (
     <div>
       {/*TODO: komponent do zrobienia*/}
-      <h1>UNAUTHORIZED</h1>
+      <h1>404 Error Page</h1>
     </div>
   );
 };
