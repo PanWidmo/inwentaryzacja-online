@@ -40,10 +40,10 @@ export const Root = () => {
         <Route element={<RequireAuth allowedRoles={[ROLES.User, ROLES.Accountant, ROLES.Admin]} />}>
           <Route path="/" element={<Navigate to="/select-user-role" />} />
           <Route path="/select-user-role" element={<UserRoleSelect />} />
+          <Route path="/user/summary" element={<UserAssets />} />
         </Route>
         {/* <Route path="/user/:user-id/inventory/:inventory-id" element={< />} /> */}
         {/* <Route path="/user/:user-id/inventory/:inventory-id/summary" element={< />} /> */}
-        {/*<Route path="/user/summary" element={<UserAssets />} />*/}
         {/*<Route path="/user/:user-id/inventory/:inventory-id/summary-confirmation" element={<InventorySummaryConfirmation />} />*/}
         <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
           <Route path="/admin-panel" element={<AdminPanel />} />

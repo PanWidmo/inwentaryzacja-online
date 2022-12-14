@@ -17,7 +17,9 @@ export const UserAssets = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const result = await axios.get('https://localhost:5001/api/user/');
+        const result = await axios.get('https://localhost:5001/api/user/', {
+          headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+        });
 
         setDane(result.data);
       } catch (error) {
