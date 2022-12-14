@@ -27,7 +27,6 @@ const ROLES = {
   Admin: 3,
 };
 
-const token = localStorage.getItem('token');
 
 export const Root = () => {
   return (
@@ -35,8 +34,8 @@ export const Root = () => {
       <Routes>
         {/*public routes*/}
         <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/login" element={token ? <Navigate to="/select-user-role" /> : <Login />} />
-        <Route path="/unauthorized" element={!token ? <Navigate to="/" /> : <Unauthorized />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/unauthorized" element={<Unauthorized />} />
         {/*protected routes*/}
         <Route element={<RequireAuth allowedRoles={[ROLES.User, ROLES.Accountant, ROLES.Admin]} />}>
           <Route path="/" element={<Navigate to="/select-user-role" />} />
