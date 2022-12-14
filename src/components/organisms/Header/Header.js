@@ -18,7 +18,10 @@ const Title = styled.div`
     font-size: ${({ theme }) => theme.fontSize.xxl};
   }
 `;
-const ButtonsSection = styled.div``;
+const ButtonsSection = styled.div`
+  display: flex;
+  gap:4rem;
+`;
 
 const Subtitles = styled.div`
   font-size: ${({ theme }) => theme.fontSize.l};
@@ -31,6 +34,10 @@ export const Header = ({ title, companyName, inventoryNumber, hasLogoutButton })
 
   const navigateToLogin = () => {
     navigate('/login');
+  };
+
+  const navigateToIssuePage = () => {
+    navigate('/issue');
   };
 
   const handleLogout = () => {
@@ -46,11 +53,12 @@ export const Header = ({ title, companyName, inventoryNumber, hasLogoutButton })
           <h1>{title}</h1>
         </Title>
 
-        {hasLogoutButton && (
           <ButtonsSection>
+            <Button name="darkBlue" text="Pomoc" onClick={navigateToIssuePage}/>
+            {hasLogoutButton && (
             <Button name="red" text="Wyloguj" onClick={handleLogout} />
+              )}
           </ButtonsSection>
-        )}
       </TitleWithButtons>
       <Subtitles>
         <p>{companyName}</p>

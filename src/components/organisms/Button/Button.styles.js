@@ -5,6 +5,7 @@ export const StyledButton = styled.button`
     if (name === 'blue') return theme.colors.blue;
     if (name === 'red') return theme.colors.red;
     if (name === 'green') return theme.colors.green;
+    if (name === 'darkBlue') return theme.colors.darkBlue;
     return theme.colors.black;
   }};
   border: none;

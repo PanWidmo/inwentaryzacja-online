@@ -16,7 +16,8 @@ import { UserRoleSelect } from './role-pages/UserRoleSelect/UserRoleSelect';
 import { UserAssets } from './user/UserAssets/UserAssets';
 import { RequireAuth } from 'components/molecules/RequireAuth/RequireAuth';
 import { Unauthorized } from 'views/auth/Unauthorized/Unauthorized';
-import { ErrorPage } from 'views/auth/ErrorPage/ErrorPage';
+import { ErrorPage } from 'views/ErrorPage/ErrorPage';
+import { IssuePage } from 'views/IssuePage/IssuePage';
 
 const ROLES = {
   User: 1,
@@ -31,6 +32,7 @@ export const Root = () => {
         {/*public routes*/}
         <Route path="/login" element={<Login />} />
         <Route path="/unauthorized" element={<Unauthorized />} />
+        <Route path="/issue" element={<IssuePage />} />
         {/*protected routes*/}
         <Route element={<RequireAuth allowedRoles={[ROLES.User, ROLES.Accountant, ROLES.Admin]} />}>
           <Route path="/" element={<Navigate to="/select-user-role" />} />
