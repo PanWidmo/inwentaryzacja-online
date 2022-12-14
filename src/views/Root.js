@@ -23,7 +23,6 @@ const ROLES = {
   Admin: 3,
 };
 
-
 export const Root = () => {
   return (
     <Wrapper>
@@ -53,7 +52,7 @@ export const Root = () => {
           <Route path="/inventory-management/:id" element={<InventoryEdit />} />
         </Route>
         {/*catch all*/}
-        // TODO: 404 component
+        {/*// TODO: 404 component*/}
         {/*<Route path="/*" element={<404 />} />*/}
       </Routes>
     </Wrapper>
