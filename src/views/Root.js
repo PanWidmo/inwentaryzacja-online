@@ -1,10 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Wrapper } from 'views/Root.styles';
 import { Login } from 'views/auth/Login/Login';
-import { ResetPassword } from 'views/auth/ResetPassword/ResetPassword';
-import { ResetPasswordConfirmation } from 'views/auth/ResetPasswordConfirmation/ResetPasswordConfirmation';
-import { ResetPasswordForm } from 'views/auth/ResetPasswordForm/ResetPasswordForm';
-import { InventorySummaryConfirmation } from 'views/inventory/InventorySummaryConfirmation/InventorySummaryConfirmation';
 import { AdminPanel } from 'views/role-pages/AdminPanel/AdminPanel';
 import { UserList } from 'views/user/UserList/UserList';
 import { UserCreate } from 'views/user/UserCreate/UserCreate';
@@ -33,7 +29,6 @@ export const Root = () => {
     <Wrapper>
       <Routes>
         {/*public routes*/}
-        <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<Login />} />
         <Route path="/unauthorized" element={<Unauthorized />} />
         {/*protected routes*/}
@@ -42,9 +37,6 @@ export const Root = () => {
           <Route path="/select-user-role" element={<UserRoleSelect />} />
           <Route path="/user/summary" element={<UserAssets />} />
         </Route>
-        {/* <Route path="/user/:user-id/inventory/:inventory-id" element={< />} /> */}
-        {/* <Route path="/user/:user-id/inventory/:inventory-id/summary" element={< />} /> */}
-        {/*<Route path="/user/:user-id/inventory/:inventory-id/summary-confirmation" element={<InventorySummaryConfirmation />} />*/}
         <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
           <Route path="/admin-panel" element={<AdminPanel />} />
           <Route path="/user-management" element={<UserList />} />
