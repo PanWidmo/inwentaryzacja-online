@@ -1,3 +1,8 @@
+const size = {
+  mobile: '600px',
+  tablet: '1024px',
+};
+
 export const theme = {
   colors: {
     white: '#FFFFFF',
@@ -18,5 +23,13 @@ export const theme = {
     l: '1.7rem',
     m: '1.2rem',
     s: '1.1rem',
+  },
+
+  breakpoints: {
+    mobileOnly: `only screen and (max-width: ${size.mobile})`,
+    notMobile: `only screen and (min-width: ${size.mobile})`,
+    tabletOnly: `only screen and (min-width: ${size.mobile}) and (max-width ${size.tablet})`,
+    notDesktop: `only screen and (max-width: ${size.tablet})`,
+    desktopOnly: `only screen and (min-width: ${size.tablet})`,
   },
 };
