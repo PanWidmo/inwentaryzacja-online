@@ -1,13 +1,11 @@
 import axios from 'api/axios';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useFormik } from 'formik';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
-import { InfoLabel } from 'components/atoms/InfoLabel/InfoLabel';
 import { FormField } from 'components/molecules/FormField/FormField';
-import { LoginProblemLink } from 'components/atoms/LoginProblemLink/LoginProblemLink';
 import { Button } from 'components/organisms/Button/Button';
-import { useFormik } from 'formik';
 import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
 import { requests } from 'api/requests';
 
@@ -56,7 +54,6 @@ export const Login = () => {
       <Header title="Logowanie do systemu inwentaryzacji" companyName="Compolexos" />
       <ContentWrapper>
         <ViewWrapper as="form" onSubmit={formik.handleSubmit}>
-          <InfoLabel>Wpisz swoje dane:</InfoLabel>
           <FormField
             label="EMAIL"
             id="email"
@@ -77,7 +74,6 @@ export const Login = () => {
             onBlur={formik.handleBlur}
           />
           {formik.touched.password && formik.errors.password ? <ErrorMessage errorMsg={formik.errors.password} /> : null}
-          <LoginProblemLink to="/auth/login-reset-password">Problem z logowaniem?</LoginProblemLink>
           <Button name="blue" text="Zaloguj" type="submit" />
         </ViewWrapper>
       </ContentWrapper>
