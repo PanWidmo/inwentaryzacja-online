@@ -6,7 +6,6 @@ import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { FormField } from 'components/molecules/FormField/FormField';
 import { Button } from 'components/organisms/Button/Button';
-import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
 import { requests } from 'api/requests';
 
 const validate = (values) => {
@@ -62,8 +61,8 @@ export const Login = () => {
             onChange={formik.handleChange}
             value={formik.values.email}
             onBlur={formik.handleBlur}
+            error={formik.touched.email && formik.errors.email ? formik.errors.email : null}
           />
-          {formik.touched.email && formik.errors.email ? <ErrorMessage errorMsg={formik.errors.email} /> : null}
           <FormField
             label="HASŁO"
             id="password"
@@ -72,8 +71,8 @@ export const Login = () => {
             onChange={formik.handleChange}
             value={formik.values.password}
             onBlur={formik.handleBlur}
+            error={formik.touched.password && formik.errors.password ? formik.errors.password : null}
           />
-          {formik.touched.password && formik.errors.password ? <ErrorMessage errorMsg={formik.errors.password} /> : null}
           <Button name="blue" text="Zaloguj" type="submit" />
         </ViewWrapper>
       </ContentWrapper>

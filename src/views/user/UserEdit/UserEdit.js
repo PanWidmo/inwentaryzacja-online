@@ -7,8 +7,8 @@ import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { FormField } from 'components/molecules/FormField/FormField';
 import { useFormik } from 'formik';
 import { FormSelectPermission } from 'components/molecules/FormSelectPermission/FormSelectPermission';
-import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
 import { LoadingOrError } from 'components/molecules/LoadingOrError/LoadingOrError';
+import { Form } from 'components/organisms/Form/Form';
 import { Footer } from 'components/organisms/Footer/Footer';
 
 const validate = (values) => {
@@ -128,7 +128,7 @@ export const UserEdit = () => {
       <Header title="Edytuj dane użytkownika" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
         {!loading && !error ? (
-          <form id="userEditForm" onSubmit={formik.handleSubmit}>
+          <Form id="userEditForm" onSubmit={formik.handleSubmit}>
             <FormField
               label="Imie"
               id="name"
@@ -137,8 +137,8 @@ export const UserEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.name}
               onBlur={formik.handleBlur}
+              error={formik.touched.name && formik.errors.name ? formik.errors.name : null}
             />
-            {formik.touched.name && formik.errors.name ? <ErrorMessage errorMsg={formik.errors.name} /> : null}
 
             <FormField
               label="Nazwisko"
@@ -148,8 +148,8 @@ export const UserEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.surname}
               onBlur={formik.handleBlur}
+              error={formik.touched.surname && formik.errors.surname ? formik.errors.surname : null}
             />
-            {formik.touched.surname && formik.errors.surname ? <ErrorMessage errorMsg={formik.errors.surname} /> : null}
 
             <FormField
               label="Login"
@@ -159,8 +159,8 @@ export const UserEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.login}
               onBlur={formik.handleBlur}
+              error={formik.touched.login && formik.errors.login ? formik.errors.login : null}
             />
-            {formik.touched.login && formik.errors.login ? <ErrorMessage errorMsg={formik.errors.login} /> : null}
 
             <FormField
               label="Haslo"
@@ -170,8 +170,8 @@ export const UserEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.password}
               onBlur={formik.handleBlur}
+              error={formik.touched.password && formik.errors.password ? formik.errors.password : null}
             />
-            {formik.touched.password && formik.errors.password ? <ErrorMessage errorMsg={formik.errors.password} /> : null}
 
             <FormField
               label="Powtorz haslo"
@@ -181,8 +181,8 @@ export const UserEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.confirmPassword}
               onBlur={formik.handleBlur}
+              error={formik.touched.confirmPassword && formik.errors.confirmPassword ? formik.errors.confirmPassword : null}
             />
-            {formik.touched.confirmPassword && formik.errors.confirmPassword ? <ErrorMessage errorMsg={formik.errors.confirmPassword} /> : null}
 
             <FormField
               label="Email"
@@ -192,8 +192,8 @@ export const UserEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.email}
               onBlur={formik.handleBlur}
+              error={formik.touched.email && formik.errors.email ? formik.errors.email : null}
             />
-            {formik.touched.email && formik.errors.email ? <ErrorMessage errorMsg={formik.errors.email} /> : null}
 
             <FormField
               label="Telefon"
@@ -203,8 +203,8 @@ export const UserEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.phoneNumber}
               onBlur={formik.handleBlur}
+              error={formik.touched.phoneNumber && formik.errors.phoneNumber ? formik.errors.phoneNumber : null}
             />
-            {formik.touched.phoneNumber && formik.errors.phoneNumber ? <ErrorMessage errorMsg={formik.errors.phoneNumber} /> : null}
 
             <FormSelectPermission
               label="Uprawnienia"
@@ -213,7 +213,7 @@ export const UserEdit = () => {
               value={formik.values.permissionId}
               onChange={formik.handleChange}
             />
-          </form>
+          </Form>
         ) : (
           <LoadingOrError msg={error ? error : 'Loading...'} />
         )}

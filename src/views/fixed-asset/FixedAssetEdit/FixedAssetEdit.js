@@ -6,9 +6,9 @@ import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { FormField } from 'components/molecules/FormField/FormField';
 import { useFormik } from 'formik';
-import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
 import { LoadingOrError } from 'components/molecules/LoadingOrError/LoadingOrError';
 import { Footer } from 'components/organisms/Footer/Footer';
+import { Form } from 'components/organisms/Form/Form';
 
 const validate = (values) => {
   const errors = {};
@@ -107,7 +107,7 @@ export const FixedAssetEdit = () => {
       <Header title="Edycja srodka trwalego" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
         {!loading && !error ? (
-          <form id="fixedAssetEditForm" onSubmit={formik.handleSubmit}>
+          <Form id="fixedAssetEditForm" onSubmit={formik.handleSubmit}>
             <FormField
               label="Nazwa"
               id="name"
@@ -116,8 +116,8 @@ export const FixedAssetEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.name}
               onBlur={formik.handleBlur}
+              error={formik.touched.name && formik.errors.name ? formik.errors.name : null}
             />
-            {formik.touched.name && formik.errors.name ? <ErrorMessage errorMsg={formik.errors.name} /> : null}
 
             <FormField
               label="Numer Inwentarzowy"
@@ -127,8 +127,8 @@ export const FixedAssetEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.inventoryNumber}
               onBlur={formik.handleBlur}
+              error={formik.touched.inventoryNumber && formik.errors.inventoryNumber ? formik.errors.inventoryNumber : null}
             />
-            {formik.touched.inventoryNumber && formik.errors.inventoryNumber ? <ErrorMessage errorMsg={formik.errors.inventoryNumber} /> : null}
 
             <FormField
               label="Numer Seryjny"
@@ -138,8 +138,8 @@ export const FixedAssetEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.serialNumber}
               onBlur={formik.handleBlur}
+              error={formik.touched.serialNumber && formik.errors.serialNumber ? formik.errors.serialNumber : null}
             />
-            {formik.touched.serialNumber && formik.errors.serialNumber ? <ErrorMessage errorMsg={formik.errors.serialNumber} /> : null}
 
             <FormField
               label="Opis"
@@ -149,8 +149,8 @@ export const FixedAssetEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.description}
               onBlur={formik.handleBlur}
+              error={formik.touched.description && formik.errors.description ? formik.errors.description : null}
             />
-            {formik.touched.description && formik.errors.description ? <ErrorMessage errorMsg={formik.errors.description} /> : null}
 
             <FormField
               label="Id Uzytkownika"
@@ -160,8 +160,8 @@ export const FixedAssetEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.userId}
               onBlur={formik.handleBlur}
+              error={formik.touched.userId && formik.errors.userId ? formik.errors.userId : null}
             />
-            {formik.touched.userId && formik.errors.userId ? <ErrorMessage errorMsg={formik.errors.userId} /> : null}
 
             <FormField
               label="Id Inwentaryzacji"
@@ -171,9 +171,9 @@ export const FixedAssetEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.inventoryId}
               onBlur={formik.handleBlur}
+              error={formik.touched.inventoryId && formik.errors.inventoryId ? formik.errors.inventoryId : null}
             />
-            {formik.touched.inventoryId && formik.errors.inventoryId ? <ErrorMessage errorMsg={formik.errors.inventoryId} /> : null}
-          </form>
+          </Form>
         ) : (
           <LoadingOrError msg={error ? error : 'Loading...'} />
         )}

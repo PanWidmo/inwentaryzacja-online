@@ -6,9 +6,9 @@ import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { useFormik } from 'formik';
 import { FormField } from 'components/molecules/FormField/FormField';
-import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
 import { LoadingOrError } from 'components/molecules/LoadingOrError/LoadingOrError';
 import { Footer } from 'components/organisms/Footer/Footer';
+import { Form } from 'components/organisms/Form/Form';
 
 const validate = (values) => {
   const errors = {};
@@ -91,7 +91,7 @@ export const InventoryEdit = () => {
       <Header title="Edycja inwentaryzacji" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
         {!loading && !error ? (
-          <form id="inventoryEditForm" onSubmit={formik.handleSubmit}>
+          <Form id="inventoryEditForm" onSubmit={formik.handleSubmit}>
             <FormField
               label="Nazwa"
               id="name"
@@ -100,8 +100,8 @@ export const InventoryEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.name}
               onBlur={formik.handleBlur}
+              error={formik.touched.name && formik.errors.name ? formik.errors.name : null}
             />
-            {formik.touched.name && formik.errors.name ? <ErrorMessage errorMsg={formik.errors.name} /> : null}
 
             <FormField
               label="Data rozpoczecia"
@@ -111,8 +111,8 @@ export const InventoryEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.startDate}
               onBlur={formik.handleBlur}
+              error={formik.touched.startDate && formik.errors.startDate ? formik.errors.startDate : null}
             />
-            {formik.touched.startDate && formik.errors.startDate ? <ErrorMessage errorMsg={formik.errors.startDate} /> : null}
 
             <FormField
               label="Data zakonczenia"
@@ -122,9 +122,9 @@ export const InventoryEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.closeDate}
               onBlur={formik.handleBlur}
+              error={formik.touched.closeDate && formik.errors.closeDate ? formik.errors.closeDate : null}
             />
-            {formik.touched.closeDate && formik.errors.closeDate ? <ErrorMessage errorMsg={formik.errors.closeDate} /> : null}
-          </form>
+          </Form>
         ) : (
           <LoadingOrError msg={error ? error : 'Loading...'} />
         )}

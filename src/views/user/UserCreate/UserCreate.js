@@ -6,8 +6,8 @@ import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { useFormik } from 'formik';
 import { FormField } from 'components/molecules/FormField/FormField';
 import { FormSelectPermission } from 'components/molecules/FormSelectPermission/FormSelectPermission';
-import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
 import { Footer } from 'components/organisms/Footer/Footer';
+import { Form } from 'components/organisms/Form/Form';
 
 const validate = (values) => {
   const errors = {};
@@ -94,7 +94,7 @@ export const UserCreate = () => {
     <>
       <Header title="Dodaj nowego uzytkownika" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
-        <form id="userCreateForm" onSubmit={formik.handleSubmit}>
+        <Form id="userCreateForm" onSubmit={formik.handleSubmit}>
           <FormField
             label="Imie"
             id="name"
@@ -103,8 +103,8 @@ export const UserCreate = () => {
             onChange={formik.handleChange}
             value={formik.values.name}
             onBlur={formik.handleBlur}
+            error={formik.touched.name && formik.errors.name ? formik.errors.name : null}
           />
-          {formik.touched.name && formik.errors.name ? <ErrorMessage errorMsg={formik.errors.name} /> : null}
 
           <FormField
             label="Nazwisko"
@@ -114,8 +114,8 @@ export const UserCreate = () => {
             onChange={formik.handleChange}
             value={formik.values.surname}
             onBlur={formik.handleBlur}
+            error={formik.touched.surname && formik.errors.surname ? formik.errors.surname : null}
           />
-          {formik.touched.surname && formik.errors.surname ? <ErrorMessage errorMsg={formik.errors.surname} /> : null}
 
           <FormField
             label="Login"
@@ -125,8 +125,8 @@ export const UserCreate = () => {
             onChange={formik.handleChange}
             value={formik.values.login}
             onBlur={formik.handleBlur}
+            error={formik.touched.login && formik.errors.login ? formik.errors.login : null}
           />
-          {formik.touched.login && formik.errors.login ? <ErrorMessage errorMsg={formik.errors.login} /> : null}
 
           <FormField
             label="Haslo"
@@ -136,8 +136,8 @@ export const UserCreate = () => {
             onChange={formik.handleChange}
             value={formik.values.password}
             onBlur={formik.handleBlur}
+            error={formik.touched.password && formik.errors.password ? formik.errors.password : null}
           />
-          {formik.touched.password && formik.errors.password ? <ErrorMessage errorMsg={formik.errors.password} /> : null}
 
           <FormField
             label="Powtorz haslo"
@@ -147,8 +147,8 @@ export const UserCreate = () => {
             onChange={formik.handleChange}
             value={formik.values.confirmPassword}
             onBlur={formik.handleBlur}
+            error={formik.touched.confirmPassword && formik.errors.confirmPassword ? formik.errors.confirmPassword : null}
           />
-          {formik.touched.confirmPassword && formik.errors.confirmPassword ? <ErrorMessage errorMsg={formik.errors.confirmPassword} /> : null}
 
           <FormField
             label="Email"
@@ -158,8 +158,8 @@ export const UserCreate = () => {
             onChange={formik.handleChange}
             value={formik.values.email}
             onBlur={formik.handleBlur}
+            error={formik.touched.email && formik.errors.email ? formik.errors.email : null}
           />
-          {formik.touched.email && formik.errors.email ? <ErrorMessage errorMsg={formik.errors.email} /> : null}
 
           <FormField
             label="Telefon"
@@ -168,8 +168,8 @@ export const UserCreate = () => {
             type="text"
             onChange={formik.handleChange}
             value={formik.values.phoneNumber}
+            error={formik.touched.phoneNumber && formik.errors.phoneNumber ? formik.errors.phoneNumber : null}
           />
-          {formik.touched.phoneNumber && formik.errors.phoneNumber ? <ErrorMessage errorMsg={formik.errors.phoneNumber} /> : null}
 
           <FormSelectPermission
             label="Uprawnienia"
@@ -178,7 +178,7 @@ export const UserCreate = () => {
             value={formik.values.permissionId}
             onChange={formik.handleChange}
           />
-        </form>
+        </Form>
       </ContentWrapper>
       <Footer hasBackToPrevPageButton hasCreateUserButton />
     </>

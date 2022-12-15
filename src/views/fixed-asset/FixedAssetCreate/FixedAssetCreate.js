@@ -5,7 +5,6 @@ import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { useFormik } from 'formik';
 import { FormField } from 'components/molecules/FormField/FormField';
-import { ErrorMessage } from 'components/molecules/ErrorMessage/ErrorMessage';
 import { Footer } from 'components/organisms/Footer/Footer';
 
 const validate = (values) => {
@@ -88,8 +87,8 @@ export const FixedAssetCreate = () => {
             onChange={formik.handleChange}
             value={formik.values.name}
             onBlur={formik.handleBlur}
+            error={formik.touched.name && formik.errors.name ? formik.errors.name : null}
           />
-          {formik.touched.name && formik.errors.name ? <ErrorMessage errorMsg={formik.errors.name} /> : null}
 
           <FormField
             label="Numer Inwentarzowy"
@@ -99,8 +98,8 @@ export const FixedAssetCreate = () => {
             onChange={formik.handleChange}
             value={formik.values.inventoryNumber}
             onBlur={formik.handleBlur}
+            error={formik.touched.inventoryNumber && formik.errors.inventoryNumber ? formik.errors.inventoryNumber : null}
           />
-          {formik.touched.inventoryNumber && formik.errors.inventoryNumber ? <ErrorMessage errorMsg={formik.errors.inventoryNumber} /> : null}
 
           <FormField
             label="Numer Seryjny"
@@ -110,8 +109,8 @@ export const FixedAssetCreate = () => {
             onChange={formik.handleChange}
             value={formik.values.serialNumber}
             onBlur={formik.handleBlur}
+            error={formik.touched.serialNumber && formik.errors.serialNumber ? formik.errors.serialNumber : null}
           />
-          {formik.touched.serialNumber && formik.errors.serialNumber ? <ErrorMessage errorMsg={formik.errors.serialNumber} /> : null}
 
           <FormField
             label="Opis"
@@ -121,8 +120,8 @@ export const FixedAssetCreate = () => {
             onChange={formik.handleChange}
             value={formik.values.description}
             onBlur={formik.handleBlur}
+            error={formik.touched.description && formik.errors.description ? formik.errors.description : null}
           />
-          {formik.touched.description && formik.errors.description ? <ErrorMessage errorMsg={formik.errors.description} /> : null}
 
           <FormField
             label="Id Uzytkownika"
@@ -132,8 +131,8 @@ export const FixedAssetCreate = () => {
             onChange={formik.handleChange}
             value={formik.values.userId}
             onBlur={formik.handleBlur}
+            error={formik.touched.userId && formik.errors.userId ? formik.errors.userId : null}
           />
-          {formik.touched.userId && formik.errors.userId ? <ErrorMessage errorMsg={formik.errors.userId} /> : null}
 
           <FormField
             label="Id Inwentaryzacji"
@@ -143,8 +142,8 @@ export const FixedAssetCreate = () => {
             onChange={formik.handleChange}
             value={formik.values.inventoryId}
             onBlur={formik.handleBlur}
+            error={formik.touched.inventoryId && formik.errors.inventoryId ? formik.errors.inventoryId : null}
           />
-          {formik.touched.inventoryId && formik.errors.inventoryId ? <ErrorMessage errorMsg={formik.errors.inventoryId} /> : null}
         </form>
       </ContentWrapper>
       <Footer hasBackToPrevPageButton hasCreateFixedAssetButton />
