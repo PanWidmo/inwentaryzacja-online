@@ -20,7 +20,7 @@ const Title = styled.div`
 `;
 const ButtonsSection = styled.div`
   display: flex;
-  gap:4rem;
+  gap: 4rem;
 `;
 
 const Subtitles = styled.div`
@@ -52,13 +52,10 @@ export const Header = ({ title, companyName, inventoryNumber, hasLogoutButton })
         <Title>
           <h1>{title}</h1>
         </Title>
-
-          <ButtonsSection>
-            <Button name="darkBlue" text="Pomoc" onClick={navigateToIssuePage}/>
-            {hasLogoutButton && (
-            <Button name="red" text="Wyloguj" onClick={handleLogout} />
-              )}
-          </ButtonsSection>
+        <ButtonsSection>
+          <Button name="darkBlue" text="Pomoc" onClick={navigateToIssuePage} />
+          {hasLogoutButton && <Button name="red" text="Wyloguj" onClick={handleLogout} />}
+        </ButtonsSection>
       </TitleWithButtons>
       <Subtitles>
         <p>{companyName}</p>
