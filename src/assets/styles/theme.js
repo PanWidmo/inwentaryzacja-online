@@ -28,7 +28,7 @@ export const theme = {
   breakpoints: {
     mobileOnly: `only screen and (max-width: ${size.mobile})`,
     notMobile: `only screen and (min-width: ${size.mobile})`,
-    tabletOnly: `only screen and (min-width: ${size.mobile}) and (max-width ${size.tablet})`,
+    tabletOnly: `only screen and (min-width: ${size.mobile}) and (max-width: ${size.tablet})`,
     notDesktop: `only screen and (max-width: ${size.tablet})`,
     desktopOnly: `only screen and (min-width: ${size.tablet})`,
   },
