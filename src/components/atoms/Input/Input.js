@@ -5,4 +5,8 @@ export const Input = styled.input`
   padding: 0.2em;
   border: none;
   font-size: ${({ theme }) => theme.fontSize.xl};
+
+  @media ${({ theme }) => theme.breakpoints.notDesktop} {
+    max-width: 250px;
+  }
 `;

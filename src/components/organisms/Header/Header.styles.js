@@ -3,11 +3,6 @@ import styled from 'styled-components';
 export const Wrapper = styled.header`
   display: flex;
   justify-content: space-between;
-  margin: 0.5rem;
-
-  @media ${({ theme }) => theme.breakpoints.desktopOnly} {
-    margin: 2rem 3.5rem;
-  }
 `;
 
 export const TitleWithSubtitles = styled.div`

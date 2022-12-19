@@ -6,6 +6,7 @@ import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { Button } from 'components/organisms/Button/Button';
 import { useNavigate } from 'react-router-dom';
+import { Wrapper } from 'views/role-pages/UserRoleSelect/UserRoleSelect.styles';
 
 export const UserRoleSelect = () => {
   const navigate = useNavigate();
@@ -27,23 +28,25 @@ export const UserRoleSelect = () => {
     <>
       <Header title="Wybierz swoja role" companyName="Compolexos" hasLogoutButton />
       <ContentWrapper>
-        <SingleViewWrapper as="form">
-          <img src={userIcon} alt="people_logo" />
-          <Button name="green" text="Uzytkownik" onClick={navigateToUserPanel} />
-          <p>Panel uzytkownika</p>
-        </SingleViewWrapper>
+        <Wrapper>
+          <SingleViewWrapper>
+            <img src={userIcon} alt="Man in suit portrait" />
+            <Button name="green" text="Pracownik" onClick={navigateToUserPanel} />
+            <p>Panel pracownika</p>
+          </SingleViewWrapper>
 
-        <SingleViewWrapper as="form">
-          <img src={adminIcon} alt="people_logo" />
-          <Button name="green" text="Admin" onClick={navigateToAdminPanel} />
-          <p>Panel administratora</p>
-        </SingleViewWrapper>
+          <SingleViewWrapper>
+            <img src={adminIcon} alt="Man portrait with gear on the front" />
+            <Button name="green" text="Administrator" onClick={navigateToAdminPanel} />
+            <p>Panel administratora</p>
+          </SingleViewWrapper>
 
-        <SingleViewWrapper as="form">
-          <img src={accountantIcon} alt="people_logo" />
-          <Button name="green" text="Ksiegowy" onClick={navigateToAccountantPanel} />
-          <p>Panel ksiegowego</p>
-        </SingleViewWrapper>
+          <SingleViewWrapper>
+            <img src={accountantIcon} alt="Woman portrait with calculator and chart on the front" />
+            <Button name="green" text="Ksiegowy" onClick={navigateToAccountantPanel} />
+            <p>Panel księgowego</p>
+          </SingleViewWrapper>
+        </Wrapper>
       </ContentWrapper>
     </>
   );
