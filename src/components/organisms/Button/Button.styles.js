@@ -14,6 +14,7 @@ export const StyledButton = styled.button`
   font-size: ${({ theme }) => theme.fontSize.l};
   color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
+  max-height: 3.5rem;
   box-shadow: 0 0.1875em 0.5em rgba(0, 0, 0, 0.3);
   :active {
     transform: translateY(0.25em);

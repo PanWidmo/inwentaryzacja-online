@@ -1,19 +1,7 @@
-import styled from 'styled-components';
 import axios from 'axios';
 import { Button } from 'components/organisms/Button/Button';
 import { useNavigate, useParams } from 'react-router-dom';
-
-const Wrapper = styled.footer`
-  margin: 2rem 3.5rem;
-  display: flex;
-  justify-content: space-between;
-`;
-
-const LeftSide = styled.div`
-  display: flex;
-  gap: 2.5rem;
-`;
-const RightSide = styled.div``;
+import { Wrapper, LeftSide, RightSide } from 'components/organisms/Footer/Footer.styles';
 
 export const Footer = ({
   hasBackToPrevPageButton,
