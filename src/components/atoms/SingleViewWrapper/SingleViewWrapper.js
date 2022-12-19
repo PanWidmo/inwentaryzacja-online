@@ -9,8 +9,12 @@ export const SingleViewWrapper = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  min-height: 60vh;
+  min-height: 50vh;
   min-width: 20rem;
+
+  @media ${({ theme }) => theme.breakpoints.tabletOnly} {
+    min-width: unset;
+  }
 
   img {
     width: 8rem;

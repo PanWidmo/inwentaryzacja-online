@@ -41,7 +41,7 @@ export const FixedAssetList = () => {
 
   return (
     <>
-      <Header title="Srodki Trwale" companyName="Compolexos" hasLogoutButton />
+      <Header title="Srodki Trwale" hasLogoutButton />
       <ContentWrapper>
         <Wrapper>
           <InnerWrapper>

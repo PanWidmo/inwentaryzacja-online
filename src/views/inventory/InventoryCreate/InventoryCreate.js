@@ -58,7 +58,7 @@ export const InventoryCreate = () => {
 
   return (
     <>
-      <Header title="Nowa Inwentaryzacja" companyName="Compolexos" hasLogoutButton />
+      <Header title="Nowa Inwentaryzacja" hasLogoutButton />
       <ContentWrapper>
         <Form id="inventoryCreateForm" onSubmit={formik.handleSubmit}>
           <FormField

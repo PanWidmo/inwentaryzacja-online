@@ -7,10 +7,9 @@ import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { Footer } from 'components/organisms/Footer/Footer';
 import { LoadingOrError } from 'components/molecules/LoadingOrError/LoadingOrError';
 
-export const UserAssets = () => {
+export const UserFixedAsset = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-
   const [dane, setDane] = useState([]);
 
   useEffect(() => {
@@ -36,7 +35,7 @@ export const UserAssets = () => {
 
   return (
     <>
-      <Header title="Uzytkownicy" companyName="Compolexos" hasLogoutButton />
+      <Header title="Twoje środki trwałe" hasLogoutButton />
       <ContentWrapper>
         <Wrapper>
           <InnerWrapper>
@@ -50,7 +49,7 @@ export const UserAssets = () => {
           </InnerWrapper>
         </Wrapper>
       </ContentWrapper>
-      <Footer hasBackToPrevPageButton hasConfirmUserAssets />
+      <Footer hasBackToPrevPageButton hasConfirmUserAsset />
     </>
   );
 };

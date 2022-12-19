@@ -14,7 +14,7 @@ export const Unauthorized = () => {
 
   return (
     <>
-      <Header title="Błąd" companyName="Compolexos" />
+      <Header title="Błąd" />
       <ContentWrapper>
         <Wrapper>
           <img src={unauthorizedIcon} alt="Unauthorized icon" />

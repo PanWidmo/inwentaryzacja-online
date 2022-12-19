@@ -6,4 +6,8 @@ export const requests = {
   singleInventory: '/api/inventory',
   getUsers: '/api/user/onlyall',
   singleUser: '/api/user',
+  userFixedAsset: '/user/fixed-asset',
+  userFixedAssetConfirm: '/user/fixed-asset/confirm',
+  adminPanel: '/admin-panel',
+  accountantPanel: '/accountant-panel',
 };

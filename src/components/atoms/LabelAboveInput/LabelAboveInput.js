@@ -6,4 +6,5 @@ export const LabelAboveInput = styled.label`
   color: ${({ theme }) => theme.colors.blue};
   font-size: ${({ theme }) => theme.fontSize.l};
   margin: 0 0 0.25em 0;
+  text-transform: uppercase;
 `;

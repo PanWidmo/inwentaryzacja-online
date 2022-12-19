@@ -7,31 +7,31 @@ import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { Button } from 'components/organisms/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import { Wrapper } from 'views/role-pages/UserRoleSelect/UserRoleSelect.styles';
+import { requests } from 'api/requests';
 
 export const UserRoleSelect = () => {
   const navigate = useNavigate();
 
-  const navigateToUserPanel = () => {
-    // DO ZMIANY ADRES PO ZROBIENIU ODPOWIEDNIEGO KOMPONENTU!
-    navigate('/user/summary');
+  const navigateToUserFixedAssets = () => {
+    navigate(requests.userFixedAsset);
   };
 
   const navigateToAdminPanel = () => {
-    navigate('/admin-panel');
+    navigate(requests.adminPanel);
   };
 
   const navigateToAccountantPanel = () => {
-    navigate('/accountant-panel');
+    navigate(requests.accountantPanel);
   };
 
   return (
     <>
-      <Header title="Wybierz swoja role" companyName="Compolexos" hasLogoutButton />
+      <Header title="Wybierz swoja role" hasLogoutButton />
       <ContentWrapper>
         <Wrapper>
           <SingleViewWrapper>
             <img src={userIcon} alt="Man in suit portrait" />
-            <Button name="green" text="Pracownik" onClick={navigateToUserPanel} />
+            <Button name="green" text="Pracownik" onClick={navigateToUserFixedAssets} />
             <p>Panel pracownika</p>
           </SingleViewWrapper>
 

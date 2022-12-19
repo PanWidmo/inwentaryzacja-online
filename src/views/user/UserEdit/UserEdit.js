@@ -125,7 +125,7 @@ export const UserEdit = () => {
 
   return (
     <>
-      <Header title="Edytuj dane użytkownika" companyName="Compolexos" hasLogoutButton />
+      <Header title="Edytuj dane użytkownika" hasLogoutButton />
       <ContentWrapper>
         {!loading && !error ? (
           <Form id="userEditForm" onSubmit={formik.handleSubmit}>

@@ -20,7 +20,7 @@ export const AdminPanel = () => {
 
   return (
     <>
-      <Header title="Panel admina" companyName="Compolexos" hasLogoutButton />
+      <Header title="Panel admina" hasLogoutButton />
       <ContentWrapper>
         <SingleViewWrapper as="form">
           <img src={usersIcon} alt="people_logo" />

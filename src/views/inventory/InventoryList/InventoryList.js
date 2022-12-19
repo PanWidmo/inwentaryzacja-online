@@ -41,7 +41,7 @@ export const InventoryList = () => {
 
   return (
     <>
-      <Header title="Inwentaryzacje" companyName="Compolexos" hasLogoutButton />
+      <Header title="Inwentaryzacje" hasLogoutButton />
       <ContentWrapper>
         <Wrapper>
           <InnerWrapper>

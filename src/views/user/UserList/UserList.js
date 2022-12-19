@@ -42,7 +42,7 @@ export const UserList = () => {
 
   return (
     <>
-      <Header title="Uzytkownicy" companyName="Compolexos" hasLogoutButton />
+      <Header title="Uzytkownicy" hasLogoutButton />
       <ContentWrapper>
         <Wrapper>
           <InnerWrapper>

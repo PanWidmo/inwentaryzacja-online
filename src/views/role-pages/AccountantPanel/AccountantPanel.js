@@ -20,7 +20,7 @@ export const AccountantPanel = () => {
 
   return (
     <>
-      <Header title="Panel ksiegowego" companyName="Compolexos" hasLogoutButton />
+      <Header title="Panel ksiegowego" hasLogoutButton />
       <ContentWrapper>
         <SingleViewWrapper as="form">
           <img src={inventoryHistory} alt="people_logo" />

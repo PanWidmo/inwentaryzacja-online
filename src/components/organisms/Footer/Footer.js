@@ -2,6 +2,7 @@ import axios from 'axios';
 import { Button } from 'components/organisms/Button/Button';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Wrapper, LeftSide, RightSide } from 'components/organisms/Footer/Footer.styles';
+import { requests } from 'api/requests';
 
 export const Footer = ({
   hasBackToPrevPageButton,
@@ -16,7 +17,7 @@ export const Footer = ({
   hasSaveEditedInventoryButton,
   hasAbortInventoryButton,
   hasDownloadInventoryButton,
-  hasConfirmUserAssets,
+  hasConfirmUserAsset,
 }) => {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -61,6 +62,10 @@ export const Footer = ({
     }
   };
 
+  const navigateToConfirmAssets = () => {
+    navigate(requests.userFixedAssetConfirm);
+  };
+
   return (
     <Wrapper>
       <LeftSide>
@@ -78,7 +83,7 @@ export const Footer = ({
         {hasSaveEditedInventoryButton && <Button name="blue" text="Zapisz" type="submit" form="inventoryEditForm" />}
         {hasAbortInventoryButton && <Button name="red" text="Przerwij" type="submit" />}
         {hasDownloadInventoryButton && <Button name="green" text="Pobierz" />}
-        {hasConfirmUserAssets && <Button name="green" text="Zatwierdź" />}
+        {hasConfirmUserAsset && <Button name="green" text="Zatwierdź" onClick={navigateToConfirmAssets} />}
       </RightSide>
     </Wrapper>
   );

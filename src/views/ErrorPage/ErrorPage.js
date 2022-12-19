@@ -14,7 +14,7 @@ export const ErrorPage = () => {
 
   return (
     <>
-      <Header title="404" companyName="Compolexos" />
+      <Header title="404" />
       <ContentWrapper>
         <Wrapper>
           <img src={errorIcon} alt="Error red icon" />

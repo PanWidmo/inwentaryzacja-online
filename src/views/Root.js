@@ -13,11 +13,12 @@ import { AccountantPanel } from './role-pages/AccountantPanel/AccountantPanel';
 import { InventoryList } from 'views/inventory/InventoryList/InventoryList';
 import { InventoryEdit } from './inventory/InventoryEdit/InventoryEdit';
 import { UserRoleSelect } from './role-pages/UserRoleSelect/UserRoleSelect';
-import { UserAssets } from './user/UserAssets/UserAssets';
+import { UserFixedAsset } from 'views/user/UserFixedAsset/UserFixedAsset';
 import { RequireAuth } from 'components/molecules/RequireAuth/RequireAuth';
 import { Unauthorized } from 'views/auth/Unauthorized/Unauthorized';
 import { ErrorPage } from 'views/ErrorPage/ErrorPage';
 import { IssuePage } from 'views/IssuePage/IssuePage';
+import { UserFixedAssetConfirm } from 'views/user/UserFixedAssetConfirm/UserFixedAssetConfirm';
 
 const ROLES = {
   User: 1,
@@ -37,7 +38,8 @@ export const Root = () => {
         <Route element={<RequireAuth allowedRoles={[ROLES.User, ROLES.Accountant, ROLES.Admin]} />}>
           <Route path="/" element={<Navigate to="/select-user-role" />} />
           <Route path="/select-user-role" element={<UserRoleSelect />} />
-          <Route path="/user/summary" element={<UserAssets />} />
+          <Route path="/user/fixed-asset" element={<UserFixedAsset />} />
+          <Route path="/user/fixed-asset/confirm" element={<UserFixedAssetConfirm />} />
         </Route>
         <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
           <Route path="/admin-panel" element={<AdminPanel />} />

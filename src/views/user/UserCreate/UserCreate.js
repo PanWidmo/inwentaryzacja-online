@@ -92,7 +92,7 @@ export const UserCreate = () => {
 
   return (
     <>
-      <Header title="Dodaj nowego uzytkownika" companyName="Compolexos" hasLogoutButton />
+      <Header title="Dodaj nowego uzytkownika" hasLogoutButton />
       <ContentWrapper>
         <Form id="userCreateForm" onSubmit={formik.handleSubmit}>
           <FormField

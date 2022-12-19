@@ -104,7 +104,7 @@ export const FixedAssetEdit = () => {
 
   return (
     <>
-      <Header title="Edycja srodka trwalego" companyName="Compolexos" hasLogoutButton />
+      <Header title="Edycja srodka trwalego" hasLogoutButton />
       <ContentWrapper>
         {!loading && !error ? (
           <Form id="fixedAssetEditForm" onSubmit={formik.handleSubmit}>

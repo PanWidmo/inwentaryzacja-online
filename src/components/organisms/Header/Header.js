@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from 'components/organisms/Button/Button';
 import { Wrapper, TitleWithSubtitles, Title, ButtonsSection, Subtitle } from 'components/organisms/Header/Header.styles';
 
-export const Header = ({ title, companyName, inventoryNumber, hasLogoutButton }) => {
+export const Header = ({ title, companyName = 'Compolexos', inventoryNumber, hasLogoutButton }) => {
   const navigate = useNavigate();
 
   const navigateToLogin = () => {

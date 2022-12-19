@@ -7,6 +7,7 @@ import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import { FormField } from 'components/molecules/FormField/FormField';
 import { Button } from 'components/organisms/Button/Button';
 import { requests } from 'api/requests';
+import { Wrapper } from 'views/auth/Login/Login.styles';
 
 const validate = (values) => {
   const errors = {};
@@ -50,30 +51,32 @@ export const Login = () => {
 
   return (
     <>
-      <Header title="Logowanie do systemu inwentaryzacji" companyName="Compolexos" />
+      <Header title="Logowanie do systemu inwentaryzacji" />
       <ContentWrapper>
         <ViewWrapper as="form" onSubmit={formik.handleSubmit}>
-          <FormField
-            label="EMAIL"
-            id="email"
-            name="email"
-            type="email"
-            onChange={formik.handleChange}
-            value={formik.values.email}
-            onBlur={formik.handleBlur}
-            error={formik.touched.email && formik.errors.email ? formik.errors.email : null}
-          />
-          <FormField
-            label="HASŁO"
-            id="password"
-            name="password"
-            type="password"
-            onChange={formik.handleChange}
-            value={formik.values.password}
-            onBlur={formik.handleBlur}
-            error={formik.touched.password && formik.errors.password ? formik.errors.password : null}
-          />
-          <Button name="blue" text="Zaloguj" type="submit" />
+          <Wrapper>
+            <FormField
+              label="Email"
+              id="email"
+              name="email"
+              type="email"
+              onChange={formik.handleChange}
+              value={formik.values.email}
+              onBlur={formik.handleBlur}
+              error={formik.touched.email && formik.errors.email ? formik.errors.email : null}
+            />
+            <FormField
+              label="Hasło"
+              id="password"
+              name="password"
+              type="password"
+              onChange={formik.handleChange}
+              value={formik.values.password}
+              onBlur={formik.handleBlur}
+              error={formik.touched.password && formik.errors.password ? formik.errors.password : null}
+            />
+            <Button name="blue" text="Zaloguj" type="submit" />
+          </Wrapper>
         </ViewWrapper>
       </ContentWrapper>
     </>

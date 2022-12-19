@@ -76,7 +76,7 @@ export const FixedAssetCreate = () => {
 
   return (
     <>
-      <Header title="Dodanie nowego Srodka Trwalego" companyName="Compolexos" hasLogoutButton />
+      <Header title="Dodanie nowego Srodka Trwalego" hasLogoutButton />
       <ContentWrapper>
         <form id="fixedAssetCreateForm" onSubmit={formik.handleSubmit}>
           <FormField
