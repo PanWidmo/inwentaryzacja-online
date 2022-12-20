@@ -1,44 +1,63 @@
 import { SingleViewWrapper } from 'components/atoms/SingleViewWrapper/SingleViewWrapper';
 import usersIcon from 'assets/icons/users.png';
 import fixedAssetsIcon from 'assets/icons/fixedAssets.png';
-import downloadIcon from 'assets/icons/download.png';
+import issuesIcon from 'assets/icons/issues.png';
+import inventoryIcon from 'assets/icons/inventory1.png';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { Button } from 'components/organisms/Button/Button';
 import { useNavigate } from 'react-router-dom';
+import { requests } from 'api/requests';
+import { Wrapper } from 'views/role-pages/AdminPanel/AdminPanel.styles';
 
 export const AdminPanel = () => {
   const navigate = useNavigate();
 
   const navigateToUsers = () => {
-    navigate('/user-management');
+    navigate(requests.userManagement);
   };
 
   const navigateToFixedAssets = () => {
-    navigate('/fixed-asset-management');
+    navigate(requests.fixedAssetManagement);
+  };
+
+  const navigateToIssues = () => {
+    navigate(requests.issueManagement);
+  };
+
+  const navigateToUserFixedAssets = () => {
+    navigate(requests.userFixedAsset);
   };
 
   return (
     <>
       <Header title="Panel admina" hasLogoutButton />
       <ContentWrapper>
-        <SingleViewWrapper as="form">
-          <img src={usersIcon} alt="people_logo" />
-          <Button name="green" text="Uzytkownicy" onClick={navigateToUsers} />
-          <p>Modyfikuj dane użytkowników</p>
-        </SingleViewWrapper>
+        <Wrapper>
+          <SingleViewWrapper>
+            <img src={usersIcon} alt="People inon" />
+            <Button name="green" text="Uzytkownicy" onClick={navigateToUsers} />
+            <p>Modyfikuj dane użytkowników</p>
+          </SingleViewWrapper>
 
-        <SingleViewWrapper as="form">
-          <img src={fixedAssetsIcon} alt="people_logo" />
-          <Button name="green" text="Srodki Trwale" onClick={navigateToFixedAssets} />
-          <p>Modyfikuj informacje o obiektach</p>
-        </SingleViewWrapper>
+          <SingleViewWrapper>
+            <img src={fixedAssetsIcon} alt="Computer, laptop and phone" />
+            <Button name="green" text="Srodki Trwale" onClick={navigateToFixedAssets} />
+            <p>Modyfikuj informacje o obiektach</p>
+          </SingleViewWrapper>
 
-        <SingleViewWrapper as="form">
-          <img src={downloadIcon} alt="people_logo" />
-          <Button name="green" text="Pobierz" onClick={() => alert('Functionality in progress... :)')} />
-          <p>Generuj plik z danymi wyjściowymi</p>
-        </SingleViewWrapper>
+          <SingleViewWrapper>
+            <img src={issuesIcon} alt="Man with bubbles around his head" />
+            <Button name="green" text="Zgłoszenia" onClick={navigateToIssues} />
+            <p>Zgłoszone problemy przez użytkowników</p>
+          </SingleViewWrapper>
+
+          <SingleViewWrapper>
+            <img src={inventoryIcon} alt="Inventory icon" />
+            <Button name="green" text="Twoje środki trwałe" onClick={navigateToUserFixedAssets} />
+            <p>Lista posiadanych przez Ciebie rzeczy</p>
+          </SingleViewWrapper>
+        </Wrapper>
       </ContentWrapper>
     </>
   );

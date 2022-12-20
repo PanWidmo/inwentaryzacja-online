@@ -17,8 +17,9 @@ import { UserFixedAsset } from 'views/user/UserFixedAsset/UserFixedAsset';
 import { RequireAuth } from 'components/molecules/RequireAuth/RequireAuth';
 import { Unauthorized } from 'views/auth/Unauthorized/Unauthorized';
 import { ErrorPage } from 'views/ErrorPage/ErrorPage';
-import { IssuePage } from 'views/IssuePage/IssuePage';
+import { IssuePage } from 'views/issue/IssuePage/IssuePage';
 import { UserFixedAssetConfirm } from 'views/user/UserFixedAssetConfirm/UserFixedAssetConfirm';
+import { IssueList } from 'views/issue/IssueList/IssueList';
 
 const ROLES = {
   User: 1,
@@ -49,6 +50,7 @@ export const Root = () => {
           <Route path="/fixed-asset-management" element={<FixedAssetList />} />
           <Route path="/fixed-asset-management/create" element={<FixedAssetCreate />} />
           <Route path="/fixed-asset-management/:id" element={<FixedAssetEdit />} />
+          <Route path="/issue-management" element={<IssueList />} />
         </Route>
         <Route element={<RequireAuth allowedRoles={[ROLES.Accountant]} />}>
           <Route path="/accountant-panel" element={<AccountantPanel />} />

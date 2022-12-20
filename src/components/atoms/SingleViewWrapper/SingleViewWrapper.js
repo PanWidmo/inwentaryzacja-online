@@ -18,10 +18,12 @@ export const SingleViewWrapper = styled.div`
 
   img {
     width: 8rem;
+    height: 8rem;
   }
 
   p {
     text-align: center;
     font-size: ${({ theme }) => theme.fontSize.l};
+    max-width: 17rem;
   }
 `;

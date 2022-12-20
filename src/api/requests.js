@@ -10,4 +10,7 @@ export const requests = {
   userFixedAssetConfirm: '/user/fixed-asset/confirm',
   adminPanel: '/admin-panel',
   accountantPanel: '/accountant-panel',
+  userManagement: '/user-management',
+  fixedAssetManagement: '/fixed-asset-management',
+  issueManagement: '/issue-management',
 };
