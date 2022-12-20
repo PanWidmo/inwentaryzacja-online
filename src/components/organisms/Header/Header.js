@@ -1,16 +1,17 @@
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'components/organisms/Button/Button';
 import { Wrapper, TitleWithSubtitles, Title, ButtonsSection, Subtitle } from 'components/organisms/Header/Header.styles';
+import { requests } from 'api/requests';
 
 export const Header = ({ title, companyName = 'Compolexos', inventoryNumber, hasLogoutButton }) => {
   const navigate = useNavigate();
 
   const navigateToLogin = () => {
-    navigate('/login');
+    navigate(requests.loginPage);
   };
 
   const navigateToIssuePage = () => {
-    navigate('/issue');
+    navigate(requests.issuePage);
   };
 
   const handleLogout = () => {

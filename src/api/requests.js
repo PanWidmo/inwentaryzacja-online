@@ -1,5 +1,6 @@
 export const requests = {
   login: 'api/user/login',
+  loginPage: '/login',
   getFixedAssets: '/api/asset',
   singleFixedAsset: '/api/asset',
   getInventories: '/api/inventory/onlyall',
@@ -11,6 +12,10 @@ export const requests = {
   adminPanel: '/admin-panel',
   accountantPanel: '/accountant-panel',
   userManagement: '/user-management',
+  userCreate: '/user-management/create',
   fixedAssetManagement: '/fixed-asset-management',
   issueManagement: '/issue-management',
+  issuePage: '/issue',
+  inventoryManagement: '/inventory-management',
+  inventoryCreate: '/inventory-management',
 };

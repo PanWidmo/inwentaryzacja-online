@@ -2,7 +2,7 @@ import { SingleViewWrapper } from 'components/atoms/SingleViewWrapper/SingleView
 import usersIcon from 'assets/icons/users.png';
 import fixedAssetsIcon from 'assets/icons/fixedAssets.png';
 import issuesIcon from 'assets/icons/issues.png';
-import inventoryIcon from 'assets/icons/inventory1.png';
+import inventoryIcon from 'assets/icons/inventory.png';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { Button } from 'components/organisms/Button/Button';
@@ -31,7 +31,7 @@ export const AdminPanel = () => {
 
   return (
     <>
-      <Header title="Panel admina" hasLogoutButton />
+      <Header title="Panel administratora" hasLogoutButton />
       <ContentWrapper>
         <Wrapper>
           <SingleViewWrapper>

@@ -67,7 +67,7 @@ export const UserEdit = () => {
   const navigate = useNavigate();
 
   const navigateToUsers = () => {
-    navigate('/user-management');
+    navigate(requests.userManagement);
   };
 
   const formik = useFormik({

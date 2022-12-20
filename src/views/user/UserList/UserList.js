@@ -17,7 +17,7 @@ export const UserList = () => {
   const navigate = useNavigate();
 
   const navigateToCreateUser = () => {
-    navigate('/user-management/create');
+    navigate(requests.userCreate);
   };
 
   const getData = async () => {

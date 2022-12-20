@@ -26,16 +26,21 @@ export const Footer = ({
     navigate(-1);
   };
 
+  const navigateToUserManagement = () => {
+    navigate(requests.userManagement);
+  };
+
   const deleteUser = () => {
     try {
-      axios.delete(`https://localhost:5001/api/user/${id}`, {
+      axios.delete(`${requests.singleUser}/${id}`, {
         headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
       });
-      alert('Usunieto uzytkownika! :)');
-      navigate('/user-management');
     } catch (error) {
       console.error(error.message);
     }
+
+    alert('Usunieto uzytkownika! :)');
+    navigateToUserManagement();
   };
 
   const deleteFixedAsset = () => {
