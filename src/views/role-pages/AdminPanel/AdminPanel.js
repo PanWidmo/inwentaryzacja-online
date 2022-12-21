@@ -35,15 +35,15 @@ export const AdminPanel = () => {
       <ContentWrapper>
         <Wrapper>
           <SingleViewWrapper>
-            <img src={usersIcon} alt="People inon" />
-            <Button name="green" text="Uzytkownicy" onClick={navigateToUsers} />
+            <img src={usersIcon} alt="Three people portrait" />
+            <Button name="green" text="Użytkownicy" onClick={navigateToUsers} />
             <p>Modyfikuj dane użytkowników</p>
           </SingleViewWrapper>
 
           <SingleViewWrapper>
             <img src={fixedAssetsIcon} alt="Computer, laptop and phone" />
-            <Button name="green" text="Srodki Trwale" onClick={navigateToFixedAssets} />
-            <p>Modyfikuj informacje o obiektach</p>
+            <Button name="green" text="Środki Trwałe" onClick={navigateToFixedAssets} />
+            <p>Modyfikuj informacje o sprzęcie</p>
           </SingleViewWrapper>
 
           <SingleViewWrapper>

@@ -11,17 +11,17 @@ import { Form } from 'components/organisms/Form/Form';
 const validate = (values) => {
   const errors = {};
   if (!values.name) {
-    errors.name = 'Required';
+    errors.name = 'Pole wymagane';
   } else if (values.name.length < 2) {
     errors.name = 'Must be 2 characters or more';
   }
 
   if (!values.startDate) {
-    errors.startDate = 'Required';
+    errors.startDate = 'Pole wymagane';
   }
 
   if (!values.closeDate) {
-    errors.closeDate = 'Required';
+    errors.closeDate = 'Pole wymagane';
   } else if (values.closeDate < values.startDate) {
     errors.closeDate = 'Wrong close date';
   }
@@ -48,7 +48,7 @@ export const InventoryCreate = () => {
         axios.post(requests.singleInventory, values, {
           headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
         });
-        alert('Utworzono nowa inwentaryzacje! :)');
+        alert('Utworzono nową inwentaryzację');
         navigateToAccountantPanel();
       } catch (error) {
         console.error(error.message);

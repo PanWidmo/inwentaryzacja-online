@@ -49,7 +49,7 @@ export const UserList = () => {
             {!loading && !error && data?.length ? (
               <>
                 <Table dane={data} dataName="user" id="usersTable" />
-                <Button name="green" text="Dodaj" onClick={navigateToCreateUser} />
+                <Button name="blue" text="Dodaj" onClick={navigateToCreateUser} />
               </>
             ) : (
               <>

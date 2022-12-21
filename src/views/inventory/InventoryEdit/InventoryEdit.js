@@ -13,17 +13,17 @@ import { Form } from 'components/organisms/Form/Form';
 const validate = (values) => {
   const errors = {};
   if (!values.name) {
-    errors.name = 'Required';
+    errors.name = 'Pole wymagane';
   } else if (values.name.length < 2) {
     errors.name = 'Must be 2 characters or more';
   }
 
   if (!values.startDate) {
-    errors.startDate = 'Required';
+    errors.startDate = 'Pole wymagane';
   }
 
   if (!values.closeDate) {
-    errors.closeDate = 'Required';
+    errors.closeDate = 'Pole wymagane';
   } else if (values.closeDate < values.startDate) {
     errors.closeDate = 'Wrong close date';
   }
@@ -53,7 +53,7 @@ export const InventoryEdit = () => {
         axios.put(`${requests.singleInventory}/${id}`, values, {
           headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
         });
-        alert('Edytowano inwentaryzacje! :)');
+        alert('Edytowano inwentaryzację');
         navigateToInventory();
       } catch (error) {
         console.error(error.message);

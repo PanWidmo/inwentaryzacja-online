@@ -17,7 +17,7 @@ export const FixedAssetList = () => {
   const navigate = useNavigate();
 
   const navigateToCreateFixedAsset = () => {
-    navigate('/fixed-asset-management/create');
+    navigate(requests.fixedAssetCreate);
   };
 
   const getData = async () => {
@@ -41,14 +41,14 @@ export const FixedAssetList = () => {
 
   return (
     <>
-      <Header title="Srodki Trwale" hasLogoutButton />
+      <Header title="Środki Trwałe" hasLogoutButton />
       <ContentWrapper>
         <Wrapper>
           <InnerWrapper>
             {!loading && !error && data?.length ? (
               <>
                 <Table dane={data} dataName="fixed-asset" id="fixedAssetsTable" />
-                <Button name="green" text="Dodaj" onClick={navigateToCreateFixedAsset} />
+                <Button name="blue" text="Dodaj" onClick={navigateToCreateFixedAsset} />
               </>
             ) : (
               <LoadingOrError msg={error ? error : 'Loading...'} />

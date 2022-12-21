@@ -26,7 +26,7 @@ export const UserRoleSelect = () => {
 
   return (
     <>
-      <Header title="Wybierz swoja role" hasLogoutButton />
+      <Header title="Wybierz swoją rolę" hasLogoutButton />
       <ContentWrapper>
         <Wrapper>
           <SingleViewWrapper>
@@ -43,7 +43,7 @@ export const UserRoleSelect = () => {
 
           <SingleViewWrapper>
             <img src={accountantIcon} alt="Woman portrait with calculator and chart on the front" />
-            <Button name="green" text="Ksiegowy" onClick={navigateToAccountantPanel} />
+            <Button name="green" text="Księgowy" onClick={navigateToAccountantPanel} />
             <p>Panel księgowego</p>
           </SingleViewWrapper>
         </Wrapper>

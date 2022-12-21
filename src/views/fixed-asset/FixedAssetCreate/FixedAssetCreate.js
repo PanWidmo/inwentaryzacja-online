@@ -6,46 +6,65 @@ import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { useFormik } from 'formik';
 import { FormField } from 'components/molecules/FormField/FormField';
 import { Footer } from 'components/organisms/Footer/Footer';
+import { Form } from 'components/organisms/Form/Form';
+import { useEffect, useState } from 'react';
+import { FormSelect } from 'components/molecules/FormSelect/FormSelect';
 
 const validate = (values) => {
   const errors = {};
   if (!values.name) {
-    errors.name = 'Required';
+    errors.name = 'Pole wymagane';
   } else if (values.name.length < 2) {
     errors.name = 'Must be 2 characters or more';
   }
 
-  if (!values.inventoryNumber) {
-    errors.inventoryNumber = 'Required';
-  } else if (values.inventoryNumber.length < 2) {
-    errors.inventoryNumber = 'Must be 2 characters or more';
-  }
-
   if (!values.serialNumber) {
-    errors.serialNumber = 'Required';
+    errors.serialNumber = 'Pole wymagane';
   } else if (values.serialNumber.length < 2) {
     errors.serialNumber = 'Must be 2 characters or more';
   }
 
   if (!values.description) {
-    errors.description = 'Required';
+    errors.description = 'Pole wymagane';
   } else if (values.description.length < 2) {
     errors.description = 'Must be 2 characters or more';
   }
 
   if (!values.userId) {
-    errors.userId = 'Required';
+    errors.userId = 'Pole wymagane';
   }
 
   if (!values.inventoryId) {
-    errors.inventoryId = 'Required';
+    errors.inventoryId = 'Pole wymagane';
   }
 
   return errors;
 };
 
 export const FixedAssetCreate = () => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
+
+  const getData = async () => {
+    setLoading(true);
+    try {
+      const result = await axios.get(requests.singleUser, {
+        headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+      });
+      setData(result.data);
+    } catch (error) {
+      console.error(error.message);
+      setError(error.message);
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    getData();
+    // eslint-disable-next-line
+  }, []);
 
   const navigateToFixedAsset = () => {
     navigate('/fixed-asset-management');
@@ -66,7 +85,7 @@ export const FixedAssetCreate = () => {
         axios.post(requests.singleFixedAsset, values, {
           headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
         });
-        alert('Srodek Trwaly dodany! :)');
+        alert('Dodano środek trwały');
         navigateToFixedAsset();
       } catch (error) {
         console.error(error.message);
@@ -76,9 +95,16 @@ export const FixedAssetCreate = () => {
 
   return (
     <>
-      <Header title="Dodanie nowego Srodka Trwalego" hasLogoutButton />
+      {data.map((el) => {
+        return (
+          <option key={el.id} value={el.id}>
+            {el.name} {el.surname}
+          </option>
+        );
+      })}
+      <Header title="Dodanie nowego środka trwałego" hasLogoutButton />
       <ContentWrapper>
-        <form id="fixedAssetCreateForm" onSubmit={formik.handleSubmit}>
+        <Form id="fixedAssetCreateForm" onSubmit={formik.handleSubmit}>
           <FormField
             label="Nazwa"
             id="name"
@@ -88,17 +114,6 @@ export const FixedAssetCreate = () => {
             value={formik.values.name}
             onBlur={formik.handleBlur}
             error={formik.touched.name && formik.errors.name ? formik.errors.name : null}
-          />
-
-          <FormField
-            label="Numer Inwentarzowy"
-            id="inventoryNumber"
-            name="inventoryNumber"
-            type="text"
-            onChange={formik.handleChange}
-            value={formik.values.inventoryNumber}
-            onBlur={formik.handleBlur}
-            error={formik.touched.inventoryNumber && formik.errors.inventoryNumber ? formik.errors.inventoryNumber : null}
           />
 
           <FormField
@@ -112,6 +127,8 @@ export const FixedAssetCreate = () => {
             error={formik.touched.serialNumber && formik.errors.serialNumber ? formik.errors.serialNumber : null}
           />
 
+          <FormSelect label="Użytkownik" id="userId" name="userId" value={formik.values.userId} onChange={formik.handleChange} data={data} />
+
           <FormField
             label="Opis"
             id="description"
@@ -122,29 +139,7 @@ export const FixedAssetCreate = () => {
             onBlur={formik.handleBlur}
             error={formik.touched.description && formik.errors.description ? formik.errors.description : null}
           />
-
-          <FormField
-            label="Id Uzytkownika"
-            id="userId"
-            name="userId"
-            type="text"
-            onChange={formik.handleChange}
-            value={formik.values.userId}
-            onBlur={formik.handleBlur}
-            error={formik.touched.userId && formik.errors.userId ? formik.errors.userId : null}
-          />
-
-          <FormField
-            label="Id Inwentaryzacji"
-            id="inventoryId"
-            name="inventoryId"
-            type="text"
-            onChange={formik.handleChange}
-            value={formik.values.inventoryId}
-            onBlur={formik.handleBlur}
-            error={formik.touched.inventoryId && formik.errors.inventoryId ? formik.errors.inventoryId : null}
-          />
-        </form>
+        </Form>
       </ContentWrapper>
       <Footer hasBackToPrevPageButton hasCreateFixedAssetButton />
     </>

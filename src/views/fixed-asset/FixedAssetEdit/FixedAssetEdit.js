@@ -13,35 +13,35 @@ import { Form } from 'components/organisms/Form/Form';
 const validate = (values) => {
   const errors = {};
   if (!values.name) {
-    errors.name = 'Required';
+    errors.name = 'Pole wymagane';
   } else if (values.name.length < 2) {
     errors.name = 'Must be 2 characters or more';
   }
 
   if (!values.inventoryNumber) {
-    errors.inventoryNumber = 'Required';
+    errors.inventoryNumber = 'Pole wymagane';
   } else if (values.inventoryNumber.length < 2) {
     errors.inventoryNumber = 'Must be 2 characters or more';
   }
 
   if (!values.serialNumber) {
-    errors.serialNumber = 'Required';
+    errors.serialNumber = 'Pole wymagane';
   } else if (values.serialNumber.length < 2) {
     errors.serialNumber = 'Must be 2 characters or more';
   }
 
   if (!values.description) {
-    errors.description = 'Required';
+    errors.description = 'Pole wymagane';
   } else if (values.description.length < 2) {
     errors.description = 'Must be 2 characters or more';
   }
 
   if (!values.userId) {
-    errors.userId = 'Required';
+    errors.userId = 'Pole wymagane';
   }
 
   if (!values.inventoryId) {
-    errors.inventoryId = 'Required';
+    errors.inventoryId = 'Pole wymagane';
   }
 
   return errors;
@@ -53,7 +53,7 @@ export const FixedAssetEdit = () => {
   const navigate = useNavigate();
 
   const navigateToFixedAsset = () => {
-    navigate('/fixed-asset-management');
+    navigate(requests.fixedAssetManagement);
   };
 
   const formik = useFormik({
@@ -71,7 +71,7 @@ export const FixedAssetEdit = () => {
         axios.put(`${requests.singleFixedAsset}/${id}`, values, {
           headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
         });
-        alert('Edytowano srodek trwaly! :)');
+        alert('Edytowano środek trwały');
         navigateToFixedAsset();
       } catch (error) {
         console.error(error.message);
@@ -104,7 +104,7 @@ export const FixedAssetEdit = () => {
 
   return (
     <>
-      <Header title="Edycja srodka trwalego" hasLogoutButton />
+      <Header title={`Edycja: ${formik.values.name}`} hasLogoutButton />
       <ContentWrapper>
         {!loading && !error ? (
           <Form id="fixedAssetEditForm" onSubmit={formik.handleSubmit}>
@@ -153,7 +153,7 @@ export const FixedAssetEdit = () => {
             />
 
             <FormField
-              label="Id Uzytkownika"
+              label="Id Użytkownika"
               id="userId"
               name="userId"
               type="text"

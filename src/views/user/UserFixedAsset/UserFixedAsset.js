@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from 'api/axios';
 import { Table } from 'components/organisms/Table/Table';
 import { Wrapper, InnerWrapper } from 'assets/styles/TableComponents';
 import { Header } from 'components/organisms/Header/Header';

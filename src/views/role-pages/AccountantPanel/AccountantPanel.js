@@ -38,7 +38,7 @@ export const AccountantPanel = () => {
 
           <SingleViewWrapper>
             <img src={inventoryCreate} alt="Three files" />
-            <Button name="green" text="Obecna inwentaryzacja" onClick={() => alert('Funkcjonalność w budowie... :)')} />
+            <Button name="green" text="Obecna inwentaryzacja" onClick={() => alert('Funkcjonalność w budowie...')} />
             <p>Akualnie prowadzona inwentaryzacja</p>
           </SingleViewWrapper>
 

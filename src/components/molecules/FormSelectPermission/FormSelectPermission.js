@@ -6,14 +6,14 @@ export const FormSelectPermission = ({ label, name, id, value, onChange }) => {
     <Wrapper>
       <LabelAboveInput htmlFor={id}>{label}</LabelAboveInput>
       <select name={name} id={id} value={value} onChange={onChange}>
-        <option value="1" label="Uzytkownik">
-          Administrator
+        <option value="1" label="Użytkownik">
+          Użytkownik
         </option>
-        <option value="2" label="Ksiegowy">
-          Ksiegowy
+        <option value="2" label="Księgowy">
+          Księgowy
         </option>
         <option value="3" label="Administrator">
-          Uzytkownik
+          Administrator
         </option>
       </select>
     </Wrapper>

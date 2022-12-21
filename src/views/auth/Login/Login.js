@@ -12,13 +12,13 @@ import { Wrapper } from 'views/auth/Login/Login.styles';
 const validate = (values) => {
   const errors = {};
   if (!values.email) {
-    errors.email = 'Required';
+    errors.email = 'Pole wymagane';
   } else if (!/^[A-Z\d._%+-]+@[A-Z\d.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address';
+    errors.email = 'Zły adres email';
   }
 
   if (!values.password) {
-    errors.password = 'Required';
+    errors.password = 'Pole wymagane';
   }
 
   return errors;
@@ -27,7 +27,7 @@ const validate = (values) => {
 export const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || '/select-user-role';
+  const from = location.state?.from?.pathname || requests.selectUserRole;
 
   const formik = useFormik({
     initialValues: {

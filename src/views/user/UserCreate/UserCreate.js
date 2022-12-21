@@ -12,47 +12,41 @@ import { Form } from 'components/organisms/Form/Form';
 const validate = (values) => {
   const errors = {};
   if (!values.name) {
-    errors.name = 'Required';
-  } else if (values.name.length < 2) {
-    errors.name = 'Must be 2 characters or more';
+    errors.name = 'Pole wymagane';
+  } else if (values.name.length < 3) {
+    errors.name = 'Wymagane minimum 3 znaki';
   }
 
   if (!values.surname) {
-    errors.surname = 'Required';
-  } else if (values.surname.length < 2) {
-    errors.surname = 'Must be 2 characters or more';
-  }
-
-  if (!values.login) {
-    errors.login = 'Required';
-  } else if (values.login.length < 2) {
-    errors.login = 'Must be 2 characters or more';
-  }
-
-  if (!values.password) {
-    errors.password = 'Required';
-  } else if (values.password < 6) {
-    errors.password = 'Must be 6 characters or more';
-  }
-
-  if (!values.confirmPassword) {
-    errors.confirmPassword = 'Required';
-  } else if (values < 6) {
-    errors.confirmPassword = 'Must be 6 characters or more';
-  } else if (values.confirmPassword !== values.password) {
-    errors.confirmPassword = 'Passwords must be the same';
+    errors.surname = 'Pole wymagane';
+  } else if (values.surname.length < 3) {
+    errors.surname = 'Wymagane minimum 3 znaki';
   }
 
   if (!values.email) {
-    errors.email = 'Required';
+    errors.email = 'Pole wymagane';
   } else if (!/^[A-Z\d._%+-]+@[A-Z\d.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address';
+    errors.email = 'Zły adres email';
   }
 
   if (!values.phoneNumber) {
-    errors.phoneNumber = 'Required';
+    errors.phoneNumber = 'Pole wymagane';
   } else if (values.phoneNumber.length !== 9) {
-    errors.phoneNumber = 'Must have 9 characters.';
+    errors.phoneNumber = 'Wymagane 9 znaków';
+  }
+
+  if (!values.password) {
+    errors.password = 'Pole wymagane';
+  } else if (values.password < 6) {
+    errors.password = 'Wymagane minimum 6 znaków';
+  }
+
+  if (!values.confirmPassword) {
+    errors.confirmPassword = 'Pole wymagane';
+  } else if (values.confirmPassword !== values.password) {
+    errors.confirmPassword = 'Hasła muszą być takie same';
+  } else if (values < 6) {
+    errors.confirmPassword = 'Wymagane minimum 6 znaków';
   }
 
   return errors;
@@ -69,11 +63,10 @@ export const UserCreate = () => {
     initialValues: {
       name: '',
       surname: '',
-      login: '',
-      password: '',
-      confirmPassword: '',
       email: '',
       phoneNumber: '',
+      password: '',
+      confirmPassword: '',
       permissionId: 1,
     },
     validate,
@@ -82,21 +75,22 @@ export const UserCreate = () => {
         axios.post(requests.singleUser, values, {
           headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
         });
-        alert('Uzytkownik dodany! :)');
         navigateToUsers();
       } catch (error) {
         console.error(error.message);
       }
+      alert('Użytkownik dodany');
+      navigateToUsers();
     },
   });
 
   return (
     <>
-      <Header title="Dodaj nowego uzytkownika" hasLogoutButton />
+      <Header title="Dodaj nowego użytkownika" hasLogoutButton />
       <ContentWrapper>
         <Form id="userCreateForm" onSubmit={formik.handleSubmit}>
           <FormField
-            label="Imie"
+            label="Imię"
             id="name"
             name="name"
             type="text"
@@ -118,39 +112,6 @@ export const UserCreate = () => {
           />
 
           <FormField
-            label="Login"
-            id="login"
-            name="login"
-            type="text"
-            onChange={formik.handleChange}
-            value={formik.values.login}
-            onBlur={formik.handleBlur}
-            error={formik.touched.login && formik.errors.login ? formik.errors.login : null}
-          />
-
-          <FormField
-            label="Haslo"
-            id="password"
-            name="password"
-            type="password"
-            onChange={formik.handleChange}
-            value={formik.values.password}
-            onBlur={formik.handleBlur}
-            error={formik.touched.password && formik.errors.password ? formik.errors.password : null}
-          />
-
-          <FormField
-            label="Powtorz haslo"
-            id="confirmPassword"
-            name="confirmPassword"
-            type="password"
-            onChange={formik.handleChange}
-            value={formik.values.confirmPassword}
-            onBlur={formik.handleBlur}
-            error={formik.touched.confirmPassword && formik.errors.confirmPassword ? formik.errors.confirmPassword : null}
-          />
-
-          <FormField
             label="Email"
             id="email"
             name="email"
@@ -169,6 +130,28 @@ export const UserCreate = () => {
             onChange={formik.handleChange}
             value={formik.values.phoneNumber}
             error={formik.touched.phoneNumber && formik.errors.phoneNumber ? formik.errors.phoneNumber : null}
+          />
+
+          <FormField
+            label="Hasło"
+            id="password"
+            name="password"
+            type="password"
+            onChange={formik.handleChange}
+            value={formik.values.password}
+            onBlur={formik.handleBlur}
+            error={formik.touched.password && formik.errors.password ? formik.errors.password : null}
+          />
+
+          <FormField
+            label="Powtórz hasło"
+            id="confirmPassword"
+            name="confirmPassword"
+            type="password"
+            onChange={formik.handleChange}
+            value={formik.values.confirmPassword}
+            onBlur={formik.handleBlur}
+            error={formik.touched.confirmPassword && formik.errors.confirmPassword ? formik.errors.confirmPassword : null}
           />
 
           <FormSelectPermission
