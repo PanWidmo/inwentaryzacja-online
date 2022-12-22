@@ -62,7 +62,7 @@ export const InventoryCreate = () => {
       name: '',
       startDate: '',
       closeDate: '',
-      leader: '',
+      userId: '',
     },
     validate,
     onSubmit: (values) => {

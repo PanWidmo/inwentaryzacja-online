@@ -9,6 +9,7 @@ import { FormField } from 'components/molecules/FormField/FormField';
 import { LoadingOrError } from 'components/molecules/LoadingOrError/LoadingOrError';
 import { Footer } from 'components/organisms/Footer/Footer';
 import { Form } from 'components/organisms/Form/Form';
+import { FormSelect } from 'components/molecules/FormSelects/FormSelect';
 
 const validate = (values) => {
   const errors = {};
@@ -47,6 +48,7 @@ export const InventoryEdit = () => {
       name: '',
       startDate: '',
       closeDate: '',
+      userId: '',
     },
     validate,
     onSubmit: (values) => {
@@ -89,6 +91,7 @@ export const InventoryEdit = () => {
         name: data.name,
         startDate: data.startDate.slice(0, 10),
         closeDate: data.closeDate.slice(0, 10),
+        userId: data.userId,
       });
     } catch (error) {
       console.error(error.message);
@@ -141,6 +144,8 @@ export const InventoryEdit = () => {
               onBlur={formik.handleBlur}
               error={formik.touched.closeDate && formik.errors.closeDate ? formik.errors.closeDate : null}
             />
+
+            <FormSelect label="Prowadzący" id="userId" name="userId" value={formik.values.userId} onChange={formik.handleChange} data={data} />
           </Form>
         ) : (
           <LoadingOrError msg={error ? error : 'Loading...'} />
