@@ -7,6 +7,8 @@ export const requests = {
   singleInventory: 'api/inventory',
   getUsers: 'api/user/onlyall',
   singleUser: 'api/user',
+  getIssues: 'api/issue',
+  singleIssue: 'api/issue',
   selectUserRole: '/select-user-role',
   userFixedAsset: '/user/fixed-asset',
   userFixedAssetConfirm: '/user/fixed-asset/confirm',
