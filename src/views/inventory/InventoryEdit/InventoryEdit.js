@@ -33,6 +33,7 @@ const validate = (values) => {
 
 export const InventoryEdit = () => {
   const { id } = useParams();
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
@@ -61,6 +62,21 @@ export const InventoryEdit = () => {
     },
   });
 
+  const getUsers = async () => {
+    setLoading(true);
+
+    try {
+      const result = await axios.get(requests.singleUser, {
+        headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+      });
+      setData(result.data);
+    } catch (error) {
+      console.error(error.message);
+      setError(error.message);
+    }
+    setLoading(false);
+  };
+
   const getData = async () => {
     setLoading(true);
     try {
@@ -82,6 +98,7 @@ export const InventoryEdit = () => {
   };
 
   useEffect(() => {
+    getUsers();
     getData();
     // eslint-disable-next-line
   }, []);

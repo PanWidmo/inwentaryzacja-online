@@ -7,13 +7,16 @@ import { useFormik } from 'formik';
 import { FormField } from 'components/molecules/FormField/FormField';
 import { Footer } from 'components/organisms/Footer/Footer';
 import { Form } from 'components/organisms/Form/Form';
+import { useEffect, useState } from 'react';
+import { FormSelect } from 'components/molecules/FormSelects/FormSelect';
+import { LoadingOrError } from 'components/molecules/LoadingOrError/LoadingOrError';
 
 const validate = (values) => {
   const errors = {};
   if (!values.name) {
     errors.name = 'Pole wymagane';
-  } else if (values.name.length < 2) {
-    errors.name = 'Must be 2 characters or more';
+  } else if (values.name.length < 3) {
+    errors.name = 'Wymagane minimum 3 znaki';
   }
 
   if (!values.startDate) {
@@ -23,17 +26,35 @@ const validate = (values) => {
   if (!values.closeDate) {
     errors.closeDate = 'Pole wymagane';
   } else if (values.closeDate < values.startDate) {
-    errors.closeDate = 'Wrong close date';
+    errors.closeDate = 'Zła data';
   }
 
   return errors;
 };
 
 export const InventoryCreate = () => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const navigateToAccountantPanel = () => {
     navigate(requests.accountantPanel);
+  };
+
+  const getData = async () => {
+    setLoading(true);
+
+    try {
+      const result = await axios.get(requests.singleUser, {
+        headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+      });
+      setData(result.data);
+    } catch (error) {
+      console.error(error.message);
+      setError(error.message);
+    }
+    setLoading(false);
   };
 
   const formik = useFormik({
@@ -41,6 +62,7 @@ export const InventoryCreate = () => {
       name: '',
       startDate: '',
       closeDate: '',
+      leader: '',
     },
     validate,
     onSubmit: (values) => {
@@ -56,45 +78,54 @@ export const InventoryCreate = () => {
     },
   });
 
+  useEffect(() => {
+    getData();
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <>
       <Header title="Nowa Inwentaryzacja" hasLogoutButton />
       <ContentWrapper>
-        <Form id="inventoryCreateForm" onSubmit={formik.handleSubmit}>
-          <FormField
-            label="Nazwa"
-            id="name"
-            name="name"
-            type="text"
-            onChange={formik.handleChange}
-            value={formik.values.name}
-            onBlur={formik.handleBlur}
-            error={formik.touched.name && formik.errors.name ? formik.errors.name : null}
-          />
+        {!loading && !error && data?.length ? (
+          <Form id="inventoryCreateForm" onSubmit={formik.handleSubmit}>
+            <FormField
+              label="Numer/ Nazwa"
+              id="name"
+              name="name"
+              type="text"
+              onChange={formik.handleChange}
+              value={formik.values.name}
+              onBlur={formik.handleBlur}
+              error={formik.touched.name && formik.errors.name ? formik.errors.name : null}
+            />
 
-          <FormField
-            label="Data rozpoczecia"
-            id="startDate"
-            name="startDate"
-            type="date"
-            onChange={formik.handleChange}
-            value={formik.values.startDate}
-            onBlur={formik.handleBlur}
-            error={formik.touched.startDate && formik.errors.startDate ? formik.errors.startDate : null}
-          />
+            <FormField
+              label="Data rozpoczecia"
+              id="startDate"
+              name="startDate"
+              type="date"
+              onChange={formik.handleChange}
+              value={formik.values.startDate}
+              onBlur={formik.handleBlur}
+              error={formik.touched.startDate && formik.errors.startDate ? formik.errors.startDate : null}
+            />
 
-          <FormField
-            label="Data zakonczenia"
-            id="closeDate"
-            name="closeDate"
-            type="date"
-            onChange={formik.handleChange}
-            value={formik.values.closeDate}
-            onBlur={formik.handleBlur}
-            error={formik.touched.closeDate && formik.errors.closeDate ? formik.errors.closeDate : null}
-          />
-        </Form>
-        {/* <Button name="green" text="Dodaj plik" onClick={() => alert('dziala dodaj plik button')} /> */}
+            <FormField
+              label="Data zakonczenia"
+              id="closeDate"
+              name="closeDate"
+              type="date"
+              onChange={formik.handleChange}
+              value={formik.values.closeDate}
+              onBlur={formik.handleBlur}
+              error={formik.touched.closeDate && formik.errors.closeDate ? formik.errors.closeDate : null}
+            />
+            <FormSelect label="Prowadzący" id="userId" name="userId" value={formik.values.userId} onChange={formik.handleChange} data={data} />
+          </Form>
+        ) : (
+          <LoadingOrError msg={error ? error : 'Loading...'} />
+        )}
       </ContentWrapper>
 
       <Footer hasBackToPrevPageButton hasCreateInventoryButton />

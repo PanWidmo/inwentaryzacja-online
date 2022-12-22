@@ -22,5 +22,5 @@ export const requests = {
   issueManagement: '/issue-management',
   issuePage: '/issue',
   inventoryManagement: '/inventory-management',
-  inventoryCreate: '/inventory-management',
+  inventoryCreate: '/inventory-management/create',
 };
