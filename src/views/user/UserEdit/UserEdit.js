@@ -6,7 +6,7 @@ import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { FormField } from 'components/molecules/FormField/FormField';
 import { useFormik } from 'formik';
-import { FormSelectPermission } from 'components/molecules/FormSelectPermission/FormSelectPermission';
+import { FormSelectPermission } from 'components/molecules/FormSelects/FormSelectPermission';
 import { LoadingOrError } from 'components/molecules/LoadingOrError/LoadingOrError';
 import { Form } from 'components/organisms/Form/Form';
 import { Footer } from 'components/organisms/Footer/Footer';
@@ -159,7 +159,7 @@ export const UserEdit = () => {
               label="Telefon"
               id="phoneNumber"
               name="phoneNumber"
-              type="text"
+              type="tel"
               onChange={formik.handleChange}
               value={formik.values.phoneNumber}
               onBlur={formik.handleBlur}

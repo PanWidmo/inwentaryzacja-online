@@ -5,7 +5,7 @@ import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { useFormik } from 'formik';
 import { FormField } from 'components/molecules/FormField/FormField';
-import { FormSelectPermission } from 'components/molecules/FormSelectPermission/FormSelectPermission';
+import { FormSelectPermission } from 'components/molecules/FormSelects/FormSelectPermission';
 import { Footer } from 'components/organisms/Footer/Footer';
 import { Form } from 'components/organisms/Form/Form';
 
@@ -126,7 +126,7 @@ export const UserCreate = () => {
             label="Telefon"
             id="phoneNumber"
             name="phoneNumber"
-            type="text"
+            type="tel"
             onChange={formik.handleChange}
             value={formik.values.phoneNumber}
             error={formik.touched.phoneNumber && formik.errors.phoneNumber ? formik.errors.phoneNumber : null}
