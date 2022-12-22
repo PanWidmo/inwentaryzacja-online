@@ -1,5 +1,5 @@
 import { LabelAboveInput } from 'components/atoms/LabelAboveInput/LabelAboveInput';
-import { Wrapper } from 'components/molecules/FormSelectPermission/FormSelectPermission.styles';
+import { Wrapper } from 'components/molecules/FormSelects/FormSelect.styles';
 
 export const FormSelectPermission = ({ label, name, id, value, onChange }) => {
   return (

@@ -1,5 +1,5 @@
 import { LabelAboveInput } from 'components/atoms/LabelAboveInput/LabelAboveInput';
-import { Wrapper } from 'components/molecules/FormSelect/FormSelect.styles';
+import { Wrapper } from 'components/molecules/FormSelects/FormSelect.styles';
 
 export const FormSelect = ({ label, name, id, value, onChange, data }) => {
   return (
