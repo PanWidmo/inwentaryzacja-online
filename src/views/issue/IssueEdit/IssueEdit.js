@@ -67,6 +67,7 @@ export const IssueEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.title}
               onBlur={formik.handleBlur}
+              disabled="disabled"
             />
 
             <FormField
@@ -77,6 +78,7 @@ export const IssueEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.name}
               onBlur={formik.handleBlur}
+              disabled="disabled"
             />
 
             <FormField
@@ -87,6 +89,7 @@ export const IssueEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.surname}
               onBlur={formik.handleBlur}
+              disabled="disabled"
             />
             <FormField
               label="Email"
@@ -96,6 +99,7 @@ export const IssueEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.email}
               onBlur={formik.handleBlur}
+              disabled="disabled"
             />
             <FormField
               label="Opis problemu"
@@ -105,6 +109,7 @@ export const IssueEdit = () => {
               onChange={formik.handleChange}
               value={formik.values.description}
               onBlur={formik.handleBlur}
+              disabled="disabled"
             />
           </Form>
         ) : (
