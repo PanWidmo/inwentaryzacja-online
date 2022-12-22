@@ -9,9 +9,11 @@ export const Footer = ({
   hasDeleteUserButton,
   hasDeleteFixedAssetButton,
   hasDeleteInventoryButton,
+  hasDeleteIssueButton,
   hasCreateUserButton,
   hasCreateFixedAssetButton,
   hasCreateInventoryButton,
+  hasCreateIssueButton,
   hasSaveEditedUserButton,
   hasSaveEditedFixedAssetButton,
   hasSaveEditedInventoryButton,
@@ -35,6 +37,10 @@ export const Footer = ({
 
   const navigateToInventoryManagement = () => {
     navigate(requests.inventoryManagement);
+  };
+
+  const navigateToIssueManagement = () => {
+    navigate(requests.issueManagement);
   };
 
   const deleteUser = () => {
@@ -76,6 +82,19 @@ export const Footer = ({
     navigateToInventoryManagement();
   };
 
+  const deleteIssue = () => {
+    try {
+      axios.delete(`${requests.singleIssue}/${id}`, {
+        headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+      });
+    } catch (error) {
+      console.error(error.message);
+    }
+
+    alert('Usunięto zgłoszenie');
+    navigateToIssueManagement();
+  };
+
   const navigateToConfirmAssets = () => {
     navigate(requests.userFixedAssetConfirm);
   };
@@ -87,11 +106,13 @@ export const Footer = ({
         {hasDeleteUserButton && <Button name="red" text="Usuń" type="submit" onClick={deleteUser} />}
         {hasDeleteFixedAssetButton && <Button name="red" text="Usuń" onClick={deleteFixedAsset} />}
         {hasDeleteInventoryButton && <Button name="red" text="Usuń" onClick={deleteInventory} />}
+        {hasDeleteIssueButton && <Button name="red" text="Usuń" onClick={deleteIssue} />}
       </LeftSide>
       <RightSide>
         {hasCreateUserButton && <Button name="green" text="Zatwierdź" type="submit" form="userCreateForm" />}
         {hasCreateFixedAssetButton && <Button name="green" text="Zatwierdź" type="submit" form="fixedAssetCreateForm" />}
         {hasCreateInventoryButton && <Button name="green" text="Zatwierdź" type="submit" form="inventoryCreateForm" />}
+        {hasCreateIssueButton && <Button name="green" text="Zatwierdź" type="submit" form="issueCreateForm" />}
         {hasSaveEditedUserButton && <Button name="green" text="Zatwierdź" type="submit" form="userEditForm" />}
         {hasSaveEditedFixedAssetButton && <Button name="blue" text="Zapisz" type="submit" form="fixedAssetEditForm" />}
         {hasSaveEditedInventoryButton && <Button name="blue" text="Zapisz" type="submit" form="inventoryEditForm" />}
