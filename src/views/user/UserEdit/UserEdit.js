@@ -100,8 +100,9 @@ export const UserEdit = () => {
       await formik.setValues({
         name: data.name,
         surname: data.surname,
-        login: data.login,
         email: data.email,
+        password: data.password,
+        confirmPassword: data.confirmPassword,
         phoneNumber: data.phoneNumber,
         permissionId: data.permissionId,
       });
