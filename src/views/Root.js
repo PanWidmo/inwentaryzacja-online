@@ -20,6 +20,7 @@ import { ErrorPage } from 'views/ErrorPage/ErrorPage';
 import { IssuePage } from 'views/issue/IssuePage/IssuePage';
 import { UserFixedAssetConfirm } from 'views/user/UserFixedAssetConfirm/UserFixedAssetConfirm';
 import { IssueList } from 'views/issue/IssueList/IssueList';
+import { IssueEdit } from 'views/issue/IssueEdit/IssueEdit';
 
 const ROLES = {
   User: 1,
@@ -51,6 +52,7 @@ export const Root = () => {
           <Route path="/fixed-asset-management/create" element={<FixedAssetCreate />} />
           <Route path="/fixed-asset-management/:id" element={<FixedAssetEdit />} />
           <Route path="/issue-management" element={<IssueList />} />
+          <Route path="/issue-management/:id" element={<IssueEdit />} />
         </Route>
         <Route element={<RequireAuth allowedRoles={[ROLES.Accountant]} />}>
           <Route path="/accountant-panel" element={<AccountantPanel />} />

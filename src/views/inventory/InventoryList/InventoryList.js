@@ -17,7 +17,7 @@ export const InventoryList = () => {
   const navigate = useNavigate();
 
   const navigateToCreateInventory = () => {
-    navigate('/inventory-management/create');
+    navigate(requests.inventoryCreate);
   };
 
   const getData = async () => {

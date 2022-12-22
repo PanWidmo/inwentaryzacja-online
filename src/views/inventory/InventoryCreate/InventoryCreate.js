@@ -33,7 +33,7 @@ export const InventoryCreate = () => {
   const navigate = useNavigate();
 
   const navigateToAccountantPanel = () => {
-    navigate('/accountant-panel');
+    navigate(requests.accountantPanel);
   };
 
   const formik = useFormik({

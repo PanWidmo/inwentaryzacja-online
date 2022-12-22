@@ -4,12 +4,13 @@ import { Button } from 'components/organisms/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import errorIcon from 'assets/icons/error.png';
 import { Wrapper } from 'views/ErrorPage/ErrorPage.styles';
+import { requests } from 'api/requests';
 
 export const ErrorPage = () => {
   const navigate = useNavigate();
 
   const navigateToMainPage = () => {
-    navigate('/');
+    navigate(requests.default);
   };
 
   return (

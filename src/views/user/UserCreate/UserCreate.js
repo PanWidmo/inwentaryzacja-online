@@ -75,7 +75,6 @@ export const UserCreate = () => {
         axios.post(requests.singleUser, values, {
           headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
         });
-        navigateToUsers();
       } catch (error) {
         console.error(error.message);
       }

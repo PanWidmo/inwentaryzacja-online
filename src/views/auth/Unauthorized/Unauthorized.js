@@ -4,12 +4,13 @@ import { Button } from 'components/organisms/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import unauthorizedIcon from 'assets/icons/unauthorized.png';
 import { Wrapper } from 'views/auth/Unauthorized/Unauthorized.styles';
+import { requests } from 'api/requests';
 
 export const Unauthorized = () => {
   const navigate = useNavigate();
 
   const navigateToMainPage = () => {
-    navigate('/');
+    navigate(requests.default);
   };
 
   return (

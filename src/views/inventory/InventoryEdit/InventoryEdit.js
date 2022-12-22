@@ -38,7 +38,7 @@ export const InventoryEdit = () => {
   const navigate = useNavigate();
 
   const navigateToInventory = () => {
-    navigate('/inventory-management');
+    navigate(requests.inventoryManagement);
   };
 
   const formik = useFormik({

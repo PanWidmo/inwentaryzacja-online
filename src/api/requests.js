@@ -1,4 +1,5 @@
 export const requests = {
+  default: '/',
   login: 'api/user/login',
   loginPage: '/login',
   getFixedAssets: 'api/asset',
