@@ -108,7 +108,7 @@ export const InventoryEdit = () => {
 
   return (
     <>
-      <Header title="Edycja inwentaryzacji" hasLogoutButton />
+      <Header title={`Edycja: ${formik.values.name}`} hasLogoutButton />
       <ContentWrapper>
         {!loading && !error ? (
           <Form id="inventoryEditForm" onSubmit={formik.handleSubmit}>
