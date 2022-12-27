@@ -9,4 +9,8 @@ export const Wrapper = styled.div`
   img {
     width: 15%;
   }
+
+  p {
+    font-size: ${({ theme }) => theme.fontSize.l};
+  }
 `;
