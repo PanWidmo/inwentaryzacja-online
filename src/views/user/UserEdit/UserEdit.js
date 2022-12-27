@@ -197,7 +197,7 @@ export const UserEdit = () => {
             />
           </Form>
         ) : (
-          <LoadingOrError msg={error ? error : 'Loading...'} />
+          <LoadingOrError msg={error ? error : 'Ładowanie...'} />
         )}
       </ContentWrapper>
       <Footer hasBackToPrevPageButton hasDeleteUserButton hasSaveEditedUserButton />

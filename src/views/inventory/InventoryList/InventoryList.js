@@ -51,7 +51,7 @@ export const InventoryList = () => {
                 <Button name="green" text="Dodaj" onClick={navigateToCreateInventory} />
               </>
             ) : (
-              <LoadingOrError msg={error ? error : 'Loading...'} />
+              <LoadingOrError msg={error ? error : 'Ładowanie......'} />
             )}
           </InnerWrapper>
         </Wrapper>

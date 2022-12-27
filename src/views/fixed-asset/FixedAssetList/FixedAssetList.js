@@ -51,7 +51,7 @@ export const FixedAssetList = () => {
                 <Button name="blue" text="Dodaj" onClick={navigateToCreateFixedAsset} />
               </>
             ) : (
-              <LoadingOrError msg={error ? error : 'Loading...'} />
+              <LoadingOrError msg={error ? error : 'Ładowanie...'} />
             )}
           </InnerWrapper>
         </Wrapper>

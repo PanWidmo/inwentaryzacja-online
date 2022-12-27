@@ -113,7 +113,7 @@ export const InventoryEdit = () => {
         {!loading && !error ? (
           <Form id="inventoryEditForm" onSubmit={formik.handleSubmit}>
             <FormField
-              label="Nazwa"
+              label="Numer/ Nazwa"
               id="name"
               name="name"
               type="text"
@@ -124,7 +124,7 @@ export const InventoryEdit = () => {
             />
 
             <FormField
-              label="Data rozpoczecia"
+              label="Data rozpoczęcia"
               id="startDate"
               name="startDate"
               type="date"
@@ -135,7 +135,7 @@ export const InventoryEdit = () => {
             />
 
             <FormField
-              label="Data zakonczenia"
+              label="Data zakończenia"
               id="closeDate"
               name="closeDate"
               type="date"
@@ -148,7 +148,7 @@ export const InventoryEdit = () => {
             <FormSelect label="Prowadzący" id="userId" name="userId" value={formik.values.userId} onChange={formik.handleChange} data={data} />
           </Form>
         ) : (
-          <LoadingOrError msg={error ? error : 'Loading...'} />
+          <LoadingOrError msg={error ? error : 'Ładowanie...'} />
         )}
       </ContentWrapper>
       <Footer hasBackToPrevPageButton hasDeleteInventoryButton hasSaveEditedInventoryButton />

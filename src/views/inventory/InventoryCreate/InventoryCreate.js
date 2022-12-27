@@ -101,7 +101,7 @@ export const InventoryCreate = () => {
             />
 
             <FormField
-              label="Data rozpoczecia"
+              label="Data rozpoczęcia"
               id="startDate"
               name="startDate"
               type="date"
@@ -112,7 +112,7 @@ export const InventoryCreate = () => {
             />
 
             <FormField
-              label="Data zakonczenia"
+              label="Data zakończenia"
               id="closeDate"
               name="closeDate"
               type="date"
@@ -124,7 +124,7 @@ export const InventoryCreate = () => {
             <FormSelect label="Prowadzący" id="userId" name="userId" value={formik.values.userId} onChange={formik.handleChange} data={data} />
           </Form>
         ) : (
-          <LoadingOrError msg={error ? error : 'Loading...'} />
+          <LoadingOrError msg={error ? error : 'Ładowanie...'} />
         )}
       </ContentWrapper>
 

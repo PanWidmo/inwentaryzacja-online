@@ -127,7 +127,7 @@ export const FixedAssetCreate = () => {
             />
           </Form>
         ) : (
-          <LoadingOrError msg={error ? error : 'Loading...'} />
+          <LoadingOrError msg={error ? error : 'Ładowanie...'} />
         )}
       </ContentWrapper>
       <Footer hasBackToPrevPageButton hasCreateFixedAssetButton />

@@ -113,7 +113,7 @@ export const IssueEdit = () => {
             />
           </Form>
         ) : (
-          <LoadingOrError msg={error ? error : 'Loading...'} />
+          <LoadingOrError msg={error ? error : 'Ładowanie...'} />
         )}
       </ContentWrapper>
       <Footer hasBackToPrevPageButton hasDeleteIssueButton />
