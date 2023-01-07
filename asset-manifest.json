@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/projekt-inz/static/css/main.1ec51474.css",
+    "main.js": "/projekt-inz/static/js/main.ad454220.js",
+    "static/media/loading.gif": "/projekt-inz/static/media/loading.d944122cbaa2f441e1b7.gif",
+    "static/media/admin.png": "/projekt-inz/static/media/admin.1b1431156ef35400140f.png",
+    "static/media/accountant.png": "/projekt-inz/static/media/accountant.b2b4f7325f2ebecbcc14.png",
+    "static/media/sentProtocol.png": "/projekt-inz/static/media/sentProtocol.c85d27be31962b5857ee.png",
+    "static/media/user.png": "/projekt-inz/static/media/user.b43d61ea12e51d1040b4.png",
+    "static/media/unauthorized.png": "/projekt-inz/static/media/unauthorized.cb63b5e17ba5943a3815.png",
+    "static/media/inventoryCreate.png": "/projekt-inz/static/media/inventoryCreate.b1f9605c46cb28c91936.png",
+    "static/media/error.png": "/projekt-inz/static/media/error.e0eb4fb3b054bde968b4.png",
+    "index.html": "/projekt-inz/index.html",
+    "main.ad454220.js.map": "/projekt-inz/static/js/main.ad454220.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ec51474.css",
+    "static/js/main.ad454220.js"
+  ]
+}
