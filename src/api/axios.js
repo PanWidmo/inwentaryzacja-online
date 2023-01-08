@@ -1,6 +1,6 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: `https://test-api.com/`,
+  baseURL: process.env.REACT_APP_API_URL,
   headers: { 'Content-Type': 'application/json' },
 });
