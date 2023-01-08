@@ -19,6 +19,7 @@ export const requests = {
   userCreate: '/user-management/create',
   fixedAssetManagement: '/fixed-asset-management',
   fixedAssetCreate: '/fixed-asset-management/create',
+  fixedAssetSelect: '/select-fixed-asset',
   issueManagement: '/issue-management',
   issuePage: '/issue',
   inventoryManagement: '/inventory-management',

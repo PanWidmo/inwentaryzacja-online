@@ -2,7 +2,7 @@ import { SingleViewWrapper } from 'components/atoms/SingleViewWrapper/SingleView
 import inventoryHistory from 'assets/icons/inventoryHistory.png';
 import inventoryCreate from 'assets/icons/inventoryCreate.png';
 import inventoryCurrent from 'assets/icons/inventoryCurrent.png';
-import inventoryIcon from 'assets/icons/inventory.png';
+import fixedAsset from 'assets/icons/fixedAssets2.png';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { Button } from 'components/organisms/Button/Button';
@@ -21,8 +21,8 @@ export const AccountantPanel = () => {
     navigate(requests.inventoryCreate);
   };
 
-  const navigateToUserFixedAssets = () => {
-    navigate(requests.userFixedAsset);
+  const navigateToSelectFixedAssets = () => {
+    navigate(requests.fixedAssetSelect);
   };
 
   return (
@@ -49,9 +49,9 @@ export const AccountantPanel = () => {
           </SingleViewWrapper>
 
           <SingleViewWrapper>
-            <img src={inventoryIcon} alt="Inventory icon" />
-            <Button name="green" text="Twoje środki trwałe" onClick={navigateToUserFixedAssets} />
-            <p>Lista posiadanych przez Ciebie rzeczy</p>
+            <img src={fixedAsset} alt="Inventory icon" />
+            <Button name="green" text="Wybierz środki trwałe" onClick={navigateToSelectFixedAssets} />
+            <p>Listy środków trwałych</p>
           </SingleViewWrapper>
         </Wrapper>
       </ContentWrapper>

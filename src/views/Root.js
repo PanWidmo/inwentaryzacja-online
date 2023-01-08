@@ -21,6 +21,7 @@ import { IssuePage } from 'views/issue/IssuePage/IssuePage';
 import { UserFixedAssetConfirm } from 'views/user/UserFixedAssetConfirm/UserFixedAssetConfirm';
 import { IssueList } from 'views/issue/IssueList/IssueList';
 import { IssueEdit } from 'views/issue/IssueEdit/IssueEdit';
+import { FixedAssetSelect } from 'views/fixed-asset/FixedAssetSelect/FixedAssetSelect';
 
 const ROLES = {
   User: 1,
@@ -43,14 +44,16 @@ export const Root = () => {
           <Route path="/user/fixed-asset" element={<UserFixedAsset />} />
           <Route path="/user/fixed-asset/confirm" element={<UserFixedAssetConfirm />} />
         </Route>
+        <Route element={<RequireAuth allowedRoles={[ROLES.Accountant, ROLES.Admin]} />}>
+          <Route path="/fixed-asset-management" element={<FixedAssetList />} />
+          <Route path="/fixed-asset-management/create" element={<FixedAssetCreate />} />
+          <Route path="/fixed-asset-management/:id" element={<FixedAssetEdit />} />
+        </Route>
         <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
           <Route path="/admin-panel" element={<AdminPanel />} />
           <Route path="/user-management" element={<UserList />} />
           <Route path="/user-management/create" element={<UserCreate />} />
           <Route path="/user-management/:id" element={<UserEdit />} />
-          <Route path="/fixed-asset-management" element={<FixedAssetList />} />
-          <Route path="/fixed-asset-management/create" element={<FixedAssetCreate />} />
-          <Route path="/fixed-asset-management/:id" element={<FixedAssetEdit />} />
           <Route path="/issue-management" element={<IssueList />} />
           <Route path="/issue-management/:id" element={<IssueEdit />} />
         </Route>
@@ -59,6 +62,7 @@ export const Root = () => {
           <Route path="/inventory-management" element={<InventoryList />} />
           <Route path="/inventory-management/create" element={<InventoryCreate />} />
           <Route path="/inventory-management/:id" element={<InventoryEdit />} />
+          <Route path="/select-fixed-asset" element={<FixedAssetSelect />} />
         </Route>
         {/*catch all*/}
         <Route path="/*" element={<ErrorPage />} />
