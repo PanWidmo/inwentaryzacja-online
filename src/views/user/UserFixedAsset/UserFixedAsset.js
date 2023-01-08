@@ -18,14 +18,10 @@ export const UserFixedAsset = () => {
   const checkInventoryActive = async () => {
     setLoading(true);
     try {
-      // TODO: zmienic endpoint fixedAsset na inventory jak bedzie dodane isActive
-      const result = await axios.get(requests.singleFixedAsset, {
+      const result = await axios.get(requests.singleInventory, {
         headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
       });
-      // TODO: to setData do wywalenia jak bedzie dzialac pobieranie assetow usera
-      setData(result.data);
-      // TODO: zmienic fixedAsset hasInventoried na inventory isActive jak bedzie dodane
-      if (result.data.some((e) => e.hasInventoried === true)) {
+      if (result.data.some((e) => e.isActive === true)) {
         setIsActiveInventory(true);
       }
     } catch (error) {
@@ -70,7 +66,8 @@ export const UserFixedAsset = () => {
         <Wrapper>
           <InnerWrapper>
             {!loading && !error ? (
-              <Table dane={data} dataName="fixed-asset" id="fixedAssetsTable" />
+              // <Table dane={data} dataName="fixed-asset" id="fixedAssetsTable" />
+              <p>Tu powinny się pojawić assety usera</p>
             ) : (
               <LoadingOrError msg={error ? error : 'Ładowanie...'} />
             )}
