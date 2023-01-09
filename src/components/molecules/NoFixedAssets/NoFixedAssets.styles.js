@@ -5,9 +5,10 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 2rem;
 
   img {
-    width: 30%;
+    width: 25%;
   }
 
   p {
