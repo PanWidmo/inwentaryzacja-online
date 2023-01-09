@@ -37,18 +37,8 @@ const validate = (values) => {
     errors.phoneNumber = 'Wymagane 9 znaków';
   }
 
-  if (!values.password) {
-    errors.password = 'Pole wymagane';
-  } else if (values.password < 6) {
-    errors.password = 'Wymagane minimum 6 znaków';
-  }
-
-  if (!values.confirmPassword) {
-    errors.confirmPassword = 'Pole wymagane';
-  } else if (values.confirmPassword !== values.password) {
+  if (values.confirmPassword !== values.password) {
     errors.confirmPassword = 'Hasła muszą być takie same';
-  } else if (values < 6) {
-    errors.confirmPassword = 'Wymagane minimum 6 znaków';
   }
 
   return errors;
