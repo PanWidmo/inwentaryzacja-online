@@ -69,7 +69,7 @@ export const UserFixedAsset = () => {
       <ContentWrapper>
         <Wrapper>
           <InnerWrapper as="form">
-            {!loading && !error && data > 0 ? (
+            {!loading && !error && data.length > 0 ? (
               <Table dane={data} dataName="fixed-asset" id="fixedAssetsTable" />
             ) : !loading && !error && data.length === 0 ? (
               <NoFixedAssets />
@@ -79,7 +79,7 @@ export const UserFixedAsset = () => {
           </InnerWrapper>
         </Wrapper>
       </ContentWrapper>
-      {isActiveInventory === true && !data.length === 0 ? <Footer hasBackToPrevPageButton hasConfirmUserAsset /> : <Footer hasBackToPrevPageButton />}
+      {isActiveInventory === true && data.length > 0 ? <Footer hasBackToPrevPageButton hasConfirmUserAsset /> : <Footer hasBackToPrevPageButton />}
     </>
   );
 };
