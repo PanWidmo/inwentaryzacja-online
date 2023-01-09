@@ -17,6 +17,7 @@ export const Header = ({ title, companyName = 'Compolexos', inventoryNumber, has
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('roles');
+    localStorage.removeItem('email');
     navigateToLogin();
   };
 

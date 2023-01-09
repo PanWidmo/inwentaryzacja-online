@@ -42,6 +42,7 @@ export const Login = () => {
         const roles = [response?.data?.permission];
         localStorage.setItem('token', JSON.stringify(accessToken));
         localStorage.setItem('roles', JSON.stringify(roles));
+        localStorage.setItem('email', JSON.stringify(formik.values.email));
         navigate(from, { replace: true });
       } catch (error) {
         console.error(error.message);

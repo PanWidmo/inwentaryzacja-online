@@ -16,6 +16,7 @@ export const UserFixedAssetConfirm = () => {
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('roles');
+    localStorage.removeItem('email');
     navigateToLogin();
   };
 
