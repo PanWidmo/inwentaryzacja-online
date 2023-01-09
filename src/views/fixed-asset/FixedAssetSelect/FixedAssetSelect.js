@@ -7,7 +7,7 @@ import { Button } from 'components/organisms/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import { Wrapper } from 'views/fixed-asset/FixedAssetSelect/FixedAssetSelect.styles';
 import { requests } from 'api/requests';
-import { Footer } from '../../../components/organisms/Footer/Footer';
+import { Footer } from 'components/organisms/Footer/Footer';
 
 export const FixedAssetSelect = () => {
   const navigate = useNavigate();
