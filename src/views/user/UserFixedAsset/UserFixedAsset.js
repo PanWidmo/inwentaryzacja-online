@@ -7,13 +7,30 @@ import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
 import { Footer } from 'components/organisms/Footer/Footer';
 import { LoadingOrError } from 'components/molecules/LoadingOrError/LoadingOrError';
+import { NoFixedAssets } from 'components/molecules/NoFixedAssets/NoFixedAssets';
 
 export const UserFixedAsset = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isActiveInventory, setIsActiveInventory] = useState(false);
   const [error, setError] = useState(null);
-  const [dane, setDane] = useState([]);
+
+  const getUserFixedAssets = async () => {
+    setLoading(true);
+    try {
+      const result = await axios.get(requests.singleUser, {
+        headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
+      });
+
+      const emailUser = JSON.parse(localStorage.getItem('email'));
+      const userAssets = result.data.find((e) => e.email === emailUser);
+
+      setData(userAssets.assets);
+    } catch (error) {
+      console.error(error.message);
+    }
+    setLoading(false);
+  };
 
   const checkInventoryActive = async () => {
     setLoading(true);
@@ -21,6 +38,7 @@ export const UserFixedAsset = () => {
       const result = await axios.get(requests.singleInventory, {
         headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
       });
+
       if (result.data.some((e) => e.isActive === true)) {
         setIsActiveInventory(true);
       }
@@ -35,46 +53,33 @@ export const UserFixedAsset = () => {
 
   useEffect(() => {
     checkInventoryActive();
+
     // eslint-disable-next-line
   }, []);
 
-  /*  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const result = await axios.get('https://localhost:5001/api/user/', {
-          headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
-        });
-
-        setDane(result.data);
-      } catch (error) {
-        console.error(error.message);
-      }
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
-
   useEffect(() => {
-    setData(dane[0]?.assets);
-  }, [dane]);*/
+    if (isActiveInventory === true) {
+      getUserFixedAssets();
+    }
+  }, [isActiveInventory]);
 
   return (
     <>
       <Header title="Twoje środki trwałe" hasLogoutButton />
       <ContentWrapper>
         <Wrapper>
-          <InnerWrapper>
-            {!loading && !error ? (
-              // <Table dane={data} dataName="fixed-asset" id="fixedAssetsTable" />
-              <p>Tu powinny się pojawić assety usera</p>
+          <InnerWrapper as="form">
+            {!loading && !error && data > 0 ? (
+              <Table dane={data} dataName="fixed-asset" id="fixedAssetsTable" />
+            ) : !loading && !error && data.length === 0 ? (
+              <NoFixedAssets />
             ) : (
               <LoadingOrError msg={error ? error : 'Ładowanie...'} />
             )}
           </InnerWrapper>
         </Wrapper>
       </ContentWrapper>
-      {isActiveInventory === true ? <Footer hasBackToPrevPageButton hasConfirmUserAsset /> : <Footer hasBackToPrevPageButton />}
+      {isActiveInventory === true && !data.length === 0 ? <Footer hasBackToPrevPageButton hasConfirmUserAsset /> : <Footer hasBackToPrevPageButton />}
     </>
   );
 };

@@ -95,10 +95,6 @@ export const Footer = ({
     navigateToIssueManagement();
   };
 
-  const navigateToConfirmAssets = () => {
-    navigate(requests.userFixedAssetConfirm);
-  };
-
   return (
     <Wrapper>
       <LeftSide>
@@ -117,7 +113,7 @@ export const Footer = ({
         {hasSaveEditedFixedAssetButton && <Button name="blue" text="Zapisz" type="submit" form="fixedAssetEditForm" />}
         {hasSaveEditedInventoryButton && <Button name="blue" text="Zapisz" type="submit" form="inventoryEditForm" />}
         {hasAbortInventoryButton && <Button name="red" text="Przerwij" type="submit" />}
-        {hasConfirmUserAsset && <Button name="green" text="Zatwierdź" onClick={navigateToConfirmAssets} />}
+        {hasConfirmUserAsset && <Button name="green" text="Zatwierdź" type="submit" form="userAssetsForm" />}
       </RightSide>
     </Wrapper>
   );
