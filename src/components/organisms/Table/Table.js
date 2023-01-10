@@ -28,9 +28,8 @@ export const Table = ({ dane, dataName }) => {
       case 'closeDate':
         return (header = 'Data zakończenia');
       default:
+        return header;
     }
-
-    return header;
   });
 
   let sortedData = [...dane];
