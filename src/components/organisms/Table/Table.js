@@ -5,6 +5,34 @@ import { StyledTable } from 'components/organisms/Table/Table.styles';
 export const Table = ({ dane, dataName }) => {
   const [sortedField, setSortedField] = useState(null);
   const headers = dane.map((header) => Object.keys(header));
+  const changedHeaders = headers[0].map((header) => {
+    switch (header) {
+      case 'name':
+        header = 'Nazwa';
+        break;
+      case 'inventoryNumber':
+        header = 'Numer inwentarzowy';
+        break;
+      case 'serialNumber':
+        header = 'Numer seryjny';
+        break;
+      case 'description':
+        header = 'Opis';
+        break;
+      case 'hasInventoried':
+        header = 'Zinwentaryzowany';
+        break;
+      case 'surname':
+        header = 'Nazwisko';
+        break;
+      case 'phoneNumber':
+        header = 'Telefon';
+        break;
+      default:
+    }
+
+    return header;
+  });
 
   let sortedData = [...dane];
   if (sortedField !== null) {
@@ -24,7 +52,7 @@ export const Table = ({ dane, dataName }) => {
       <thead>
         <tr>
           <th>Lp</th>
-          {headers[0].map((header) => (
+          {changedHeaders.map((header) => (
             <th key={header}>
               <div key={header + 1} type="button" onClick={() => setSortedField({ header })}>
                 {header[0].toUpperCase() + header.substring(1)}

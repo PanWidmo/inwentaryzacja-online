@@ -26,7 +26,14 @@ export const FixedAssetList = () => {
       const result = await axios.get(requests.singleFixedAsset, {
         headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
       });
-      setData(result.data);
+      const cutData = result.data.filter((x) => {
+        delete x.inventoryId;
+        delete x.id;
+        delete x.userId;
+        return x;
+      });
+
+      setData(cutData);
     } catch (error) {
       console.error(error.message);
       setError(error.message);
@@ -36,7 +43,6 @@ export const FixedAssetList = () => {
 
   useEffect(() => {
     getData();
-    // eslint-disable-next-line
   }, []);
 
   return (
