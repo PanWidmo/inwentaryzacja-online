@@ -26,8 +26,14 @@ export const UserList = () => {
       const result = await axios.get(requests.getUsers, {
         headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
       });
+      const cutData = result.data.filter((x) => {
+        delete x.permissionId;
+        delete x.id;
+        delete x.login;
+        return x;
+      });
 
-      setData(result.data);
+      setData(cutData);
     } catch (error) {
       console.error(error.message);
       setError(error.message);
@@ -37,7 +43,6 @@ export const UserList = () => {
 
   useEffect(() => {
     getData();
-    // eslint-disable-next-line
   }, []);
 
   return (

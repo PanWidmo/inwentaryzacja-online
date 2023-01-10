@@ -26,6 +26,7 @@ export const InventoryList = () => {
       const result = await axios.get(requests.getInventories, {
         headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
       });
+
       setData(result.data);
     } catch (error) {
       console.error(error.message);
@@ -36,7 +37,6 @@ export const InventoryList = () => {
 
   useEffect(() => {
     getData();
-    // eslint-disable-next-line
   }, []);
 
   return (
