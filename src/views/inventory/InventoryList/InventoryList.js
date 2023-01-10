@@ -29,11 +29,11 @@ export const InventoryList = () => {
 
       const cutData = result.data.filter((x) => {
         //delete x.id;
-
         return x;
       });
 
       setData(cutData);
+
     } catch (error) {
       console.error(error.message);
       setError(error.message);

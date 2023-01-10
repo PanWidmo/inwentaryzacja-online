@@ -30,6 +30,7 @@ export const Table = ({ dane, dataName }) => {
       default:
         return header;
     }
+
   });
 
   let sortedData = [...dane];
