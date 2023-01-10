@@ -7,27 +7,26 @@ export const Table = ({ dane, dataName }) => {
   const headers = dane.map((header) => Object.keys(header));
   const changedHeaders = headers[0].map((header) => {
     switch (header) {
+      case 'id':
+        return (header = 'Numer/Nazwa');
       case 'name':
-        header = 'Nazwa';
-        break;
+        return (header = 'Nazwa');
       case 'inventoryNumber':
-        header = 'Numer inwentarzowy';
-        break;
+        return (header = 'Numer inwentarzowy');
       case 'serialNumber':
-        header = 'Numer seryjny';
-        break;
+        return (header = 'Numer seryjny');
       case 'description':
-        header = 'Opis';
-        break;
+        return (header = 'Opis');
       case 'hasInventoried':
-        header = 'Zinwentaryzowany';
-        break;
+        return (header = 'Zinwentaryzowany');
       case 'surname':
-        header = 'Nazwisko';
-        break;
+        return (header = 'Nazwisko');
       case 'phoneNumber':
-        header = 'Telefon';
-        break;
+        return (header = 'Telefon');
+      case 'startDate':
+        return (header = 'Data rozpoczęcia');
+      case 'closeDate':
+        return (header = 'Data zakończenia');
       default:
     }
 
