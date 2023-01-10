@@ -33,7 +33,6 @@ export const InventoryList = () => {
       });
 
       setData(cutData);
-
     } catch (error) {
       console.error(error.message);
       setError(error.message);
