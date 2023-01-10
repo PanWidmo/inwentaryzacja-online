@@ -27,7 +27,12 @@ export const InventoryList = () => {
         headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
       });
 
-      setData(result.data);
+      const cutData = result.data.filter((x) => {
+        //delete x.id;
+        return x;
+      });
+
+      setData(cutData);
     } catch (error) {
       console.error(error.message);
       setError(error.message);
