@@ -8,7 +8,7 @@ export const Table = ({ dane, dataName }) => {
   const changedHeaders = headers[0].map((header) => {
     switch (header) {
       case 'id':
-        return (header = 'Numer/Nazwa');
+        return (header = 'Numer');
       case 'name':
         return (header = 'Nazwa');
       case 'inventoryNumber':
