@@ -25,10 +25,10 @@ const validate = (values) => {
     errors.serialNumber = 'Wymagane minimum 3 znaki';
   }
 
-  if (!values.description) {
-    errors.description = 'Pole wymagane';
-  } else if (values.description.length < 3) {
-    errors.description = 'Wymagane minimum 3 znaki';
+  if (!values.inventoryNumber) {
+    errors.inventoryNumber = 'Pole wymagane';
+  } else if (values.inventoryNumber.length < 3) {
+    errors.inventoryNumber = 'Wymagane minimum 3 znaki';
   }
 
   return errors;
@@ -63,6 +63,7 @@ export const FixedAssetCreate = () => {
     initialValues: {
       name: '',
       serialNumber: '',
+      inventoryNumber: '',
       userId: '',
       description: '',
     },
@@ -111,6 +112,17 @@ export const FixedAssetCreate = () => {
               value={formik.values.serialNumber}
               onBlur={formik.handleBlur}
               error={formik.touched.serialNumber && formik.errors.serialNumber ? formik.errors.serialNumber : null}
+            />
+
+            <FormField
+              label="Numer Inwentarzowy"
+              id="inventoryNumber"
+              name="inventoryNumber"
+              type="text"
+              onChange={formik.handleChange}
+              value={formik.values.inventoryNumber}
+              onBlur={formik.handleBlur}
+              error={formik.touched.inventoryNumber && formik.errors.inventoryNumber ? formik.errors.inventoryNumber : null}
             />
 
             <FormSelect label="Osoba przypisana" id="userId" name="userId" value={formik.values.userId} onChange={formik.handleChange} data={data} />

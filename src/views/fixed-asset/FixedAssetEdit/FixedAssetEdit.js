@@ -25,12 +25,6 @@ const validate = (values) => {
     errors.serialNumber = 'Wymagane minimum 3 znaki';
   }
 
-  if (!values.description) {
-    errors.description = 'Pole wymagane';
-  } else if (values.description.length < 2) {
-    errors.description = 'Must be 2 characters or more';
-  }
-
   return errors;
 };
 export const FixedAssetEdit = () => {
