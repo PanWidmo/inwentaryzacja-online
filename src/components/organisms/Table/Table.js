@@ -19,6 +19,8 @@ export const Table = ({ dane, dataName }) => {
         return (header = 'Opis');
       case 'hasInventoried':
         return (header = 'Zinwentaryzowany');
+      case 'firstName':
+        return (header = 'Imię');
       case 'surname':
         return (header = 'Nazwisko');
       case 'phoneNumber':

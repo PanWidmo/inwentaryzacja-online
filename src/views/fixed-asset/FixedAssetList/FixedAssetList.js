@@ -28,7 +28,7 @@ export const FixedAssetList = () => {
       });
       const cutData = result.data.filter((x) => {
         delete x.inventoryId;
-        delete x.id;
+        // delete x.id;
         delete x.userId;
         return x;
       });

@@ -28,11 +28,11 @@ export const UserList = () => {
       });
       const cutData = result.data.filter((x) => {
         delete x.permissionId;
-        delete x.id;
+        // delete x.id;
         delete x.login;
         return x;
       });
-
+      console.log(cutData);
       setData(cutData);
     } catch (error) {
       console.error(error.message);
