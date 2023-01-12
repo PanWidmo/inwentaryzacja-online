@@ -126,6 +126,7 @@ export const UserCreate = () => {
             id="phoneNumber"
             name="phoneNumber"
             type="tel"
+            pattern="[0-9]*"
             onChange={formik.handleChange}
             value={formik.values.phoneNumber}
             error={formik.touched.phoneNumber && formik.errors.phoneNumber ? formik.errors.phoneNumber : null}

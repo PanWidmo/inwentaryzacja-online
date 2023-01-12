@@ -151,6 +151,7 @@ export const UserEdit = () => {
               id="phoneNumber"
               name="phoneNumber"
               type="tel"
+              pattern="[0-9]*"
               onChange={formik.handleChange}
               value={formik.values.phoneNumber}
               onBlur={formik.handleBlur}
