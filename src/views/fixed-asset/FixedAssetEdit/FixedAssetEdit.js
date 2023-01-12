@@ -73,6 +73,8 @@ export const FixedAssetEdit = () => {
         inventoryNumber: data.inventoryNumber,
         userId: data.userId,
         description: data.description,
+        // FIXME: do wywalenia
+        inventoryId: 1,
       });
     } catch (error) {
       console.error(error.message);
