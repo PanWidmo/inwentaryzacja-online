@@ -11,10 +11,10 @@ import { Form } from 'components/organisms/Form/Form';
 
 const validate = (values) => {
   const errors = {};
-  if (!values.name) {
-    errors.name = 'Pole wymagane';
-  } else if (values.name.length < 3) {
-    errors.name = 'Wymagane minimum 3 znaki';
+  if (!values.firstName) {
+    errors.firstName = 'Pole wymagane';
+  } else if (values.firstName.length < 3) {
+    errors.firstName = 'Wymagane minimum 3 znaki';
   }
 
   if (!values.surname) {
@@ -61,7 +61,7 @@ export const UserCreate = () => {
 
   const formik = useFormik({
     initialValues: {
-      name: '',
+      firstName: '',
       surname: '',
       email: '',
       phoneNumber: '',
@@ -90,13 +90,13 @@ export const UserCreate = () => {
         <Form id="userCreateForm" onSubmit={formik.handleSubmit}>
           <FormField
             label="Imię"
-            id="name"
-            name="name"
+            id="firstName"
+            name="firstName"
             type="text"
             onChange={formik.handleChange}
-            value={formik.values.name}
+            value={formik.values.firstName}
             onBlur={formik.handleBlur}
-            error={formik.touched.name && formik.errors.name ? formik.errors.name : null}
+            error={formik.touched.firstName && formik.errors.firstName ? formik.errors.firstName : null}
           />
 
           <FormField

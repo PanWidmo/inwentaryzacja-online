@@ -14,6 +14,8 @@ export const Wrapper = styled.div`
 
   h2 {
     font-size: ${({ theme }) => theme.fontSize.xxl};
+    color: ${({ theme }) => theme.colors.blue};
+    margin: 1rem 0;
   }
 
   p {

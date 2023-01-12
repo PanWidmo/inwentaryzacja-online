@@ -26,8 +26,7 @@ export const UserFixedAssetConfirm = () => {
       <ContentWrapper>
         <Wrapper>
           <img src={sentProtocol} alt="Protocol sent icon" />
-          <h2>Protokół wysłany!</h2>
-          <p>Dziękujemy</p>
+          <h2>Protokół wysłany, dziękujemy.</h2>
           <Button name="blue" text="Zakoncz" onClick={handleLogout} />
         </Wrapper>
       </ContentWrapper>

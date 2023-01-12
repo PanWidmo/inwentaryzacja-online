@@ -43,6 +43,10 @@ export const Footer = ({
     navigate(requests.issueManagement);
   };
 
+  const navigateToConfirmInventory = () => {
+    navigate(requests.userFixedAssetConfirm);
+  };
+
   const deleteUser = () => {
     try {
       axios.delete(`${requests.singleUser}/${id}`, {
@@ -113,7 +117,7 @@ export const Footer = ({
         {hasSaveEditedFixedAssetButton && <Button name="blue" text="Zapisz" type="submit" form="fixedAssetEditForm" />}
         {hasSaveEditedInventoryButton && <Button name="blue" text="Zapisz" type="submit" form="inventoryEditForm" />}
         {hasAbortInventoryButton && <Button name="red" text="Przerwij" type="submit" />}
-        {hasConfirmUserAsset && <Button name="green" text="Zatwierdź" type="submit" form="userAssetsForm" />}
+        {hasConfirmUserAsset && <Button name="green" text="Zatwierdź" type="submit" onClick={navigateToConfirmInventory} />}
       </RightSide>
     </Wrapper>
   );
