@@ -52,7 +52,7 @@ export const IssueList = () => {
           </InnerWrapper>
         </Wrapper>
       </ContentWrapper>
-      <Footer hasBackToPrevPageButton />
+      <Footer hasBackToAdminPanelButton />
     </>
   );
 };

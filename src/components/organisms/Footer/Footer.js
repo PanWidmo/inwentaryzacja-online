@@ -6,6 +6,8 @@ import { requests } from 'api/requests';
 
 export const Footer = ({
   hasBackToPrevPageButton,
+  hasBackToAdminPanelButton,
+  hasBackToAccountantPanelButton,
   hasDeleteUserButton,
   hasDeleteFixedAssetButton,
   hasDeleteInventoryButton,
@@ -45,6 +47,14 @@ export const Footer = ({
 
   const navigateToConfirmInventory = () => {
     navigate(requests.userFixedAssetConfirm);
+  };
+
+  const navigateToAdminPanel = () => {
+    navigate(requests.adminPanel);
+  };
+
+  const navigateToAccountantPanel = () => {
+    navigate(requests.accountantPanel);
   };
 
   const deleteUser = () => {
@@ -103,6 +113,8 @@ export const Footer = ({
     <Wrapper>
       <LeftSide>
         {hasBackToPrevPageButton && <Button name="red" text="Cofnij" onClick={navigateToPrevPage} />}
+        {hasBackToAdminPanelButton && <Button name="red" text="Cofnij" onClick={navigateToAdminPanel} />}
+        {hasBackToAccountantPanelButton && <Button name="red" text="Cofnij" onClick={navigateToAccountantPanel} />}
         {hasDeleteUserButton && <Button name="red" text="Usuń" type="submit" onClick={deleteUser} />}
         {hasDeleteFixedAssetButton && <Button name="red" text="Usuń" onClick={deleteFixedAsset} />}
         {hasDeleteInventoryButton && <Button name="red" text="Usuń" onClick={deleteInventory} />}

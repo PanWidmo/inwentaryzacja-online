@@ -14,6 +14,7 @@ export const FixedAssetList = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const navigate = useNavigate();
 
   const navigateToCreateFixedAsset = () => {
@@ -41,9 +42,20 @@ export const FixedAssetList = () => {
     setLoading(false);
   };
 
+  const checkIfAdminLogged = async () => {
+    const permission = await JSON.parse(localStorage.getItem('roles'));
+    if (permission == 3) {
+      setIsAdmin(true);
+    }
+  };
+
   useEffect(() => {
     getData();
   }, []);
+
+  useEffect(() => {
+    checkIfAdminLogged();
+  }, [isAdmin]);
 
   return (
     <>
@@ -62,7 +74,7 @@ export const FixedAssetList = () => {
           </InnerWrapper>
         </Wrapper>
       </ContentWrapper>
-      <Footer hasBackToPrevPageButton />
+      {isAdmin ? <Footer hasBackToAdminPanelButton /> : <Footer hasBackToAccountantPanelButton />}
     </>
   );
 };

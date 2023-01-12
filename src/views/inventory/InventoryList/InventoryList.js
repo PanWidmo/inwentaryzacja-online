@@ -56,12 +56,12 @@ export const InventoryList = () => {
                 <Button name="green" text="Dodaj" onClick={navigateToCreateInventory} />
               </>
             ) : (
-              <LoadingOrError msg={error ? error : 'Ładowanie......'} />
+              <LoadingOrError msg={error ? error : 'Ładowanie...'} />
             )}
           </InnerWrapper>
         </Wrapper>
       </ContentWrapper>
-      <Footer hasBackToPrevPageButton />
+      <Footer hasBackToAccountantPanelButton />
     </>
   );
 };

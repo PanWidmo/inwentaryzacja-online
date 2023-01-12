@@ -64,7 +64,7 @@ export const UserList = () => {
           </InnerWrapper>
         </Wrapper>
       </ContentWrapper>
-      <Footer hasBackToPrevPageButton />
+      <Footer hasBackToAdminPanelButton />
     </>
   );
 };
