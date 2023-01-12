@@ -29,6 +29,10 @@ export const Table = ({ dane, dataName }) => {
         return (header = 'Data rozpoczęcia');
       case 'closeDate':
         return (header = 'Data zakończenia');
+      case 'title':
+        return (header = 'Tytuł');
+      case 'isActive':
+        return (header = 'Aktywne');
       default:
         return header;
     }
