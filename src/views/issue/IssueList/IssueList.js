@@ -16,7 +16,6 @@ export const IssueList = () => {
   const getData = async () => {
     setLoading(true);
     try {
-      // TODO: tu po stworzeniu endpointa check czy wszystko gra
       const result = await axios.get(requests.getIssues, {
         headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
       });

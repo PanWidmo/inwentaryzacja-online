@@ -18,7 +18,7 @@ export const IssueEdit = () => {
   const formik = useFormik({
     initialValues: {
       title: '',
-      name: '',
+      firstName: '',
       surname: '',
       email: '',
       description: '',
@@ -28,7 +28,6 @@ export const IssueEdit = () => {
   const getData = async () => {
     setLoading(true);
     try {
-      // TODO: po dodaniu endpointa check czy dziala prawidlowo
       const response = await axios.get(`${requests.singleIssue}/${id}`, {
         headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
       });
@@ -36,7 +35,7 @@ export const IssueEdit = () => {
 
       await formik.setValues({
         title: data.title,
-        name: data.name,
+        firstName: data.firstName,
         surname: data.surname,
         email: data.email,
         description: data.description,
@@ -72,11 +71,11 @@ export const IssueEdit = () => {
 
             <FormField
               label="Imię"
-              id="name"
-              name="name"
+              id="firstName"
+              name="firstName"
               type="text"
               onChange={formik.handleChange}
-              value={formik.values.name}
+              value={formik.values.firstName}
               onBlur={formik.handleBlur}
               disabled="disabled"
             />
