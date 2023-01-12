@@ -25,7 +25,14 @@ export const UserFixedAsset = () => {
       const emailUser = JSON.parse(localStorage.getItem('email'));
       const userAssets = result.data.find((e) => e.email === emailUser);
 
-      setData(userAssets.assets);
+      const cutData = userAssets.assets.filter((x) => {
+        delete x.inventoryId;
+        //delete x.id;
+        delete x.userId;
+        return x;
+      });
+
+      setData(cutData);
     } catch (error) {
       console.error(error.message);
     }
@@ -39,7 +46,7 @@ export const UserFixedAsset = () => {
         headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
       });
 
-      if (result.data.some((e) => e.isActive === true)) {
+      if (result.data.some((e) => e.isActive === false)) {
         setIsActiveInventory(true);
       }
     } catch (error) {
