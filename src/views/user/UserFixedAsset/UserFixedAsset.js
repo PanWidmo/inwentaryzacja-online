@@ -46,6 +46,7 @@ export const UserFixedAsset = () => {
         headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}` },
       });
 
+      // tu ma byc true
       if (result.data.some((e) => e.isActive === false)) {
         setIsActiveInventory(true);
       }
