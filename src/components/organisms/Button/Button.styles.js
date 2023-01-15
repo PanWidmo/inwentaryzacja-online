@@ -9,21 +9,22 @@ export const StyledButton = styled.button`
     return theme.colors.black;
   }};
   border: none;
-  border-radius: 0.4375em;
-  padding: 0.42375em 1.25em;
+  border-radius: 0.5em;
+  padding: 0.5em 1.25em;
   font-size: ${({ theme }) => theme.fontSize.l};
   color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
   max-width: 18rem;
   height: fit-content;
-  box-shadow: 0 0.1875em 0.5em rgba(0, 0, 0, 0.3);
-  :active {
-    transform: translateY(0.25em);
-    border: none;
-    outline: none;
+  box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  :is(:hover, :active, :focus) {
+    opacity: 0.9;
+    transform: translateY(0.25rem);
   }
-  :focus {
-    border: none;
+
+  :focus:not(:focus-visible) {
     outline: none;
   }
 `;
