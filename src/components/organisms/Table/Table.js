@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { StyledTable } from 'components/organisms/Table/Table.styles';
 
-export const Table = ({ dane, dataName }) => {
+export const Table = ({ dane, dataName, isEditEnable = true }) => {
   const [sortedField, setSortedField] = useState(null);
   const headers = dane.map((header) => Object.keys(header));
   const changedHeaders = headers[0].map((header) => {
@@ -58,7 +58,7 @@ export const Table = ({ dane, dataName }) => {
           <th>Lp</th>
           {changedHeaders.map((header) => (
             <th key={header}>
-              <div key={header + 1} type="button" onClick={() => setSortedField({ header })}>
+              <div key={header + 1} onClick={() => setSortedField({ header })}>
                 {header[0].toUpperCase() + header.substring(1)}
               </div>
             </th>
@@ -76,7 +76,7 @@ export const Table = ({ dane, dataName }) => {
                 </td>
               ) : (
                 <td key={Math.random() + index + 100}>
-                  <NavLink to={`/${dataName}-management/${daneData.id}`}>{columnData}</NavLink>
+                  {isEditEnable ? <NavLink to={`/${dataName}-management/${daneData.id}`}>{columnData}</NavLink> : <>{columnData}</>}
                 </td>
               )
             )}

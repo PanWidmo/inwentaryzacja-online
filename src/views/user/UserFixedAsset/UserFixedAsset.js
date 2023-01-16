@@ -78,7 +78,7 @@ export const UserFixedAsset = () => {
         <Wrapper>
           <InnerWrapper as="form">
             {!loading && !error && data.length > 0 ? (
-              <Table dane={data} dataName="fixed-asset" id="fixedAssetsTable" />
+              <Table dane={data} dataName="fixed-asset" id="fixedAssetsTable" isEditEnable={false} />
             ) : !loading && !error && data.length === 0 ? (
               <NoFixedAssets />
             ) : (
