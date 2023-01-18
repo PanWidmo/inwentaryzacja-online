@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
-      "baseUrl": "src"
+      "baseUrl": "src",
+      "types": ["cypress", "@testing-library/cypress"]
     },
     "include": ["src"]
   }
