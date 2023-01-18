@@ -29,6 +29,10 @@ const validate = (values) => {
     errors.closeDate = 'Zła data';
   }
 
+  if (values.userId === 0) {
+    errors.userId = 'Pole wymagane';
+  }
+
   return errors;
 };
 
@@ -62,7 +66,7 @@ export const InventoryCreate = () => {
       name: '',
       startDate: '',
       closeDate: '',
-      userId: '',
+      userId: 0,
     },
     validate,
     onSubmit: (values) => {
@@ -121,7 +125,15 @@ export const InventoryCreate = () => {
               onBlur={formik.handleBlur}
               error={formik.touched.closeDate && formik.errors.closeDate ? formik.errors.closeDate : null}
             />
-            <FormSelect label="Prowadzący" id="userId" name="userId" value={formik.values.userId} onChange={formik.handleChange} data={data} />
+            <FormSelect
+              label="Prowadzący"
+              id="userId"
+              name="userId"
+              value={formik.values.userId}
+              onChange={formik.handleChange}
+              data={data}
+              error={formik.touched.userId && formik.errors.userId ? formik.errors.userId : null}
+            />
           </Form>
         ) : (
           <LoadingOrError msg={error ? error : 'Ładowanie...'} />

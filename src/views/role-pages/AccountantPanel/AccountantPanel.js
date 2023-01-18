@@ -1,7 +1,7 @@
 import { SingleViewWrapper } from 'components/atoms/SingleViewWrapper/SingleViewWrapper';
 import inventoryHistory from 'assets/icons/inventoryHistory.png';
-import inventoryCreate from 'assets/icons/inventoryCreate.png';
 import inventoryCurrent from 'assets/icons/inventoryCurrent.png';
+import inventoryCreate from 'assets/icons/inventoryCreate.png';
 import fixedAsset from 'assets/icons/fixedAssets2.png';
 import { Header } from 'components/organisms/Header/Header';
 import { ContentWrapper } from 'components/atoms/ContentWrapper/ContentWrapper';
@@ -37,13 +37,13 @@ export const AccountantPanel = () => {
           </SingleViewWrapper>
 
           <SingleViewWrapper>
-            <img src={inventoryCreate} alt="Three files" />
+            <img src={inventoryCurrent} alt="Three files" />
             <Button name="green" text="Obecna inwentaryzacja" onClick={() => alert('Funkcjonalność w budowie...')} />
             <p>Akualnie prowadzona inwentaryzacja</p>
           </SingleViewWrapper>
 
           <SingleViewWrapper>
-            <img src={inventoryCurrent} alt="Document with plus sign on the front" />
+            <img src={inventoryCreate} alt="Document with plus sign on the front" />
             <Button name="green" text="Nowa inwentaryzacja" onClick={navigateToCreateInventory} />
             <p>Rozpocznij nową inwentaryzacje</p>
           </SingleViewWrapper>

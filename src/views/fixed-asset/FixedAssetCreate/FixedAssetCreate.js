@@ -31,6 +31,10 @@ const validate = (values) => {
     errors.inventoryNumber = 'Wymagane minimum 3 znaki';
   }
 
+  if (values.userId === 0) {
+    errors.userId = 'Pole wymagane';
+  }
+
   return errors;
 };
 
@@ -64,7 +68,7 @@ export const FixedAssetCreate = () => {
       name: '',
       serialNumber: '',
       inventoryNumber: '',
-      userId: '',
+      userId: 0,
       description: '',
     },
     validate,
@@ -125,7 +129,15 @@ export const FixedAssetCreate = () => {
               error={formik.touched.inventoryNumber && formik.errors.inventoryNumber ? formik.errors.inventoryNumber : null}
             />
 
-            <FormSelect label="Osoba przypisana" id="userId" name="userId" value={formik.values.userId} onChange={formik.handleChange} data={data} />
+            <FormSelect
+              label="Osoba przypisana"
+              id="userId"
+              name="userId"
+              value={formik.values.userId}
+              onChange={formik.handleChange}
+              data={data}
+              error={formik.touched.userId && formik.errors.userId ? formik.errors.userId : null}
+            />
 
             <FormField
               label="Opis"

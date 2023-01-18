@@ -49,6 +49,10 @@ const validate = (values) => {
     errors.confirmPassword = 'Wymagane minimum 6 znaków';
   }
 
+  if (values.permissionId === 0) {
+    errors.permissionId = 'Pole wymagane';
+  }
+
   return errors;
 };
 
@@ -67,7 +71,7 @@ export const UserCreate = () => {
       phoneNumber: '',
       password: '',
       confirmPassword: '',
-      permissionId: 1,
+      permissionId: 0,
     },
     validate,
     onSubmit: (values) => {
@@ -160,6 +164,7 @@ export const UserCreate = () => {
             name="permissionId"
             value={formik.values.permissionId}
             onChange={formik.handleChange}
+            error={formik.touched.permissionId && formik.errors.permissionId ? formik.errors.permissionId : null}
           />
         </Form>
       </ContentWrapper>
