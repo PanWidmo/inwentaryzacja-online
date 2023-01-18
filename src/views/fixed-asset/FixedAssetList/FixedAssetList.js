@@ -43,8 +43,9 @@ export const FixedAssetList = () => {
   };
 
   const checkIfAdminLogged = async () => {
-    const permission = await JSON.parse(localStorage.getItem('roles'));
-    if (permission == 3) {
+    const permission = await JSON.parse(localStorage.getItem('roles'))[0];
+
+    if (permission === 3) {
       setIsAdmin(true);
     }
   };
