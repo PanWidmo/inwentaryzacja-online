@@ -11,7 +11,7 @@ export const FormSelect = ({ label, name, id, value, onChange, data, error }) =>
         {data.map((el) => {
           return (
             <option key={el.id} value={el.id}>
-              {el.name} {el.surname}
+              {el.firstName} {el.surname}
             </option>
           );
         })}
